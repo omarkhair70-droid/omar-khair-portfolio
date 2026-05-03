@@ -34,6 +34,7 @@ Update these sections there:
 - Hero copy
 - Selected work cards
 - Services list
+- Packages section
 - Process steps
 - Why work with me points
 - Contact CTA and footer

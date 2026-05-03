@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const workItems = [
   {
     title: "HILTECH — Network Infrastructure Website & RFQ System",
@@ -17,7 +19,12 @@ const workItems = [
     ],
     status: "Live / In production prep",
     positioning: "Not just a website — a simple operating system for sales requests.",
-    featured: true
+    featured: true,
+    screenshots: [
+      "/project-screenshots/hiltech-homepage.png",
+      "/project-screenshots/hiltech-rfq-basket.png",
+      "/project-screenshots/hiltech-products-catalog.png"
+    ]
   },
   {
     title: "Tuscanini — Food Brand Website Experience",
@@ -30,14 +37,24 @@ const workItems = [
       "Mobile-first layout",
       "Contact and conversion flow"
     ],
-    status: "In progress / Client review"
+    status: "In progress / Client review",
+    screenshots: [
+      "/project-screenshots/tuscanini-order-flow.png",
+      "/project-screenshots/tuscanini-menu.png",
+      "/project-screenshots/tuscanini-offers.png"
+    ]
   },
   {
     title: "Ben Farag — Business Website",
     description:
       "A business website built to present services clearly, improve trust, and make customer contact easier.",
     built: ["Business website", "Service presentation", "Contact flow", "Responsive layout"],
-    status: "Completed / In review"
+    status: "Completed / In review",
+    screenshots: [
+      "/project-screenshots/ben-farag-hero.png",
+      "/project-screenshots/ben-farag-coffee-finder.png",
+      "/project-screenshots/ben-farag-process-reviews.png"
+    ]
   }
 ];
 
@@ -143,6 +160,59 @@ export default function Home() {
                 </span>
               </div>
               <p className={item.featured ? "text-stone-200" : "text-stone-600"}>{item.description}</p>
+              <div
+                className={`mt-5 rounded-2xl border p-3 ${
+                  item.featured ? "border-white/20 bg-white/5" : "border-stone-200 bg-stone-50"
+                }`}
+              >
+                {item.featured ? (
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="rounded-xl border border-white/20 bg-white p-2">
+                      <Image
+                        src={item.screenshots[0]}
+                        alt="HILTECH homepage and company presentation layout"
+                        width={1200}
+                        height={700}
+                        className="h-auto w-full rounded-lg object-contain"
+                      />
+                    </div>
+                    <div className="grid gap-3">
+                      <div className="rounded-xl border border-white/20 bg-white p-2">
+                        <Image
+                          src={item.screenshots[1]}
+                          alt="HILTECH RFQ basket interface for collecting sales requests"
+                          width={1200}
+                          height={700}
+                          className="h-auto w-full rounded-lg object-contain"
+                        />
+                      </div>
+                      <div className="rounded-xl border border-white/20 bg-white p-2">
+                        <Image
+                          src={item.screenshots[2]}
+                          alt="HILTECH product catalog with networking products"
+                          width={1200}
+                          height={700}
+                          className="h-auto w-full rounded-lg object-contain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {item.screenshots.map((shot, index) => (
+                      <div key={shot} className="rounded-xl border border-stone-200 bg-white p-2">
+                        <Image
+                          src={shot}
+                          alt={`${item.title} screenshot preview ${index + 1}`}
+                          width={1200}
+                          height={700}
+                          className="h-auto w-full rounded-lg object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
               <ul className={`mt-4 grid gap-2 text-sm md:grid-cols-2 ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
                 {item.built.map((point) => (
                   <li key={point}>• {point}</li>
@@ -153,11 +223,15 @@ export default function Home() {
                   {item.positioning}
                 </p>
               ) : null}
-              {item.featured ? (
-                <p className="mt-5 inline-flex rounded-full border border-white/40 px-4 py-2 text-sm font-medium text-white/90">
-                  Case study coming soon
-                </p>
-              ) : null}
+              <p
+                className={`mt-5 inline-flex rounded-full border px-4 py-2 text-sm font-medium ${
+                  item.featured
+                    ? "border-white/40 text-white/90"
+                    : "border-stone-300 bg-white text-stone-700"
+                }`}
+              >
+                Case study coming soon
+              </p>
             </article>
           ))}
         </div>

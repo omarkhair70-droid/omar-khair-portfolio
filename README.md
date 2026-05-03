@@ -39,15 +39,11 @@ Update these sections there:
 - Contact CTA and footer
 
 ## Update Contact Links
-In `app/page.tsx`, update the `href` values in the contact section:
-- WhatsApp button
-- Instagram button
-- Email button
-
-Search for this code comment:
-```tsx
-{/* Update contact links below with real values when available. */}
-```
+In `app/page.tsx`, contact links are set to:
+- WhatsApp: `https://wa.me/201151891310`
+- Instagram: `https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ==`
+- Email: `mailto:omar.khair70@gmail.com`
+- Facebook: `https://www.facebook.com/share/18Vs3ic2QK/`
 
 ## SEO Metadata
 Edit metadata in:

@@ -139,10 +139,10 @@ export default function Home() {
           <h2 className="text-3xl font-semibold tracking-tight">Have a project in mind?</h2>
           <p className="mt-4 max-w-3xl text-stone-300">Send me what you’re building, what you need the website to do, and your deadline. I’ll help turn it into a clear digital experience.</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {/* Update contact links below with real values when available. */}
-            <a href="#" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">WhatsApp me</a>
-            <a href="#" className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium">Instagram</a>
-            <a href="#" className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium">Email</a>
+            <a href="https://wa.me/201151891310" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">WhatsApp me</a>
+            <a href="https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ==" className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium">Instagram</a>
+            <a href="mailto:omar.khair70@gmail.com" className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium">Email</a>
+            <a href="https://www.facebook.com/share/18Vs3ic2QK/" className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium">Facebook</a>
           </div>
         </div>
       </section>

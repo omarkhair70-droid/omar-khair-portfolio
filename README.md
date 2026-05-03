@@ -55,3 +55,5 @@ Includes title, description, and basic Open Graph tags.
 - Polish Pass 01 improved contact visibility and overall visual presentation across key sections.
 - Portfolio Phase 02 added real project screenshots in `public/project-screenshots/`.
 - Selected Work now uses real visuals for HILTECH, Tuscanini, and Ben Farag case study previews.
+
+- Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.

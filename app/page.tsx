@@ -20,6 +20,7 @@ const workItems = [
     status: "Live / In production prep",
     positioning: "Not just a website — a simple operating system for sales requests.",
     featured: true,
+    url: "https://hiltech-eg-website.vercel.app/",
     screenshots: [
       "/project-screenshots/hiltech-homepage.png",
       "/project-screenshots/hiltech-rfq-basket.png",
@@ -38,6 +39,7 @@ const workItems = [
       "Contact and conversion flow"
     ],
     status: "In progress / Client review",
+    url: "https://tuscanini-ordering-system.vercel.app/",
     screenshots: [
       "/project-screenshots/tuscanini-order-flow.png",
       "/project-screenshots/tuscanini-menu.png",
@@ -50,6 +52,7 @@ const workItems = [
       "A business website built to present services clearly, improve trust, and make customer contact easier.",
     built: ["Business website", "Service presentation", "Contact flow", "Responsive layout"],
     status: "Completed / In review",
+    url: "https://farrag-coffee-v2.vercel.app/",
     screenshots: [
       "/project-screenshots/ben-farag-hero.png",
       "/project-screenshots/ben-farag-coffee-finder.png",
@@ -223,15 +226,27 @@ export default function Home() {
                   {item.positioning}
                 </p>
               ) : null}
-              <p
-                className={`mt-5 inline-flex rounded-full border px-4 py-2 text-sm font-medium ${
-                  item.featured
-                    ? "border-white/40 text-white/90"
-                    : "border-stone-300 bg-white text-stone-700"
-                }`}
-              >
-                Case study coming soon
-              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                    item.featured
+                      ? "border-white bg-white text-stone-900 hover:bg-stone-100"
+                      : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
+                  }`}
+                >
+                  Visit project
+                </a>
+                <p
+                  className={`text-xs font-medium ${
+                    item.featured ? "text-stone-300" : "text-stone-500"
+                  }`}
+                >
+                  Case study coming soon
+                </p>
+              </div>
             </article>
           ))}
         </div>

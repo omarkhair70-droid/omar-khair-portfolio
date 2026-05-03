@@ -289,13 +289,16 @@ export default function Home() {
                 >
                   Visit project
                 </a>
-                <p
-                  className={`text-xs font-medium ${
-                    item.featured ? "text-stone-300" : "text-stone-500"
-                  }`}
-                >
-                  Case study coming soon — available on request
-                </p>
+                {item.featured ? (
+                  <a
+                    href="/work/hiltech"
+                    className="text-xs font-semibold text-stone-200 underline-offset-4 hover:underline"
+                  >
+                    View case study
+                  </a>
+                ) : (
+                  <p className="text-xs font-medium text-stone-500">Case study coming soon — available on request</p>
+                )}
               </div>
             </article>
           ))}

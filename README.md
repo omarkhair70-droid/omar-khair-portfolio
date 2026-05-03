@@ -59,3 +59,8 @@ Includes title, description, and basic Open Graph tags.
 
 - Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.
 - Portfolio Phase 05 final QA polish was performed after adding real screenshots, live project links, contact links, and project packages.
+- Portfolio Phase 06 added the first dedicated case study page at `/work/hiltech`.
+
+## Case Study Content Editing
+- First dedicated case study route: `app/work/hiltech/page.tsx` (URL: `/work/hiltech`).
+- Edit HILTECH case study structure, proof screenshots, flow, business value, and CTA directly in that file.

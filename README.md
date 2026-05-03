@@ -58,3 +58,4 @@ Includes title, description, and basic Open Graph tags.
 - Selected Work now uses real visuals for HILTECH, Tuscanini, and Ben Farag case study previews.
 
 - Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.
+- Portfolio Phase 05 final QA polish was performed after adding real screenshots, live project links, contact links, and project packages.

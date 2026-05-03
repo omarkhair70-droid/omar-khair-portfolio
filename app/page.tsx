@@ -141,24 +141,24 @@ export default function Home() {
   return (
     <main>
       <header className="sticky top-0 z-20 border-b border-stone-200/70 bg-stone-50/90 backdrop-blur">
-        <div className="section-wrap flex h-16 items-center justify-between">
-          <p className="font-semibold tracking-tight">Omar Khair</p>
-          <nav className="hidden gap-8 text-sm text-stone-600 md:flex">
+        <div className="section-wrap flex min-h-16 items-center justify-between gap-3 py-3 md:py-0">
+          <p className="shrink-0 font-semibold tracking-tight">Omar Khair</p>
+          <nav className="hidden flex-1 justify-center gap-5 text-sm text-stone-600 lg:flex">
             <a href="#work">Work</a>
             <a href="#services">Services</a>
             <a href="#packages">Packages</a>
             <a href="#process">Process</a>
             <a href="#contact">Contact</a>
           </nav>
-          <a href="#contact" className="rounded-full bg-stone-900 px-4 py-2 text-sm text-white">
+          <a href="#contact" className="shrink-0 rounded-full bg-stone-900 px-4 py-2 text-sm text-white">
             Start a project
           </a>
         </div>
       </header>
 
-      <section className="section-wrap py-20 md:py-24">
+      <section className="section-wrap py-16 md:py-22">
         <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Websites & Digital Systems</p>
-        <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
           I build websites that turn business ideas into working digital experiences.
         </h1>
         <p className="mt-4 text-base font-medium text-stone-700 md:text-lg">
@@ -168,7 +168,7 @@ export default function Home() {
           From brand websites to product catalogs, RFQ flows, dashboards, and client-facing systems — I design and
           build websites that are clear, useful, and ready to operate.
         </p>
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
           <a href="#work" className="rounded-full bg-stone-900 px-6 py-3 text-white">
             View Work
           </a>
@@ -189,7 +189,7 @@ export default function Home() {
               key={item.title}
               className={`rounded-2xl border p-6 shadow-sm ${
                 item.featured
-                  ? "border-stone-900 bg-stone-900 text-white"
+                  ? "border-stone-900 bg-stone-900 text-white shadow-md"
                   : "border-stone-200 bg-white text-stone-900"
               }`}
             >
@@ -294,7 +294,7 @@ export default function Home() {
                     item.featured ? "text-stone-300" : "text-stone-500"
                   }`}
                 >
-                  Case study coming soon
+                  Case study coming soon — available on request
                 </p>
               </div>
             </article>
@@ -329,10 +329,12 @@ export default function Home() {
             <article
               key={pkg.title}
               className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm ${
-                pkg.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white text-stone-900"
+                pkg.featured
+                  ? "border-stone-900 bg-stone-900 text-white shadow-md ring-1 ring-stone-700/40"
+                  : "border-stone-200 bg-white text-stone-900"
               }`}
             >
-              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-300" : "text-stone-400"}`}>
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-200" : "text-stone-500"}`}>
                 {pkg.pricing}
               </p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight">{pkg.title}</h3>
@@ -363,7 +365,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-sm text-stone-500">
+        <p className="mt-5 text-sm text-stone-600">
           Final pricing depends on scope, content, features, and launch requirements.
         </p>
       </section>
@@ -398,7 +400,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="section-wrap py-20 md:py-24">
-        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-6 shadow-sm text-white">
+        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-6 shadow-sm text-white md:p-8">
           <h2 className="text-3xl font-semibold tracking-tight">Have a project in mind?</h2>
           <p className="mt-4 max-w-3xl text-stone-300">
             Send me what you’re building, what you need the website to do, and your deadline. I’ll help turn it into a
@@ -407,24 +409,32 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="https://wa.me/201151891310"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900 transition hover:bg-stone-200"
             >
               WhatsApp me
             </a>
             <a
               href="https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ=="
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Instagram
             </a>
             <a
               href="mailto:omar.khair70@gmail.com"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Email
             </a>
             <a
               href="https://www.facebook.com/share/18Vs3ic2QK/"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Facebook

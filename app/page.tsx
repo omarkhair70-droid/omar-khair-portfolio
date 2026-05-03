@@ -79,6 +79,55 @@ const process = [
   ["Launch, test, and improve", "Deploy, validate usability, and iterate based on real use."]
 ];
 
+const packages = [
+  {
+    title: "Starter Website",
+    subtitle: "For small businesses that need a clean online presence.",
+    includes: [
+      "One-page or compact multi-section website",
+      "Mobile-first responsive layout",
+      "Contact CTA",
+      "Basic SEO setup",
+      "Fast Vercel deployment"
+    ],
+    bestFor: "Personal brands, cafés, small shops, simple service pages.",
+    cta: "Start with this",
+    pricing: "Starting from 15,000 EGP"
+  },
+  {
+    title: "Business Website",
+    subtitle: "For brands that need clear pages, stronger presentation, and better conversion.",
+    includes: [
+      "Home, About, Services, Contact",
+      "Brand-aligned visual direction",
+      "Responsive design",
+      "Contact and WhatsApp flow",
+      "SEO basics",
+      "Launch support"
+    ],
+    bestFor: "Restaurants, cafés, service businesses, local companies.",
+    cta: "Discuss this package",
+    pricing: "Starting from 30,000 EGP"
+  },
+  {
+    title: "Website + System",
+    subtitle: "For companies that need a website with real working features.",
+    includes: [
+      "Product catalog",
+      "RFQ / quotation flow",
+      "Database connection",
+      "Admin dashboard",
+      "Customer tracking page",
+      "Email notifications",
+      "Technical launch support"
+    ],
+    bestFor: "Companies, suppliers, B2B businesses, product/service operations.",
+    cta: "Build a system",
+    pricing: "Starting from 60,000 EGP",
+    featured: true
+  }
+];
+
 const valuePoints = [
   "Fast execution",
   "Clear communication",
@@ -97,6 +146,7 @@ export default function Home() {
           <nav className="hidden gap-8 text-sm text-stone-600 md:flex">
             <a href="#work">Work</a>
             <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
             <a href="#process">Process</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -267,6 +317,55 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section id="packages" className="section-wrap py-16 md:py-18">
+        <h2 className="text-3xl font-semibold tracking-tight">Project Packages</h2>
+        <p className="mt-4 max-w-3xl text-stone-600">
+          Clear starting points for business websites, brand websites, and working digital systems.
+        </p>
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {packages.map((pkg) => (
+            <article
+              key={pkg.title}
+              className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm ${
+                pkg.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white text-stone-900"
+              }`}
+            >
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-300" : "text-stone-400"}`}>
+                {pkg.pricing}
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight">{pkg.title}</h3>
+              <p className={`mt-3 text-sm leading-relaxed ${pkg.featured ? "text-stone-200" : "text-stone-600"}`}>{pkg.subtitle}</p>
+              <div className={`mt-5 rounded-xl border p-4 ${pkg.featured ? "border-white/20 bg-white/5" : "border-stone-200 bg-stone-50"}`}>
+                <p className={`text-xs font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-300" : "text-stone-500"}`}>
+                  Includes
+                </p>
+                <ul className={`mt-3 space-y-2 text-sm ${pkg.featured ? "text-stone-100" : "text-stone-700"}`}>
+                  {pkg.includes.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+              <p className={`mt-5 text-sm ${pkg.featured ? "text-stone-200" : "text-stone-600"}`}>
+                <span className={`font-semibold ${pkg.featured ? "text-white" : "text-stone-800"}`}>Best for:</span> {pkg.bestFor}
+              </p>
+              <a
+                href="#contact"
+                className={`mt-6 inline-flex w-fit rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  pkg.featured
+                    ? "border-white bg-white text-stone-900 hover:bg-stone-100"
+                    : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
+                }`}
+              >
+                {pkg.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+        <p className="mt-5 text-sm text-stone-500">
+          Final pricing depends on scope, content, features, and launch requirements.
+        </p>
       </section>
 
       <section id="process" className="section-wrap py-16 md:py-18">

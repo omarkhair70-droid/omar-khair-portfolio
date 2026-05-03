@@ -16,7 +16,8 @@ const workItems = [
       "Company profile visuals and reference sections"
     ],
     status: "Live / In production prep",
-    positioning: "Not just a website — a simple operating system for sales requests."
+    positioning: "Not just a website — a simple operating system for sales requests.",
+    featured: true
   },
   {
     title: "Tuscanini — Food Brand Website Experience",
@@ -58,6 +59,15 @@ const process = [
   ["Launch, test, and improve", "Deploy, validate usability, and iterate based on real use."]
 ];
 
+const valuePoints = [
+  "Fast execution",
+  "Clear communication",
+  "Business-first thinking",
+  "Clean design",
+  "Systems mindset",
+  "Real working features, not just pages"
+];
+
 export default function Home() {
   return (
     <main>
@@ -65,56 +75,112 @@ export default function Home() {
         <div className="section-wrap flex h-16 items-center justify-between">
           <p className="font-semibold tracking-tight">Omar Khair</p>
           <nav className="hidden gap-8 text-sm text-stone-600 md:flex">
-            <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
           </nav>
-          <a href="#contact" className="rounded-full bg-stone-900 px-4 py-2 text-sm text-white">Start a project</a>
+          <a href="#contact" className="rounded-full bg-stone-900 px-4 py-2 text-sm text-white">
+            Start a project
+          </a>
         </div>
       </header>
 
-      <section className="section-wrap py-24 md:py-32">
+      <section className="section-wrap py-20 md:py-24">
         <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Websites & Digital Systems</p>
         <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
           I build websites that turn business ideas into working digital experiences.
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-stone-600">
-          From brand websites to product catalogs, RFQ flows, dashboards, and client-facing systems — I design and build websites that are clear, useful, and ready to operate.
+        <p className="mt-4 text-base font-medium text-stone-700 md:text-lg">
+          Websites, RFQ systems, dashboards, and digital experiences.
+        </p>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-stone-600">
+          From brand websites to product catalogs, RFQ flows, dashboards, and client-facing systems — I design and
+          build websites that are clear, useful, and ready to operate.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <a href="#work" className="rounded-full bg-stone-900 px-6 py-3 text-white">View Work</a>
-          <a href="#contact" className="rounded-full border border-stone-300 px-6 py-3">Start a Project</a>
+          <a href="#work" className="rounded-full bg-stone-900 px-6 py-3 text-white">
+            View Work
+          </a>
+          <a href="#contact" className="rounded-full border border-stone-300 px-6 py-3">
+            Start a Project
+          </a>
         </div>
-        <p className="mt-8 text-sm text-stone-500">Currently building real projects across business websites, food brands, and infrastructure companies.</p>
+        <p className="mt-8 text-sm text-stone-500">
+          Currently building real projects across business websites, food brands, and infrastructure companies.
+        </p>
       </section>
 
-      <section id="work" className="section-wrap py-20">
+      <section id="work" className="section-wrap py-16 md:py-18">
         <h2 className="text-3xl font-semibold tracking-tight">Selected Work</h2>
-        <div className="mt-8 grid gap-6">
+        <div className="mt-8 space-y-6">
           {workItems.map((item) => (
-            <article key={item.title} className="card">
+            <article
+              key={item.title}
+              className={`rounded-2xl border p-6 shadow-sm ${
+                item.featured
+                  ? "border-stone-900 bg-stone-900 text-white"
+                  : "border-stone-200 bg-white text-stone-900"
+              }`}
+            >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <span className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{item.status}</span>
+                <div>
+                  {item.featured ? (
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-stone-300">
+                      Featured system project
+                    </p>
+                  ) : null}
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                </div>
+                <span
+                  className={`rounded-full border px-3 py-1 text-xs font-medium ${
+                    item.featured
+                      ? "border-white/40 bg-white/10 text-white"
+                      : "border-accent/20 bg-accent/10 text-accent"
+                  }`}
+                >
+                  {item.status}
+                </span>
               </div>
-              <p className="text-stone-600">{item.description}</p>
-              <ul className="mt-4 grid gap-2 text-sm text-stone-700 md:grid-cols-2">
-                {item.built.map((point) => <li key={point}>• {point}</li>)}
+              <p className={item.featured ? "text-stone-200" : "text-stone-600"}>{item.description}</p>
+              <ul className={`mt-4 grid gap-2 text-sm md:grid-cols-2 ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
+                {item.built.map((point) => (
+                  <li key={point}>• {point}</li>
+                ))}
               </ul>
-              {item.positioning ? <p className="mt-5 text-sm font-medium text-stone-800">{item.positioning}</p> : null}
-              <p className="mt-4 text-sm text-stone-400">View case study — coming soon</p>
+              {item.positioning ? (
+                <p className={`mt-5 text-base font-semibold ${item.featured ? "text-white" : "text-stone-800"}`}>
+                  {item.positioning}
+                </p>
+              ) : null}
+              {item.featured ? (
+                <p className="mt-5 inline-flex rounded-full border border-white/40 px-4 py-2 text-sm font-medium text-white/90">
+                  Case study coming soon
+                </p>
+              ) : null}
             </article>
           ))}
         </div>
       </section>
 
-      <section id="services" className="section-wrap py-20">
+      <section id="services" className="section-wrap py-16 md:py-18">
         <h2 className="text-3xl font-semibold tracking-tight">What I Build</h2>
-        <p className="mt-4 max-w-3xl text-stone-600">I focus on websites that are easy to understand, easy to use, and useful for the business behind them.</p>
+        <p className="mt-4 max-w-3xl text-stone-600">
+          I focus on websites that are easy to understand, easy to use, and useful for the business behind them.
+        </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => <div key={service} className="card text-sm font-medium">{service}</div>)}
+          {services.map((service) => (
+            <div
+              key={service}
+              className="flex min-h-[122px] items-center rounded-2xl border border-stone-200 bg-white p-5 text-sm font-medium text-stone-800 shadow-sm transition hover:-translate-y-0.5 hover:border-stone-300"
+            >
+              {service}
+            </div>
+          ))}
         </div>
       </section>
 
-      <section id="process" className="section-wrap py-20">
+      <section id="process" className="section-wrap py-16 md:py-18">
         <h2 className="text-3xl font-semibold tracking-tight">Process</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {process.map(([title, description], i) => (
@@ -127,28 +193,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-wrap py-20">
+      <section className="section-wrap py-16 md:py-18">
         <h2 className="text-3xl font-semibold tracking-tight">Why work with me</h2>
-        <div className="mt-6 grid gap-3 text-stone-700 sm:grid-cols-2">
-          {["Fast execution", "Clear communication", "Business-first thinking", "Clean design", "Systems mindset", "Real working features, not just pages"].map((point) => <p key={point} className="card">{point}</p>)}
+        <p className="mt-4 max-w-3xl text-stone-600">
+          I build with speed, clarity, and operational thinking so every page works for the business, not just the
+          screen.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {valuePoints.map((point) => (
+            <div key={point} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-stone-400">Value</p>
+              <p className="mt-3 text-base font-medium text-stone-800">{point}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section id="contact" className="section-wrap py-24">
-        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-6 text-white shadow-sm">
+      <section id="contact" className="section-wrap py-20 md:py-24">
+        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-6 shadow-sm text-white">
           <h2 className="text-3xl font-semibold tracking-tight">Have a project in mind?</h2>
-          <p className="mt-4 max-w-3xl text-stone-300">Send me what you’re building, what you need the website to do, and your deadline. I’ll help turn it into a clear digital experience.</p>
+          <p className="mt-4 max-w-3xl text-stone-300">
+            Send me what you’re building, what you need the website to do, and your deadline. I’ll help turn it into a
+            clear digital experience.
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="https://wa.me/201151891310" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900 transition hover:bg-stone-200">WhatsApp me</a>
-            <a href="https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ==" className="rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10">Instagram</a>
-            <a href="mailto:omar.khair70@gmail.com" className="rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10">Email</a>
-            <a href="https://www.facebook.com/share/18Vs3ic2QK/" className="rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10">Facebook</a>
+            <a
+              href="https://wa.me/201151891310"
+              className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900 transition hover:bg-stone-200"
+            >
+              WhatsApp me
+            </a>
+            <a
+              href="https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ=="
+              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              Instagram
+            </a>
+            <a
+              href="mailto:omar.khair70@gmail.com"
+              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              Email
+            </a>
+            <a
+              href="https://www.facebook.com/share/18Vs3ic2QK/"
+              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              Facebook
+            </a>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-stone-200 py-8">
-        <div className="section-wrap flex flex-col justify-between gap-2 text-sm text-stone-500 md:flex-row">
+      <footer className="border-t border-stone-200 py-7">
+        <div className="section-wrap flex flex-col justify-between gap-2 text-sm text-stone-500 md:flex-row md:items-center">
           <p>Omar Khair — Websites & Digital Systems</p>
           <p>Built with clarity, speed, and purpose.</p>
         </div>

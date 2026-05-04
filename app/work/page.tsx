@@ -8,7 +8,25 @@ export const metadata: Metadata = {
     "Business websites, ordering experiences, RFQ systems, product catalogs, dashboards, and digital systems built by Omar Khair."
 };
 
-const projects = [
+type WorkProject = {
+  title: string;
+  category: string;
+  description: string;
+  proofPoints: string[];
+  screenshots: {
+    src: string;
+    alt: string;
+  }[];
+  links: {
+    label: string;
+    href: string;
+    internal: boolean;
+  }[];
+  featured?: boolean;
+  note?: string;
+};
+
+const projects: WorkProject[] = [
   {
     title: "HILTECH — Network Infrastructure Website & RFQ System",
     category: "B2B Website + Business System",

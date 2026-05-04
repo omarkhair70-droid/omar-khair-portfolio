@@ -206,7 +206,12 @@ export default function Home() {
       </section>
 
       <section id="work" className="section-wrap py-16 md:py-18">
-        <h2 className="text-3xl font-semibold tracking-tight">Selected Work</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-3xl font-semibold tracking-tight">Selected Work</h2>
+          <a href="/work" className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900">
+            View all work
+          </a>
+        </div>
         <div className="mt-8 space-y-6">
           {workItems.map((item) => (
             <article

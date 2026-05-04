@@ -74,8 +74,10 @@ const projects: WorkProject[] = [
       { src: "/project-screenshots/tuscanini-menu.png", alt: "Tuscanini menu and category browsing" },
       { src: "/project-screenshots/tuscanini-offers.png", alt: "Tuscanini offers preview section" }
     ],
-    links: [{ label: "Visit live project", href: "https://tuscanini-ordering-system.vercel.app/", internal: false }],
-    note: "Case study coming soon"
+    links: [
+      { label: "View case study", href: "/work/tuscanini", internal: true },
+      { label: "Visit live project", href: "https://tuscanini-ordering-system.vercel.app/", internal: false }
+    ]
   },
   {
     title: "Farrag Coffee — RTL Coffee Brand & Ordering Experience",

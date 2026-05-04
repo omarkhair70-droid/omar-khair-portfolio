@@ -63,6 +63,7 @@ const workItems: HomeWorkItem[] = [
       "Mobile-first layout"
     ],
     status: "Arabic RTL Ordering System",
+    caseStudy: "/work/tuscanini",
     url: "https://tuscanini-ordering-system.vercel.app/",
     screenshots: [
       "/project-screenshots/tuscanini-order-flow.png",

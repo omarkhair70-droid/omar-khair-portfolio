@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import ProjectInquiryForm from "@/components/ProjectInquiryForm";
+
 type HomeWorkItem = {
   title: string;
   label: string;
@@ -550,47 +552,16 @@ export default function Home() {
       </section>
 
       <section id="contact" className="section-wrap py-20 md:py-24">
-        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-6 shadow-sm text-white md:p-8">
-          <h2 className="text-3xl font-semibold tracking-tight">Have a project in mind?</h2>
-          <p className="mt-4 max-w-3xl text-stone-300">
-            Send me what you’re building, what you need the website to do, and your deadline. I’ll help turn it into a
-            clear digital experience.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="https://wa.me/201151891310"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900 transition hover:bg-stone-200"
-            >
-              WhatsApp me
-            </a>
-            <a
-              href="https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ=="
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
-            >
-              Instagram
-            </a>
-            <a
-              href="mailto:omar.khair70@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
-            >
-              Email
-            </a>
-            <a
-              href="https://www.facebook.com/share/18Vs3ic2QK/"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
-            >
-              Facebook
-            </a>
-          </div>
-        </div>
+        <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Start a Project</p>
+        <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-stone-900 md:text-4xl">
+          Tell me what you need — I’ll help shape it into a website or system.
+        </h2>
+        <p className="mt-4 max-w-4xl text-base leading-relaxed text-stone-600 md:text-lg">
+          Choose the type of project, add a few details, and send a structured WhatsApp message so we can start with
+          context instead of a vague “hello”.
+        </p>
+
+        <ProjectInquiryForm />
       </section>
 
       <footer className="border-t border-stone-200 py-7">

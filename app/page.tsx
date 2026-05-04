@@ -24,6 +24,7 @@ const workItems = [
     status: "B2B Website + Business System",
     positioning: "A network infrastructure company website that evolved into sales operations support.",
     featured: true,
+    caseStudy: "/work/hiltech",
     url: "https://hiltech-eg-website.vercel.app/",
     screenshots: [
       "/project-screenshots/hiltech-homepage.png",
@@ -76,6 +77,7 @@ const workItems = [
     ],
     status: "Coffee Brand + Ordering Experience",
     url: "https://farrag-coffee-v2.vercel.app/",
+    caseStudy: "/work/farrag-coffee",
     screenshots: [
       "/project-screenshots/ben-farag-hero.png",
       "/project-screenshots/ben-farag-coffee-finder.png",
@@ -318,14 +320,12 @@ export default function Home() {
                 >
                   Visit project
                 </a>
-                {item.title.includes("Tuscanini") ? (
-                  <a href="/work/tuscanini" className="text-xs font-semibold text-stone-700 underline-offset-4 hover:underline">
-                    View case study
-                  </a>
-                ) : item.featured ? (
+                {item.caseStudy ? (
                   <a
-                    href="/work/hiltech"
-                    className="text-xs font-semibold text-stone-200 underline-offset-4 hover:underline"
+                    href={item.caseStudy}
+                    className={`text-xs font-semibold underline-offset-4 hover:underline ${
+                      item.featured ? "text-stone-200" : "text-stone-600"
+                    }`}
                   >
                     View case study
                   </a>

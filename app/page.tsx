@@ -318,7 +318,11 @@ export default function Home() {
                 >
                   Visit project
                 </a>
-                {item.featured ? (
+                {item.title.includes("Tuscanini") ? (
+                  <a href="/work/tuscanini" className="text-xs font-semibold text-stone-700 underline-offset-4 hover:underline">
+                    View case study
+                  </a>
+                ) : item.featured ? (
                   <a
                     href="/work/hiltech"
                     className="text-xs font-semibold text-stone-200 underline-offset-4 hover:underline"

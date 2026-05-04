@@ -17,24 +17,26 @@ const challengePoints = [
 ];
 
 const buildItems = [
-  "Company website",
-  "Product catalog",
-  "RFQ basket",
-  "Supabase database",
-  "Admin RFQ dashboard",
-  "Product admin",
-  "Customer RFQ tracking",
+  "Company website and service presentation",
+  "Product catalog with category structure",
+  "RFQ Command Center",
+  "Quotation Builder for structured responses",
+  "Product inventory management context",
+  "CSV product import/export",
+  "Customer RFQ tracking pages",
+  "Customer quote approval / rejection / change request flow",
+  "Admin dashboard visibility",
+  "Safe analytics events for product and RFQ actions",
   "Internal email notifications",
-  "SEO technical setup",
-  "Company profile visual sections"
+  "SEO technical setup"
 ];
 
 const businessValue = [
-  "Clearer company presentation.",
-  "Easier product request collection.",
-  "More organized RFQ workflow.",
-  "Admin visibility over incoming requests.",
-  "Better customer experience than basic contact forms."
+  "Clearer product and service presentation for technical buyers.",
+  "Better request structure compared with scattered chats.",
+  "RFQ and quotation steps with cleaner follow-up context.",
+  "Better internal visibility across products, requests, and status updates.",
+  "A practical website foundation that can expand with operations."
 ];
 
 const techNotes = [
@@ -57,7 +59,8 @@ export default function HiltechCaseStudyPage() {
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-stone-600">
           A full business website and RFQ workflow for a network infrastructure company — built to present services,
-          organize product requests, and support sales operations.
+          organize product requests, and support sales operations. Not just a website — a simple operating system for
+          product requests, RFQs, inventory context, quotations, and customer follow-up.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -79,8 +82,8 @@ export default function HiltechCaseStudyPage() {
           <h2 className="text-2xl font-semibold tracking-tight">Overview</h2>
           <p className="mt-4 max-w-4xl leading-relaxed text-stone-600">
             HILTECH needed more than a standard company website. The project required a clear company presence,
-            structured product catalog, RFQ request flow, admin visibility, customer tracking, and operational support
-            for sales requests.
+            structured product catalog, RFQ request flow, admin visibility, customer tracking, quotation handling, and
+            operational support for sales requests.
           </p>
         </div>
       </section>

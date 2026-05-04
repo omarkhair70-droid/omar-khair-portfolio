@@ -67,9 +67,9 @@ const services = [
   "Product catalogs",
   "RFQ / quotation systems",
   "Admin dashboards",
-  "Client tracking pages",
-  "AI-assisted visuals and brand presentation",
-  "Portfolio / personal brand sites"
+  "Customer tracking pages",
+  "Inventory and product workflows",
+  "Internal business tools"
 ];
 
 const process = [
@@ -145,6 +145,7 @@ export default function Home() {
           <p className="shrink-0 font-semibold tracking-tight">Omar Khair</p>
           <nav className="hidden flex-1 justify-center gap-5 text-sm text-stone-600 lg:flex">
             <a href="#work">Work</a>
+            <a href="#systems">Systems</a>
             <a href="#services">Services</a>
             <a href="#packages">Packages</a>
             <a href="#process">Process</a>
@@ -302,6 +303,106 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+
+      <section id="systems" className="section-wrap py-16 md:py-18">
+        <div className="max-w-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            Websites that can grow into business systems.
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-stone-600 md:text-lg">
+            A strong website should not only present the business. It can also collect requests, organize products,
+            support sales, and give the team better visibility.
+          </p>
+          <p className="mt-4 text-base font-semibold text-stone-900 md:text-lg">
+            Not just pages. Practical systems for real business workflows.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              label: "Layer 01",
+              title: "Website Foundation",
+              points: ["Brand presentation", "Service pages", "Contact / WhatsApp flow", "SEO basics", "Fast responsive launch"]
+            },
+            {
+              label: "Layer 02",
+              title: "Customer Actions",
+              points: ["Product catalog", "RFQ basket", "Inquiry forms", "Customer tracking pages", "Quote approval / change requests"]
+            },
+            {
+              label: "Layer 03",
+              title: "Business Operations",
+              points: ["Admin dashboards", "Inventory context", "Quotation builder", "CSV import/export", "Analytics events", "Internal notifications"]
+            }
+          ].map((layer) => (
+            <article key={layer.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">{layer.label}</p>
+              <h3 className="mt-2 text-xl font-semibold tracking-tight text-stone-900">{layer.title}</h3>
+              <ul className="mt-4 space-y-2 text-sm text-stone-700">
+                {layer.points.map((point) => (
+                  <li key={point} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+          <h3 className="text-xl font-semibold tracking-tight">What this means for a business</h3>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Better request structure",
+              "Less scattered communication",
+              "Clearer product/service presentation",
+              "Faster follow-up context",
+              "Better internal visibility",
+              "A website that can grow over time"
+            ].map((point) => (
+              <li key={point} className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-stone-900 bg-stone-900 p-6 text-white shadow-sm md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-300">Featured proof project</p>
+          <h3 className="mt-2 text-2xl font-semibold tracking-tight">HILTECH is the proof.</h3>
+          <p className="mt-4 max-w-3xl text-stone-200">
+            A network infrastructure company website that grew into a product catalog, RFQ basket, admin visibility,
+            customer tracking, quotation workflow, and operational support for sales requests.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/work/hiltech" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">
+              View HILTECH Case Study
+            </a>
+            <a
+              href="https://hiltech-eg-website.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white"
+            >
+              Visit Live Project
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+          <h3 className="text-2xl font-semibold tracking-tight">Need a website that works like a business system?</h3>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a href="#contact" className="rounded-full bg-stone-900 px-5 py-2 text-sm font-medium text-white">
+              Start a Project
+            </a>
+            <a href="/work/hiltech" className="rounded-full border border-stone-300 px-5 py-2 text-sm font-medium text-stone-900">
+              View HILTECH Case Study
+            </a>
+          </div>
         </div>
       </section>
 

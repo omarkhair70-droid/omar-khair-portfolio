@@ -8,7 +8,25 @@ export const metadata: Metadata = {
     "Business websites, ordering experiences, RFQ systems, product catalogs, dashboards, and digital systems built by Omar Khair."
 };
 
-const projects = [
+type WorkProject = {
+  title: string;
+  category: string;
+  description: string;
+  proofPoints: string[];
+  screenshots: {
+    src: string;
+    alt: string;
+  }[];
+  links: {
+    label: string;
+    href: string;
+    internal: boolean;
+  }[];
+  featured?: boolean;
+  note?: string;
+};
+
+const projects: WorkProject[] = [
   {
     title: "HILTECH — Network Infrastructure Website & RFQ System",
     category: "B2B Website + Business System",
@@ -81,8 +99,10 @@ const projects = [
       { src: "/project-screenshots/ben-farag-coffee-finder.png", alt: "Farrag Coffee Finder recommendations" },
       { src: "/project-screenshots/ben-farag-process-reviews.png", alt: "Farrag Coffee product and journey sections" }
     ],
-    links: [{ label: "Visit live project", href: "https://farrag-coffee-v2.vercel.app/", internal: false }],
-    note: "Case study coming soon"
+    links: [
+      { label: "View case study", href: "/work/farrag-coffee", internal: true },
+      { label: "Visit live project", href: "https://farrag-coffee-v2.vercel.app/", internal: false }
+    ]
   }
 ];
 

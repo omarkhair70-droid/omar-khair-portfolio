@@ -3,22 +3,26 @@ import Image from "next/image";
 const workItems = [
   {
     title: "HILTECH — Network Infrastructure Website & RFQ System",
+    label: "Featured system project",
     description:
-      "A complete company website and RFQ system for a network infrastructure business.",
+      "A B2B website and RFQ operations system for a network infrastructure company — combining company presentation, product discovery, request collection, admin visibility, quotation workflow, and customer follow-up.",
     built: [
       "Company website",
       "Product catalog",
       "RFQ basket",
-      "Supabase database",
+      "Supabase RFQ saving",
       "Admin RFQ dashboard",
-      "Product admin",
+      "RFQ Command Center",
+      "Quotation Builder",
+      "Product inventory context",
+      "CSV import/export",
       "Customer RFQ tracking",
+      "Customer quote response flow",
       "Internal email notifications",
-      "SEO technical setup",
-      "Company profile visuals and reference sections"
+      "Safe analytics events"
     ],
-    status: "Live / In production prep",
-    positioning: "Not just a website — a simple operating system for sales requests.",
+    status: "B2B Website + Business System",
+    positioning: "A network infrastructure company website that evolved into sales operations support.",
     featured: true,
     url: "https://hiltech-eg-website.vercel.app/",
     screenshots: [
@@ -28,17 +32,23 @@ const workItems = [
     ]
   },
   {
-    title: "Tuscanini — Food Brand Website Experience",
+    title: "Tuscanini — Arabic Fast-Food Ordering Experience",
+    label: "Arabic ordering system",
     description:
-      "A brand-focused website experience designed to present a food/café concept clearly and help customers understand the brand quickly.",
+      "An Arabic-first fast-food ordering experience built around menu browsing, offers, cart flow, order submission, customer tracking, and mobile-first usability.",
     built: [
-      "Brand website direction",
-      "Menu / offering presentation",
-      "Visual style direction",
-      "Mobile-first layout",
-      "Contact and conversion flow"
+      "Arabic RTL interface",
+      "Menu/category browsing",
+      "Offers preview",
+      "Food Finder flow",
+      "Cart and checkout flow",
+      "Supabase order saving",
+      "WhatsApp fallback/order continuation",
+      "Customer order tracking",
+      "Admin order management",
+      "Mobile-first layout"
     ],
-    status: "In progress / Client review",
+    status: "Arabic RTL Ordering System",
     url: "https://tuscanini-ordering-system.vercel.app/",
     screenshots: [
       "/project-screenshots/tuscanini-order-flow.png",
@@ -47,11 +57,24 @@ const workItems = [
     ]
   },
   {
-    title: "Ben Farag — Business Website",
+    title: "Farrag Coffee — RTL Coffee Brand & Ordering Experience",
+    label: "Coffee brand experience",
     description:
-      "A business website built to present services clearly, improve trust, and make customer contact easier.",
-    built: ["Business website", "Service presentation", "Contact flow", "Responsive layout"],
-    status: "Completed / In review",
+      "A premium RTL coffee brand and ordering experience for بن فراج with product discovery, Coffee Finder recommendations, grind selection, cart flow, Supabase product loading, and WhatsApp ordering.",
+    built: [
+      "RTL coffee brand experience",
+      "Brand storytelling",
+      "Coffee ritual / guide sections",
+      "Product catalog",
+      "Product filtering/search",
+      "Coffee Finder recommendations",
+      "Grind selection",
+      "Cart experience",
+      "Supabase product loading",
+      "WhatsApp ordering flow",
+      "Reviews/contact sections"
+    ],
+    status: "Coffee Brand + Ordering Experience",
     url: "https://farrag-coffee-v2.vercel.app/",
     screenshots: [
       "/project-screenshots/ben-farag-hero.png",
@@ -178,7 +201,7 @@ export default function Home() {
           </a>
         </div>
         <p className="mt-8 text-sm text-stone-500">
-          Currently building real projects across business websites, food brands, and infrastructure companies.
+          Currently building real projects across business websites, ordering experiences, product catalogs, RFQ systems, dashboards, customer flows, and internal tools.
         </p>
       </section>
 
@@ -196,11 +219,11 @@ export default function Home() {
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  {item.featured ? (
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-stone-300">
-                      Featured system project
-                    </p>
-                  ) : null}
+                  <p className={`mb-2 text-xs font-semibold uppercase tracking-[0.14em] ${
+                    item.featured ? "text-stone-300" : "text-stone-500"
+                  }`}>
+                    {item.label}
+                  </p>
                   <h3 className="text-xl font-semibold">{item.title}</h3>
                 </div>
                 <span
@@ -257,7 +280,7 @@ export default function Home() {
                       <div key={shot} className="rounded-xl border border-stone-200 bg-white p-2">
                         <Image
                           src={shot}
-                          alt={`${item.title} screenshot preview ${index + 1}`}
+                          alt={`${item.title} interface preview ${index + 1}`}
                           width={1200}
                           height={700}
                           className="h-auto w-full rounded-lg object-contain"

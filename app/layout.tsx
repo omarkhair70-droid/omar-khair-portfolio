@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     title: "Omar Khair — Websites & Digital Systems",
     description:
       "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
+    url: siteUrl,
+    siteName: "Omar Khair",
     type: "website",
     images: ["/opengraph-image"]
   },

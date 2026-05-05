@@ -4,7 +4,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tuscanini Case Study — Omar Khair",
-  description: "Arabic fast-food ordering experience case study by Omar Khair."
+  description:
+    "Arabic fast-food ordering experience case study by Omar Khair.",
+  alternates: {
+    canonical: "/work/tuscanini"
+  }
 };
 
 const tags = ["Arabic-first", "RTL interface", "Food ordering flow", "Mobile-first", "WhatsApp continuation"];

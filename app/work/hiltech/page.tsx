@@ -4,7 +4,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "HILTECH Case Study — Omar Khair",
-  description: "Network infrastructure website and RFQ system case study by Omar Khair."
+  description:
+    "Network infrastructure website and RFQ system case study by Omar Khair.",
+  alternates: {
+    canonical: "/work/hiltech"
+  }
 };
 
 const tags = ["B2B website", "RFQ system", "Product catalog", "Admin visibility", "Quotation workflow"];

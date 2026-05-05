@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Omar Khair — Websites & Digital Systems",
   description:
-    "Portfolio of Omar Khair, building business websites, RFQ systems, product catalogs, dashboards, and digital experiences.",
+    "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
   openGraph: {
     title: "Omar Khair — Websites & Digital Systems",
     description:
-      "Portfolio of Omar Khair, building business websites, RFQ systems, product catalogs, dashboards, and digital experiences.",
+      "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
     type: "website"
   }
 };

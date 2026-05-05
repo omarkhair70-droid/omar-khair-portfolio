@@ -22,8 +22,6 @@ type WorkProject = {
     href: string;
     internal: boolean;
   }[];
-  featured?: boolean;
-  note?: string;
 };
 
 const projects: WorkProject[] = [
@@ -50,25 +48,14 @@ const projects: WorkProject[] = [
     links: [
       { label: "View case study", href: "/work/hiltech", internal: true },
       { label: "Visit live project", href: "https://hiltech-eg-website.vercel.app/", internal: false }
-    ],
-    featured: true
+    ]
   },
   {
     title: "Tuscanini — Arabic Fast-Food Ordering Experience",
     category: "Arabic RTL Ordering System",
     description:
       "An Arabic-first fast-food ordering experience built around menu browsing, offers, cart flow, order submission, customer tracking, admin order management, and mobile-first usability.",
-    proofPoints: [
-      "Arabic RTL interface",
-      "Menu/category browsing",
-      "Offers preview",
-      "Food Finder flow",
-      "Cart and checkout flow",
-      "Supabase order saving",
-      "WhatsApp order continuation",
-      "Customer order tracking",
-      "Admin order management"
-    ],
+    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Offers preview", "Cart flow", "Order tracking"],
     screenshots: [
       { src: "/project-screenshots/tuscanini-order-flow.png", alt: "Tuscanini ordering flow interface" },
       { src: "/project-screenshots/tuscanini-menu.png", alt: "Tuscanini menu and category browsing" },
@@ -84,18 +71,7 @@ const projects: WorkProject[] = [
     category: "Coffee Brand + Ordering Experience",
     description:
       "A premium RTL coffee brand experience for بن فراج with brand storytelling, product discovery, Coffee Finder recommendations, grind selection, cart flow, Supabase product loading, and WhatsApp ordering.",
-    proofPoints: [
-      "RTL Arabic landing experience",
-      "Premium coffee brand presentation",
-      "Coffee ritual / guide sections",
-      "Product catalog",
-      "Product filtering/search",
-      "Coffee Finder recommendations",
-      "Grind selection",
-      "Cart experience",
-      "Supabase product loading",
-      "WhatsApp ordering flow"
-    ],
+    proofPoints: ["Premium RTL brand", "Coffee Finder", "Product catalog", "Cart experience", "WhatsApp ordering"],
     screenshots: [
       { src: "/project-screenshots/ben-farag-hero.png", alt: "Farrag Coffee RTL brand hero section" },
       { src: "/project-screenshots/ben-farag-coffee-finder.png", alt: "Farrag Coffee Finder recommendations" },
@@ -142,27 +118,18 @@ export default function WorkPage() {
       <section className="section-wrap py-8 md:py-12">
         <div className="space-y-6">
           {projects.map((project) => (
-            <article
-              key={project.title}
-              className={`rounded-2xl border p-6 shadow-sm ${
-                project.featured ? "border-stone-900 bg-stone-900 text-white shadow-md" : "border-stone-200 bg-white"
-              }`}
-            >
+            <article key={project.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <h2 className="max-w-3xl text-2xl font-semibold tracking-tight">{project.title}</h2>
                 <p
-                  className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                    project.featured
-                      ? "border-white/50 bg-white/10 text-white"
-                      : "border-accent/20 bg-accent/10 text-accent"
-                  }`}
+                  className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
                 >
                   {project.category}
                 </p>
               </div>
-              <p className={`mt-4 ${project.featured ? "text-stone-200" : "text-stone-600"}`}>{project.description}</p>
+              <p className="mt-4 text-stone-600">{project.description}</p>
 
-              <div className={`mt-5 rounded-2xl border p-3 ${project.featured ? "border-white/20 bg-white/5" : "border-stone-200 bg-stone-50"}`}>
+              <div className="mt-5 rounded-2xl border border-stone-200 bg-stone-50 p-3">
                 <div className="grid gap-3 sm:grid-cols-3">
                   {project.screenshots.map((shot) => (
                     <div key={shot.src} className="rounded-xl border border-stone-200 bg-white p-2">
@@ -178,7 +145,7 @@ export default function WorkPage() {
                 </div>
               </div>
 
-              <ul className={`mt-5 grid gap-2 text-sm md:grid-cols-2 ${project.featured ? "text-stone-100" : "text-stone-700"}`}>
+              <ul className="mt-5 grid gap-2 text-sm text-stone-700 md:grid-cols-2">
                 {project.proofPoints.map((point) => (
                   <li key={point}>• {point}</li>
                 ))}
@@ -190,9 +157,7 @@ export default function WorkPage() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className={`rounded-full border px-4 py-2 text-sm font-medium ${
-                        project.featured ? "border-white bg-white text-stone-900" : "border-stone-300 bg-stone-900 text-white"
-                      }`}
+                      className="rounded-full border border-stone-300 bg-stone-900 px-4 py-2 text-sm font-medium text-white"
                     >
                       {link.label}
                     </Link>
@@ -202,19 +167,13 @@ export default function WorkPage() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className={`rounded-full border px-4 py-2 text-sm font-medium ${
-                        project.featured ? "border-white/70 text-white" : "border-stone-300 text-stone-900"
-                      }`}
+                      className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900"
                     >
                       {link.label}
                     </a>
                   )
                 )}
-                {project.note ? (
-                  <p className={`text-xs font-semibold ${project.featured ? "text-stone-300" : "text-stone-500"}`}>
-                    {project.note}
-                  </p>
-                ) : null}
+
               </div>
             </article>
           ))}

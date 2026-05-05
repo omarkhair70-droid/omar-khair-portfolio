@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Farrag Coffee Case Study — Omar Khair",
   description:
-    "RTL coffee brand and ordering experience case study by Omar Khair, covering brand storytelling, product discovery, Coffee Finder recommendations, cart flow, Supabase product loading, and WhatsApp ordering."
+    "RTL coffee brand and ordering experience case study by Omar Khair."
 };
 
 const tags = [
@@ -163,7 +163,7 @@ export default function FarragCoffeeCaseStudyPage() {
       </section>
 
       <section className="section-wrap py-8 md:py-12">
-        <h2 className="text-2xl font-semibold tracking-tight">Customer Journey</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">System / Customer Journey</h2>
         <div className="mt-6 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
           <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-stone-700">
             {customerJourney.map((step, index) => (
@@ -178,19 +178,17 @@ export default function FarragCoffeeCaseStudyPage() {
 
       <section className="section-wrap py-8 md:py-12">
         <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight">Helping customers choose, not just browse.</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Operational or Business Side</h2>
           <p className="mt-4 max-w-4xl leading-relaxed text-stone-600">
-            The Coffee Finder turns product choice into a guided experience. Instead of leaving customers to guess, it
-            asks a few simple questions and recommends a suitable coffee type based on taste, preparation method, and
-            style.
+            The experience is designed to support real ordering actions, not only storytelling. Product loading, recommendation assistance, cart steps, and order continuation are connected to help customers move from choice to action.
           </p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
-              "Three-question recommendation flow",
-              "Taste/preparation/style inputs",
-              "Suggested coffee result",
-              "Quick WhatsApp ordering path",
-              "Better product discovery experience"
+              "Coffee Finder recommendation support",
+              "Guided product choice based on preferences",
+              "Supabase-backed product loading",
+              "Cart review before order continuation",
+              "WhatsApp ordering continuation path"
             ].map((item) => (
               <li key={item} className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">
                 {item}
@@ -251,7 +249,7 @@ export default function FarragCoffeeCaseStudyPage() {
           <h2 className="text-3xl font-semibold tracking-tight">Need a brand website that helps customers choose and order?</h2>
           <p className="mt-4 max-w-3xl text-stone-300">
             I build brand experiences that can connect storytelling, product discovery, recommendation flows, carts,
-            and WhatsApp ordering into a clear customer journey.
+            and WhatsApp ordering.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/#contact" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">
@@ -263,6 +261,8 @@ export default function FarragCoffeeCaseStudyPage() {
           </div>
         </div>
       </section>
+      <section className="section-wrap pt-8"><div className="rounded-2xl border border-stone-200 bg-white p-5"><p className="text-sm font-semibold text-stone-700">Explore more work</p><div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/work/hiltech" className="text-sm text-stone-600 transition hover:text-stone-900">HILTECH Case Study</Link><Link href="/work/tuscanini" className="text-sm text-stone-600 transition hover:text-stone-900">Tuscanini Case Study</Link></div></div></section>
     </main>
   );
 }
+

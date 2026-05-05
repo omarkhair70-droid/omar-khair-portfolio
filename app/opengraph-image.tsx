@@ -29,16 +29,25 @@ export default function OpenGraphImage() {
               height: 108,
               borderRadius: 24,
               background: "#fafaf9",
-              color: "#111111",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 52,
-              fontWeight: 700,
-              letterSpacing: "-0.04em"
+              gap: 10
             }}
           >
-            OK
+            <div
+              style={{
+                width: 34,
+                height: 34,
+                borderRadius: 999,
+                border: "8px solid #111111"
+              }}
+            />
+            <div style={{ width: 30, height: 40, position: "relative", display: "flex" }}>
+              <div style={{ width: 8, height: 40, borderRadius: 8, background: "#111111" }} />
+              <div style={{ position: "absolute", left: 5, top: 17, width: 31, height: 8, background: "#111111", transform: "rotate(-38deg)", transformOrigin: "left center", borderRadius: 8 }} />
+              <div style={{ position: "absolute", left: 5, top: 17, width: 31, height: 8, background: "#111111", transform: "rotate(38deg)", transformOrigin: "left center", borderRadius: 8 }} />
+            </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 64, fontWeight: 700, letterSpacing: "-0.03em" }}>Omar Khair</div>

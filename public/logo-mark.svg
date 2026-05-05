@@ -2,6 +2,8 @@
   <title id="title">Omar Khair OK mark</title>
   <desc id="desc">Minimal OK monogram for Omar Khair brand identity.</desc>
   <rect width="96" height="96" rx="20" fill="#111111"/>
-  <path d="M23 28H34C45 28 52 35 52 48C52 61 45 68 34 68H23V28ZM33 59C39 59 42 55 42 48C42 41 39 37 33 37H32V59H33Z" fill="#F5F5F4"/>
-  <path d="M58 28V45L73 28H85L69 46L86 68H74L62 52L58 56V68H48V28H58Z" fill="#F5F5F4"/>
+  <circle cx="34" cy="48" r="15" stroke="#F5F5F4" stroke-width="8"/>
+  <path d="M52 30V66" stroke="#F5F5F4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M52 48L75 30" stroke="#F5F5F4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M52 48L75 66" stroke="#F5F5F4" stroke-width="8" stroke-linecap="round"/>
 </svg>

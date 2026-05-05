@@ -5,7 +5,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Farrag Coffee Case Study — Omar Khair",
   description:
-    "RTL coffee brand and ordering experience case study by Omar Khair."
+    "RTL coffee brand and ordering experience case study by Omar Khair.",
+  alternates: {
+    canonical: "/work/farrag-coffee"
+  }
 };
 
 const tags = [

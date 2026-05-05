@@ -5,7 +5,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Selected Work — Omar Khair",
   description:
-    "Business websites, ordering experiences, RFQ systems, product catalogs, dashboards, and digital systems built by Omar Khair."
+    "Selected work by Omar Khair across business websites, ordering experiences, RFQ systems, product catalogs, dashboards, and digital systems.",
+  alternates: {
+    canonical: "/work"
+  }
 };
 
 type WorkProject = {

@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import ProjectInquiryForm from "@/components/ProjectInquiryForm";
+
+export const metadata: Metadata = {
+  title: "Omar Khair — Websites & Digital Systems",
+  description:
+    "Business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems by Omar Khair.",
+  alternates: {
+    canonical: "/"
+  }
+};
 
 type HomeWorkItem = {
   title: string;

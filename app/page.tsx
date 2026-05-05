@@ -181,7 +181,13 @@ export default function Home() {
     <main>
       <header className="sticky top-0 z-20 border-b border-stone-200/70 bg-stone-50/90 backdrop-blur">
         <div className="section-wrap flex min-h-16 items-center justify-between gap-3 py-3 md:py-0">
-          <p className="shrink-0 font-semibold tracking-tight">Omar Khair</p>
+          <div className="flex shrink-0 items-center gap-2.5" aria-label="Omar Khair">
+            <Image src="/logo-mark.svg" alt="Omar Khair" width={34} height={34} className="h-8 w-8 rounded-lg" priority />
+            <div className="leading-tight">
+              <p className="font-semibold tracking-tight">Omar Khair</p>
+              <p className="hidden text-[10px] uppercase tracking-[0.12em] text-stone-500 sm:block">Websites &amp; Digital Systems</p>
+            </div>
+          </div>
           <nav className="hidden flex-1 justify-center gap-5 text-sm text-stone-600 lg:flex">
             <a href="#work">Work</a>
             <a href="#systems">Systems</a>

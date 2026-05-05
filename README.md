@@ -55,7 +55,7 @@ Includes title, description, and basic Open Graph tags.
 ## Phase Updates
 - Polish Pass 01 improved contact visibility and overall visual presentation across key sections.
 - Portfolio Phase 02 added real project screenshots in `public/project-screenshots/`.
-- Selected Work now uses real visuals for HILTECH, Tuscanini, and Ben Farag case study previews.
+- Selected Work now uses real visuals for HILTECH, Tuscanini, and Farrag Coffee case study previews.
 
 - Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.
 - Portfolio Phase 05 final QA polish was performed after adding real screenshots, live project links, contact links, and project packages.

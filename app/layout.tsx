@@ -23,9 +23,12 @@ export const metadata: Metadata = {
     images: ["/twitter-image"]
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/apple-icon.svg",
-    shortcut: "/icon.svg"
+    icon: [
+      { url: "/icon.svg?v=ok2", type: "image/svg+xml" },
+      { url: "/logo-mark.svg", type: "image/svg+xml" }
+    ],
+    shortcut: "/icon.svg?v=ok2",
+    apple: "/apple-icon.svg?v=ok2"
   }
 };
 

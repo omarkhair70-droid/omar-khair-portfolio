@@ -174,8 +174,16 @@ export default function WorkPage() {
                       />
                     </div>
                   )) : (
-                    <div className="rounded-xl border border-dashed border-stone-300 bg-white p-6 text-center text-sm text-stone-500">
-                      Visual proof is summarized through project highlights and case-study notes.
+                    <div className="rounded-xl border border-dashed border-stone-300 bg-white p-5">
+                      <p className="text-sm font-semibold text-stone-900">{project.title}</p>
+                      <p className="mt-1 text-xs text-stone-600">{project.category}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {project.proofPoints.slice(0, 3).map((point) => (
+                          <span key={point} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] text-stone-700">
+                            {point}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

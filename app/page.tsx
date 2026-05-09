@@ -44,6 +44,31 @@ const workItems: HomeWorkItem[] = [
     screenshot: "/project-screenshots/hiltech-homepage.png"
   },
   {
+    title: "Habba",
+    label: "Arabic product experience",
+    description: "Guided discovery storefront for handmade accessories with WhatsApp ordering.",
+    proofPoints: [
+      "Arabic-first browsing",
+      "Habba Match finder",
+      "Bundle/drop flows",
+      "WhatsApp inquiry path"
+    ],
+    status: "Handmade Accessories Store",
+    caseStudy: "/work/habba",
+    url: "https://habba-store.vercel.app/",
+    screenshot: "/project-screenshots/tuscanini-menu.png"
+  },
+  {
+    title: "Bahja Store",
+    label: "Arabic boutique storefront",
+    description: "Handmade boutique storefront with custom orders and cart-to-WhatsApp flow.",
+    proofPoints: ["RTL storefront", "Category discovery", "Order bag flow", "WhatsApp handoff"],
+    status: "Handmade Boutique Storefront",
+    caseStudy: "/work/bahja-store",
+    url: "https://bahja-store.vercel.app/",
+    screenshot: "/project-screenshots/ben-farag-process-reviews.png"
+  },
+  {
     title: "Tuscanini — Arabic Fast-Food Ordering Experience",
     label: "Arabic ordering system",
     description: "An Arabic-first customer journey for menu browsing, checkout, and order follow-up.",
@@ -228,7 +253,7 @@ export default function Home() {
             Start a Project
           </a>
         </div>
-        <p className="mt-6 text-sm text-stone-500">Built around real projects: HILTECH, Tuscanini, and Farrag Coffee.</p>
+        <p className="mt-6 text-sm text-stone-500">Built around real projects: HILTECH, Habba, Bahja Store, Tuscanini, and Farrag Coffee.</p>
       </section>
 
       <section id="work" className="section-wrap py-16 md:py-18">

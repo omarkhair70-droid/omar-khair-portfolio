@@ -54,6 +54,35 @@ const projects: WorkProject[] = [
     ]
   },
   {
+    title: "Habba",
+    category: "Handmade Accessories Store + Smart Product Finder",
+    description:
+      "A colorful Arabic storefront for handmade bead accessories, with guided discovery, featured products, bundle/drop flows, and WhatsApp ordering.",
+    proofPoints: [
+      "Arabic-first storefront",
+      "Habba Match / product finder",
+      "Collection and product-detail flow",
+      "WhatsApp ordering path"
+    ],
+    screenshots: [],
+    links: [
+      { label: "View case study", href: "/work/habba", internal: true },
+      { label: "Visit live project", href: "https://habba-store.vercel.app/", internal: false }
+    ]
+  },
+  {
+    title: "Bahja Store",
+    category: "Handmade Boutique Storefront",
+    description:
+      "A warm Arabic storefront for a handmade boutique, built around product discovery, custom orders, cart-style selection, and WhatsApp inquiry flow.",
+    proofPoints: ["RTL product browsing", "Handmade categories", "Cart/order-bag flow", "WhatsApp handoff"],
+    screenshots: [],
+    links: [
+      { label: "View case study", href: "/work/bahja-store", internal: true },
+      { label: "Visit live project", href: "https://bahja-store.vercel.app/", internal: false }
+    ]
+  },
+  {
     title: "Tuscanini — Arabic Fast-Food Ordering Experience",
     category: "Arabic RTL Ordering System",
     description:
@@ -134,7 +163,7 @@ export default function WorkPage() {
 
               <div className="mt-5 rounded-2xl border border-stone-200 bg-stone-50 p-3">
                 <div className="grid gap-3 sm:grid-cols-3">
-                  {project.screenshots.map((shot) => (
+                  {project.screenshots.length > 0 ? project.screenshots.map((shot) => (
                     <div key={shot.src} className="rounded-xl border border-stone-200 bg-white p-2">
                       <Image
                         src={shot.src}
@@ -144,7 +173,19 @@ export default function WorkPage() {
                         className="h-auto w-full rounded-lg object-contain"
                       />
                     </div>
-                  ))}
+                  )) : (
+                    <div className="rounded-xl border border-dashed border-stone-300 bg-white p-5">
+                      <p className="text-sm font-semibold text-stone-900">{project.title}</p>
+                      <p className="mt-1 text-xs text-stone-600">{project.category}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {project.proofPoints.slice(0, 3).map((point) => (
+                          <span key={point} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] text-stone-700">
+                            {point}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 

@@ -19,7 +19,7 @@ type HomeWorkItem = {
   proofPoints: string[];
   status: string;
   url: string;
-  screenshot: string;
+  screenshot?: string;
   caseStudy: string;
   featured?: boolean;
 };
@@ -42,6 +42,31 @@ const workItems: HomeWorkItem[] = [
     caseStudy: "/work/hiltech",
     url: "https://hiltech-eg-website.vercel.app/",
     screenshot: "/project-screenshots/hiltech-homepage.png"
+  },
+  {
+    title: "Habba",
+    label: "Arabic product experience",
+    description: "Guided discovery storefront for handmade accessories with WhatsApp ordering.",
+    proofPoints: [
+      "Arabic-first browsing",
+      "Habba Match finder",
+      "Bundle/drop flows",
+      "WhatsApp inquiry path"
+    ],
+    status: "Handmade Accessories Store",
+    caseStudy: "/work/habba",
+    url: "https://habba-store.vercel.app/",
+    screenshot: undefined
+  },
+  {
+    title: "Bahja Store",
+    label: "Arabic boutique storefront",
+    description: "Handmade boutique storefront with custom orders and cart-to-WhatsApp flow.",
+    proofPoints: ["RTL storefront", "Category discovery", "Order bag flow", "WhatsApp handoff"],
+    status: "Handmade Boutique Storefront",
+    caseStudy: "/work/bahja-store",
+    url: "https://bahja-store.vercel.app/",
+    screenshot: undefined
   },
   {
     title: "Tuscanini — Arabic Fast-Food Ordering Experience",
@@ -228,7 +253,7 @@ export default function Home() {
             Start a Project
           </a>
         </div>
-        <p className="mt-6 text-sm text-stone-500">Built around real projects: HILTECH, Tuscanini, and Farrag Coffee.</p>
+        <p className="mt-6 text-sm text-stone-500">Built around real projects: HILTECH, Habba, Bahja Store, Tuscanini, and Farrag Coffee.</p>
       </section>
 
       <section id="work" className="section-wrap py-16 md:py-18">
@@ -267,13 +292,27 @@ export default function Home() {
 
               <div className={`mt-4 grid gap-4 ${item.featured ? "md:grid-cols-[1.2fr_1fr]" : "md:grid-cols-[1fr_1.1fr]"}`}>
                 <div className={`overflow-hidden rounded-xl border p-2 ${item.featured ? "border-white/20 bg-white" : "border-stone-200 bg-stone-50"}`}>
-                  <Image
-                    src={item.screenshot}
-                    alt={`${item.title} interface preview`}
-                    width={1200}
-                    height={700}
-                    className="h-40 w-full rounded-lg object-cover md:h-44"
-                  />
+                  {item.screenshot ? (
+                    <Image
+                      src={item.screenshot}
+                      alt={`${item.title} interface preview`}
+                      width={1200}
+                      height={700}
+                      className="h-40 w-full rounded-lg object-cover md:h-44"
+                    />
+                  ) : (
+                    <div className="rounded-lg border border-dashed border-stone-300 bg-white p-4">
+                      <p className="text-sm font-semibold text-stone-900">{item.title}</p>
+                      <p className="mt-1 text-xs text-stone-600">{item.status}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {item.proofPoints.slice(0, 3).map((point) => (
+                          <span key={point} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] text-stone-700">
+                            {point}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className={`grid gap-2 text-sm ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
                   {item.proofPoints.map((point) => (

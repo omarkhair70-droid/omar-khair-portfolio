@@ -24,7 +24,7 @@ type HomeWorkItem = {
   featured?: boolean;
 };
 
-const workItems: HomeWorkItem[] = [
+const featuredWork: HomeWorkItem[] = [
   {
     title: "HILTECH — B2B Website, RFQ & Admin Operations System",
     label: "Flagship system proof",
@@ -49,11 +49,14 @@ const workItems: HomeWorkItem[] = [
     status: "Mobile Product — In Development",
     caseStudy: "/work/teswa"
   },
+];
+
+const compactWork: HomeWorkItem[] = [
   {
     title: "Habba",
     label: "Arabic product discovery storefront",
     description: "Guided discovery storefront for handmade accessories with WhatsApp ordering.",
-    proofPoints: ["Arabic-first browsing", "Habba Match finder", "Bundle/drop flows", "WhatsApp inquiry path"],
+    proofPoints: ["Habba Match finder", "WhatsApp inquiry path"],
     status: "Handmade Accessories Store",
     caseStudy: "/work/habba",
     url: "https://habba-store.vercel.app/"
@@ -61,31 +64,29 @@ const workItems: HomeWorkItem[] = [
   {
     title: "Bahja Store",
     label: "Arabic boutique storefront",
-    description: "Handmade boutique storefront with custom orders and app-like PWA storefront behavior.",
-    proofPoints: ["RTL storefront", "Category discovery", "Installable PWA storefront", "WhatsApp handoff"],
+    description: "Handmade boutique storefront with custom orders and app-like PWA behavior.",
+    proofPoints: ["Installable PWA storefront", "WhatsApp handoff"],
     status: "Handmade Boutique Storefront",
     caseStudy: "/work/bahja-store",
     url: "https://bahja-store.vercel.app/"
   },
   {
-    title: "Tuscanini — Arabic Fast-Food Ordering Experience",
+    title: "Tuscanini",
     label: "Arabic ordering system",
-    description: "An Arabic-first customer journey for menu browsing, checkout, order follow-up, and installable PWA ordering behavior.",
-    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Customer order tracking"],
+    description: "Arabic ordering flow with menu, checkout, tracking, and PWA support.",
+    proofPoints: ["Installable PWA ordering", "Order tracking flow"],
     status: "Ordering Experience",
     caseStudy: "/work/tuscanini",
-    url: "https://tuscanini-ordering-system.vercel.app/",
-    screenshot: "/project-screenshots/tuscanini-order-flow.png"
+    url: "https://tuscanini-ordering-system.vercel.app/"
   },
   {
-    title: "Farrag Coffee — RTL Coffee Brand & Ordering Experience",
+    title: "Farrag Coffee",
     label: "Coffee brand experience",
-    description: "A premium RTL coffee experience built for discovery and WhatsApp-driven ordering.",
-    proofPoints: ["RTL coffee brand experience", "Product catalog", "Coffee Finder recommendations", "WhatsApp ordering flow"],
+    description: "Premium RTL coffee brand journey with WhatsApp ordering.",
+    proofPoints: ["Coffee Finder recommendations", "WhatsApp ordering flow"],
     status: "Brand + Ordering",
-    url: "https://farrag-coffee-v2.vercel.app/",
     caseStudy: "/work/farrag-coffee",
-    screenshot: "/project-screenshots/ben-farag-hero.png"
+    url: "https://farrag-coffee-v2.vercel.app/"
   }
 ];
 
@@ -251,7 +252,7 @@ export default function Home() {
           </a>
         </div>
         <div className="mt-8 space-y-5">
-          {workItems.map((item) => (
+          {featuredWork.map((item) => (
             <article
               key={item.title}
               className={`rounded-2xl border p-5 shadow-sm ${
@@ -323,6 +324,31 @@ export default function Home() {
                       item.featured ? "border-white bg-white text-stone-900 hover:bg-stone-100" : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
                     }`}
                   >
+                    Visit project
+                  </a>
+                ) : null}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {compactWork.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">{item.label}</p>
+                <span className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{item.status}</span>
+              </div>
+              <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-stone-600">{item.description}</p>
+              <ul className="mt-3 grid gap-2 text-sm text-stone-700">
+                {item.proofPoints.slice(0, 2).map((point) => (
+                  <li key={point} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">{point}</li>
+                ))}
+              </ul>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a href={item.caseStudy} className="text-sm font-semibold text-stone-700 underline-offset-4 hover:underline">View case study</a>
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noreferrer" className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900">
                     Visit project
                   </a>
                 ) : null}

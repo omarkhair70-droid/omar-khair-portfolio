@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   }
 };
 
-const tags = ["Arabic-first", "RTL interface", "Food ordering flow", "Mobile-first", "WhatsApp continuation"];
+const tags = ["Arabic-first", "RTL interface", "Food ordering flow", "Installable PWA", "WhatsApp continuation"];
 const challengePoints = ["Make fast-food browsing feel fast and clear on mobile.", "Build an intuitive Arabic RTL ordering journey.", "Organize categories and offers without clutter.", "Support cart review before order submission.", "Give customers and admins better order visibility."];
-const buildItems = ["Arabic RTL interface", "Menu/category browsing", "Offers preview", "Cart and checkout flow", "Supabase-backed order saving", "Customer active order tracking", "Admin order management", "WhatsApp order continuation"];
+const buildItems = ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Cart and checkout flow", "Supabase-backed order saving", "Customer active order tracking", "Admin order management", "WhatsApp order continuation"];
 const opsPoints = ["Orders can be saved with customer details for follow-up.", "Admin side supports reviewing and managing incoming orders.", "Customers can track active order status after submission.", "Runtime open/closed status helps set clear ordering expectations."];
 const businessValue = ["Improves clarity across browsing, cart, and submission steps.", "Makes menu and offer discovery easier for Arabic users.", "Supports more structured order communication.", "Gives better visibility to customers and admins."];
 const buildNotes = ["Next.js App Router", "TypeScript + React", "Tailwind CSS", "RTL Arabic interface", "Supabase order flow", "Vercel"];

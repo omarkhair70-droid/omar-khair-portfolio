@@ -54,6 +54,20 @@ const projects: WorkProject[] = [
     ]
   },
   {
+    title: "Teswa — Arabic-First Mobile Swap Marketplace",
+    category: "Mobile Marketplace Product — In Development",
+    description:
+      "An Arabic-first mobile marketplace product in development for item-to-item swapping, with onboarding/auth foundations, browse/search flows, and backend delivery planning.",
+    proofPoints: [
+      "Arabic-first mobile product experience",
+      "Auth + onboarding foundation",
+      "Marketplace browse/search and item detail flow",
+      "Push notification foundation + backend delivery work"
+    ],
+    screenshots: [],
+    links: [{ label: "View case study", href: "/work/teswa", internal: true }]
+  },
+  {
     title: "Habba",
     category: "Handmade Accessories Store + Smart Product Finder",
     description:
@@ -75,7 +89,7 @@ const projects: WorkProject[] = [
     category: "Handmade Boutique Storefront",
     description:
       "A warm Arabic storefront for a handmade boutique, built around product discovery, custom orders, cart-style selection, and WhatsApp inquiry flow.",
-    proofPoints: ["RTL product browsing", "Handmade categories", "Cart/order-bag flow", "WhatsApp handoff"],
+    proofPoints: ["RTL product browsing", "Handmade categories", "Installable PWA storefront", "Cart/order-bag flow"],
     screenshots: [],
     links: [
       { label: "View case study", href: "/work/bahja-store", internal: true },
@@ -87,7 +101,7 @@ const projects: WorkProject[] = [
     category: "Arabic RTL Ordering System",
     description:
       "An Arabic-first fast-food ordering experience built around menu browsing, offers, cart flow, order submission, customer tracking, admin order management, and mobile-first usability.",
-    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Offers preview", "Cart flow", "Order tracking"],
+    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Cart flow", "Order tracking"],
     screenshots: [
       { src: "/project-screenshots/tuscanini-order-flow.png", alt: "Tuscanini ordering flow interface" },
       { src: "/project-screenshots/tuscanini-menu.png", alt: "Tuscanini menu and category browsing" },

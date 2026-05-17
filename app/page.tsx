@@ -18,7 +18,7 @@ type HomeWorkItem = {
   description: string;
   proofPoints: string[];
   status: string;
-  url: string;
+  url?: string;
   screenshot?: string;
   caseStudy: string;
   featured?: boolean;
@@ -26,17 +26,10 @@ type HomeWorkItem = {
 
 const workItems: HomeWorkItem[] = [
   {
-    title: "HILTECH — Network Infrastructure Website & RFQ System",
-    label: "Featured system project",
-    description:
-      "A company website that evolved into practical sales operations support.",
-    proofPoints: [
-      "Product catalog",
-      "RFQ basket",
-      "Admin RFQ dashboard",
-      "Quotation Builder",
-      "Customer tracking"
-    ],
+    title: "HILTECH — B2B Website, RFQ & Admin Operations System",
+    label: "Flagship system proof",
+    description: "A business website that evolved into structured RFQ workflows, quotation handling, and admin operations visibility.",
+    proofPoints: ["Product catalog", "RFQ basket", "Admin command center", "Quotation workflow", "Follow-up tracking"],
     status: "B2B Website + Business System",
     featured: true,
     caseStudy: "/work/hiltech",
@@ -44,41 +37,41 @@ const workItems: HomeWorkItem[] = [
     screenshot: "/project-screenshots/hiltech-homepage.png"
   },
   {
-    title: "Habba",
-    label: "Arabic product experience",
-    description: "Guided discovery storefront for handmade accessories with WhatsApp ordering.",
+    title: "Teswa — Arabic-First Mobile Swap Marketplace",
+    label: "Flagship mobile product proof",
+    description: "An Arabic-first mobile marketplace product in development for item-to-item swapping.",
     proofPoints: [
-      "Arabic-first browsing",
-      "Habba Match finder",
-      "Bundle/drop flows",
-      "WhatsApp inquiry path"
+      "Arabic-first mobile product experience",
+      "Auth + onboarding foundation",
+      "Marketplace browse/search and item detail flow",
+      "Push notification foundation + backend delivery work"
     ],
+    status: "Mobile Product — In Development",
+    caseStudy: "/work/teswa"
+  },
+  {
+    title: "Habba",
+    label: "Arabic product discovery storefront",
+    description: "Guided discovery storefront for handmade accessories with WhatsApp ordering.",
+    proofPoints: ["Arabic-first browsing", "Habba Match finder", "Bundle/drop flows", "WhatsApp inquiry path"],
     status: "Handmade Accessories Store",
     caseStudy: "/work/habba",
-    url: "https://habba-store.vercel.app/",
-    screenshot: undefined
+    url: "https://habba-store.vercel.app/"
   },
   {
     title: "Bahja Store",
     label: "Arabic boutique storefront",
-    description: "Handmade boutique storefront with custom orders and cart-to-WhatsApp flow.",
-    proofPoints: ["RTL storefront", "Category discovery", "Order bag flow", "WhatsApp handoff"],
+    description: "Handmade boutique storefront with custom orders and app-like PWA storefront behavior.",
+    proofPoints: ["RTL storefront", "Category discovery", "Installable PWA storefront", "WhatsApp handoff"],
     status: "Handmade Boutique Storefront",
     caseStudy: "/work/bahja-store",
-    url: "https://bahja-store.vercel.app/",
-    screenshot: undefined
+    url: "https://bahja-store.vercel.app/"
   },
   {
     title: "Tuscanini — Arabic Fast-Food Ordering Experience",
     label: "Arabic ordering system",
-    description: "An Arabic-first customer journey for menu browsing, checkout, and order follow-up.",
-    proofPoints: [
-      "Arabic RTL interface",
-      "Menu/category browsing",
-      "Cart and checkout flow",
-      "Supabase order saving",
-      "Customer order tracking"
-    ],
+    description: "An Arabic-first customer journey for menu browsing, checkout, order follow-up, and installable PWA ordering behavior.",
+    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Customer order tracking"],
     status: "Ordering Experience",
     caseStudy: "/work/tuscanini",
     url: "https://tuscanini-ordering-system.vercel.app/",
@@ -88,13 +81,7 @@ const workItems: HomeWorkItem[] = [
     title: "Farrag Coffee — RTL Coffee Brand & Ordering Experience",
     label: "Coffee brand experience",
     description: "A premium RTL coffee experience built for discovery and WhatsApp-driven ordering.",
-    proofPoints: [
-      "RTL coffee brand experience",
-      "Product catalog",
-      "Coffee Finder recommendations",
-      "Grind selection",
-      "WhatsApp ordering flow"
-    ],
+    proofPoints: ["RTL coffee brand experience", "Product catalog", "Coffee Finder recommendations", "WhatsApp ordering flow"],
     status: "Brand + Ordering",
     url: "https://farrag-coffee-v2.vercel.app/",
     caseStudy: "/work/farrag-coffee",
@@ -253,7 +240,7 @@ export default function Home() {
             Start a Project
           </a>
         </div>
-        <p className="mt-6 text-sm text-stone-500">Built around real projects: HILTECH, Habba, Bahja Store, Tuscanini, and Farrag Coffee.</p>
+        <p className="mt-6 text-sm text-stone-500">Built across business systems, mobile product work, Arabic storefronts, and ordering experiences.</p>
       </section>
 
       <section id="work" className="section-wrap py-16 md:py-18">
@@ -327,16 +314,18 @@ export default function Home() {
                 <a href={item.caseStudy} className={`text-sm font-semibold underline-offset-4 hover:underline ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
                   View case study
                 </a>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                    item.featured ? "border-white bg-white text-stone-900 hover:bg-stone-100" : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
-                  }`}
-                >
-                  Visit project
-                </a>
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                      item.featured ? "border-white bg-white text-stone-900 hover:bg-stone-100" : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
+                    }`}
+                  >
+                    Visit project
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}

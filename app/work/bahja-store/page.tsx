@@ -14,6 +14,7 @@ const highlights = [
   "RTL boutique storefront with Arabic-first product browsing.",
   "Product categories for handmade bags, accessories, canvas art, and custom orders.",
   "Cart/order-bag flow with WhatsApp handoff for final confirmation.",
+  "Installable PWA storefront with app-like mobile experience.",
   "Brand-safe SEO and social preview setup."
 ];
 
@@ -22,6 +23,7 @@ const built = [
   "Category and product discovery across handmade collections",
   "Custom-order path for customer-specific requests",
   "Cart-style order bag before WhatsApp confirmation",
+  "Manifest + standalone mode + service worker PWA layer",
   "Structured WhatsApp inquiry messaging"
 ];
 

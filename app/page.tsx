@@ -201,53 +201,73 @@ const valuePoints = [
 
 export default function Home() {
   return (
-    <main>
-      <header className="sticky top-0 z-20 border-b border-stone-200/70 bg-stone-50/90 backdrop-blur">
+    <main className="overflow-hidden">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#08070a]/75 backdrop-blur-xl">
         <div className="section-wrap flex min-h-14 items-center justify-between gap-3 py-2 md:py-0">
           <div className="flex shrink-0 items-center gap-2.5" aria-label="Omar Khair">
             <Image src="/logo-mark.svg" alt="Omar Khair" width={32} height={32} className="h-8 w-8 rounded-md" priority />
             <div className="leading-tight">
               <p className="text-sm font-semibold tracking-tight sm:text-base">Omar Khair</p>
-              <p className="hidden text-[9px] uppercase tracking-[0.11em] text-stone-500 md:block">Websites &amp; Digital Systems</p>
+              <p className="hidden text-[9px] uppercase tracking-[0.11em] text-stone-400 md:block">Websites &amp; Digital Systems</p>
             </div>
           </div>
-          <nav className="hidden flex-1 justify-center gap-5 text-sm text-stone-600 lg:flex">
+          <nav className="hidden flex-1 justify-center gap-5 text-sm text-stone-300 lg:flex">
             <a href="#work">Work</a>
             <a href="#systems">Systems</a>
             <a href="#packages">Packages</a>
             <a href="#process">Process</a>
             <a href="#contact">Contact</a>
           </nav>
-          <a href="#contact" className="shrink-0 rounded-full bg-stone-900 px-4 py-2 text-sm text-white">
+          <a href="#contact" className="shrink-0 rounded-full bg-gradient-to-r from-[#f7d78a] to-[#c99b48] px-4 py-2 text-sm font-semibold text-stone-950 shadow-lg shadow-[#c99b48]/20">
             Start a project
           </a>
         </div>
       </header>
 
-      <section className="section-wrap py-16 md:py-22">
-        <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Websites & Digital Systems</p>
-        <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
-          I build websites that work like business tools.
-        </h1>
-        <p className="mt-5 max-w-4xl text-base leading-relaxed text-stone-600 md:text-lg">
-          Business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and customer-facing flows
-          — designed to look clean and support real operations.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-          <a href="#work" className="rounded-full bg-stone-900 px-6 py-3 text-white">
-            View Work
-          </a>
-          <a href="#contact" className="rounded-full border border-stone-300 px-6 py-3">
-            Start a Project
-          </a>
+      <section className="section-wrap py-16 md:py-24">
+        <div className="premium-shell relative overflow-hidden p-6 md:p-10 lg:p-12">
+          <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#c99b48]/20 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-[#e6c783]">Premium Websites & Digital Systems</p>
+              <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-7xl">
+                Premium websites that feel like <span className="gold-gradient">business assets.</span>
+              </h1>
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-stone-300 md:text-lg">
+                High-end business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and customer-facing flows
+                — designed with polish, clarity, speed, and real operational value.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
+                <a href="#work" className="rounded-full bg-gradient-to-r from-[#f7d78a] to-[#c99b48] px-6 py-3 font-semibold text-stone-950 shadow-lg shadow-[#c99b48]/20">
+                  View Premium Work
+                </a>
+                <a href="#contact" className="rounded-full border border-white/15 bg-white/10 px-6 py-3 text-white backdrop-blur transition hover:bg-white/15">
+                  Start a Project
+                </a>
+              </div>
+              <p className="mt-6 text-sm text-stone-400">Built across business systems, mobile product work, Arabic storefronts, and ordering experiences.</p>
+            </div>
+            <div className="premium-card p-5">
+              <div className="rounded-2xl border border-[#f7d78a]/20 bg-[#0d0c10]/80 p-5">
+                <p className="text-xs uppercase tracking-[0.22em] text-[#e6c783]">Portfolio Signal</p>
+                <div className="mt-5 grid gap-3">
+                  {["Premium UI polish", "Business-system thinking", "Mobile-first execution", "Launch-ready delivery"].map((item) => (
+                    <div key={item} className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-stone-200">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="mt-6 text-sm text-stone-500">Built across business systems, mobile product work, Arabic storefronts, and ordering experiences.</p>
       </section>
 
       <section id="work" className="section-wrap py-16 md:py-18">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-3xl font-semibold tracking-tight">Selected Work</h2>
-          <a href="/work" className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900">
+          <a href="/work" className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-stone-100">
             View all work
           </a>
         </div>
@@ -256,13 +276,13 @@ export default function Home() {
             <article
               key={item.title}
               className={`rounded-2xl border p-5 shadow-sm ${
-                item.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white text-stone-900"
+                item.featured ? "border-stone-900 bg-[#0b0b0f] text-white" : "border-white/10 bg-white/[0.07] text-stone-100"
               }`}
             >
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                 <p
                   className={`text-xs font-semibold uppercase tracking-[0.14em] ${
-                    item.featured ? "text-stone-300" : "text-stone-500"
+                    item.featured ? "text-stone-300" : "text-stone-400"
                   }`}
                 >
                   {item.label}
@@ -276,10 +296,10 @@ export default function Home() {
                 </span>
               </div>
               <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className={`mt-2 text-sm ${item.featured ? "text-stone-200" : "text-stone-600"}`}>{item.description}</p>
+              <p className={`mt-2 text-sm ${item.featured ? "text-stone-200" : "text-stone-300"}`}>{item.description}</p>
 
               <div className={`mt-4 grid gap-4 ${item.featured ? "md:grid-cols-[1.2fr_1fr]" : "md:grid-cols-[1fr_1.1fr]"}`}>
-                <div className={`overflow-hidden rounded-xl border p-2 ${item.featured ? "border-white/20 bg-white" : "border-stone-200 bg-stone-50"}`}>
+                <div className={`overflow-hidden rounded-xl border p-2 ${item.featured ? "border-white/20 bg-white/[0.07]" : "border-white/10 bg-white/[0.04]"}`}>
                   {item.screenshot ? (
                     <Image
                       src={item.screenshot}
@@ -289,12 +309,12 @@ export default function Home() {
                       className="h-40 w-full rounded-lg object-cover md:h-44"
                     />
                   ) : (
-                    <div className="rounded-lg border border-dashed border-stone-300 bg-white p-4">
-                      <p className="text-sm font-semibold text-stone-900">{item.title}</p>
-                      <p className="mt-1 text-xs text-stone-600">{item.status}</p>
+                    <div className="rounded-lg border border-dashed border-white/15 bg-white/[0.07] p-4">
+                      <p className="text-sm font-semibold text-stone-100">{item.title}</p>
+                      <p className="mt-1 text-xs text-stone-300">{item.status}</p>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {item.proofPoints.slice(0, 3).map((point) => (
-                          <span key={point} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] text-stone-700">
+                          <span key={point} className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-stone-200">
                             {point}
                           </span>
                         ))}
@@ -302,7 +322,7 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <ul className={`grid gap-2 text-sm ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
+                <ul className={`grid gap-2 text-sm ${item.featured ? "text-stone-100" : "text-stone-200"}`}>
                   {item.proofPoints.map((point) => (
                     <li key={point} className="rounded-lg border border-current/15 px-3 py-2">
                       {point}
@@ -312,7 +332,7 @@ export default function Home() {
               </div>
 
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <a href={item.caseStudy} className={`text-sm font-semibold underline-offset-4 hover:underline ${item.featured ? "text-stone-100" : "text-stone-700"}`}>
+                <a href={item.caseStudy} className={`text-sm font-semibold underline-offset-4 hover:underline ${item.featured ? "text-stone-100" : "text-stone-200"}`}>
                   View case study
                 </a>
                 {item.url ? (
@@ -321,7 +341,7 @@ export default function Home() {
                     target="_blank"
                     rel="noreferrer"
                     className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                      item.featured ? "border-white bg-white text-stone-900 hover:bg-stone-100" : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
+                      item.featured ? "border-white bg-white/[0.07] text-stone-100 hover:bg-stone-100" : "border-white/15 bg-[#0b0b0f] text-white hover:bg-stone-900"
                     }`}
                   >
                     Visit project
@@ -333,22 +353,22 @@ export default function Home() {
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {compactWork.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+            <article key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.07] p-5 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">{item.label}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">{item.label}</p>
                 <span className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{item.status}</span>
               </div>
               <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-stone-600">{item.description}</p>
-              <ul className="mt-3 grid gap-2 text-sm text-stone-700">
+              <p className="mt-2 text-sm text-stone-300">{item.description}</p>
+              <ul className="mt-3 grid gap-2 text-sm text-stone-200">
                 {item.proofPoints.slice(0, 2).map((point) => (
-                  <li key={point} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">{point}</li>
+                  <li key={point} className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2">{point}</li>
                 ))}
               </ul>
               <div className="mt-4 flex flex-wrap items-center gap-3">
-                <a href={item.caseStudy} className="text-sm font-semibold text-stone-700 underline-offset-4 hover:underline">View case study</a>
+                <a href={item.caseStudy} className="text-sm font-semibold text-stone-200 underline-offset-4 hover:underline">View case study</a>
                 {item.url ? (
-                  <a href={item.url} target="_blank" rel="noreferrer" className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900">
+                  <a href={item.url} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-stone-100">
                     Visit project
                   </a>
                 ) : null}
@@ -361,7 +381,7 @@ export default function Home() {
       <section id="systems" className="section-wrap py-16 md:py-18">
         <div className="max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Websites that can grow into business systems.</h2>
-          <p className="mt-4 text-base leading-relaxed text-stone-600 md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-stone-300 md:text-lg">
             A strong website can do more than present the business. It can collect structured requests, support
             customer actions, and improve operations visibility.
           </p>
@@ -382,12 +402,12 @@ export default function Home() {
               points: ["Admin visibility", "Dashboard workflows", "Quotation support", "Internal notifications"]
             }
           ].map((layer, i) => (
-            <article key={layer.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Layer 0{i + 1}</p>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-stone-900">{layer.title}</h3>
-              <ul className="mt-4 space-y-2 text-sm text-stone-700">
+            <article key={layer.title} className="rounded-2xl border border-white/10 bg-white/[0.07] p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">Layer 0{i + 1}</p>
+              <h3 className="mt-2 text-xl font-semibold tracking-tight text-stone-100">{layer.title}</h3>
+              <ul className="mt-4 space-y-2 text-sm text-stone-200">
                 {layer.points.map((point) => (
-                  <li key={point} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
+                  <li key={point} className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2">
                     {point}
                   </li>
                 ))}
@@ -406,20 +426,20 @@ export default function Home() {
             "Customer tracking",
             "Internal tools"
           ].map((chip) => (
-            <li key={chip} className="rounded-full border border-stone-300 bg-white px-3 py-1.5 text-xs font-medium text-stone-700">
+            <li key={chip} className="rounded-full border border-white/15 bg-white/[0.07] px-3 py-1.5 text-xs font-medium text-stone-200">
               {chip}
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 rounded-2xl border border-stone-900 bg-stone-900 p-6 text-white shadow-sm md:p-8">
+        <div className="mt-8 rounded-2xl border border-stone-900 bg-[#0b0b0f] p-6 text-white shadow-sm md:p-8">
           <h3 className="text-2xl font-semibold tracking-tight">HILTECH is the proof.</h3>
           <p className="mt-3 max-w-3xl text-stone-200">
             A company website that grew into a product catalog, RFQ flow, admin visibility, quotation workflow, and
             customer follow-up.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href="/work/hiltech" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">
+            <a href="/work/hiltech" className="rounded-full bg-white/[0.07] px-5 py-2 text-sm font-medium text-stone-100">
               View HILTECH Case Study
             </a>
             <a
@@ -435,13 +455,13 @@ export default function Home() {
       </section>
 
       <section id="packages" className="section-wrap py-16 md:py-18">
-        <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Project Starting Points</p>
+        <p className="text-sm uppercase tracking-[0.18em] text-stone-400">Project Starting Points</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight">Choose the starting point that fits your business.</h2>
-        <p className="mt-4 max-w-4xl text-stone-600">
+        <p className="mt-4 max-w-4xl text-stone-300">
           Start simple with a clean website, or build toward a product catalog, ordering flow, RFQ system, dashboard,
           or full business system.
         </p>
-        <p className="mt-2 text-sm text-stone-500">
+        <p className="mt-2 text-sm text-stone-400">
           Final scope depends on content, features, integrations, and launch requirements.
         </p>
 
@@ -450,16 +470,16 @@ export default function Home() {
             <article
               key={pkg.title}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
-                pkg.featured ? "border-stone-900 bg-stone-900 text-white shadow-md" : "border-stone-200 bg-white text-stone-900"
+                pkg.featured ? "border-stone-900 bg-[#0b0b0f] text-white shadow-md" : "border-white/10 bg-white/[0.07] text-stone-100"
               }`}
             >
-              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-200" : "text-stone-500"}`}>{pkg.pricing}</p>
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${pkg.featured ? "text-stone-200" : "text-stone-400"}`}>{pkg.pricing}</p>
               <h3 className="mt-2 text-xl font-semibold tracking-tight">{pkg.title}</h3>
-              <p className={`mt-2 text-sm leading-relaxed ${pkg.featured ? "text-stone-200" : "text-stone-600"}`}>{pkg.subtitle}</p>
-              <p className={`mt-3 text-sm ${pkg.featured ? "text-stone-200" : "text-stone-600"}`}>
-                <span className={`font-semibold ${pkg.featured ? "text-white" : "text-stone-800"}`}>Best for:</span> {pkg.bestFor}
+              <p className={`mt-2 text-sm leading-relaxed ${pkg.featured ? "text-stone-200" : "text-stone-300"}`}>{pkg.subtitle}</p>
+              <p className={`mt-3 text-sm ${pkg.featured ? "text-stone-200" : "text-stone-300"}`}>
+                <span className={`font-semibold ${pkg.featured ? "text-white" : "text-stone-100"}`}>Best for:</span> {pkg.bestFor}
               </p>
-              <ul className={`mt-4 grid gap-2 text-sm ${pkg.featured ? "text-stone-100" : "text-stone-700"}`}>
+              <ul className={`mt-4 grid gap-2 text-sm ${pkg.featured ? "text-stone-100" : "text-stone-200"}`}>
                 {pkg.includes.map((item) => (
                   <li key={item} className="rounded-lg border border-current/15 px-3 py-2">{item}</li>
                 ))}
@@ -467,7 +487,7 @@ export default function Home() {
               {pkg.proofLinks ? (
                 <div className="mt-4 flex flex-wrap gap-3 text-xs">
                   {pkg.proofLinks.map((link) => (
-                    <a key={link.href} href={link.href} className={`font-semibold underline-offset-4 hover:underline ${pkg.featured ? "text-stone-100" : "text-stone-600"}`}>
+                    <a key={link.href} href={link.href} className={`font-semibold underline-offset-4 hover:underline ${pkg.featured ? "text-stone-100" : "text-stone-300"}`}>
                       {link.label}
                     </a>
                   ))}
@@ -476,7 +496,7 @@ export default function Home() {
               <a
                 href="#contact"
                 className={`mt-5 inline-flex w-fit rounded-full border px-4 py-2 text-sm font-medium transition ${
-                  pkg.featured ? "border-white bg-white text-stone-900 hover:bg-stone-100" : "border-stone-300 bg-stone-900 text-white hover:bg-stone-800"
+                  pkg.featured ? "border-white bg-white/[0.07] text-stone-100 hover:bg-stone-100" : "border-white/15 bg-[#0b0b0f] text-white hover:bg-stone-900"
                 }`}
               >
                 {pkg.cta}
@@ -493,7 +513,7 @@ export default function Home() {
             <div key={title} className="card">
               <p className="text-sm text-accent">0{i + 1}</p>
               <h3 className="mt-2 text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-stone-600">{description}</p>
+              <p className="mt-2 text-stone-300">{description}</p>
             </div>
           ))}
         </div>
@@ -503,20 +523,20 @@ export default function Home() {
         <h2 className="text-3xl font-semibold tracking-tight">Why work with me</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {valuePoints.map((point) => (
-            <div key={point} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+            <div key={point} className="rounded-2xl border border-white/10 bg-white/[0.07] p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.12em] text-stone-400">Value</p>
-              <p className="mt-3 text-base font-medium text-stone-800">{point}</p>
+              <p className="mt-3 text-base font-medium text-stone-100">{point}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section id="contact" className="section-wrap py-20 md:py-24">
-        <p className="text-sm uppercase tracking-[0.18em] text-stone-500">Start a Project</p>
-        <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-stone-900 md:text-4xl">
+        <p className="text-sm uppercase tracking-[0.18em] text-stone-400">Start a Project</p>
+        <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-stone-100 md:text-4xl">
           Tell me what you need — I’ll help shape the right website or system.
         </h2>
-        <p className="mt-4 max-w-4xl text-base leading-relaxed text-stone-600 md:text-lg">
+        <p className="mt-4 max-w-4xl text-base leading-relaxed text-stone-300 md:text-lg">
           Choose the project type, add a few details, and send a structured WhatsApp brief so we can start with
           context.
         </p>
@@ -524,8 +544,8 @@ export default function Home() {
         <ProjectInquiryForm />
       </section>
 
-      <footer className="border-t border-stone-200 py-7">
-        <div className="section-wrap flex flex-col justify-between gap-2 text-sm text-stone-500 md:flex-row md:items-center">
+      <footer className="border-t border-white/10 py-7">
+        <div className="section-wrap flex flex-col justify-between gap-2 text-sm text-stone-400 md:flex-row md:items-center">
           <p>Omar Khair — Websites & Digital Systems</p>
           <p>Built with clarity, speed, and purpose.</p>
         </div>

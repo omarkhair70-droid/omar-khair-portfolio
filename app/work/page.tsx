@@ -123,8 +123,14 @@ export default function WorkPage() {
           {projects.map((project) => (
             <article key={project.title} className={`overflow-hidden rounded-3xl border shadow-sm ${project.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white"}`}>
               {project.image ? (
-                <div className={`border-b p-2 ${project.featured ? "border-white/10 bg-white" : "border-stone-200 bg-stone-100"}`}>
-                  <Image src={project.image} alt={`${project.title} selected interface screens`} width={1200} height={750} className="h-auto w-full rounded-2xl" />
+                <div className={`relative overflow-hidden border-b ${project.featured ? "border-white/10 bg-white" : "border-stone-200 bg-stone-100"} ${project.image.includes("/project-showcases/") ? "h-[580px]" : "aspect-[16/9]"}`}>
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} interface screen`}
+                    fill
+                    sizes="100vw"
+                    className={project.image.includes("/project-showcases/") ? "object-contain p-5 sm:p-8" : "object-cover"}
+                  />
                 </div>
               ) : null}
               <div className="p-6 md:p-8">

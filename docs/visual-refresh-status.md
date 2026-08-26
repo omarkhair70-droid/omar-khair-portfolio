@@ -1,1 +1,0 @@
-Visual refresh scope is ready for merge: HILTECH, Teswa, Nova, and WaveZero are the primary visual proof on the homepage/Work page, Teswa has screenshot proof in its case study, and custom project ranges are restored separately from the 1,000 EGP local launch offer.

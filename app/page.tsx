@@ -175,8 +175,14 @@ export default function Home() {
               </div>
               <p className={`mt-4 max-w-4xl leading-relaxed ${item.dark ? "text-stone-300" : "text-stone-600"}`}>{item.description}</p>
               <div className="mt-6 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
-                <div className={`relative aspect-[16/9] overflow-hidden rounded-2xl border ${item.dark ? "border-white/15 bg-white" : "border-stone-200 bg-stone-100"}`}>
-                  <Image src={item.screenshot} alt={`${item.title} product preview`} fill sizes="(min-width: 1024px) 65vw, 100vw" className={`object-cover transition-transform ${item.screenshot.includes("/project-showcases/") ? "scale-[1.48]" : ""}`} />
+                <div className={`relative overflow-hidden rounded-2xl border ${item.dark ? "border-white/15 bg-white" : "border-stone-200 bg-stone-100"} ${item.screenshot.includes("/project-showcases/") ? "h-[560px]" : "aspect-[16/9]"}`}>
+                  <Image
+                    src={item.screenshot}
+                    alt={`${item.title} product preview`}
+                    fill
+                    sizes="(min-width: 1024px) 65vw, 100vw"
+                    className={item.screenshot.includes("/project-showcases/") ? "object-contain p-4 sm:p-6" : "object-cover"}
+                  />
                 </div>
                 <div className="grid content-start gap-2 sm:grid-cols-2 lg:grid-cols-1">
                   {item.proof.map((point) => (
@@ -195,8 +201,8 @@ export default function Home() {
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           {visualProof.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm">
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-stone-200 bg-stone-100">
-                <Image src={item.image} alt={`${item.title} selected product screens`} fill sizes="(min-width: 768px) 50vw, 100vw" className="scale-[1.42] object-cover" />
+              <div className="relative h-[520px] overflow-hidden border-b border-stone-200 bg-stone-100">
+                <Image src={item.image} alt={`${item.title} product screen`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-contain p-4 sm:p-6" />
               </div>
               <div className="p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">{item.label}</p>

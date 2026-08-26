@@ -4,144 +4,77 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Teswa Case Study — Omar Khair",
   description:
-    "Teswa / تِسوى is an Arabic-first mobile swap marketplace product in development, focused on onboarding, marketplace flow, and engagement foundations.",
-  alternates: {
-    canonical: "/work/teswa"
-  }
+    "Teswa / تِسوى is an Arabic-first social swap marketplace with marketplace, stories, motion/video, messaging, notifications, offline memory, and native security.",
+  alternates: { canonical: "/work/teswa" }
 };
 
-const builtSoFar = [
-  "Arabic-first mobile UX direction centered on item-for-item exchange.",
-  "Auth and onboarding foundation for account-led product usage.",
-  "Marketplace browse/search flow and item detail foundations.",
-  "Structured phased roadmap to sequence product delivery.",
-  "Native engagement direction with push-notification groundwork."
+const systems = [
+  ["Marketplace", "Arabic-first item discovery, detail, creator/add-item flows, offers, and deal lifecycle."],
+  ["Social layer", "Stories, story replies, voice replies, people discovery, profile activity, and video-led Motion experiences."],
+  ["Messaging", "Deal-scoped chat, voice messages, warm inbox/direct flows, and notification-aware communication."],
+  ["Offline memory", "SQLite-backed public cache, warm-start behavior, background refresh, and recovery paths."],
+  ["Native capabilities", "Camera, media, notifications, location, haptics, sharing, biometrics, secure storage, and Google Sign-In."],
+  ["Release operations", "Expo/EAS production builds, OTA updates where compatible, Google Play release operations, and backend push delivery." ]
 ];
 
-const productThinking = [
-  "Clarity-first mobile flow so swapping feels simpler than traditional selling.",
-  "Arabic-first content structure to reduce friction for local users.",
-  "Phased delivery approach to ship core behavior first, then deepen marketplace loops."
-];
-
-const backendDirection = [
-  "Notification delivery planning on the backend side to support user engagement loops.",
-  "Foundational architecture thinking for scalable marketplace operations over time.",
-  "Roadmap-aligned backend sequencing instead of overbuilding before validation."
-];
+const stack = ["Expo SDK 55", "React Native", "TypeScript", "Expo Router", "Supabase", "SQLite", "Reanimated", "Skia", "Lottie", "Expo Notifications", "Expo Camera / Video / Audio", "Google Sign-In", "Local Authentication"];
 
 export default function TeswaCaseStudyPage() {
   return (
-    <main className="bg-stone-50 pb-20">
-      <section className="section-wrap py-16 md:py-22">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Case Study</p>
-        <h1 className="mt-4 max-w-5xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
-          Teswa — Arabic-First Mobile Swap Marketplace
-        </h1>
-        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-stone-600">
-          Teswa / تِسوى is a mobile marketplace product in development focused on item-for-item exchange,
-          built with an Arabic-first product experience and phased execution strategy.
-        </p>
-        <span className="mt-6 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-          Mobile Product — In Development
-        </span>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <Link href="/work" className="rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-medium text-white">
-            Back to Work
-          </Link>
+    <main className="min-h-screen bg-stone-50 text-stone-950">
+      <section className="section-wrap py-14 md:py-20">
+        <Link href="/work" className="text-sm font-medium text-stone-600">← Back to work</Link>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Mobile product case study</p>
+        <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">Teswa — Arabic-First Social Swap Marketplace</h1>
+        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600">Teswa / تِسوى is a native Arabic-first product built around item-for-item exchange, then expanded into a broader social exchange world with stories, video discovery, communication, local activity, and offline memory.</p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <span className="rounded-full border border-stone-900 bg-stone-900 px-4 py-2 text-xs font-medium text-white">Live / post-launch on Google Play</span>
+          <span className="rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-medium">Arabic-first mobile product</span>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="https://github.com/omarkhair70-droid/teswa.eg" target="_blank" rel="noreferrer" className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white">View GitHub proof</a>
+          <Link href="/" className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium">Back to portfolio</Link>
         </div>
       </section>
 
-      <section className="section-wrap py-8 md:py-12">
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight">Product context</h2>
-          <p className="mt-4 max-w-4xl leading-relaxed text-stone-600">
-            Teswa is being built as a serious product workflow rather than a landing-page concept. The direction is to
-            support mobile-first discovery and exchange behaviors while keeping the scope grounded in real phased delivery.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-wrap py-8 md:py-12">
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight">What Teswa is</h2>
-          <p className="mt-4 max-w-4xl leading-relaxed text-stone-600">
-            Teswa is an Arabic-first mobile swap marketplace built around the idea that unused items still hold value.
-            The product concept prioritizes direct item exchange journeys instead of conventional sell-first marketplace flows.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-wrap py-8 md:py-12">
-        <h2 className="text-2xl font-semibold tracking-tight">What has been built so far</h2>
-        <ul className="mt-6 grid gap-3 md:grid-cols-2">
-          {builtSoFar.map((point) => (
-            <li key={point} className="rounded-2xl border border-stone-200 bg-white p-5 text-stone-700 shadow-sm">
-              {point}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="section-wrap py-8 md:py-12">
-        <h2 className="text-2xl font-semibold tracking-tight">Product / mobile thinking</h2>
-        <ul className="mt-6 grid gap-3 md:grid-cols-3">
-          {productThinking.map((point) => (
-            <li key={point} className="rounded-2xl border border-stone-200 bg-white p-5 text-stone-700 shadow-sm">
-              {point}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="section-wrap py-8 md:py-12">
-        <h2 className="text-2xl font-semibold tracking-tight">Backend and engagement direction</h2>
-        <ul className="mt-6 grid gap-3 md:grid-cols-3">
-          {backendDirection.map((point) => (
-            <li key={point} className="rounded-2xl border border-stone-200 bg-white p-5 text-stone-700 shadow-sm">
-              {point}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="section-wrap py-8 md:py-12">
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight">Why this matters / what it proves</h2>
-          <p className="mt-4 max-w-4xl leading-relaxed text-stone-600">
-            Teswa shows product-grade mobile execution discipline: Arabic-first UX thinking, roadmap-driven development,
-            and engagement foundations linked to backend delivery planning.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-wrap pt-10">
-        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-7 text-white shadow-sm md:p-9">
-          <h2 className="text-3xl font-semibold tracking-tight">Need help building a real mobile product direction?</h2>
-          <p className="mt-4 max-w-3xl text-stone-300">
-            I build product-ready web and mobile foundations with practical delivery phases and business-aligned execution.
-          </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link href="/#contact" className="rounded-full bg-white px-5 py-2 text-center text-sm font-medium text-stone-900">
-              Start a Project
-            </Link>
-            <Link href="/work/hiltech" className="rounded-full border border-white/70 px-5 py-2 text-center text-sm font-medium text-white">
-              View HILTECH Case Study
-            </Link>
+      <section className="border-y border-stone-200 bg-white">
+        <div className="section-wrap py-14 md:py-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">What the product proves</p>
+          <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Not a landing-page prototype. A real mobile product surface with many connected systems.</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {systems.map(([title, text]) => (
+              <div key={title} className="rounded-2xl border border-stone-200 bg-stone-50 p-5">
+                <h3 className="font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone-600">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-wrap pt-8">
-        <div className="rounded-2xl border border-stone-200 bg-white p-5">
-          <p className="text-sm font-semibold text-stone-700">Related work</p>
-          <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4">
-            <Link href="/work/hiltech" className="text-sm text-stone-600 transition hover:text-stone-900">
-              HILTECH Case Study
-            </Link>
-            <Link href="/work/tuscanini" className="text-sm text-stone-600 transition hover:text-stone-900">
-              Tuscanini Case Study
-            </Link>
+      <section className="section-wrap py-14 md:py-18">
+        <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">Product direction</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">The exchange is the core. The social layer makes the marketplace feel alive.</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">The product direction moved beyond a plain buy/sell-style listing feed. Stories, Motion, city-aware activity, emotional deal milestones, voice, and personal recap surfaces are used to make item exchange feel more human and locally relevant.</p>
+          </div>
+          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Current stack</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {stack.map((item) => <span key={item} className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-700">{item}</span>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-stone-200 bg-stone-950 text-white">
+        <div className="section-wrap py-14 md:py-16">
+          <h2 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Why Teswa matters in this portfolio</h2>
+          <p className="mt-5 max-w-4xl leading-relaxed text-stone-300">It demonstrates mobile product execution across UI, native capabilities, data, notifications, offline behavior, release operations, and evolving product direction — not just screen implementation.</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/work/hiltech" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">View HILTECH</Link>
+            <Link href="/work" className="rounded-full border border-white/40 px-5 py-2 text-sm font-medium">View all work</Link>
           </div>
         </div>
       </section>

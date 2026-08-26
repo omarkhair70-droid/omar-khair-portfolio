@@ -1,270 +1,162 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Selected Work — Omar Khair",
   description:
-    "Selected work by Omar Khair across business websites, ordering experiences, RFQ systems, product catalogs, dashboards, and digital systems.",
-  alternates: {
-    canonical: "/work"
-  }
+    "Selected work by Omar Khair across business systems, mobile products, Android social platforms, ordering experiences, and professional websites.",
+  alternates: { canonical: "/work" }
 };
 
-type WorkProject = {
+type Project = {
   title: string;
   category: string;
   description: string;
-  proofPoints: string[];
-  screenshots: {
-    src: string;
-    alt: string;
-  }[];
-  links: {
-    label: string;
-    href: string;
-    internal: boolean;
-  }[];
+  proof: string[];
+  status: string;
+  caseStudy?: string;
+  live?: string;
+  repo?: string;
+  featured?: boolean;
 };
 
-const projects: WorkProject[] = [
+const projects: Project[] = [
   {
     title: "HILTECH — Network Infrastructure Website & RFQ System",
     category: "B2B Website + Business System",
     description:
-      "A B2B website and RFQ operations system for a network infrastructure company — combining company presentation, product discovery, request collection, admin visibility, quotation workflow, and customer follow-up.",
-    proofPoints: [
-      "Product catalog",
-      "RFQ basket",
-      "Admin RFQ dashboard",
-      "RFQ Command Center",
-      "Quotation Builder",
-      "Customer tracking",
-      "Inventory context",
-      "Analytics events"
-    ],
-    screenshots: [
-      { src: "/project-screenshots/hiltech-homepage.png", alt: "HILTECH homepage and company presentation" },
-      { src: "/project-screenshots/hiltech-rfq-basket.png", alt: "HILTECH RFQ basket flow" },
-      { src: "/project-screenshots/hiltech-products-catalog.png", alt: "HILTECH products catalog" }
-    ],
-    links: [
-      { label: "View case study", href: "/work/hiltech", internal: true },
-      { label: "Visit live project", href: "https://hiltech-eg-website.vercel.app/", internal: false }
-    ]
+      "A production business platform combining corporate presentation, product discovery, RFQ capture, customer tracking, quotation workflows, and internal admin operations.",
+    proof: ["Next.js + TypeScript", "Supabase-backed RFQ data", "Product catalog + request basket", "Admin dashboards + reporting", "Quotation and follow-up workflow"],
+    status: "Live system",
+    caseStudy: "/work/hiltech",
+    live: "https://hiltech-eg-website.vercel.app/",
+    featured: true
   },
   {
-    title: "Teswa — Arabic-First Mobile Swap Marketplace",
-    category: "Mobile Marketplace Product — In Development",
+    title: "Teswa — Arabic-First Social Swap Marketplace",
+    category: "Mobile Product",
     description:
-      "An Arabic-first mobile marketplace product in development for item-to-item swapping, with onboarding/auth foundations, browse/search flows, and backend delivery planning.",
-    proofPoints: [
-      "Arabic-first mobile product experience",
-      "Auth + onboarding foundation",
-      "Marketplace browse/search and item detail flow",
-      "Push notification foundation + backend delivery work"
-    ],
-    screenshots: [],
-    links: [{ label: "View case study", href: "/work/teswa", internal: true }]
+      "Arabic-first mobile marketplace and social exchange product spanning item discovery, stories, video-led discovery, offers, messaging, voice, notifications, offline memory, and native security.",
+    proof: ["Expo / React Native + TypeScript", "Supabase auth/data/storage", "Push delivery + notifications", "SQLite offline memory", "Media, location, biometrics, Google Sign-In", "Google Play release operations"],
+    status: "Live / post-launch on Google Play",
+    caseStudy: "/work/teswa",
+    repo: "https://github.com/omarkhair70-droid/teswa.eg",
+    featured: true
   },
   {
-    title: "Habba",
-    category: "Handmade Accessories Store + Smart Product Finder",
+    title: "Nova — Native Android Social Platform",
+    category: "Android + Backend Architecture",
     description:
-      "A colorful Arabic storefront for handmade bead accessories, with guided discovery, featured products, bundle/drop flows, and WhatsApp ordering.",
-    proofPoints: [
-      "Arabic-first storefront",
-      "Habba Match / product finder",
-      "Collection and product-detail flow",
-      "WhatsApp ordering path"
-    ],
-    screenshots: [],
-    links: [
-      { label: "View case study", href: "/work/habba", internal: true },
-      { label: "Visit live project", href: "https://habba-store.vercel.app/", internal: false }
-    ]
+      "A Kotlin Android social product with messaging, calls, stories/reels, notifications, privacy/security, REST APIs, WebSockets, and a deeply governed architecture consolidation.",
+    proof: ["Kotlin Android", "Django backend", "REST + WebSockets", "Messaging + calls + social media domains", "CI / Android release gates", "Feature ownership and architecture enforcement"],
+    status: "Active product / architecture hardened",
+    repo: "https://github.com/omarkhair-labs/nova"
   },
   {
-    title: "Bahja Store",
-    category: "Handmade Boutique Storefront",
+    title: "Balcona Bar — Cafe Operating System",
+    category: "Full-Stack SaaS / Operations",
     description:
-      "A warm Arabic storefront for a handmade boutique, built around product discovery, custom orders, cart-style selection, and WhatsApp inquiry flow.",
-    proofPoints: ["RTL product browsing", "Handmade categories", "Installable PWA storefront", "Cart/order-bag flow"],
-    screenshots: [],
-    links: [
-      { label: "View case study", href: "/work/bahja-store", internal: true },
-      { label: "Visit live project", href: "https://bahja-store.vercel.app/", internal: false }
-    ]
+      "A cafe operating system covering customer ordering, AI waiter, cashier, kitchen/barista, waiter operations, owner analytics, billing/payments, inventory, tenant onboarding, and deployment foundations.",
+    proof: ["Next.js + NestJS", "Prisma + PostgreSQL + Redis", "Docker + CI", "Role/branch access", "Owner analytics + operations", "AWS/Terraform foundations"],
+    status: "Advanced product build",
+    repo: "https://github.com/omarkhair70-droid/balcona-bar"
   },
   {
-    title: "Tuscanini — Arabic Fast-Food Ordering Experience",
-    category: "Arabic RTL Ordering System",
+    title: "WaveZero — Music Experience & Native Playback",
+    category: "Flutter + Native Android",
     description:
-      "An Arabic-first fast-food ordering experience built around menu browsing, offers, cart flow, order submission, customer tracking, admin order management, and mobile-first usability.",
-    proofPoints: ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Cart flow", "Order tracking"],
-    screenshots: [
-      { src: "/project-screenshots/tuscanini-order-flow.png", alt: "Tuscanini ordering flow interface" },
-      { src: "/project-screenshots/tuscanini-menu.png", alt: "Tuscanini menu and category browsing" },
-      { src: "/project-screenshots/tuscanini-offers.png", alt: "Tuscanini offers preview section" }
-    ],
-    links: [
-      { label: "View case study", href: "/work/tuscanini", internal: true },
-      { label: "Visit live project", href: "https://tuscanini-ordering-system.vercel.app/", internal: false }
-    ]
+      "A Flutter music product connected to native Kotlin Media3 / ExoPlayer playback with queue persistence, MediaSession controls, local device music, downloads, offline playback, and Rust foundations.",
+    proof: ["Flutter consumer UI", "Kotlin + AndroidX Media3", "MethodChannel bridge", "Offline/download behavior", "MediaSession + notification controls", "Rust core/API foundations"],
+    status: "Working Android product foundation",
+    repo: "https://github.com/omarkhair70-droid/wavezero"
   },
   {
-    title: "Farrag Coffee — RTL Coffee Brand & Ordering Experience",
-    category: "Coffee Brand + Ordering Experience",
+    title: "Senior Pharmacist Portfolio",
+    category: "Professional Website / Client Delivery",
     description:
-      "A premium RTL coffee brand experience for بن فراج with brand storytelling, product discovery, Coffee Finder recommendations, grind selection, cart flow, Supabase product loading, and WhatsApp ordering.",
-    proofPoints: ["Premium RTL brand", "Coffee Finder", "Product catalog", "Cart experience", "WhatsApp ordering"],
-    screenshots: [
-      { src: "/project-screenshots/ben-farag-hero.png", alt: "Farrag Coffee RTL brand hero section" },
-      { src: "/project-screenshots/ben-farag-coffee-finder.png", alt: "Farrag Coffee Finder recommendations" },
-      { src: "/project-screenshots/ben-farag-process-reviews.png", alt: "Farrag Coffee product and journey sections" }
-    ],
-    links: [
-      { label: "View case study", href: "/work/farrag-coffee", internal: true },
-      { label: "Visit live project", href: "https://farrag-coffee-v2.vercel.app/", internal: false }
-    ]
+      "A production professional portfolio translating a long healthcare career into one shareable website with experience, education, downloadable CV, and direct contact flows.",
+    proof: ["Next.js responsive website", "Career/experience information architecture", "CV download", "Phone + WhatsApp + email", "Production Vercel deployment"],
+    status: "Delivered",
+    caseStudy: "/work/pharmacist-portfolio",
+    live: "https://pharmacist-portfolio.vercel.app/"
+  },
+  {
+    title: "Farrag Coffee",
+    category: "RTL Brand + Ordering Experience",
+    description:
+      "Arabic RTL coffee experience with product discovery, guided recommendations, cart-style flow, WhatsApp ordering, and protected product administration.",
+    proof: ["Next.js + TypeScript", "Supabase products", "RLS", "Server-side admin writes", "HttpOnly signed admin session"],
+    status: "Live web experience",
+    caseStudy: "/work/farrag-coffee",
+    live: "https://farrag-coffee-v2.vercel.app/"
+  },
+  {
+    title: "Habba & Bahja",
+    category: "Arabic Storefronts",
+    description:
+      "Two Arabic-first handmade product storefront directions covering discovery, guided matching, product presentation, PWA-style behavior, and WhatsApp conversion paths.",
+    proof: ["Arabic / RTL product experience", "Responsive storefronts", "Product discovery", "WhatsApp conversion", "Next.js deployment"],
+    status: "Live portfolio proof",
+    caseStudy: "/work/habba"
+  },
+  {
+    title: "Tuscanini",
+    category: "Arabic Ordering Experience",
+    description:
+      "Mobile-first Arabic restaurant ordering direction with menu/category discovery, offers, cart flow, PWA behavior, order-oriented UX, and admin foundations.",
+    proof: ["Next.js + TypeScript", "Arabic / RTL UX", "PWA direction", "Menu + cart flows", "Admin route foundation"],
+    status: "Product prototype / staged build",
+    caseStudy: "/work/tuscanini",
+    live: "https://tuscanini-ordering-system.vercel.app/"
   }
-];
-
-const capabilityPoints = [
-  "Websites can become request systems.",
-  "Menus can become ordering flows.",
-  "Product lists can become catalogs with customer actions.",
-  "Simple contact can become structured follow-up.",
-  "Admin dashboards can turn website activity into business visibility."
 ];
 
 export default function WorkPage() {
   return (
-    <main className="bg-stone-50 pb-20">
-      <section className="section-wrap py-16 md:py-22">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Selected Work</p>
-        <h1 className="mt-4 max-w-5xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
-          Websites and digital systems built for real business workflows.
-        </h1>
-        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-stone-600">
-          A focused collection of business websites, ordering experiences, product catalogs, RFQ systems, dashboards,
-          and customer-facing tools.
-        </p>
-        <p className="mt-5 text-base font-semibold text-stone-900">From clean brand websites to working business systems.</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/#contact" className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white">
-            Start a Project
-          </Link>
-          <Link href="/" className="rounded-full border border-stone-300 px-6 py-3 text-sm font-medium text-stone-900">
-            Back to Home
-          </Link>
-        </div>
+    <main className="min-h-screen bg-stone-50 text-stone-950">
+      <section className="section-wrap py-14 md:py-20">
+        <Link href="/" className="text-sm font-medium text-stone-600">← Back home</Link>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Selected work</p>
+        <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">Not one stack. Different products, different constraints.</h1>
+        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600">The strongest proof across business systems, native Android, mobile products, operational software, consumer experiences, and smaller client websites.</p>
       </section>
 
-      <section className="section-wrap py-8 md:py-12">
-        <div className="space-y-6">
+      <section className="section-wrap pb-16 md:pb-20">
+        <div className="space-y-5">
           {projects.map((project) => (
-            <article key={project.title} className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+            <article key={project.title} className={`rounded-3xl border p-6 shadow-sm md:p-8 ${project.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white"}`}>
               <div className="flex flex-wrap items-start justify-between gap-4">
-                <h2 className="max-w-3xl text-2xl font-semibold tracking-tight">{project.title}</h2>
-                <p
-                  className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
-                >
-                  {project.category}
-                </p>
-              </div>
-              <p className="mt-4 text-stone-600">{project.description}</p>
-
-              <div className="mt-5 rounded-2xl border border-stone-200 bg-stone-50 p-3">
-                <div className="grid gap-3 sm:grid-cols-3">
-                  {project.screenshots.length > 0 ? project.screenshots.map((shot) => (
-                    <div key={shot.src} className="rounded-xl border border-stone-200 bg-white p-2">
-                      <Image
-                        src={shot.src}
-                        alt={shot.alt}
-                        width={1200}
-                        height={700}
-                        className="h-auto w-full rounded-lg object-contain"
-                      />
-                    </div>
-                  )) : (
-                    <div className="rounded-xl border border-dashed border-stone-300 bg-white p-5">
-                      <p className="text-sm font-semibold text-stone-900">{project.title}</p>
-                      <p className="mt-1 text-xs text-stone-600">{project.category}</p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {project.proofPoints.slice(0, 3).map((point) => (
-                          <span key={point} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] text-stone-700">
-                            {point}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                <div className="max-w-4xl">
+                  <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${project.featured ? "text-stone-300" : "text-stone-500"}`}>{project.category}</p>
+                  <h2 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">{project.title}</h2>
                 </div>
+                <span className={`rounded-full border px-3 py-1 text-xs font-medium ${project.featured ? "border-white/30 bg-white/10" : "border-stone-200 bg-stone-50"}`}>{project.status}</span>
               </div>
-
-              <ul className="mt-5 grid gap-2 text-sm text-stone-700 md:grid-cols-2">
-                {project.proofPoints.map((point) => (
-                  <li key={point}>• {point}</li>
+              <p className={`mt-4 max-w-5xl leading-relaxed ${project.featured ? "text-stone-300" : "text-stone-600"}`}>{project.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.proof.map((point) => (
+                  <span key={point} className={`rounded-full border px-3 py-1.5 text-xs ${project.featured ? "border-white/20 text-stone-100" : "border-stone-200 bg-stone-50 text-stone-700"}`}>{point}</span>
                 ))}
-              </ul>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                {project.links.map((link) =>
-                  link.internal ? (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="rounded-full border border-stone-300 bg-stone-900 px-4 py-2 text-sm font-medium text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-900"
-                    >
-                      {link.label}
-                    </a>
-                  )
-                )}
-
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.caseStudy ? <Link href={project.caseStudy} className={`rounded-full px-4 py-2 text-sm font-medium ${project.featured ? "bg-white text-stone-900" : "bg-stone-900 text-white"}`}>View case study</Link> : null}
+                {project.live ? <a href={project.live} target="_blank" rel="noreferrer" className={`rounded-full border px-4 py-2 text-sm font-medium ${project.featured ? "border-white/40" : "border-stone-300"}`}>Visit live project</a> : null}
+                {project.repo ? <a href={project.repo} target="_blank" rel="noreferrer" className={`rounded-full border px-4 py-2 text-sm font-medium ${project.featured ? "border-white/40" : "border-stone-300"}`}>GitHub proof</a> : null}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section-wrap py-8 md:py-12">
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight">What these projects prove</h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilityPoints.map((point) => (
-              <li key={point} className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">
-                {point}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section-wrap pt-8">
-        <div className="rounded-2xl border border-stone-900 bg-stone-900 p-7 text-white shadow-sm md:p-9">
-          <h2 className="text-3xl font-semibold tracking-tight">Have a project that needs more than a basic website?</h2>
-          <p className="mt-4 max-w-3xl text-stone-300">
-            I build websites that can start simple and grow into product catalogs, ordering flows, RFQ systems,
-            dashboards, customer tracking, and internal tools.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/#contact" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">
-              Start a Project
-            </Link>
-            <Link href="/work/hiltech" className="rounded-full border border-white/70 px-5 py-2 text-sm font-medium text-white">
-              View HILTECH Case Study
-            </Link>
+      <section className="border-t border-stone-200 bg-white">
+        <div className="section-wrap py-14 md:py-16">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-stone-500">Need something smaller?</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight">A local clinic or business website does not need the scope of Nova or HILTECH.</h2>
+              <p className="mt-3 max-w-3xl text-stone-600">That’s why I keep a separate compact launch offer instead of pretending every project needs a full software-system budget.</p>
+            </div>
+            <Link href="/local-business" className="rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-medium text-white">View local launch offer</Link>
           </div>
         </div>
       </section>

@@ -124,7 +124,7 @@ export default function WorkPage() {
             <article key={project.title} className={`overflow-hidden rounded-3xl border shadow-sm ${project.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white"}`}>
               {project.image ? (
                 <div className={`relative aspect-[16/9] overflow-hidden border-b ${project.featured ? "border-white/10 bg-white" : "border-stone-200 bg-stone-100"}`}>
-                  <Image src={project.image} alt={`${project.title} selected interface screens`} fill sizes="100vw" className={`object-cover ${project.imageClassName ?? ""}`} />
+                  <Image src={project.image} alt={`${project.title} selected interface screens`} fill sizes="100vw" className={`object-cover ${project.image.includes("/project-showcases/") ? "scale-[1.45]" : ""}`} />
                 </div>
               ) : null}
               <div className="p-6 md:p-8">

@@ -51,12 +51,12 @@ export default function OpenGraphImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 64, fontWeight: 700, letterSpacing: "-0.03em" }}>Omar Khair</div>
-            <div style={{ fontSize: 28, color: "#d6d3d1", letterSpacing: "0.12em" }}>WEBSITES &amp; DIGITAL SYSTEMS</div>
+            <div style={{ fontSize: 27, color: "#d6d3d1", letterSpacing: "0.1em" }}>PRODUCT BUILDER · WEB &amp; MOBILE</div>
           </div>
         </div>
 
-        <div style={{ fontSize: 38, color: "#e7e5e4", letterSpacing: "-0.01em" }}>
-          Business websites • Ordering experiences • RFQ systems • Dashboards
+        <div style={{ fontSize: 36, color: "#e7e5e4", letterSpacing: "-0.01em" }}>
+          Websites • Mobile products • Business systems • Product execution
         </div>
       </div>
     ),

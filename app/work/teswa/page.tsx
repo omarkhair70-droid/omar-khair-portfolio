@@ -33,10 +33,10 @@ export default function TeswaCaseStudyPage() {
       </section>
 
       <section className="section-wrap pb-14">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-stone-200 bg-stone-100 shadow-sm">
-          <Image src="/project-showcases/teswa.webp" alt="Selected Teswa marketplace, social, messaging, and product screens" fill sizes="100vw" className="scale-[1.42] object-cover" priority />
+        <div className="relative h-[680px] overflow-hidden rounded-3xl border border-stone-200 bg-stone-100 shadow-sm">
+          <Image src="/project-showcases/teswa.webp" alt="Teswa marketplace discovery screen" fill sizes="100vw" className="object-contain p-5 sm:p-8" priority />
         </div>
-        <p className="mt-3 text-sm text-stone-500">Selected real product surfaces from the current Teswa experience.</p>
+        <p className="mt-3 text-sm text-stone-500">A real Teswa product screen shown at readable scale.</p>
       </section>
 
       <section className="border-y border-stone-200 bg-white">

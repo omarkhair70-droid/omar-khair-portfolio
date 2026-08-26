@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfolio.vercel.app";
+const title = "Omar Khair — Product Builder | Web & Mobile";
+const description =
+  "Omar Khair builds websites, mobile products, ordering experiences, RFQ systems, dashboards, and business software — from product direction to deployment.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Omar Khair — Websites & Digital Systems",
-  description:
-    "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
+  title,
+  description,
   openGraph: {
-    title: "Omar Khair — Websites & Digital Systems",
-    description:
-      "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
+    title,
+    description,
     url: siteUrl,
     siteName: "Omar Khair",
     type: "website",
@@ -19,9 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Khair — Websites & Digital Systems",
-    description:
-      "Omar Khair builds business websites, ordering experiences, product catalogs, RFQ systems, dashboards, and digital systems.",
+    title,
+    description,
     images: ["/twitter-image"]
   },
   icons: {

@@ -5,12 +5,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfoli
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${siteUrl}/`, changeFrequency: "weekly", priority: 1 },
+    { url: `${siteUrl}/local-business`, changeFrequency: "weekly", priority: 0.95 },
     { url: `${siteUrl}/work`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/work/hiltech`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/work/teswa`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/work/tuscanini`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/work/farrag-coffee`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/work/habba`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/work/bahja-store`, changeFrequency: "monthly", priority: 0.8 }
+    { url: `${siteUrl}/work/pharmacist-portfolio`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${siteUrl}/work/tuscanini`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/work/farrag-coffee`, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${siteUrl}/work/habba`, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${siteUrl}/work/bahja-store`, changeFrequency: "monthly", priority: 0.65 }
   ];
 }

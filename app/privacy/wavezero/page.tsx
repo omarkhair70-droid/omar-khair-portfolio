@@ -21,7 +21,15 @@ export const metadata: Metadata = {
   }
 };
 
-const sections = [
+type PolicySection = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+  closing?: string;
+};
+
+const sections: PolicySection[] = [
   {
     id: "device-music",
     title: "1. Device Music access",

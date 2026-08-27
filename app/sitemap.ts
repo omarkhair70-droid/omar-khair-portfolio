@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/work/tuscanini`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/work/farrag-coffee`, changeFrequency: "monthly", priority: 0.75 },
     { url: `${siteUrl}/work/habba`, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${siteUrl}/work/bahja-store`, changeFrequency: "monthly", priority: 0.65 }
+    { url: `${siteUrl}/work/bahja-store`, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${siteUrl}/privacy/wavezero`, changeFrequency: "monthly", priority: 0.5 }
   ];
 }

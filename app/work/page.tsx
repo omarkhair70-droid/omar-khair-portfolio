@@ -2,164 +2,416 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import ScrollReveal from "@/components/ScrollReveal";
+import { getProject, getProjectsByLane, type ProjectAction, type ProjectRecord } from "@/data/projects";
+import { getProjectVisualPlan, getVisual, projectVisuals, type CuratedVisual } from "@/data/project-visuals";
+
 export const metadata: Metadata = {
   title: "Selected Work — Omar Khair",
   description:
-    "Selected work by Omar Khair across business systems, mobile products, Android social platforms, ordering experiences, and professional websites.",
+    "Selected work across flagship products and systems, client delivery, creative direction, and independent digital work.",
   alternates: { canonical: "/work" }
 };
 
-type Project = {
-  title: string;
-  category: string;
-  description: string;
-  proof: string[];
-  status: string;
-  caseStudy?: string;
-  live?: string;
-  repo?: string;
-  image?: string;
-  featured?: boolean;
-};
+const flagshipOrder = ["teswa", "nova", "hiltech", "wavezero", "balcona-bar"] as const;
+const clientVisualIds = new Set(["tuscanini", "habba", "bahja"]);
 
-const projects: Project[] = [
-  {
-    title: "HILTECH — Network Infrastructure Website & RFQ System",
-    category: "B2B Website + Business System",
-    description: "A production platform combining corporate presentation, product discovery, RFQ capture, customer tracking, quotation workflows, and internal admin operations.",
-    proof: ["Next.js + TypeScript", "Supabase-backed RFQ data", "Product catalog + request basket", "Admin dashboards + reporting", "Quotation + follow-up workflow"],
-    status: "Live system",
-    caseStudy: "/work/hiltech",
-    live: "https://hiltech-eg-website.vercel.app/",
-    image: "/project-screenshots/hiltech-homepage.png",
-    featured: true
-  },
-  {
-    title: "Teswa — Arabic-First Social Swap Marketplace",
-    category: "Mobile Product",
-    description: "Arabic-first mobile marketplace and social exchange product spanning item discovery, stories, offers, messaging, notifications, offline memory, and native security.",
-    proof: ["Expo / React Native + TypeScript", "Supabase", "SQLite offline memory", "Media + notifications", "Google Play release operations"],
-    status: "Live / post-launch on Google Play",
-    caseStudy: "/work/teswa",
-    repo: "https://github.com/omarkhair70-droid/teswa.eg",
-    image: "/project-showcases/teswa.webp",
-    featured: true
-  },
-  {
-    title: "Nova — Native Android Social Platform",
-    category: "Android + Backend Architecture",
-    description: "A Kotlin Android social product with messaging, calls, stories/reels, notifications, privacy/security, REST APIs, WebSockets, and a deeply governed architecture consolidation.",
-    proof: ["Kotlin Android", "Django backend", "REST + WebSockets", "Messaging + calls", "CI / release gates"],
-    status: "Active product / architecture hardened",
-    repo: "https://github.com/omarkhair-labs/nova",
-    image: "/project-showcases/nova.webp"
-  },
-  {
-    title: "WaveZero — Music Experience & Native Playback",
-    category: "Flutter + Native Android",
-    description: "A Flutter music product connected to native Kotlin Media3 / ExoPlayer playback with queue persistence, MediaSession controls, local music, downloads, and offline playback.",
-    proof: ["Flutter consumer UI", "Kotlin + AndroidX Media3", "MethodChannel bridge", "Offline/download behavior", "Rust foundations"],
-    status: "Working Android product foundation",
-    repo: "https://github.com/omarkhair70-droid/wavezero",
-    image: "/project-showcases/wavezero.webp"
-  },
-  {
-    title: "Balcona Bar — Cafe Operating System",
-    category: "Full-Stack SaaS / Operations",
-    description: "Cafe operating system covering customer ordering, AI waiter, cashier, kitchen/barista, waiter operations, owner analytics, billing/payments, inventory, tenant onboarding, and deployment foundations.",
-    proof: ["Next.js + NestJS", "Prisma + PostgreSQL + Redis", "Docker + CI", "Role/branch access", "Owner analytics + operations"],
-    status: "Advanced product build",
-    repo: "https://github.com/omarkhair70-droid/balcona-bar"
-  },
-  {
-    title: "Senior Pharmacist Portfolio",
-    category: "Professional Website / Client Delivery",
-    description: "A production professional portfolio translating a long healthcare career into one shareable website with experience, education, downloadable CV, and direct contact flows.",
-    proof: ["Next.js responsive website", "Career information architecture", "CV download", "WhatsApp + email", "Vercel deployment"],
-    status: "Delivered",
-    caseStudy: "/work/pharmacist-portfolio",
-    live: "https://pharmacist-portfolio.vercel.app/"
-  },
-  {
-    title: "Farrag Coffee",
-    category: "RTL Brand + Ordering Experience",
-    description: "Arabic RTL coffee experience with product discovery, guided recommendations, cart-style flow, WhatsApp ordering, and protected product administration.",
-    proof: ["Next.js + TypeScript", "Supabase products", "RLS", "Server-side admin writes", "HttpOnly admin session"],
-    status: "Live web experience",
-    caseStudy: "/work/farrag-coffee",
-    live: "https://farrag-coffee-v2.vercel.app/"
-  },
-  {
-    title: "Habba & Bahja",
-    category: "Arabic Storefronts",
-    description: "Two Arabic-first handmade product storefront directions covering discovery, guided matching, product presentation, PWA-style behavior, and WhatsApp conversion paths.",
-    proof: ["Arabic / RTL product experience", "Responsive storefronts", "Product discovery", "WhatsApp conversion"],
-    status: "Live portfolio proof",
-    caseStudy: "/work/habba"
-  },
-  {
-    title: "Tuscanini",
-    category: "Arabic Ordering Experience",
-    description: "Mobile-first Arabic restaurant ordering direction with menu/category discovery, offers, cart flow, PWA behavior, order-oriented UX, and admin foundations.",
-    proof: ["Next.js + TypeScript", "Arabic / RTL UX", "PWA direction", "Menu + cart flows"],
-    status: "Product prototype / staged build",
-    caseStudy: "/work/tuscanini",
-    live: "https://tuscanini-ordering-system.vercel.app/"
+function actionClass(inverted: boolean) {
+  return [
+    "group inline-flex items-center gap-2 border-b pb-1 text-xs font-semibold uppercase tracking-[0.1em] transition",
+    inverted
+      ? "border-white/30 text-white hover:border-white"
+      : "border-black/25 text-[#11110f] hover:border-black"
+  ].join(" ");
+}
+
+function ProjectActionLink({ action, inverted = false }: { action: ProjectAction; inverted?: boolean }) {
+  const label = (
+    <>
+      <span>{action.label}</span>
+      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+        ↗
+      </span>
+    </>
+  );
+
+  if (!action.external) {
+    return <Link href={action.href} className={actionClass(inverted)}>{label}</Link>;
   }
-];
+
+  return <a href={action.href} target="_blank" rel="noreferrer" className={actionClass(inverted)}>{label}</a>;
+}
+
+function VisualSet({ projectId, visuals, mode }: { projectId: string; visuals: CuratedVisual[]; mode: "mobile" | "wide" | "single" }) {
+  if (mode === "wide") {
+    return (
+      <div className="work-wide-stage" aria-label={`${projectId} visual preview`}>
+        {visuals.slice(0, 3).map((visual, index) => (
+          <figure key={visual.sourceId} className={`work-wide-frame work-wide-frame--${index + 1}`}>
+            <Image
+              src={visual.publicPath}
+              alt={visual.alt}
+              fill
+              className="object-contain"
+              sizes={index === 0 ? "(min-width: 1024px) 62vw, 94vw" : "(min-width: 1024px) 28vw, 48vw"}
+            />
+          </figure>
+        ))}
+      </div>
+    );
+  }
+
+  if (mode === "single") {
+    const visual = visuals[0];
+    if (!visual) return null;
+    return (
+      <div className="work-single-stage">
+        <figure className="work-single-frame">
+          <Image
+            src={visual.publicPath}
+            alt={visual.alt}
+            fill
+            className="object-contain"
+            sizes="(min-width: 1024px) 46vw, 88vw"
+          />
+        </figure>
+      </div>
+    );
+  }
+
+  return (
+    <div className="work-phone-stage" aria-label={`${projectId} visual preview`}>
+      {visuals.slice(0, 3).map((visual, index) => (
+        <figure key={visual.sourceId} className={`work-phone-frame work-phone-frame--${index + 1}`}>
+          <Image
+            src={visual.publicPath}
+            alt={visual.alt}
+            fill
+            className="object-contain"
+            sizes="(min-width: 1024px) 23vw, 48vw"
+          />
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+function FlagshipProject({ project, index }: { project: ProjectRecord; index: number }) {
+  const plan = getProjectVisualPlan(project.id);
+  const visuals = plan.work.map(getVisual);
+  const mode: "mobile" | "wide" | "single" =
+    project.id === "hiltech" ? "wide" : project.id === "balcona-bar" ? "single" : "mobile";
+  const dark = index % 2 === 0;
+  const surface = dark ? "bg-[#11110f] text-[#f4f0e7]" : "bg-[#f1eee6] text-[#11110f]";
+  const muted = dark ? "text-[#aaa59a]" : "text-[#6f6a60]";
+  const rule = dark ? "border-white/15" : "border-black/15";
+
+  return (
+    <section className={surface}>
+      <div className="home-editorial-shell py-20 sm:py-24 lg:py-32">
+        <ScrollReveal>
+          <div className={`grid gap-6 border-t pt-5 lg:grid-cols-[0.68fr_1.32fr] ${rule}`}>
+            <div className={muted}>
+              <p className="home-meta">0{index + 1} / Flagship</p>
+              <p className="home-meta mt-3">{project.stack.slice(0, 3).join(" · ")}</p>
+            </div>
+            <div>
+              <div className="flex flex-wrap items-start justify-between gap-5">
+                <h2 className="text-[clamp(3.8rem,8.2vw,8.5rem)] font-semibold leading-[0.84] tracking-[-0.065em]">
+                  {project.shortTitle}
+                </h2>
+                <p className={`home-meta mt-2 flex items-center gap-2 ${muted}`}>
+                  <span className="h-2 w-2 rounded-full bg-current" aria-hidden="true" />
+                  {project.status.label}
+                </p>
+              </div>
+              <p className={`mt-7 max-w-4xl text-xl leading-snug sm:text-2xl lg:text-3xl ${muted}`}>
+                {project.summary}
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={80} className="mt-12 lg:mt-16">
+          <VisualSet projectId={project.id} visuals={visuals} mode={mode} />
+        </ScrollReveal>
+
+        <ScrollReveal delay={120} className="mt-9">
+          <div className={`grid gap-6 border-t pt-5 lg:grid-cols-[0.68fr_1.32fr] ${rule}`}>
+            <p className={`home-meta max-w-sm ${muted}`}>{project.role}</p>
+            <div className="flex flex-wrap items-end justify-between gap-7">
+              <div className="flex max-w-3xl flex-wrap gap-x-5 gap-y-2">
+                {project.proof.map((item) => (
+                  <span key={item} className={`text-sm ${muted}`}>{item}</span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-5">
+                {project.actions.slice(0, 3).map((action) => (
+                  <ProjectActionLink key={`${action.kind}-${action.href}`} action={action} inverted={dark} />
+                ))}
+              </div>
+            </div>
+          </div>
+          {project.caveat ? <p className={`mt-4 max-w-3xl text-xs leading-relaxed ${muted}`}>{project.caveat}</p> : null}
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+function ClientVisualProject({ project, index }: { project: ProjectRecord; index: number }) {
+  const plan = projectVisuals[project.id];
+  const visuals = plan ? plan.work.slice(0, 3).map(getVisual) : [];
+
+  return (
+    <ScrollReveal delay={index * 45}>
+      <article className="work-client-feature border-t border-black/15 py-8 sm:py-10">
+        <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+          <div>
+            <p className="home-meta text-[#686259]">0{index + 1} / Client</p>
+            <h3 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">{project.shortTitle}</h3>
+            <p className="mt-5 max-w-md leading-relaxed text-[#6f6a60]">{project.summary}</p>
+            <p className="home-meta mt-7 text-[#686259]">{project.status.label}</p>
+            <div className="mt-6 flex flex-wrap gap-5">
+              {project.actions.slice(0, 2).map((action) => (
+                <ProjectActionLink key={`${action.kind}-${action.href}`} action={action} />
+              ))}
+            </div>
+          </div>
+
+          {visuals.length ? (
+            <div className="work-client-visuals">
+              {visuals.map((visual, visualIndex) => (
+                <figure key={visual.sourceId} className={`work-client-phone work-client-phone--${visualIndex + 1}`}>
+                  <Image
+                    src={visual.publicPath}
+                    alt={visual.alt}
+                    fill
+                    className="object-contain"
+                    sizes="(min-width: 1024px) 18vw, 40vw"
+                  />
+                </figure>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </article>
+    </ScrollReveal>
+  );
+}
+
+function EditorialProjectRow({
+  project,
+  index,
+  inverted = false,
+  warm = false
+}: {
+  project: ProjectRecord;
+  index: number;
+  inverted?: boolean;
+  warm?: boolean;
+}) {
+  const muted = inverted ? "text-white/90" : warm ? "text-black/75" : "text-[#686259]";
+  const summary = inverted ? "text-white/90" : warm ? "text-black/80" : "text-[#5f5a51]";
+  const rule = inverted ? "border-white/15" : "border-black/15";
+
+  return (
+    <ScrollReveal delay={index * 40}>
+      <article className={`grid gap-5 border-t py-7 sm:grid-cols-[64px_0.9fr_1.1fr_auto] sm:items-start ${rule}`}>
+        <p className={`home-meta ${muted}`}>{String(index + 1).padStart(2, "0")}</p>
+        <div>
+          <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{project.shortTitle}</h3>
+          <p className={`home-meta mt-3 ${muted}`}>{project.status.label}</p>
+        </div>
+        <div>
+          <p className={`max-w-2xl leading-relaxed ${summary}`}>{project.summary}</p>
+          <p className={`mt-4 text-sm ${muted}`}>{project.proof.join(" · ")}</p>
+          {project.caveat ? <p className={`mt-3 text-xs leading-relaxed ${muted}`}>{project.caveat}</p> : null}
+        </div>
+        <div className="flex flex-wrap gap-4 sm:justify-end">
+          {project.actions.slice(0, 2).map((action) => (
+            <ProjectActionLink key={`${action.kind}-${action.href}`} action={action} inverted={inverted} />
+          ))}
+        </div>
+      </article>
+    </ScrollReveal>
+  );
+}
 
 export default function WorkPage() {
-  return (
-    <main className="min-h-screen bg-stone-50 text-stone-950">
-      <section className="section-wrap py-14 md:py-20">
-        <Link href="/" className="text-sm font-medium text-stone-600">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Selected work</p>
-        <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">Different products. Real screens. Different constraints.</h1>
-        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600">The strongest proof across business systems, native Android, mobile products, operational software, consumer experiences, and client websites.</p>
-      </section>
+  const flagships = flagshipOrder.map(getProject);
+  const clientProjects = getProjectsByLane("client");
+  const visualClients = clientProjects.filter((project) => clientVisualIds.has(project.id));
+  const textClients = clientProjects.filter((project) => !clientVisualIds.has(project.id));
+  const creativeProjects = getProjectsByLane("creative");
+  const independentProjects = getProjectsByLane("independent");
 
-      <section className="section-wrap pb-16 md:pb-20">
-        <div className="space-y-5">
-          {projects.map((project) => (
-            <article key={project.title} className={`overflow-hidden rounded-3xl border shadow-sm ${project.featured ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white"}`}>
-              {project.image ? (
-                <div className={`relative overflow-hidden border-b ${project.featured ? "border-white/10 bg-white" : "border-stone-200 bg-stone-100"} ${project.image.includes("/project-showcases/") ? "h-[580px]" : "aspect-[16/9]"}`}>
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} interface screen`}
-                    fill
-                    sizes="100vw"
-                    className={project.image.includes("/project-showcases/") ? "object-contain p-5 sm:p-8" : "object-cover"}
-                  />
-                </div>
-              ) : null}
-              <div className="p-6 md:p-8">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="max-w-4xl">
-                    <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${project.featured ? "text-stone-300" : "text-stone-500"}`}>{project.category}</p>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">{project.title}</h2>
-                  </div>
-                  <span className={`rounded-full border px-3 py-1 text-xs font-medium ${project.featured ? "border-white/30 bg-white/10" : "border-stone-200 bg-stone-50"}`}>{project.status}</span>
-                </div>
-                <p className={`mt-4 max-w-5xl leading-relaxed ${project.featured ? "text-stone-300" : "text-stone-600"}`}>{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">{project.proof.map((point) => <span key={point} className={`rounded-full border px-3 py-1.5 text-xs ${project.featured ? "border-white/20 text-stone-100" : "border-stone-200 bg-stone-50 text-stone-700"}`}>{point}</span>)}</div>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {project.caseStudy ? <Link href={project.caseStudy} className={`rounded-full px-4 py-2 text-sm font-medium ${project.featured ? "bg-white text-stone-900" : "bg-stone-900 text-white"}`}>View case study</Link> : null}
-                  {project.live ? <a href={project.live} target="_blank" rel="noreferrer" className={`rounded-full border px-4 py-2 text-sm font-medium ${project.featured ? "border-white/40" : "border-stone-300"}`}>Visit live project</a> : null}
-                  {project.repo ? <a href={project.repo} target="_blank" rel="noreferrer" className={`rounded-full border px-4 py-2 text-sm font-medium ${project.featured ? "border-white/40" : "border-stone-300"}`}>GitHub proof</a> : null}
-                </div>
-              </div>
-            </article>
-          ))}
+  return (
+    <main className="overflow-clip bg-[var(--paper)] text-[var(--ink)]">
+      <section className="work-index-hero border-b border-black/15">
+        <div className="home-editorial-shell py-10 sm:py-14 lg:py-20">
+          <ScrollReveal>
+            <div className="grid gap-5 border-t border-black/20 pt-4 sm:grid-cols-2">
+              <p className="home-meta">Selected work / complete index</p>
+              <p className="home-meta text-[#686259] sm:text-right">Products · systems · client · visual · independent</p>
+            </div>
+
+            <h1 className="mt-12 select-none text-[clamp(5rem,15vw,14rem)] font-semibold uppercase leading-[0.69] tracking-[-0.085em]">
+              <span className="block">Selected</span>
+              <span className="home-display-serif block font-normal italic normal-case tracking-[-0.07em]">work.</span>
+            </h1>
+
+            <div className="mt-12 grid gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+              <p className="home-meta max-w-[17rem] leading-relaxed text-[#686259]">
+                Strongest proof first. Supporting work keeps its own weight instead of competing with the flagships.
+              </p>
+              <p className="max-w-4xl text-[clamp(1.55rem,3vw,3.3rem)] leading-[1.05] tracking-[-0.04em]">
+                This is not a repository dump. Each lane answers a different question about what I can own, build, deliver, or direct.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="mt-16 grid border-y border-black/15 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ["01", "Flagship", "Product + engineering depth", "#flagship"],
+                ["02", "Client", "Business delivery", "#client"],
+                ["03", "Creative", "Visual direction + evolution", "#creative"],
+                ["04", "Independent", "Self-directed work", "#independent"]
+              ].map(([number, title, text, href], index) => (
+                <a
+                  key={title}
+                  href={href}
+                  className={`group py-6 sm:px-5 ${index > 0 ? "sm:border-l sm:border-black/15" : ""}`}
+                >
+                  <p className="home-meta text-[#686259]">{number}</p>
+                  <p className="mt-5 text-2xl font-semibold tracking-[-0.04em]">{title}</p>
+                  <p className="mt-2 text-sm text-[#686259]">{text}</p>
+                  <span aria-hidden="true" className="mt-5 inline-block transition-transform duration-300 group-hover:translate-y-1">↓</span>
+                </a>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="border-t border-stone-200 bg-white">
-        <div className="section-wrap py-14 md:py-16">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div><p className="text-sm font-semibold uppercase tracking-[0.14em] text-stone-500">Need something smaller?</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">A local clinic or business website does not need the scope of Nova or HILTECH.</h2><p className="mt-3 max-w-3xl text-stone-600">The 1,000 EGP local launch package stays separate from custom project ranges so a small landing site and a real software system are never presented as the same thing.</p></div>
-            <Link href="/local-business" className="rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-medium text-white">View local launch offer</Link>
+      <section id="flagship" className="scroll-mt-20 bg-[#11110f] text-[#f4f0e7]">
+        <div className="home-editorial-shell py-20 sm:py-24 lg:py-32">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#aaa59a]">01 / Flagship products & systems</p>
+              <div>
+                <h2 className="text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.065em]">
+                  The work that carries the technical story.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#aaa59a]">
+                  Product ownership, native/mobile depth, backend systems, business workflows, release operations, and live product evidence.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {flagships.map((project, index) => (
+        <FlagshipProject key={project.id} project={project} index={index} />
+      ))}
+
+      <section id="client" className="scroll-mt-20 bg-[#fbf9f4]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">02 / Client & business work</p>
+              <div>
+                <h2 className="text-[clamp(3.3rem,6.6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
+                  Real constraints. Real conversion paths.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#6f6a60]">
+                  These projects prove translation from a business need into a shipped interface, Arabic-first journey, or customer-facing workflow.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16">
+            {visualClients.map((project, index) => (
+              <ClientVisualProject key={project.id} project={project} index={index} />
+            ))}
           </div>
+
+          <div className="mt-8 border-b border-black/15">
+            {textClients.map((project, index) => (
+              <EditorialProjectRow key={project.id} project={project} index={index + visualClients.length} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="creative" className="scroll-mt-20 bg-[#ff5a2f] text-[#11110f]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-black/70">03 / Creative · brand · visual</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,7.4rem)] font-semibold leading-[0.88] tracking-[-0.065em]">
+                  Visual judgment is part of the build.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-black/72">
+                  Brand composition, Arabic-first visual direction, progression, and motion-led work sit here without pretending to be engineering flagships.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16 border-b border-black/20">
+            {creativeProjects.map((project, index) => (
+              <EditorialProjectRow key={project.id} project={project} index={index} warm />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="independent" className="scroll-mt-20 bg-[#3157ff] text-white">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-white/90">04 / Independent · editorial</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,7.4rem)] font-semibold leading-[0.88] tracking-[-0.065em]">
+                  Work that starts from a question, not a brief.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/90">
+                  Self-directed projects stay only when they prove a dimension that commercial work does not.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16 border-b border-white/15">
+            {independentProjects.map((project, index) => (
+              <EditorialProjectRow key={project.id} project={project} index={index} inverted />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 border-t border-black/15 pt-7 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">Next / go deeper</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+                  The index is the map. The case studies carry the decisions.
+                </h2>
+                <div className="mt-8 flex flex-wrap gap-7">
+                  <Link href="/" className="home-text-link">Back home ↗</Link>
+                  <Link href="/about" className="home-text-link">About & capabilities ↗</Link>
+                  <Link href="/contact" className="home-text-link">Start a project ↗</Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </main>

@@ -1,0 +1,490 @@
+{
+  "version": 1,
+  "audit_date": "2026-08-27",
+  "source_pack": "memo(1).zip",
+  "source_image_count": 136,
+  "approved_count": 55,
+  "source_dimensions": [
+    738,
+    1599
+  ],
+  "pack_segments": {
+    "balcona-bar": [
+      "P001",
+      "P003"
+    ],
+    "tuscanini": [
+      "P004",
+      "P014"
+    ],
+    "habba": [
+      "P015",
+      "P031"
+    ],
+    "bahja": [
+      "P032",
+      "P044"
+    ],
+    "hiltech": [
+      "P045",
+      "P064"
+    ],
+    "nova": [
+      "P065",
+      "P082"
+    ],
+    "teswa": [
+      "P083",
+      "P127"
+    ],
+    "wavezero": [
+      "P128",
+      "P136"
+    ]
+  },
+  "projects": {
+    "balcona-bar": {
+      "hero": "P003",
+      "home": [],
+      "work": [
+        "P003"
+      ],
+      "case": [
+        {
+          "id": "P003",
+          "name": "customer-entry.webp"
+        }
+      ],
+      "rejected": [
+        "P001",
+        "P002"
+      ],
+      "capture_priority": "P0"
+    },
+    "tuscanini": {
+      "hero": "P011",
+      "home": [
+        "P011"
+      ],
+      "work": [
+        "P011",
+        "P009",
+        "P007"
+      ],
+      "case": [
+        {
+          "id": "P013",
+          "name": "category-grid.webp"
+        },
+        {
+          "id": "P011",
+          "name": "menu.webp"
+        },
+        {
+          "id": "P008",
+          "name": "food-finder.webp"
+        },
+        {
+          "id": "P004",
+          "name": "recommendation.webp"
+        },
+        {
+          "id": "P009",
+          "name": "customization.webp"
+        },
+        {
+          "id": "P006",
+          "name": "cart.webp"
+        },
+        {
+          "id": "P005",
+          "name": "checkout.webp"
+        },
+        {
+          "id": "P007",
+          "name": "order-summary.webp"
+        }
+      ],
+      "rejected": [
+        "P010",
+        "P012",
+        "P014"
+      ],
+      "capture_priority": "P3"
+    },
+    "habba": {
+      "hero": "P031",
+      "home": [
+        "P031"
+      ],
+      "work": [
+        "P031",
+        "P022",
+        "P017"
+      ],
+      "case": [
+        {
+          "id": "P031",
+          "name": "brand-home.webp"
+        },
+        {
+          "id": "P030",
+          "name": "featured-products.webp"
+        },
+        {
+          "id": "P017",
+          "name": "product-detail.webp"
+        },
+        {
+          "id": "P028",
+          "name": "choose-your-way.webp"
+        },
+        {
+          "id": "P022",
+          "name": "drop-builder.webp"
+        },
+        {
+          "id": "P021",
+          "name": "drop-result.webp"
+        },
+        {
+          "id": "P015",
+          "name": "cart-upsell.webp"
+        },
+        {
+          "id": "P026",
+          "name": "whatsapp-conversion.webp"
+        }
+      ],
+      "rejected": [
+        "P016",
+        "P018",
+        "P019",
+        "P020",
+        "P023",
+        "P024",
+        "P025",
+        "P027",
+        "P029"
+      ],
+      "capture_priority": "P3"
+    },
+    "bahja": {
+      "hero": "P037",
+      "home": [
+        "P037"
+      ],
+      "work": [
+        "P037",
+        "P041",
+        "P034"
+      ],
+      "case": [
+        {
+          "id": "P035",
+          "name": "home-sections.webp"
+        },
+        {
+          "id": "P037",
+          "name": "bag-collections.webp"
+        },
+        {
+          "id": "P041",
+          "name": "product-detail.webp"
+        },
+        {
+          "id": "P034",
+          "name": "cart-checkout.webp"
+        },
+        {
+          "id": "P033",
+          "name": "checkout-form.webp"
+        }
+      ],
+      "rejected": [
+        "P032",
+        "P036",
+        "P038",
+        "P039",
+        "P040",
+        "P042",
+        "P043",
+        "P044"
+      ],
+      "capture_priority": "P0"
+    },
+    "hiltech": {
+      "hero": "P064",
+      "home": [
+        "P064",
+        "P061",
+        "P056"
+      ],
+      "work": [
+        "P064",
+        "P056",
+        "P045"
+      ],
+      "case": [
+        {
+          "id": "P064",
+          "name": "home-hero.webp"
+        },
+        {
+          "id": "P061",
+          "name": "field-work.webp"
+        },
+        {
+          "id": "P051",
+          "name": "core-services.webp"
+        },
+        {
+          "id": "P056",
+          "name": "catalog.webp"
+        },
+        {
+          "id": "P053",
+          "name": "product-detail.webp"
+        },
+        {
+          "id": "P045",
+          "name": "rfq-basket.webp"
+        },
+        {
+          "id": "P046",
+          "name": "rfq-details.webp"
+        },
+        {
+          "id": "P059",
+          "name": "procurement-flow.webp"
+        }
+      ],
+      "rejected": [
+        "P047",
+        "P048",
+        "P049",
+        "P050",
+        "P052",
+        "P054",
+        "P055",
+        "P057",
+        "P058",
+        "P060",
+        "P062",
+        "P063"
+      ],
+      "capture_priority": "P1"
+    },
+    "nova": {
+      "hero": "P082",
+      "home": [
+        "P082",
+        "P073",
+        "P068"
+      ],
+      "work": [
+        "P082",
+        "P073",
+        "P069"
+      ],
+      "case": [
+        {
+          "id": "P082",
+          "name": "home-dashboard.webp"
+        },
+        {
+          "id": "P073",
+          "name": "orbit.webp"
+        },
+        {
+          "id": "P068",
+          "name": "tonight.webp"
+        },
+        {
+          "id": "P069",
+          "name": "reel.webp"
+        },
+        {
+          "id": "P075",
+          "name": "create-hub.webp"
+        },
+        {
+          "id": "P079",
+          "name": "post-detail.webp"
+        },
+        {
+          "id": "P076",
+          "name": "messaging-calls.webp"
+        },
+        {
+          "id": "P072",
+          "name": "profile.webp"
+        }
+      ],
+      "rejected": [
+        "P065",
+        "P066",
+        "P067",
+        "P070",
+        "P071",
+        "P074",
+        "P077",
+        "P078",
+        "P080",
+        "P081"
+      ],
+      "capture_priority": "P3"
+    },
+    "teswa": {
+      "hero": "P123",
+      "home": [
+        "P123",
+        "P127",
+        "P084",
+        "P104"
+      ],
+      "work": [
+        "P123",
+        "P084",
+        "P104"
+      ],
+      "case": [
+        {
+          "id": "P123",
+          "name": "discovery-hub.webp"
+        },
+        {
+          "id": "P127",
+          "name": "home-dashboard.webp"
+        },
+        {
+          "id": "P109",
+          "name": "marketplace-feed.webp"
+        },
+        {
+          "id": "P084",
+          "name": "item-detail.webp"
+        },
+        {
+          "id": "P100",
+          "name": "offer-state.webp"
+        },
+        {
+          "id": "P104",
+          "name": "exchange-chat.webp"
+        },
+        {
+          "id": "P108",
+          "name": "create-listing.webp"
+        },
+        {
+          "id": "P099",
+          "name": "profile.webp"
+        },
+        {
+          "id": "P111",
+          "name": "trust.webp"
+        },
+        {
+          "id": "P122",
+          "name": "movement.webp"
+        }
+      ],
+      "rejected": [
+        "P083",
+        "P085",
+        "P086",
+        "P087",
+        "P088",
+        "P089",
+        "P090",
+        "P091",
+        "P092",
+        "P093",
+        "P094",
+        "P095",
+        "P096",
+        "P097",
+        "P098",
+        "P101",
+        "P102",
+        "P103",
+        "P105",
+        "P106",
+        "P107",
+        "P110",
+        "P112",
+        "P113",
+        "P114",
+        "P115",
+        "P116",
+        "P117",
+        "P118",
+        "P119",
+        "P120",
+        "P121",
+        "P124",
+        "P125",
+        "P126"
+      ],
+      "capture_priority": "none-blocking"
+    },
+    "wavezero": {
+      "hero": "P135",
+      "home": [
+        "P135",
+        "P133",
+        "P128"
+      ],
+      "work": [
+        "P135",
+        "P133",
+        "P128"
+      ],
+      "case": [
+        {
+          "id": "P135",
+          "name": "brand-home.webp"
+        },
+        {
+          "id": "P136",
+          "name": "listening-home.webp"
+        },
+        {
+          "id": "P131",
+          "name": "library.webp"
+        },
+        {
+          "id": "P128",
+          "name": "device-music.webp"
+        },
+        {
+          "id": "P132",
+          "name": "search.webp"
+        },
+        {
+          "id": "P133",
+          "name": "now-playing.webp"
+        },
+        {
+          "id": "P130",
+          "name": "settings-downloads.webp"
+        }
+      ],
+      "rejected": [
+        "P129",
+        "P134"
+      ],
+      "capture_priority": "P1",
+      "hero_note": "Strongest composition, but replace when possible with same state using a non-demo track."
+    }
+  },
+  "absent_from_pack": [
+    "farrag-coffee-v2",
+    "abdel-aal-coffee",
+    "athr-studio-website",
+    "pharmacist-portfolio",
+    "sultan-al-burhan"
+  ],
+  "repo_binary_note": "Selected full-frame WebP handoff binaries were generated during the audit, but the connected GitHub writer available here cannot stream local binary files into repository paths. Do not infer that the binary pack is in this PR."
+}

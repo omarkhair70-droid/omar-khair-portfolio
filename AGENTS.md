@@ -29,8 +29,8 @@ Some older/partial assets already exist in `public/project-screenshots/`, `publi
 - Preserve factual accuracy. Never invent clients, revenue, users, employment, education credentials, release status, metrics, or production status.
 - Use public repository links only when the registry says the repo is public and worth showing.
 - Never expose a private repository URL as a portfolio CTA.
-- Nova is closed testing until a public Play listing exists. Label it accurately.
-- WaveZero is not on Google Play yet. Use a non-clickable coming-soon status, not a fake store button.
+- Nova is available through its normal Google Play listing and is currently distributed via closed testing. Keep one removable closed-testing note until production rollout is public.
+- WaveZero is available through its normal Google Play listing and is currently distributed via closed testing. Preserve the Play CTA and one removable closed-testing note.
 - Bahja has a known product-site layout issue. Do not claim it is polished production proof; present conservatively until that external project is fixed.
 - Do not modify external project repositories in this task. This task changes only `omar-khair-portfolio`.
 - Avoid dependency bloat. Reuse Next.js/Tailwind patterns already present unless a new dependency is clearly justified.

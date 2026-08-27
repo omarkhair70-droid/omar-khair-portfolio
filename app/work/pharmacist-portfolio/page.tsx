@@ -1,79 +1,89 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import EditorialCaseStudyMeta from "@/components/EditorialCaseStudyMeta";
+import EvidencePlaceholder from "@/components/EvidencePlaceholder";
+import ScrollReveal from "@/components/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "Professional Portfolio Website Case Study — Omar Khair",
-  description: "A professional portfolio website delivered for a senior pharmacist, covering experience, education, downloadable CV, and direct contact flows.",
+  description: "A delivered professional portfolio website for a senior pharmacist, turning 21+ years of experience into a clear, responsive, shareable professional presence.",
   alternates: { canonical: "/work/pharmacist-portfolio" }
 };
 
 const scope = [
-  "Professional hero and positioning",
-  "21+ years of experience presentation",
-  "Career timeline and role summaries",
-  "Education and courses",
-  "Skills and languages",
-  "Downloadable CV",
-  "Phone, WhatsApp, email, and location contact paths",
-  "Responsive production deployment"
+  ["01", "Structure", "Translate a long career into a readable hierarchy instead of copying a CV into a webpage."],
+  ["02", "Credibility", "Make 21+ years of experience, education, courses, skills, and languages understandable before a visitor downloads anything."],
+  ["03", "Action", "Keep phone, WhatsApp, email, location, and CV download paths obvious enough to make the site useful in a real professional context."],
+  ["04", "Delivery", "Ship the finished responsive site and make it easy to share as one professional link."]
 ];
 
 export default function PharmacistPortfolioCaseStudy() {
   return (
-    <main className="min-h-screen bg-stone-50 text-stone-950">
-      <section className="section-wrap py-14 md:py-20">
-        <Link href="/work" className="text-sm font-medium text-stone-600">← Back to work</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Client delivery · Professional portfolio</p>
-        <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">A complete online professional presence for a senior pharmacist.</h1>
-        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600">The goal was simple: turn a long healthcare career into one clear, credible link that can be shared with employers, colleagues, and professional contacts.</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href="https://pharmacist-portfolio.vercel.app" target="_blank" rel="noreferrer" className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white">Visit live project</a>
-          <Link href="/local-business" className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium">View local website offer</Link>
-        </div>
-      </section>
-
-      <section className="border-y border-stone-200 bg-white">
-        <div className="section-wrap py-14 md:py-16">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Problem</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight">A CV contains information. A portfolio needs to make the career readable.</h2>
+    <main className="overflow-clip bg-[#f1eee6] text-[#11110f]">
+      <section className="bg-[#e7e2d7]">
+        <div className="home-editorial-shell py-10 sm:py-14 lg:py-20">
+          <ScrollReveal>
+            <div className="flex items-center justify-between gap-5 border-t border-black/15 pt-4">
+              <Link href="/work" className="home-meta text-[#686259]">← Work index</Link>
+              <p className="home-meta text-[#686259]">Client delivery / professional presence</p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {scope.map((item) => <div key={item} className="rounded-2xl border border-stone-200 bg-stone-50 p-4 text-sm text-stone-700">{item}</div>)}
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+              <div><p className="home-meta text-[#686259]">Information architecture / responsive web</p><p className="case-number mt-7">04</p></div>
+              <div>
+                <h1 className="max-w-5xl text-[clamp(3.8rem,8.5vw,9rem)] font-semibold leading-[0.82] tracking-[-0.07em]">A career made readable.</h1>
+                <p className="mt-9 max-w-4xl text-[clamp(1.4rem,2.8vw,2.9rem)] leading-[1.07] tracking-[-0.04em] text-[#656057]">
+                  A complete online professional presence for a senior pharmacist, designed to turn experience into one credible link.
+                </p>
+              </div>
             </div>
+            <EditorialCaseStudyMeta projectId="pharmacist-portfolio" />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="bg-[#fbf9f4]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">The problem</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.1rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">A CV stores information. A portfolio has to make the career legible.</h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#6f6a60]">The project turns years of healthcare and management experience into a professional hierarchy that can be understood quickly by employers, colleagues, and contacts.</p>
+              </div>
+            </div>
+          </ScrollReveal>
+          <div className="case-editorial-list mt-16">
+            {scope.map(([number,title,text],index)=>(
+              <ScrollReveal key={title} delay={index*40}>
+                <article className="case-editorial-row">
+                  <p className="home-meta text-[#686259]">{number}</p>
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
+                  <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-wrap py-14 md:py-18">
-        <div className="grid gap-5 md:grid-cols-3">
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">01 · Structure</p>
-            <h3 className="mt-3 text-xl font-semibold">Translate the career</h3>
-            <p className="mt-3 text-sm leading-relaxed text-stone-600">Organize years of pharmacy, management, preventive medicine, and healthcare experience into a clear hierarchy instead of copying a CV onto a webpage.</p>
-          </div>
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">02 · Experience</p>
-            <h3 className="mt-3 text-xl font-semibold">Make credibility visible</h3>
-            <p className="mt-3 text-sm leading-relaxed text-stone-600">Use experience blocks, statistics, education, courses, and competencies so the visitor understands the profile without downloading anything first.</p>
-          </div>
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">03 · Action</p>
-            <h3 className="mt-3 text-xl font-semibold">Make contact effortless</h3>
-            <p className="mt-3 text-sm leading-relaxed text-stone-600">Add direct phone, WhatsApp, email, location, and CV download paths so the page works as a professional tool, not just a visual profile.</p>
-          </div>
-        </div>
-      </section>
+      <EvidencePlaceholder projectId="pharmacist-portfolio" title="Fresh client-delivery captures to add" />
 
-      <section className="border-t border-stone-200 bg-stone-950 text-white">
-        <div className="section-wrap py-14 md:py-16">
-          <h2 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">The useful lesson: a small website can still solve a very real business or career problem.</h2>
-          <p className="mt-5 max-w-3xl leading-relaxed text-stone-300">This project is the closest proof for doctors, pharmacists, consultants, coaches, and other professionals who need a clean personal or practice website rather than a large software system.</p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/local-business" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">See the local offer</Link>
-            <Link href="/work/hiltech" className="rounded-full border border-white/40 px-5 py-2 text-sm font-medium">See a larger business system</Link>
-          </div>
+      <section className="bg-[#3157ff] text-white">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-white/90">Why it matters</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6.3vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.06em]">Small scope can still solve a real professional problem.</h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/92">This is the clearest proof for professionals who need a credible digital presence rather than a large software product.</p>
+                <div className="mt-9 flex flex-wrap gap-7">
+                  <Link href="/local-business" className="home-text-link home-text-link--light">Local launch offer ↗</Link>
+                  <Link href="/contact" className="home-text-link home-text-link--light">Discuss a professional site ↗</Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </main>

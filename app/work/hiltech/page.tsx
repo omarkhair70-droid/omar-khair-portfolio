@@ -1,92 +1,155 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+
+import EditorialCaseStudyMeta from "@/components/EditorialCaseStudyMeta";
+import FlagshipVisualStory from "@/components/FlagshipVisualStory";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "HILTECH Case Study — Omar Khair",
   description:
-    "Network infrastructure website and RFQ system case study by Omar Khair.",
-  alternates: {
-    canonical: "/work/hiltech"
-  }
+    "HILTECH is a live B2B website and RFQ operations system connecting product discovery, structured requests, quotation workflows, customer follow-up, and admin visibility.",
+  alternates: { canonical: "/work/hiltech" }
 };
 
-const tags = ["B2B website", "RFQ system", "Product catalog", "Admin visibility", "Quotation workflow"];
-const challengePoints = [
-  "Present a technical infrastructure company clearly to business buyers.",
-  "Organize products into a structured catalog that supports discovery.",
-  "Replace scattered request messages with a clearer RFQ flow.",
-  "Store RFQs and request context safely for follow-up.",
-  "Give admins a way to review requests and manage status updates."
+const journey = [
+  ["01", "Present", "Technical services and infrastructure capability have to read clearly to a business buyer before any request begins."],
+  ["02", "Discover", "A structured catalog turns a broad product inventory into something a buyer can actually navigate and compare."],
+  ["03", "Collect", "The RFQ basket gathers product intent before project details are submitted, replacing scattered request messages with a deliberate flow."],
+  ["04", "Review", "RFQs persist with customer and product context so the sales side can review the real request instead of reconstructing it manually."],
+  ["05", "Quote", "Quotation workflow and follow-up queues create continuity between the incoming request and the business response."],
+  ["06", "Track", "Customer-facing status pages keep follow-up transparent while admin operations retain control of the workflow."]
 ];
-const buildItems = [
-  "Company website and service presentation",
-  "Category-based product catalog",
-  "RFQ basket and submission flow",
-  "Quotation Builder for structured responses",
-  "Customer RFQ tracking pages",
-  "Admin dashboard with request visibility",
-  "Inventory context and product operations support",
-  "Internal notification and analytics event hooks"
+
+const operations = [
+  ["RFQ management", "Urgent and high-value request attention, status updates, follow-up continuity, and stored context."],
+  ["Quotation workflow", "Structured response flow with cleaner request-to-quote communication."],
+  ["Product operations", "Catalog administration, inventory attention, stock-state filters, and CSV import/export support."],
+  ["Analytics", "Sales, website, and product-interest visibility tied to real buyer behavior and request activity."],
+  ["Command visibility", "Operational views surface requests, follow-up needs, and day-to-day business attention."],
+  ["Customer continuity", "Tracking pages and request history reduce the gap between a public website and the sales workflow behind it."]
 ];
-const opsPoints = [
-  "RFQ submissions are saved with customer and product context.",
-  "Admins can review, update, and follow request status.",
-  "Quotation steps are structured for cleaner communication.",
-  "Customer tracking pages support transparent follow-up."
-];
-const businessValue = [
-  "Clearer product and service presentation for technical buyers.",
-  "More structured RFQ intake compared with scattered chats.",
-  "Better visibility across requests, quotes, and follow-up status.",
-  "A website foundation designed to support ongoing operations."
-];
-const buildNotes = ["Next.js", "TypeScript + React", "Tailwind CSS", "Supabase", "Admin dashboard", "Vercel"];
 
 export default function HiltechCaseStudyPage() {
   return (
-    <main className="bg-stone-50 pb-20">
-      <section className="section-wrap py-16 md:py-22">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Case Study</p>
-        <h1 className="mt-4 max-w-5xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
-          HILTECH — Network Infrastructure Website &amp; RFQ System
-        </h1>
-        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-stone-600">
-          A business-focused website and RFQ workflow built around product discovery, structured request collection,
-          admin visibility, and customer follow-up.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <li key={tag} className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-700">{tag}</li>
-          ))}
-        </ul>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a href="https://hiltech-eg-website.vercel.app/" target="_blank" rel="noreferrer" className="rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-medium text-white">View Live Project</a>
-          <Link href="/work" className="rounded-full border border-stone-300 px-6 py-3 text-center text-sm font-medium text-stone-900">Back to Work</Link>
+    <main className="overflow-clip bg-[#f1eee6] text-[#11110f]">
+      <section className="bg-[#152039] text-white">
+        <div className="home-editorial-shell py-10 sm:py-14 lg:py-20">
+          <ScrollReveal>
+            <div className="flex items-center justify-between gap-5 border-t border-white/15 pt-4">
+              <Link href="/work" className="home-meta text-white/72 transition hover:text-white">← Work index</Link>
+              <p className="home-meta text-white/72">Case 03 / B2B system</p>
+            </div>
+
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+              <div>
+                <p className="home-meta text-white/68">Catalog / RFQ / operations</p>
+                <p className="case-number mt-7 text-white/85">03</p>
+              </div>
+              <div>
+                <h1 className="text-[clamp(4.4rem,9.5vw,10rem)] font-semibold leading-[0.78] tracking-[-0.075em]">
+                  HILTECH
+                </h1>
+                <p className="mt-9 max-w-4xl text-[clamp(1.45rem,3vw,3.1rem)] leading-[1.06] tracking-[-0.04em] text-white/80">
+                  A B2B website that keeps going after the product page — into RFQ intake, quotation, tracking, and business operations.
+                </p>
+              </div>
+            </div>
+
+            <EditorialCaseStudyMeta projectId="hiltech" inverted />
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="section-wrap py-8 md:py-12"><div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><h2 className="text-2xl font-semibold tracking-tight">Overview</h2><p className="mt-4 max-w-4xl leading-relaxed text-stone-600">HILTECH needed more than a brochure site. The project was built as a practical digital layer that supports product browsing, RFQ intake, quotation communication, and sales-side workflow visibility.</p></div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">The Challenge</h2><div className="mt-6 grid gap-4 md:grid-cols-2">{challengePoints.map((point) => <div key={point} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"><p className="text-stone-700">{point}</p></div>)}</div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">What I Built</h2><div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{buildItems.map((item) => <div key={item} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"><p className="text-sm font-semibold text-stone-800">{item}</p></div>)}</div></section>
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">The business problem</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.3rem,6.5vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
+                  A brochure site would stop exactly where the useful workflow starts.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#6f6a60]">
+                  HILTECH needed corporate credibility and product discovery, but the valuable handoff is the request itself. The system therefore treats browsing, RFQ intake, sales-side review, quotation, and follow-up as one connected business journey.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
 
-      <section className="section-wrap py-8 md:py-12">
-        <h2 className="text-2xl font-semibold tracking-tight">Visual Proof / Screenshots</h2>
-        <div className="mt-6 grid gap-4 lg:grid-cols-2">
-          <figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm lg:row-span-2"><Image src="/project-screenshots/hiltech-homepage.png" alt="HILTECH homepage and service positioning" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">Homepage and service positioning</figcaption></figure>
-          <figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm"><Image src="/project-screenshots/hiltech-rfq-basket.png" alt="HILTECH RFQ basket and structured request flow" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">RFQ basket and structured request flow</figcaption></figure>
-          <figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm"><Image src="/project-screenshots/hiltech-products-catalog.png" alt="HILTECH product catalog and technical category browsing" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">Product catalog and category browsing</figcaption></figure>
+          <div className="case-editorial-list mt-16">
+            {journey.map(([number, title, text], index) => (
+              <ScrollReveal key={title} delay={index * 32}>
+                <article className="case-editorial-row">
+                  <p className="home-meta text-[#686259]">{number}</p>
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
+                  <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">System / Customer Journey</h2><div className="mt-6 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"><p className="text-base leading-relaxed text-stone-700">Customer discovers products → builds an RFQ basket → submits project details → request is saved → admin reviews and updates status → customer tracks request updates.</p></div></section>
-      <section className="section-wrap py-8 md:py-12"><div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><h2 className="text-2xl font-semibold tracking-tight">Operational or Business Side</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{opsPoints.map((point) => <li key={point} className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">{point}</li>)}</ul></div></section>
-      <section className="section-wrap py-8 md:py-12"><div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><h2 className="text-2xl font-semibold tracking-tight">Admin Operations System</h2><p className="mt-4 max-w-4xl leading-relaxed text-stone-600">The HILTECH system evolved beyond a public website into a B2B operations layer for RFQs, quotations, inventory attention, analytics, and follow-up workflows. It is more relevant than a generic ecommerce dashboard for HILTECH&apos;s B2B RFQ workflow.</p><ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">Command Center and Action Center for daily operational visibility.</li><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">RFQ management with urgent and high-value request attention.</li><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">Quotation workflow with follow-up queues and tracking continuity.</li><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">Sales dashboard, reports, and insights for pipeline visibility.</li><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">Website analytics and product analytics tied to buyer interest.</li><li className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">Product admin with inventory attention, stock-state filters, and CSV import/export support.</li></ul></div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">Business Value</h2><ul className="mt-6 grid gap-3 md:grid-cols-2">{businessValue.map((point) => <li key={point} className="rounded-2xl border border-stone-200 bg-white p-5 text-stone-700 shadow-sm">{point}</li>)}</ul></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">Build Notes</h2><ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{buildNotes.map((item) => <li key={item} className="rounded-2xl border border-stone-200 bg-white p-5 text-sm font-medium text-stone-800 shadow-sm">{item}</li>)}</ul></section>
+      <FlagshipVisualStory
+        projectId="hiltech"
+        eyebrow="Visual story / approved B2B sequence"
+        title="Credibility first. Procurement flow second."
+        intro="The visual sequence moves from corporate and field context into services, catalog, product detail, RFQ basket, project details, and the procurement flow. It shows the public-facing system and the conversion path as one story."
+      />
 
-      <section className="section-wrap pt-10"><div className="rounded-2xl border border-stone-900 bg-stone-900 p-7 text-white shadow-sm md:p-9"><h2 className="text-3xl font-semibold tracking-tight">Need a website that works like a business system?</h2><p className="mt-4 max-w-3xl text-stone-300">I build websites that can connect product discovery, RFQ flows, dashboards, customer tracking, and internal workflows.</p><div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><Link href="/#contact" className="rounded-full bg-white px-5 py-2 text-center text-sm font-medium text-stone-900">Start a Project</Link><Link href="/work" className="rounded-full border border-white/70 px-5 py-2 text-center text-sm font-medium text-white">View All Work</Link></div></div></section>
-      <section className="section-wrap pt-8"><div className="rounded-2xl border border-stone-200 bg-white p-5"><p className="text-sm font-semibold text-stone-700">Explore more work</p><div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/work/tuscanini" className="text-sm text-stone-600 transition hover:text-stone-900">Tuscanini Case Study</Link><Link href="/work/farrag-coffee" className="text-sm text-stone-600 transition hover:text-stone-900">Farrag Coffee Case Study</Link></div></div></section>
+      <section className="bg-[#fbf9f4]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">Operational side</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[0.91] tracking-[-0.06em]">
+                  The system is built for follow-through, not just lead capture.
+                </h2>
+                <p className="mt-7 max-w-3xl text-lg leading-relaxed text-[#6f6a60]">
+                  The public website creates the request. The operations layer keeps the request useful after submission by preserving context, making attention visible, and supporting a cleaner quote-and-follow-up workflow.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16 border-b border-black/15">
+            {operations.map(([title, text], index) => (
+              <ScrollReveal key={title} delay={index * 35}>
+                <article className="grid gap-5 border-t border-black/15 py-7 sm:grid-cols-[64px_0.8fr_1.2fr]">
+                  <p className="home-meta text-[#686259]">0{index + 1}</p>
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em]">{title}</h3>
+                  <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#11110f] text-[#f4f0e7]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-white/72">Build / business value</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.3rem,6.6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
+                  The website becomes a usable layer in the sales operation.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/75">
+                  Next.js, TypeScript, Supabase, product administration, RFQ workflows, and deployment are tied to one outcome: clearer buying context and less fragmented request handling.
+                </p>
+                <div className="mt-9 flex flex-wrap gap-7">
+                  <a href="https://hiltech-eg.com" target="_blank" rel="noreferrer" className="home-text-link home-text-link--light">Open HILTECH ↗</a>
+                  <Link href="/work/wavezero" className="home-text-link home-text-link--light">Next: WaveZero ↗</Link>
+                  <Link href="/contact" className="home-text-link home-text-link--light">Discuss a business system ↗</Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </main>
   );
 }

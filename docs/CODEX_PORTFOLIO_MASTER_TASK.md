@@ -186,8 +186,8 @@ Links/status:
 - Tester group: https://groups.google.com/g/nova-closed-testers
 - Google Play closed test: https://play.google.com/apps/testing/com.omarkhair70.nova
 
-Critical status rule:
-Nova is **closed testing** at the time of this task. Do not label the test URL as a public Play Store release. Create a clean CTA sequence such as “Join closed test” / “Open testing listing.” Structure the data so replacing this with a public Play URL later is a one-line configuration change.
+Current closure status:
+Nova is **available on Google Play** at the normal store listing and is currently distributed through closed testing. Show the Google Play CTA plus the closed-test group, with one small removable distribution note until production rollout is public.
 
 ## WaveZero
 Create a dedicated WaveZero case study route.
@@ -204,7 +204,7 @@ Link:
 - GitHub: https://github.com/omarkhair70-droid/wavezero
 
 Google Play status:
-**Coming soon** only. No dead/fake button.
+**Available on Google Play.** Use https://play.google.com/store/apps/details?id=com.omarkhair.wavezero and keep the small temporary closed-testing distribution note.
 
 ## HILTECH
 Strengthen the existing HILTECH case study with the curated asset pack.
@@ -230,7 +230,7 @@ Links:
 - staging: https://balcona-bar-staging-web.vercel.app
 - GitHub: https://github.com/omarkhair70-droid/balcona-bar
 
-Status must say **advanced product build / staging** or equivalent, never imply a live client production deployment if that is not true.
+Current closure status is **LIVE / ONLINE** for the hosted operating demo at https://balcona-bar-staging-web.vercel.app. Keep the staging/demo nature clear without implying the environment is offline.
 
 ---
 
@@ -534,8 +534,8 @@ The task is NOT complete until all of the following are true:
 - Work has clear hierarchy/lanes.
 - HILTECH, Teswa, Nova, WaveZero, and Balcona have deliberate flagship treatment.
 - Teswa has Google Play + web + GitHub + case-study links.
-- Nova has a dedicated case study and accurate closed-test flow.
-- WaveZero has a dedicated case study and accurate “coming soon” Play status.
+- Nova has a dedicated case study, Google Play CTA, and accurate closed-testing distribution note.
+- WaveZero has a dedicated case study, Google Play CTA, closed-testing distribution note, and intact privacy policy.
 - HILTECH uses the custom domain as its canonical live CTA.
 - supporting projects are properly separated and curated.
 - Habba and Bahja are no longer collapsed into one indistinct project.

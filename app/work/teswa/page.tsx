@@ -1,64 +1,141 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+
+import EditorialCaseStudyMeta from "@/components/EditorialCaseStudyMeta";
+import FlagshipVisualStory from "@/components/FlagshipVisualStory";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Teswa Case Study — Omar Khair",
   description:
-    "Teswa / تِسوى is an Arabic-first social swap marketplace with marketplace, stories, motion/video, messaging, notifications, offline memory, and native security.",
+    "Teswa / تِسوى is an Arabic-first social swap marketplace spanning discovery, exchange, messaging, trust, native capabilities, offline memory, and Google Play release.",
   alternates: { canonical: "/work/teswa" }
 };
 
 const systems = [
-  ["Marketplace", "Arabic-first item discovery, detail, creator/add-item flows, offers, and deal lifecycle."],
-  ["Social layer", "Stories, story replies, people discovery, profile activity, and video-led Motion experiences."],
-  ["Messaging", "Deal-scoped chat, voice messages, inbox/direct flows, and notification-aware communication."],
-  ["Offline memory", "SQLite-backed public cache, warm-start behavior, background refresh, and recovery paths."],
-  ["Native capabilities", "Camera, media, notifications, location, haptics, sharing, biometrics, secure storage, and Google Sign-In."],
-  ["Release operations", "Expo/EAS production builds, OTA updates where compatible, Google Play release operations, and backend push delivery."]
+  ["01", "Discovery", "Item discovery is not isolated from people, place, profile, or social activity. The product opens with a world to explore, not a static catalog."],
+  ["02", "Exchange", "Item detail, offers, deal state, and accepted exchange move the user from interest to a concrete swap journey."],
+  ["03", "Conversation", "Deal-scoped chat, voice, call behavior, and notification-aware communication keep the exchange human once it starts."],
+  ["04", "Trust", "Profiles, reputation, identity, and activity provide context before a stranger becomes an exchange partner."],
+  ["05", "Creation", "Listing creation and social/movement surfaces keep supply and community activity inside the same product loop."],
+  ["06", "Release", "Expo/EAS, native capabilities, offline memory, push delivery, and Google Play operations turn the interface into a shippable mobile product."]
 ];
 
-const stack = ["Expo SDK 55", "React Native", "TypeScript", "Expo Router", "Supabase", "SQLite", "Reanimated", "Skia", "Lottie", "Expo Notifications", "Camera / Video / Audio", "Google Sign-In", "Local Authentication"];
+const stack = ["React Native", "Expo", "TypeScript", "Supabase", "SQLite", "Reanimated", "Skia", "Notifications", "Camera / media", "Google Play"];
 
 export default function TeswaCaseStudyPage() {
   return (
-    <main className="min-h-screen bg-stone-50 text-stone-950">
-      <section className="section-wrap py-14 md:py-20">
-        <Link href="/work" className="text-sm font-medium text-stone-600">← Back to work</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Mobile product case study</p>
-        <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">Teswa — Arabic-First Social Swap Marketplace</h1>
-        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600">Teswa / تِسوى is a native Arabic-first product built around item-for-item exchange, then expanded into a broader social exchange world with stories, video discovery, communication, local activity, and offline memory.</p>
-        <div className="mt-6 flex flex-wrap gap-2"><span className="rounded-full border border-stone-900 bg-stone-900 px-4 py-2 text-xs font-medium text-white">Live / post-launch on Google Play</span><span className="rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-medium">Arabic-first mobile product</span></div>
-        <div className="mt-8 flex flex-wrap gap-3"><a href="https://github.com/omarkhair70-droid/teswa.eg" target="_blank" rel="noreferrer" className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white">View GitHub proof</a><Link href="/" className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium">Back to portfolio</Link></div>
-      </section>
+    <main className="overflow-clip bg-[#f1eee6] text-[#11110f]">
+      <section className="bg-[#11110f] text-[#f4f0e7]">
+        <div className="home-editorial-shell py-10 sm:py-14 lg:py-20">
+          <ScrollReveal>
+            <div className="flex items-center justify-between gap-5 border-t border-white/15 pt-4">
+              <Link href="/work" className="home-meta text-white/92 transition hover:text-white">← Work index</Link>
+              <p className="home-meta text-white/90">Case 01 / Mobile product</p>
+            </div>
 
-      <section className="section-wrap pb-14">
-        <div className="relative h-[680px] overflow-hidden rounded-3xl border border-stone-200 bg-stone-100 shadow-sm">
-          <Image src="/project-showcases/teswa.webp" alt="Teswa marketplace discovery screen" fill sizes="100vw" className="object-contain p-5 sm:p-8" priority />
-        </div>
-        <p className="mt-3 text-sm text-stone-500">A real Teswa product screen shown at readable scale.</p>
-      </section>
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+              <div>
+                <p className="home-meta text-white/90">Arabic-first / exchange / social</p>
+                <p className="case-number mt-7 text-[#d8ff65]">01</p>
+              </div>
+              <div>
+                <h1 className="text-[clamp(4.5rem,10vw,11rem)] font-semibold leading-[0.77] tracking-[-0.075em]">
+                  Teswa
+                  <span className="home-display-serif block font-normal italic">تِسوى</span>
+                </h1>
+                <p className="mt-9 max-w-4xl text-[clamp(1.5rem,3vw,3.2rem)] leading-[1.06] tracking-[-0.04em] text-white/92">
+                  A swap marketplace designed as a social exchange world — discovery, trust, negotiation, conversation, and movement in one product.
+                </p>
+              </div>
+            </div>
 
-      <section className="border-y border-stone-200 bg-white">
-        <div className="section-wrap py-14 md:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">What the product proves</p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Not a landing-page prototype. A real mobile product surface with many connected systems.</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{systems.map(([title, text]) => <div key={title} className="rounded-2xl border border-stone-200 bg-stone-50 p-5"><h3 className="font-semibold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-stone-600">{text}</p></div>)}</div>
-        </div>
-      </section>
-
-      <section className="section-wrap py-14 md:py-18">
-        <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
-          <div><p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">Product direction</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">The exchange is the core. The social layer makes the marketplace feel alive.</h2><p className="mt-4 leading-relaxed text-stone-600">The product direction moved beyond a plain buy/sell-style listing feed. Stories, Motion, city-aware activity, emotional deal milestones, voice, and personal recap surfaces are used to make item exchange feel more human and locally relevant.</p></div>
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Current stack</p><div className="mt-4 flex flex-wrap gap-2">{stack.map((item) => <span key={item} className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-700">{item}</span>)}</div></div>
+            <EditorialCaseStudyMeta projectId="teswa" inverted />
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="border-t border-stone-200 bg-stone-950 text-white">
-        <div className="section-wrap py-14 md:py-16">
-          <h2 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Why Teswa matters in this portfolio</h2>
-          <p className="mt-5 max-w-4xl leading-relaxed text-stone-300">It demonstrates mobile product execution across UI, native capabilities, data, notifications, offline behavior, release operations, and evolving product direction — not just screen implementation.</p>
-          <div className="mt-7 flex flex-wrap gap-3"><Link href="/work/hiltech" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-stone-900">View HILTECH</Link><Link href="/work" className="rounded-full border border-white/40 px-5 py-2 text-sm font-medium">View all work</Link></div>
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">Product thesis</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.3rem,6.5vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
+                  The exchange is the core. The social layer makes it alive.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#6f6a60]">
+                  Teswa deliberately avoids feeling like a plain classifieds feed. The product connects item discovery to identity, trust, communication, and ongoing local activity so a swap can move from curiosity to a real relationship between people.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="case-editorial-list mt-16">
+            {systems.map(([number, title, text], index) => (
+              <ScrollReveal key={title} delay={index * 35}>
+                <article className="case-editorial-row">
+                  <p className="home-meta text-[#686259]">{number}</p>
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
+                  <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FlagshipVisualStory
+        projectId="teswa"
+        eyebrow="Visual story / 10 approved states"
+        title="From discovery to a completed social exchange."
+        intro="The sequence is long because each screen proves a different part of the product loop: discovery, marketplace, item context, offer state, conversation, creation, profile, trust, and social movement."
+      />
+
+      <section className="bg-[#fbf9f4]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#686259]">Under the interface</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+                  A mobile surface backed by local memory, native capabilities, and release work.
+                </h2>
+                <p className="mt-7 max-w-3xl text-lg leading-relaxed text-[#6f6a60]">
+                  Product scope spans the React Native interface, Supabase-backed data, SQLite warm-state behavior, notifications, camera/media, secure/native integrations, and the practical Google Play release path.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={90}>
+            <div className="mt-14 flex flex-wrap gap-x-6 gap-y-3 border-y border-black/15 py-6">
+              {stack.map((item) => <span key={item} className="home-meta text-[#686259]">{item}</span>)}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="bg-[#3157ff] text-white">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <p className="home-meta text-white/90">Why it matters</p>
+            <div className="mt-7 grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta max-w-xs leading-relaxed text-white/90">Mobile product / native capabilities / release operations</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,7.4rem)] font-semibold leading-[0.88] tracking-[-0.065em]">
+                  It proves product ownership beyond screen implementation.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/92">
+                  Teswa connects product direction, Arabic-first UX, native mobile behavior, data, offline thinking, communication, and launch operations in one working product.
+                </p>
+                <div className="mt-9 flex flex-wrap gap-7">
+                  <Link href="/work/nova" className="home-text-link home-text-link--light">Next: Nova ↗</Link>
+                  <Link href="/work" className="home-text-link home-text-link--light">All work ↗</Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </main>

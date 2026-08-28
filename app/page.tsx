@@ -1,270 +1,478 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
-import ProjectInquiryForm from "@/components/ProjectInquiryForm";
+import ScrollReveal from "@/components/ScrollReveal";
+import { getProject, type ProjectAction, type ProjectRecord } from "@/data/projects";
+import { getProjectVisualPlan, getVisual, type CuratedVisual } from "@/data/project-visuals";
+import {
+  capabilityPillars,
+  contactLinks,
+  localLaunchOffer,
+  serviceRanges,
+  siteIdentity,
+  workingApproach
+} from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Omar Khair — Product Builder | Web & Mobile",
   description:
-    "Websites, mobile products, ordering experiences, dashboards, RFQ systems, and business software built by Omar Khair.",
+    "Product, engineering, visual direction, and launch work across mobile products, business systems, Arabic-first experiences, and client delivery.",
   alternates: { canonical: "/" }
 };
 
-type WorkItem = {
-  title: string;
-  label: string;
-  description: string;
-  proof: string[];
-  status: string;
-  href: string;
-  live?: string;
-  screenshot: string;
-  dark?: boolean;
+type FeatureConfig = {
+  id: "teswa" | "nova" | "hiltech" | "wavezero";
+  index: string;
+  kicker: string;
+  statement: string;
+  sectionClass: string;
+  textClass: string;
+  mutedClass: string;
+  ruleClass: string;
+  mediaClass: string;
+  layout: "phones" | "wide";
+  visualCount: number;
 };
 
-const flagshipWork: WorkItem[] = [
+const featureConfigs: FeatureConfig[] = [
   {
-    title: "HILTECH — B2B Website & RFQ Operations System",
-    label: "Business system",
-    description:
-      "A corporate website that grew into product discovery, structured RFQ intake, quotation workflows, customer tracking, and admin operations.",
-    proof: ["Product catalog + RFQ basket", "Supabase-backed workflows", "Admin command center", "Quotation + follow-up flow"],
-    status: "Live business system",
-    href: "/work/hiltech",
-    live: "https://hiltech-eg-website.vercel.app/",
-    screenshot: "/project-screenshots/hiltech-homepage.png",
-    dark: true
+    id: "teswa",
+    index: "01",
+    kicker: "Marketplace / social exchange",
+    statement: "A product where discovery, trust, negotiation, and conversation become one continuous exchange.",
+    sectionClass: "bg-[#11110f]",
+    textClass: "text-[#f4f0e7]",
+    mutedClass: "text-[#aaa59a]",
+    ruleClass: "border-white/15",
+    mediaClass: "bg-[#d8ff65]",
+    layout: "phones",
+    visualCount: 2
   },
   {
-    title: "Teswa — Arabic-First Social Swap Marketplace",
-    label: "Mobile product",
-    description:
-      "A native Arabic-first marketplace and social exchange product covering discovery, stories, messaging, notifications, offline memory, and device security.",
-    proof: ["Expo / React Native", "Supabase auth + data", "Offline memory", "Google Play release operations"],
-    status: "Live / post-launch on Google Play",
-    href: "/work/teswa",
-    screenshot: "/project-showcases/teswa.webp"
+    id: "nova",
+    index: "02",
+    kicker: "Native social product",
+    statement: "Social surfaces shaped as a coherent product system — from Orbit and Tonight to media, messaging, and identity.",
+    sectionClass: "bg-[#3157ff]",
+    textClass: "text-white",
+    mutedClass: "text-white/90",
+    ruleClass: "border-white/20",
+    mediaClass: "bg-[#ebe8df]",
+    layout: "phones",
+    visualCount: 3
+  },
+  {
+    id: "hiltech",
+    index: "03",
+    kicker: "Business system / infrastructure",
+    statement: "A technical business presence that connects field credibility, product discovery, RFQ workflows, and procurement.",
+    sectionClass: "bg-[#ebe7dc]",
+    textClass: "text-[#11110f]",
+    mutedClass: "text-[#676259]",
+    ruleClass: "border-black/15",
+    mediaClass: "bg-[#141b2d]",
+    layout: "wide",
+    visualCount: 2
+  },
+  {
+    id: "wavezero",
+    index: "04",
+    kicker: "Music / native playback",
+    statement: "A calm local-first music experience carried by Flutter UI and native Kotlin Media3 playback underneath.",
+    sectionClass: "bg-[#1c151b]",
+    textClass: "text-[#f5eee8]",
+    mutedClass: "text-[#b9aeb5]",
+    ruleClass: "border-white/15",
+    mediaClass: "bg-[#f08b6e]",
+    layout: "phones",
+    visualCount: 2
   }
 ];
 
-const visualProof = [
-  {
-    title: "Nova",
-    label: "Native Android social platform",
-    text: "Kotlin Android product with backend APIs, WebSockets, messaging, calls, stories/reels, security, CI, and architecture consolidation.",
-    image: "/project-showcases/nova.webp",
-    chips: ["Kotlin", "Django", "WebSockets", "CI / release engineering"]
-  },
-  {
-    title: "WaveZero",
-    label: "Music product + native playback",
-    text: "Flutter consumer experience connected to native Kotlin Media3 / ExoPlayer playback, local music, queues, downloads, and offline behavior.",
-    image: "/project-showcases/wavezero.webp",
-    chips: ["Flutter", "Kotlin / Media3", "MethodChannel", "Rust"]
+const clientProofIds = ["pharmacist-portfolio", "tuscanini", "habba"];
+
+function projectVisuals(projectId: string, count: number): CuratedVisual[] {
+  const plan = getProjectVisualPlan(projectId);
+  return plan.home.slice(0, count).map(getVisual);
+}
+
+function Action({ action, inverted = false }: { action: ProjectAction; inverted?: boolean }) {
+  const className = [
+    "group inline-flex items-center gap-2 border-b pb-1 text-sm font-medium transition",
+    inverted
+      ? "border-white/35 text-white hover:border-white"
+      : "border-black/30 text-[#11110f] hover:border-black"
+  ].join(" ");
+
+  const label = (
+    <>
+      <span>{action.label}</span>
+      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+        ↗
+      </span>
+    </>
+  );
+
+  if (!action.external) {
+    return (
+      <Link href={action.href} className={className}>
+        {label}
+      </Link>
+    );
   }
-];
 
-const services = [
-  ["Business websites", "Clean, responsive websites for professionals, clinics, cafés, brands, and service businesses."],
-  ["Ordering & catalog experiences", "Menus, product discovery, WhatsApp ordering, carts, request flows, and customer journeys."],
-  ["Business systems", "Dashboards, admin tools, RFQ / quotation workflows, internal operations, and database-backed flows."],
-  ["Mobile products", "Arabic-first consumer apps, marketplace flows, social features, media, notifications, and release operations."],
-  ["Product & UX direction", "Scope definition, user journeys, design systems, and turning vague ideas into buildable product phases."],
-  ["Architecture & hardening", "Refactors, feature ownership, CI gates, security boundaries, deployment readiness, and codebase cleanup."]
-];
+  return (
+    <a href={action.href} target="_blank" rel="noreferrer" className={className}>
+      {label}
+    </a>
+  );
+}
 
-const pricing = [
-  {
-    name: "Starter Website",
-    price: "15,000 EGP+",
-    text: "A custom business or professional website with stronger visual direction, content structure, responsive implementation, and deployment."
-  },
-  {
-    name: "Business Website",
-    price: "30,000 EGP+",
-    text: "A larger multi-page business presence with richer product/service presentation, lead flows, integrations, and admin-ready foundations."
-  },
-  {
-    name: "Brand / Ordering Experience",
-    price: "45,000 EGP+",
-    text: "Catalog, ordering, product discovery, conversion flows, customer journeys, and custom operational logic."
-  },
-  {
-    name: "RFQ / Business System",
-    price: "60,000 EGP+",
-    text: "Database-backed workflows, dashboards, quotation/RFQ flows, internal operations, customer tracking, and system integrations."
-  }
-];
+function ProjectFeature({ config }: { config: FeatureConfig }) {
+  const project = getProject(config.id);
+  const visuals = projectVisuals(config.id, config.visualCount);
+  const inverted = config.textClass.includes("white") || config.textClass.includes("f4f0e7") || config.textClass.includes("f5eee8");
 
-const process = [
-  ["01", "Understand", "What the business or product actually needs — not just a list of screens."],
-  ["02", "Shape", "Choose the smallest useful scope and the right technical path."],
-  ["03", "Build", "Design and implement the real working experience, mobile-first."],
-  ["04", "Launch", "Deploy, verify, fix the real-world gaps, and leave a maintainable foundation."]
-];
+  return (
+    <section className={`home-project-scene ${config.sectionClass} ${config.textClass}`}>
+      <div className="home-editorial-shell py-20 sm:py-24 lg:py-32">
+        <ScrollReveal>
+          <div className={`grid gap-6 border-t pt-5 lg:grid-cols-[0.7fr_1.3fr] ${config.ruleClass}`}>
+            <div className={`flex items-start justify-between gap-6 lg:block ${config.mutedClass}`}>
+              <p className="home-meta">{config.index} / FLAGSHIP</p>
+              <p className="home-meta lg:mt-3">{config.kicker}</p>
+            </div>
+            <div>
+              <div className="flex flex-wrap items-start justify-between gap-5">
+                <h2 className="max-w-4xl text-[clamp(3.5rem,8vw,8rem)] font-semibold leading-[0.84] tracking-[-0.065em]">
+                  {project.shortTitle}
+                </h2>
+                <p className={`home-meta mt-2 flex items-center gap-2 ${config.mutedClass}`}>
+                  <span className="h-2 w-2 rounded-full bg-current" aria-hidden="true" />
+                  {project.status.label}
+                </p>
+              </div>
+              <p className={`mt-8 max-w-3xl text-xl leading-snug sm:text-2xl lg:text-3xl ${config.mutedClass}`}>
+                {config.statement}
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={90} className="mt-12 lg:mt-16">
+          <div
+            className={
+              config.layout === "wide"
+                ? `home-wide-composition ${config.mediaClass}`
+                : `home-phone-composition ${config.mediaClass}`
+            }
+          >
+            {visuals.map((visual, index) => (
+              <figure
+                key={visual.sourceId}
+                className={
+                  config.layout === "wide"
+                    ? `home-wide-shot home-wide-shot--${index + 1}`
+                    : `home-phone-shot home-phone-shot--${index + 1}`
+                }
+              >
+                <Image
+                  src={visual.publicPath}
+                  alt={visual.alt}
+                  fill
+                  className="object-contain"
+                  sizes={
+                    config.layout === "wide"
+                      ? "(min-width: 1024px) 72vw, 94vw"
+                      : "(min-width: 1024px) 28vw, 54vw"
+                  }
+                  priority={config.index === "01" && index === 0}
+                />
+              </figure>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={140} className="mt-10">
+          <div className={`grid gap-6 border-t pt-5 lg:grid-cols-[0.7fr_1.3fr] ${config.ruleClass}`}>
+            <p className={`home-meta ${config.mutedClass}`}>{project.role}</p>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div className="flex max-w-3xl flex-wrap gap-x-5 gap-y-2">
+                {project.proof.map((item) => (
+                  <span key={item} className={`text-sm ${config.mutedClass}`}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-5">
+                {project.actions.slice(0, 3).map((action) => (
+                  <Action key={`${action.kind}-${action.href}`} action={action} inverted={inverted} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+function ClientProofRow({ project, index }: { project: ProjectRecord; index: number }) {
+  return (
+    <Link
+      href={project.caseStudyPath ?? "/work"}
+      className="group grid gap-4 border-t border-black/15 py-6 transition-colors hover:bg-black/[0.035] sm:grid-cols-[64px_1fr_auto] sm:items-center sm:px-3"
+    >
+      <span className="home-meta text-[#686259]">{String(index + 1).padStart(2, "0")}</span>
+      <span>
+        <span className="block text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">{project.shortTitle}</span>
+        <span className="mt-1 block max-w-2xl text-sm leading-relaxed text-[#6f6a60]">{project.summary}</span>
+      </span>
+      <span className="flex items-center justify-between gap-5 sm:justify-end">
+        <span className="home-meta text-[#686259]">{project.status.label}</span>
+        <span aria-hidden="true" className="text-2xl transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+      </span>
+    </Link>
+  );
+}
 
 export default function Home() {
+  const clientProof = clientProofIds.map(getProject);
+
   return (
-    <main className="bg-stone-50 text-stone-950">
-      <header className="sticky top-0 z-30 border-b border-stone-200/70 bg-stone-50/90 backdrop-blur">
-        <div className="section-wrap flex min-h-16 items-center justify-between gap-4">
-          <a href="#top" className="flex items-center gap-2.5" aria-label="Omar Khair home">
-            <Image src="/logo-mark.svg" alt="Omar Khair" width={34} height={34} className="h-9 w-9 rounded-lg" priority />
-            <div className="leading-tight">
-              <p className="font-semibold tracking-tight">Omar Khair</p>
-              <p className="text-[10px] uppercase tracking-[0.12em] text-stone-500">Product Builder · Web & Mobile</p>
+    <main className="overflow-clip bg-[var(--paper)] text-[var(--ink)]">
+      <section className="home-hero min-h-[calc(100svh-4rem)] border-b border-black/15">
+        <div className="home-editorial-shell flex min-h-[calc(100svh-4rem)] flex-col py-7 sm:py-9">
+          <div className="grid gap-5 border-t border-black/20 pt-4 sm:grid-cols-2">
+            <p className="home-meta">{siteIdentity.title}</p>
+            <div className="grid grid-cols-2 gap-4 sm:justify-self-end sm:text-right">
+              <p className="home-meta">{siteIdentity.location}</p>
+              <p className="home-meta">Selected work · 2026</p>
             </div>
-          </a>
-          <nav className="hidden items-center gap-5 text-sm text-stone-600 lg:flex">
-            <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="/local-business">Local Launch Offer</a>
-          </nav>
-          <a href="#contact" className="rounded-full bg-stone-900 px-4 py-2 text-sm font-medium text-white">Start a project</a>
-        </div>
-      </header>
-
-      <section id="top" className="section-wrap py-16 md:py-24">
-        <div className="max-w-5xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Product Builder · Full-Stack Web & Mobile</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-7xl">I turn ideas and business workflows into real digital products.</h1>
-          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-stone-600 md:text-xl">Websites, mobile apps, ordering experiences, RFQ systems, dashboards, social products, and operational tools — from product direction to working deployment.</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#work" className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white">See selected work</a>
-            <a href="#pricing" className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium">See project ranges</a>
-            <a href="/local-business" className="rounded-full border border-stone-300 px-6 py-3 text-sm font-medium">1,000 EGP local offer</a>
           </div>
-        </div>
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {["Live business systems", "Google Play product work", "Web + mobile + backend", "From scope to deployment"].map((item) => (
-            <div key={item} className="rounded-2xl border border-stone-200 bg-white p-4 text-sm font-medium shadow-sm">{item}</div>
-          ))}
-        </div>
-      </section>
 
-      <section className="border-y border-stone-200 bg-white">
-        <div className="section-wrap grid gap-5 py-8 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">Limited local launch offer</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight">A compact business website for 1,000 EGP.</h2>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600">500 EGP to start + 500 EGP on launch. This is a deliberately limited small-business offer — not the price of custom apps, dashboards, ordering systems, or larger websites.</p>
-          </div>
-          <a href="/local-business" className="rounded-full bg-stone-900 px-5 py-3 text-center text-sm font-medium text-white">See what is included</a>
-        </div>
-      </section>
+          <div className="flex flex-1 flex-col justify-center py-12 sm:py-16">
+            <ScrollReveal>
+              <h1 className="select-none text-[clamp(5.3rem,17vw,15rem)] font-semibold uppercase leading-[0.67] tracking-[-0.085em]">
+                <span className="block">Omar</span>
+                <span className="home-display-serif block font-normal italic tracking-[-0.07em]">Khair</span>
+              </h1>
+            </ScrollReveal>
 
-      <section id="work" className="section-wrap py-16 md:py-20">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">Selected work</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">The screenshots now show the product, not just the stack.</h2>
-          </div>
-          <a href="/work" className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium">View all work</a>
-        </div>
-
-        <div className="mt-9 space-y-5">
-          {flagshipWork.map((item) => (
-            <article key={item.title} className={`rounded-3xl border p-6 shadow-sm md:p-8 ${item.dark ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white"}`}>
-              <div className="flex flex-wrap items-start justify-between gap-3">
+            <ScrollReveal delay={120}>
+              <div className="mt-10 grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+                <div className="hidden lg:block">
+                  <p className="home-meta max-w-[16rem] leading-relaxed text-[#686259]">
+                    Product / Engineering / Visual Direction / Launch
+                  </p>
+                </div>
                 <div>
-                  <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${item.dark ? "text-stone-300" : "text-stone-500"}`}>{item.label}</p>
-                  <h3 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">{item.title}</h3>
-                </div>
-                <span className={`rounded-full border px-3 py-1 text-xs font-medium ${item.dark ? "border-white/30 bg-white/10" : "border-stone-200 bg-stone-50"}`}>{item.status}</span>
-              </div>
-              <p className={`mt-4 max-w-4xl leading-relaxed ${item.dark ? "text-stone-300" : "text-stone-600"}`}>{item.description}</p>
-              <div className="mt-6 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
-                <div className={`relative overflow-hidden rounded-2xl border ${item.dark ? "border-white/15 bg-white" : "border-stone-200 bg-stone-100"} ${item.screenshot.includes("/project-showcases/") ? "h-[560px]" : "aspect-[16/9]"}`}>
-                  <Image
-                    src={item.screenshot}
-                    alt={`${item.title} product preview`}
-                    fill
-                    sizes="(min-width: 1024px) 65vw, 100vw"
-                    className={item.screenshot.includes("/project-showcases/") ? "object-contain p-4 sm:p-6" : "object-cover"}
-                  />
-                </div>
-                <div className="grid content-start gap-2 sm:grid-cols-2 lg:grid-cols-1">
-                  {item.proof.map((point) => (
-                    <div key={point} className={`rounded-xl border px-4 py-3 text-sm ${item.dark ? "border-white/15 text-stone-100" : "border-stone-200 bg-stone-50 text-stone-700"}`}>{point}</div>
-                  ))}
+                  <p className="max-w-4xl text-[clamp(1.65rem,3.3vw,3.8rem)] leading-[1.03] tracking-[-0.045em]">
+                    I build digital products end-to-end — from direction and system behavior to the interface people touch and the release they can actually use.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-6">
+                    <Link href="#selected-work" className="home-text-link">
+                      Selected work <span aria-hidden="true">↓</span>
+                    </Link>
+                    <Link href="/contact" className="home-text-link">
+                      Start a project <span aria-hidden="true">↗</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={item.href} className={`rounded-full px-4 py-2 text-sm font-medium ${item.dark ? "bg-white text-stone-900" : "bg-stone-900 text-white"}`}>View case study</a>
-                {item.live ? <a href={item.live} target="_blank" rel="noreferrer" className={`rounded-full border px-4 py-2 text-sm font-medium ${item.dark ? "border-white/40" : "border-stone-300"}`}>Visit live project</a> : null}
+            </ScrollReveal>
+          </div>
+
+          <div className="grid gap-4 border-t border-black/20 pt-4 sm:grid-cols-2">
+            <p className="home-meta text-[#686259]">Scroll to enter the work</p>
+            <p className="home-meta text-[#686259] sm:text-right">Web · Mobile · Systems · Creative</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="overflow-hidden border-b border-black/15 bg-[#11110f] py-5 text-[#f4f0e7]" aria-label="Core capabilities">
+        <p className="sr-only">Product, Engineering, Visual Direction, Launch</p>
+        <div className="home-ticker" aria-hidden="true">
+          <div className="home-ticker-track">
+            <span>PRODUCT</span><i>✦</i><span>ENGINEERING</span><i>✦</i><span>VISUAL DIRECTION</span><i>✦</i><span>LAUNCH</span><i>✦</i>
+            <span>PRODUCT</span><i>✦</i><span>ENGINEERING</span><i>✦</i><span>VISUAL DIRECTION</span><i>✦</i><span>LAUNCH</span><i>✦</i>
+          </div>
+        </div>
+      </section>
+
+      <div id="selected-work">
+        {featureConfigs.map((config) => (
+          <ProjectFeature key={config.id} config={config} />
+        ))}
+      </div>
+
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-40">
+          <ScrollReveal>
+            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+              <div>
+                <p className="home-meta text-[#686259]">Capabilities / 04 dimensions</p>
               </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          {visualProof.map((item) => (
-            <article key={item.title} className="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm">
-              <div className="relative h-[520px] overflow-hidden border-b border-stone-200 bg-stone-100">
-                <Image src={item.image} alt={`${item.title} product screen`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-contain p-4 sm:p-6" />
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,7vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.065em]">
+                  One product story, carried across disciplines.
+                </h2>
+                <p className="mt-8 max-w-3xl text-xl leading-relaxed text-[#6f6a60] sm:text-2xl">
+                  {siteIdentity.summary} The range matters because the handoff points between product, interface, engineering, and release are where work usually breaks.
+                </p>
               </div>
-              <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">{item.label}</p>
-                <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-stone-600">{item.text}</p>
-                <div className="mt-4 flex flex-wrap gap-2">{item.chips.map((chip) => <span key={chip} className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs text-stone-700">{chip}</span>)}</div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16 border-b border-black/15">
+            {capabilityPillars.map((pillar, index) => (
+              <ScrollReveal key={pillar.title} delay={index * 45}>
+                <div className="grid gap-5 border-t border-black/15 py-7 sm:grid-cols-[64px_0.75fr_1.25fr] sm:items-start">
+                  <p className="home-meta text-[#686259]">0{index + 1}</p>
+                  <h3 className="text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">{pillar.title}</h3>
+                  <div>
+                    <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{pillar.text}</p>
+                    <p className="mt-4 text-sm text-[#686259]">{pillar.proof.join(" · ")}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fbf9f4]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+              <p className="home-meta text-[#686259]">Client & business proof</p>
+              <div>
+                <h2 className="text-[clamp(3rem,6vw,6.6rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+                  Different constraints. Same ownership.
+                </h2>
+                <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#6f6a60]">
+                  Client work sits quieter than the flagships, but it proves something different: translating a real business need into a usable, shipped experience.
+                </p>
               </div>
-            </article>
-          ))}
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-14 border-b border-black/15">
+            {clientProof.map((project, index) => (
+              <ScrollReveal key={project.id} delay={index * 55}>
+                <ClientProofRow project={project} index={index} />
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal className="mt-8">
+            <Link href="/work" className="home-text-link">
+              Explore the complete work index <span aria-hidden="true">↗</span>
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section id="services" className="border-y border-stone-200 bg-white">
-        <div className="section-wrap py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">What I can build</p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Start small, or build the system behind the business.</h2>
-          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{services.map(([title, text]) => <div key={title} className="rounded-2xl border border-stone-200 bg-stone-50 p-5"><h3 className="font-semibold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-stone-600">{text}</p></div>)}</div>
+      <section className="bg-[#3157ff] text-white">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+              <p className="home-meta text-white/90">Work with me</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,7vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.065em]">
+                  Scope the real work before pricing the label.
+                </h2>
+                <p className="mt-7 max-w-3xl text-lg leading-relaxed text-white/90">
+                  A compact launch page and a product system are not the same offer. The starting ranges stay visible so the conversation begins with scope, not guesswork.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16 grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+            <div className="border-b border-white/25">
+              {serviceRanges.slice(0, 4).map((service, index) => (
+                <ScrollReveal key={service.name} delay={index * 45}>
+                  <div className="grid gap-3 border-t border-white/25 py-6 sm:grid-cols-[56px_1fr_auto] sm:items-center">
+                    <span className="home-meta text-white/90">0{index + 1}</span>
+                    <span className="text-xl font-medium sm:text-2xl">{service.name}</span>
+                    <span className="text-xl font-semibold sm:text-2xl">{service.price}</span>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal delay={120}>
+              <div className="border-t border-white/25 pt-6">
+                <p className="home-meta text-white/90">Separate local path</p>
+                <h3 className="mt-5 text-4xl font-semibold tracking-[-0.045em]">{localLaunchOffer.name}</h3>
+                <p className="mt-3 home-display-serif text-6xl italic">{localLaunchOffer.price}</p>
+                <p className="mt-5 max-w-md leading-relaxed text-white/90">{localLaunchOffer.summary}</p>
+                <Link href="/local-business" className="mt-7 inline-flex border-b border-white/40 pb-1 text-sm font-medium hover:border-white">
+                  See the limited scope ↗
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      <section id="pricing" className="section-wrap py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">Typical project ranges</p>
-        <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">The 1,000 EGP offer is a small local launch package. Custom work is scoped separately.</h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-stone-600">These are starting ranges, not fixed quotes. Final scope depends on content, integrations, admin needs, backend logic, and delivery requirements.</p>
-        <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {pricing.map((item) => (
-            <article key={item.name} className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold">{item.name}</p>
-              <p className="mt-3 text-2xl font-semibold tracking-tight">{item.price}</p>
-              <p className="mt-3 text-sm leading-relaxed text-stone-600">{item.text}</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-5 rounded-2xl border border-stone-900 bg-stone-900 p-6 text-white md:flex md:items-center md:justify-between md:gap-6">
-          <div><p className="font-semibold">Mobile apps, larger platforms, and unusual system scope</p><p className="mt-1 text-sm text-stone-300">Custom scope and pricing after the product requirements are clear.</p></div>
-          <a href="#contact" className="mt-4 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-stone-900 md:mt-0">Discuss the scope</a>
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+              <p className="home-meta text-[#686259]">Working approach</p>
+              <h2 className="max-w-5xl text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+                From unclear problem to something people can use.
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-14 grid border-y border-black/15 sm:grid-cols-2 lg:grid-cols-4">
+            {workingApproach.map((item, index) => (
+              <ScrollReveal key={item.step} delay={index * 50} className="h-full">
+                <article className="h-full border-black/15 px-0 py-7 sm:px-5 lg:border-l lg:first:border-l-0">
+                  <p className="home-meta text-[#686259]">{item.step}</p>
+                  <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em]">{item.title}</h3>
+                  <p className="mt-4 max-w-sm leading-relaxed text-[#6f6a60]">{item.text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="process" className="border-y border-stone-200 bg-white">
-        <div className="section-wrap py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">How I work</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">Product thinking before feature dumping.</h2>
-          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{process.map(([number, title, text]) => <div key={number} className="rounded-2xl border border-stone-200 bg-stone-50 p-5"><p className="text-xs font-semibold text-stone-400">{number}</p><h3 className="mt-3 text-lg font-semibold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-stone-600">{text}</p></div>)}</div>
+      <section className="bg-[#11110f] text-[#f4f0e7]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-40">
+          <ScrollReveal>
+            <p className="home-meta text-[#aaa59a]">Contact / next project</p>
+            <h2 className="mt-8 max-w-6xl text-[clamp(4rem,10vw,11rem)] font-semibold uppercase leading-[0.76] tracking-[-0.075em]">
+              Let&apos;s build
+              <span className="home-display-serif block font-normal italic normal-case">something useful.</span>
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="mt-14 grid gap-8 border-t border-white/15 pt-7 lg:grid-cols-[0.72fr_1.28fr]">
+              <p className="home-meta text-[#aaa59a]">Direct / structured / no ceremony</p>
+              <div>
+                <p className="max-w-3xl text-xl leading-relaxed text-[#c6c0b6] sm:text-2xl">
+                  Send the product, business workflow, or launch problem as it is. We can shape the smallest coherent scope before implementation starts.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4">
+                  <Link href="/contact" className="home-text-link home-text-link--light">Open contact page ↗</Link>
+                  <a href={contactLinks.email.href} className="home-text-link home-text-link--light">Email ↗</a>
+                  <a href={contactLinks.linkedin.href} target="_blank" rel="noreferrer" className="home-text-link home-text-link--light">LinkedIn ↗</a>
+                  <a href={contactLinks.whatsapp.href} target="_blank" rel="noreferrer" className="home-text-link home-text-link--light">WhatsApp ↗</a>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-
-      <section id="contact" className="bg-stone-100">
-        <div className="section-wrap py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-stone-500">Start a project</p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">Tell me what you need. I’ll help shape the right scope.</h2>
-          <p className="mt-4 max-w-3xl leading-relaxed text-stone-600">For a small local website, use the local launch offer. For products, business systems, mobile apps, or larger websites, use the project brief below.</p>
-          <ProjectInquiryForm />
-        </div>
-      </section>
-
-      <footer className="border-t border-stone-200 bg-stone-950 text-stone-300">
-        <div className="section-wrap flex flex-col gap-4 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="font-semibold text-white">Omar Khair</p><p className="mt-1 text-stone-400">Product Builder · Full-Stack Web & Mobile</p></div>
-          <div className="flex flex-wrap gap-4"><a href="https://github.com/omarkhair70-droid" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:omar.khair70@gmail.com">Email</a><a href="https://wa.me/201151891310" target="_blank" rel="noreferrer">WhatsApp</a></div>
-        </div>
-      </footer>
     </main>
   );
 }

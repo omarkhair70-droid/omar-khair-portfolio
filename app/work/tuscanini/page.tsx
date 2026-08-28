@@ -1,43 +1,105 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+
+import EditorialCaseStudyMeta from "@/components/EditorialCaseStudyMeta";
+import ScrollReveal from "@/components/ScrollReveal";
+import SupportingVisualStory from "@/components/SupportingVisualStory";
 
 export const metadata: Metadata = {
   title: "Tuscanini Case Study — Omar Khair",
-  description:
-    "Arabic fast-food ordering experience case study by Omar Khair.",
-  alternates: {
-    canonical: "/work/tuscanini"
-  }
+  description: "Arabic-first fast-food ordering experience spanning discovery, guided choice, customization, cart, checkout, tracking, and WhatsApp continuation.",
+  alternates: { canonical: "/work/tuscanini" }
 };
 
-const tags = ["Arabic-first", "RTL interface", "Food ordering flow", "Installable PWA", "WhatsApp continuation"];
-const challengePoints = ["Make fast-food browsing feel fast and clear on mobile.", "Build an intuitive Arabic RTL ordering journey.", "Organize categories and offers without clutter.", "Support cart review before order submission.", "Give customers and admins better order visibility."];
-const buildItems = ["Arabic RTL interface", "Menu/category browsing", "Installable PWA ordering experience", "Cart and checkout flow", "Supabase-backed order saving", "Customer active order tracking", "Admin order management", "WhatsApp order continuation"];
-const opsPoints = ["Orders can be saved with customer details for follow-up.", "Admin side supports reviewing and managing incoming orders.", "Customers can track active order status after submission.", "Runtime open/closed status helps set clear ordering expectations."];
-const businessValue = ["Improves clarity across browsing, cart, and submission steps.", "Makes menu and offer discovery easier for Arabic users.", "Supports more structured order communication.", "Gives better visibility to customers and admins."];
-const buildNotes = ["Next.js App Router", "TypeScript + React", "Tailwind CSS", "RTL Arabic interface", "Supabase order flow", "Vercel"];
+const journey = [
+  ["01", "Browse", "Arabic-first categories and menu structure keep discovery fast on mobile."],
+  ["02", "Guide", "Food Finder gives uncertain customers a path to a recommendation instead of forcing endless browsing."],
+  ["03", "Customize", "Item-level options and add-ons happen before the user commits to the cart."],
+  ["04", "Review", "Cart state makes quantities, line items, and total intent explicit before submission."],
+  ["05", "Submit", "Checkout captures delivery details and turns the session into a structured order."],
+  ["06", "Continue", "WhatsApp and active-order visibility preserve a familiar handoff after the digital flow."]
+];
 
 export default function TuscaniniCaseStudyPage() {
   return (
-    <main className="bg-stone-50 pb-20">
-      <section className="section-wrap py-16 md:py-22">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">Case Study</p>
-        <h1 className="mt-4 max-w-5xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">Tuscanini — Arabic Fast-Food Ordering Experience</h1>
-        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-stone-600">A mobile-first ordering experience designed for Arabic users, connecting menu browsing, offers, carts, order submission, tracking, and admin visibility.</p>
-        <ul className="mt-6 flex flex-wrap gap-2">{tags.map((tag) => <li key={tag} className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-700">{tag}</li>)}</ul>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><a href="https://tuscanini-ordering-system.vercel.app/" target="_blank" rel="noreferrer" className="rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-medium text-white">View Live Project</a><Link href="/work" className="rounded-full border border-stone-300 px-6 py-3 text-center text-sm font-medium text-stone-900">Back to Work</Link></div>
+    <main className="overflow-clip bg-[#f1eee6] text-[#11110f]">
+      <section className="bg-[#f3c54b] text-[#17130b]">
+        <div className="home-editorial-shell py-10 sm:py-14 lg:py-20">
+          <ScrollReveal>
+            <div className="flex items-center justify-between gap-5 border-t border-black/15 pt-4">
+              <Link href="/work" className="home-meta text-black/70 transition hover:text-black">← Work index</Link>
+              <p className="home-meta text-black/72">Client case / ordering</p>
+            </div>
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+              <div>
+                <p className="home-meta text-black/72">Arabic / RTL / conversion</p>
+                <p className="case-number mt-7">01</p>
+              </div>
+              <div>
+                <h1 className="text-[clamp(4rem,9vw,9.5rem)] font-semibold leading-[0.79] tracking-[-0.075em]">Tuscanini</h1>
+                <p className="mt-9 max-w-4xl text-[clamp(1.45rem,3vw,3.05rem)] leading-[1.06] tracking-[-0.04em] text-black/72">
+                  A mobile-first Arabic ordering journey that helps people browse, choose, customize, review, and convert without friction.
+                </p>
+              </div>
+            </div>
+            <EditorialCaseStudyMeta projectId="tuscanini" />
+          </ScrollReveal>
+        </div>
       </section>
-      <section className="section-wrap py-8 md:py-12"><div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><h2 className="text-2xl font-semibold tracking-tight">Overview</h2><p className="mt-4 max-w-4xl leading-relaxed text-stone-600">Tuscanini needed more than a static menu page. The experience was built to help Arabic-speaking customers browse quickly, choose confidently, submit structured orders, and continue through WhatsApp when needed.</p></div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">The Challenge</h2><div className="mt-6 grid gap-4 md:grid-cols-2">{challengePoints.map((point) => <div key={point} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"><p className="text-stone-700">{point}</p></div>)}</div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">What I Built</h2><div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{buildItems.map((item) => <div key={item} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"><p className="text-sm font-semibold text-stone-800">{item}</p></div>)}</div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">Visual Proof / Screenshots</h2><div className="mt-6 grid gap-4 lg:grid-cols-2"><figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm lg:row-span-2"><Image src="/project-screenshots/tuscanini-order-flow.png" alt="Tuscanini ordering flow and cart journey" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">Ordering flow and cart journey</figcaption></figure><figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm"><Image src="/project-screenshots/tuscanini-menu.png" alt="Tuscanini menu and category browsing in Arabic" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">Menu and category browsing</figcaption></figure><figure className="rounded-2xl border border-stone-200 bg-white p-3 shadow-sm"><Image src="/project-screenshots/tuscanini-offers.png" alt="Tuscanini offers and promotions visibility" width={1400} height={900} className="h-auto w-full rounded-xl object-contain" /><figcaption className="mt-3 text-sm text-stone-600">Offers and promotions visibility</figcaption></figure></div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">System / Customer Journey</h2><div className="mt-6 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"><p className="text-base leading-relaxed text-stone-700">Customer opens Tuscanini → browses menu and offers → adds items to cart → reviews order details → submits order → continues on WhatsApp if needed → tracks active order status.</p></div></section>
-      <section className="section-wrap py-8 md:py-12"><div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm md:p-8"><h2 className="text-2xl font-semibold tracking-tight">Operational or Business Side</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{opsPoints.map((point) => <li key={point} className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-800">{point}</li>)}</ul></div></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">Business Value</h2><ul className="mt-6 grid gap-3 md:grid-cols-2">{businessValue.map((point) => <li key={point} className="rounded-2xl border border-stone-200 bg-white p-5 text-stone-700 shadow-sm">{point}</li>)}</ul></section>
-      <section className="section-wrap py-8 md:py-12"><h2 className="text-2xl font-semibold tracking-tight">Build Notes</h2><ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{buildNotes.map((item) => <li key={item} className="rounded-2xl border border-stone-200 bg-white p-5 text-sm font-medium text-stone-800 shadow-sm">{item}</li>)}</ul></section>
-      <section className="section-wrap pt-10"><div className="rounded-2xl border border-stone-900 bg-stone-900 p-7 text-white shadow-sm md:p-9"><h2 className="text-3xl font-semibold tracking-tight">Need a food ordering experience that feels clear, fast, and easy to use?</h2><p className="mt-4 max-w-3xl text-stone-300">I build ordering experiences that connect menus, carts, customer actions, admin visibility, and WhatsApp workflows.</p><div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><Link href="/#contact" className="rounded-full bg-white px-5 py-2 text-center text-sm font-medium text-stone-900">Start a Project</Link><Link href="/work" className="rounded-full border border-white/70 px-5 py-2 text-center text-sm font-medium text-white">View All Work</Link></div></div></section>
-      <section className="section-wrap pt-8"><div className="rounded-2xl border border-stone-200 bg-white p-5"><p className="text-sm font-semibold text-stone-700">Explore more work</p><div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/work/hiltech" className="text-sm text-stone-600 transition hover:text-stone-900">HILTECH Case Study</Link><Link href="/work/farrag-coffee" className="text-sm text-stone-600 transition hover:text-stone-900">Farrag Coffee Case Study</Link></div></div></section>
+
+      <section className="bg-[#f1eee6]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-[#5f5a51]">Product / UX lens</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6.3vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
+                  The proof is the ordering flow, not a flashy restaurant homepage.
+                </h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-[#5f5a51]">
+                  Tuscanini is supporting product/UX evidence: Arabic-first navigation, guided food choice, customization, cart clarity, checkout, and order continuation are designed as one mobile conversion path.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+          <div className="case-editorial-list mt-16">
+            {journey.map(([number,title,text],index)=>(
+              <ScrollReveal key={title} delay={index*32}>
+                <article className="case-editorial-row">
+                  <p className="home-meta text-[#5f5a51]">{number}</p>
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
+                  <p className="max-w-2xl leading-relaxed text-[#5f5a51]">{text}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SupportingVisualStory
+        projectId="tuscanini"
+        eyebrow="Visual story / 8 approved states"
+        title="From menu discovery to a confirmed order."
+        intro="The sequence covers category discovery, menu, guided recommendation, customization, cart, checkout, and order summary. The screens stay large enough to read as evidence instead of becoming decorative phone thumbnails."
+      />
+
+      <section className="bg-[#11110f] text-[#f4f0e7]">
+        <div className="home-editorial-shell py-24 sm:py-28 lg:py-36">
+          <ScrollReveal>
+            <div className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
+              <p className="home-meta text-white/60">Business value</p>
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3.2rem,6.3vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.06em]">Make ordering feel obvious before the customer reaches WhatsApp.</h2>
+                <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/75">The experience improves Arabic menu discovery, gives customers a guided choice path, structures order details, and creates a cleaner handoff for follow-up.</p>
+                <div className="mt-9 flex flex-wrap gap-7">
+                  <Link href="/work/habba" className="home-text-link home-text-link--light">Next: Habba ↗</Link>
+                  <Link href="/contact" className="home-text-link home-text-link--light">Discuss an ordering experience ↗</Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </main>
   );
 }

@@ -1,66 +1,42 @@
-# Omar Khair Portfolio Website
+# Omar Khair Professional Portfolio
 
-A one-page, premium portfolio website for **Omar Khair** to present website and digital system services with a clean, practical, business-first tone.
+A Next.js App Router portfolio organized around the professional positioning:
 
-## Tech Stack
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- ESLint
+**Product + Engineering + Visual Direction + Launch**
 
-## Run Locally
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start development server:
-   ```bash
-   npm run dev
-   ```
-3. Open `http://localhost:3000`.
+## Governing sources
+Read before portfolio changes:
+- `AGENTS.md`
+- `docs/MASTER_PROJECT_REGISTRY.md`
+- `docs/PROFESSIONAL_PROFILE_SOURCE.md`
+- `docs/CODEX_PORTFOLIO_MASTER_TASK.md`
+- `docs/FINAL_IMPLEMENTATION_ARCHITECTURE.md`
+- `portfolio-input/final-visual-curation/ASSET_MANIFEST.md`
 
-## Build for Production
+## Architecture
+- `data/projects.ts` — canonical public project lanes, status, links, proof, and release state.
+- `data/project-visuals.ts` — curated visual source IDs and final intended public paths.
+- `data/site.ts` — identity, navigation, capabilities, contact, pricing, education, and working approach.
+- `components/ProjectActions.tsx` / `ProjectStatusBadge.tsx` — reusable project release/link primitives.
+- `components/SiteHeader.tsx` / `SiteFooter.tsx` — shared responsive shell.
+
+## Primary routes
+- `/` — curated identity and flagship evidence
+- `/work` — four portfolio lanes
+- `/about` — professional narrative and capabilities
+- `/services` — standard commercial ranges + separate limited local offer
+- `/contact` — direct contact and structured project brief
+- `/local-business` — dedicated 1,000 EGP Local Launch Offer
+
+## Visual curation
+PR #34 is merged into the implementation branch history, not into `main` as a standalone production change.
+
+The final attached bundle contains 55 approved WebP assets. Phase 1 records their exact semantic destination and human-approved display ordering. Binary ingestion is tracked separately and must not be claimed until the files are actually committed.
+
+## Local development
 ```bash
+npm install
+npm run dev
+npm run lint
 npm run build
-npm run start
 ```
-
-## Edit Portfolio Content
-Main content is in:
-- `app/page.tsx`
-
-Update these sections there:
-- Header navigation and CTA
-- Hero copy
-- Selected work cards
-- Services list
-- Packages section
-- Process steps
-- Why work with me points
-- Contact CTA and footer
-
-## Update Contact Links
-In `app/page.tsx`, contact links are set to:
-- WhatsApp: `https://wa.me/201151891310`
-- Instagram: `https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ==`
-- Email: `mailto:omar.khair70@gmail.com`
-- Facebook: `https://www.facebook.com/share/18Vs3ic2QK/`
-
-## SEO Metadata
-Edit metadata in:
-- `app/layout.tsx`
-
-Includes title, description, and basic Open Graph tags.
-
-## Phase Updates
-- Polish Pass 01 improved contact visibility and overall visual presentation across key sections.
-- Portfolio Phase 02 added real project screenshots in `public/project-screenshots/`.
-- Selected Work now uses real visuals for HILTECH, Tuscanini, and Farrag Coffee case study previews.
-
-- Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.
-- Portfolio Phase 05 final QA polish was performed after adding real screenshots, live project links, contact links, and project packages.
-- Portfolio Phase 06 added the first dedicated case study page at `/work/hiltech`.
-
-## Case Study Content Editing
-- First dedicated case study route: `app/work/hiltech/page.tsx` (URL: `/work/hiltech`).
-- Edit HILTECH case study structure, proof screenshots, flow, business value, and CTA directly in that file.

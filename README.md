@@ -28,10 +28,22 @@ Read before portfolio changes:
 - `/contact` — direct contact and structured project brief
 - `/local-business` — dedicated 1,000 EGP Local Launch Offer
 
-## Visual curation
-PR #34 is merged into the implementation branch history, not into `main` as a standalone production change.
+## Final implementation status
 
-The final attached bundle contains 55 approved WebP assets. Phase 1 records their exact semantic destination and human-approved display ordering. Binary ingestion is tracked separately and must not be claimed until the files are actually committed.
+The final portfolio implementation was merged through PR #36 on August 28, 2026.
+
+- 55 curated WebP assets are committed under `public/work/`.
+- Flagship, client, creative, and independent project lanes are implemented.
+- Final desktop/mobile route QA passed before merge.
+- No broken images or horizontal overflow were found in the closure pass.
+- Keyboard focus, mobile navigation, reduced motion, and accessibility checks were included.
+- `/privacy/wavezero` is preserved as the production WaveZero V1 privacy-policy route.
+
+## Visual curation
+
+The final visual source of truth is `portfolio-input/final-visual-curation/ASSET_MANIFEST.md`.
+
+The committed `public/work/` assets are the approved portfolio evidence set and are also reused by public GitHub READMEs so the portfolio and repositories present the same product proof.
 
 ## Local development
 ```bash

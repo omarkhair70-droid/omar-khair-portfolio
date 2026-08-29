@@ -1,66 +1,64 @@
-# Omar Khair Portfolio Website
+# Omar Khair — Systems with a pulse
 
-A one-page, premium portfolio website for **Omar Khair** to present website and digital system services with a clean, practical, business-first tone.
+An editorial portfolio for product builder and creative developer Omar Khair. The experience is organised around proof: flagship systems, client delivery, creative commerce and independent work, with motion used to connect chapters rather than decorate them.
 
-## Tech Stack
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- ESLint
+## Experience stack
 
-## Run Locally
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start development server:
-   ```bash
-   npm run dev
-   ```
-3. Open `http://localhost:3000`.
+- Next.js App Router, React and TypeScript
+- GSAP + ScrollTrigger for chapter reveals and spatial pacing
+- Lenis for controlled smooth scrolling
+- PixiJS for the interactive hero signal field
+- `next/font` for Manrope and Instrument Serif
+- `next/image` and curated local WebP evidence
 
-## Build for Production
+Three.js is intentionally not included in this version. The portfolio's visual thesis is two-dimensional systems, signals and real interface evidence; a second 3D runtime would add weight without improving that story.
+
+## Run locally
+
 ```bash
-npm run build
-npm run start
+npm install
+npm run dev
 ```
 
-## Edit Portfolio Content
-Main content is in:
-- `app/page.tsx`
+Open `http://localhost:3000`.
 
-Update these sections there:
-- Header navigation and CTA
-- Hero copy
-- Selected work cards
-- Services list
-- Packages section
-- Process steps
-- Why work with me points
-- Contact CTA and footer
+## Validate
 
-## Update Contact Links
-In `app/page.tsx`, contact links are set to:
-- WhatsApp: `https://wa.me/201151891310`
-- Instagram: `https://www.instagram.com/omarkhair0?igsh=MWc1MnhtbDZwYXF3OQ==`
-- Email: `mailto:omar.khair70@gmail.com`
-- Facebook: `https://www.facebook.com/share/18Vs3ic2QK/`
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## SEO Metadata
-Edit metadata in:
-- `app/layout.tsx`
+## Content architecture
 
-Includes title, description, and basic Open Graph tags.
+- `data/projects.ts` is the single source for project names, categories, statuses, links, narratives and galleries.
+- `app/page.tsx` is the authored home sequence.
+- `app/work/page.tsx` is the complete project index.
+- `app/work/[slug]/page.tsx` generates the case-study system.
+- `app/about/page.tsx` presents Omar's cross-disciplinary practice.
+- `app/local-business/page.tsx` keeps the limited commercial offer separate from the award-facing portfolio narrative.
+- `components/RouteExperience.tsx` owns GSAP, ScrollTrigger and Lenis lifecycle.
+- `components/SignalCanvas.tsx` owns the PixiJS hero field.
+- `docs/FINAL_VISUAL_DIRECTION.md` records the visual and motion decisions.
 
-## Phase Updates
-- Polish Pass 01 improved contact visibility and overall visual presentation across key sections.
-- Portfolio Phase 02 added real project screenshots in `public/project-screenshots/`.
-- Selected Work now uses real visuals for HILTECH, Tuscanini, and Farrag Coffee case study previews.
+## Assets
 
-- Portfolio Phase 03 added live project links configured in `app/page.tsx` inside `workItems`.
-- Portfolio Phase 05 final QA polish was performed after adding real screenshots, live project links, contact links, and project packages.
-- Portfolio Phase 06 added the first dedicated case study page at `/work/hiltech`.
+Curated project evidence lives under `public/portfolio/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
 
-## Case Study Content Editing
-- First dedicated case study route: `app/work/hiltech/page.tsx` (URL: `/work/hiltech`).
-- Edit HILTECH case study structure, proof screenshots, flow, business value, and CTA directly in that file.
+## Public routes
+
+- `/`
+- `/work`
+- `/work/<project-slug>`
+- `/about`
+- `/local-business`
+
+`app/sitemap.ts`, `app/robots.ts`, Open Graph metadata and social images cover the public surface. Set `NEXT_PUBLIC_SITE_URL` to the final production origin before launch.
+
+## Contact
+
+- Email: `omar.khair70@gmail.com`
+- WhatsApp: `+20 115 189 1310`
+- GitHub: `https://github.com/omarkhair70-droid`
+- LinkedIn: `https://linkedin.com/in/omar-khair-70`

@@ -29,6 +29,7 @@ export default function SiteFooter() {
             <a href="https://wa.me/201151891310" target="_blank" rel="noreferrer">
               WhatsApp
             </a>
+            <Link href="/services">Services</Link>
             <Link href="/local-business">Local offer</Link>
           </div>
           <p>© 2026 Omar Khair</p>

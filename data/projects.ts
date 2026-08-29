@@ -32,8 +32,8 @@ export type Project = {
   links: ProjectLink[];
 };
 
-const mobileGallery = (project: string, files: string[]) =>
-  files.map((file) => `/portfolio/${project}/${file}`);
+const curatedGallery = (project: string, files: string[]) =>
+  files.map((file) => `/work/${project}/${file}`);
 
 export const projects: Project[] = [
   {
@@ -56,8 +56,8 @@ export const projects: Project[] = [
       "One public-facing system now carries brand presentation, product discovery and structured commercial intent instead of splitting them across disconnected tools.",
     stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Operational workflows"],
     capabilities: ["Product catalogue", "RFQ basket", "Quotation flow", "Admin operations"],
-    cover: "/portfolio/hiltech/hero_063.webp",
-    gallery: mobileGallery("hiltech", ["hero_063.webp", "02_066.webp", "03_053.webp", "04_058.webp", "05_054.webp", "06_048.webp", "07_060.webp"]),
+    cover: "/work/hiltech/01-home-hero.webp",
+    gallery: curatedGallery("hiltech", ["01-home-hero.webp", "02-field-work.webp", "03-core-services.webp", "04-catalog.webp", "05-product-detail.webp", "06-rfq-basket.webp", "07-rfq-details.webp", "08-procurement-flow.webp"]),
     galleryAlt: [
       "HILTECH infrastructure homepage on mobile",
       "HILTECH product catalogue interface",
@@ -65,7 +65,8 @@ export const projects: Project[] = [
       "HILTECH RFQ request workflow",
       "HILTECH operational system screen",
       "HILTECH field and service evidence",
-      "HILTECH business workflow screen"
+      "HILTECH business workflow screen",
+      "HILTECH procurement flow"
     ],
     tone: "ember",
     visualMode: "mixed",
@@ -97,8 +98,8 @@ export const projects: Project[] = [
       "The result is a released product package spanning visual direction, React Native implementation, data, device behaviour and Play operations.",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "SQLite"],
     capabilities: ["Arabic / RTL", "Discovery", "Messaging", "Offline memory"],
-    cover: "/portfolio/teswa/hero_115.webp",
-    gallery: mobileGallery("teswa", ["hero_115.webp", "02_083.webp", "03_088.webp", "04_098.webp", "05_104.webp", "06_119.webp", "07_123.webp"]),
+    cover: "/work/teswa/01-discovery-hub.webp",
+    gallery: curatedGallery("teswa", ["01-discovery-hub.webp", "02-home-dashboard.webp", "03-marketplace-feed.webp", "04-item-detail.webp", "05-offer-state.webp", "06-exchange-chat.webp", "07-create-listing.webp", "08-profile.webp", "09-trust.webp", "10-movement.webp"]),
     galleryAlt: [
       "Teswa Arabic discovery feed",
       "Teswa item detail and exchange context",
@@ -106,7 +107,10 @@ export const projects: Project[] = [
       "Teswa messaging experience",
       "Teswa notification and product state",
       "Teswa profile and account experience",
-      "Teswa discovery hub"
+      "Teswa discovery hub",
+      "Teswa profile screen",
+      "Teswa trust and exchange state",
+      "Teswa product movement screen"
     ],
     tone: "sand",
     visualMode: "mobile",
@@ -126,7 +130,7 @@ export const projects: Project[] = [
     compactTitle: "Nova",
     lane: "flagship",
     category: "Native Android social product",
-    status: "Closed testing",
+    status: "Available on Google Play · closed testing",
     year: "2026",
     role: "Product direction, native Android, backend and release architecture",
     lead:
@@ -139,8 +143,8 @@ export const projects: Project[] = [
       "Nova demonstrates product design and deep engineering as one discipline: interface, state, realtime behaviour, security, CI and release gates are treated as a single system.",
     stack: ["Kotlin", "Jetpack Compose", "Django", "WebSockets", "CI / release engineering"],
     capabilities: ["Native Android", "Realtime", "Messaging", "Architecture governance"],
-    cover: "/portfolio/nova/hero_072.webp",
-    gallery: mobileGallery("nova", ["hero_072.webp", "02_067.webp", "03_080.webp", "04_075.webp", "05_073.webp", "06_074.webp", "07_068.webp"]),
+    cover: "/work/nova/01-home-dashboard.webp",
+    gallery: curatedGallery("nova", ["01-home-dashboard.webp", "02-orbit.webp", "03-tonight.webp", "04-reel.webp", "05-create-hub.webp", "06-post-detail.webp", "07-messaging-calls.webp", "08-profile.webp"]),
     galleryAlt: [
       "Nova Orbit social interface",
       "Nova home experience",
@@ -148,7 +152,8 @@ export const projects: Project[] = [
       "Nova creation flow",
       "Nova conversation surface",
       "Nova profile experience",
-      "Nova social interaction screen"
+      "Nova social interaction screen",
+      "Nova profile screen"
     ],
     tone: "violet",
     visualMode: "mobile",
@@ -156,9 +161,9 @@ export const projects: Project[] = [
     caseStudy: true,
     links: [
       { label: "Case study", href: "/work/nova", kind: "case-study" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.omarkhair70.nova", kind: "store" },
       { label: "GitHub", href: "https://github.com/omarkhair-labs/nova", kind: "repo" },
-      { label: "Join closed test", href: "https://groups.google.com/g/nova-closed-testers", kind: "testing" },
-      { label: "Testing listing", href: "https://play.google.com/apps/testing/com.omarkhair70.nova", kind: "testing" }
+      { label: "Join closed test", href: "https://groups.google.com/g/nova-closed-testers", kind: "testing" }
     ]
   },
   {
@@ -168,7 +173,7 @@ export const projects: Project[] = [
     compactTitle: "WaveZero",
     lane: "flagship",
     category: "Music product & native playback",
-    status: "Android product · Play coming soon",
+    status: "Available on Google Play · closed testing",
     year: "2026",
     role: "Product direction, Flutter interface and native playback engineering",
     lead:
@@ -181,15 +186,16 @@ export const projects: Project[] = [
       "WaveZero makes hidden engineering legible without turning the product into a technical demo: the interface stays quiet while the native system does the hard work.",
     stack: ["Flutter", "Kotlin", "Media3 / ExoPlayer", "MethodChannel", "Rust foundations"],
     capabilities: ["Local music", "Background playback", "Queue persistence", "Offline behaviour"],
-    cover: "/portfolio/wavezero/hero_136.webp",
-    gallery: mobileGallery("wavezero", ["hero_136.webp", "02_134.webp", "03_130.webp", "04_131.webp", "05_127.webp", "06_129.webp"]),
+    cover: "/work/wavezero/01-brand-home.webp",
+    gallery: curatedGallery("wavezero", ["01-brand-home.webp", "02-listening-home.webp", "03-library.webp", "04-device-music.webp", "05-search.webp", "06-now-playing.webp", "07-settings-downloads.webp"]),
     galleryAlt: [
       "WaveZero Now Playing interface",
       "WaveZero music home",
       "WaveZero local library",
       "WaveZero queue and playback state",
       "WaveZero search and discovery",
-      "WaveZero collection interface"
+      "WaveZero collection interface",
+      "WaveZero settings and downloads"
     ],
     tone: "porcelain",
     visualMode: "mobile",
@@ -197,8 +203,10 @@ export const projects: Project[] = [
     caseStudy: true,
     links: [
       { label: "Case study", href: "/work/wavezero", kind: "case-study" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.omarkhair.wavezero", kind: "store" },
+      { label: "Join closed test", href: "https://groups.google.com/g/nova-closed-testers", kind: "testing" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/wavezero", kind: "repo" },
-      { label: "Google Play · coming soon", kind: "status" }
+      { label: "Privacy", href: "/privacy/wavezero", kind: "live" }
     ]
   },
   {
@@ -208,7 +216,7 @@ export const projects: Project[] = [
     compactTitle: "Balcona Bar",
     lane: "flagship",
     category: "Cafe operating system",
-    status: "Advanced staging build",
+    status: "Live / online",
     year: "2026",
     role: "System architecture, product direction and full-stack delivery",
     lead:
@@ -218,11 +226,11 @@ export const projects: Project[] = [
     approach:
       "Balcona uses one product DNA with surface-specific behaviour for Guest, Service, Kitchen, Office, Setup and Platform, connected by shared order and venue state.",
     value:
-      "The advanced staging product proves end-to-end systems thinking across customer experience, realtime operations, roles, analytics and deployment foundations.",
+      "The live system proves end-to-end thinking across customer experience, realtime operations, roles, analytics and deployment foundations.",
     stack: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Redis"],
     capabilities: ["QR ordering", "Realtime operations", "Kitchen / service", "Owner analytics"],
-    cover: "/portfolio/balcona/hero_007.webp",
-    gallery: mobileGallery("balcona", ["hero_007.webp"]),
+    cover: "/work/balcona-bar/01-customer-entry.webp",
+    gallery: curatedGallery("balcona-bar", ["01-customer-entry.webp"]),
     galleryAlt: ["Balcona guest table experience"],
     tone: "ink",
     visualMode: "mixed",
@@ -230,7 +238,7 @@ export const projects: Project[] = [
     caseStudy: true,
     links: [
       { label: "Case study", href: "/work/balcona", kind: "case-study" },
-      { label: "Staging demo", href: "https://balcona-bar-staging-web.vercel.app", kind: "live" },
+      { label: "Live demo", href: "https://balcona-bar-staging-web.vercel.app", kind: "live" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/balcona-bar", kind: "repo" }
     ]
   },
@@ -250,9 +258,9 @@ export const projects: Project[] = [
     value: "A focused conversion product that communicates the offer without adding operational complexity to the customer surface.",
     stack: ["Next.js", "TypeScript", "Arabic / RTL", "PWA direction"],
     capabilities: ["Menu", "Offers", "Cart", "Mobile conversion"],
-    cover: "/portfolio/tuscanini/hero_013.webp",
-    gallery: mobileGallery("tuscanini", ["hero_013.webp", "02_010.webp", "03_012.webp", "04_006.webp", "05_004.webp"]),
-    galleryAlt: ["Tuscanini Arabic ordering home", "Tuscanini menu", "Tuscanini offer flow", "Tuscanini item selection", "Tuscanini cart experience"],
+    cover: "/work/tuscanini/01-category-grid.webp",
+    gallery: curatedGallery("tuscanini", ["01-category-grid.webp", "02-menu.webp", "03-food-finder.webp", "04-recommendation.webp", "05-customization.webp", "06-cart.webp", "07-checkout.webp", "08-order-summary.webp"]),
+    galleryAlt: ["Tuscanini Arabic category grid", "Tuscanini menu", "Tuscanini food finder", "Tuscanini recommendation", "Tuscanini item customization", "Tuscanini cart experience", "Tuscanini checkout", "Tuscanini order summary"],
     tone: "signal",
     visualMode: "mobile",
     featured: false,
@@ -278,9 +286,9 @@ export const projects: Project[] = [
     value: "Habba shows visual direction and commerce thinking working together at a deliberately intimate scale.",
     stack: ["Next.js", "TypeScript", "RTL", "WhatsApp conversion"],
     capabilities: ["Brand tone", "Product detail", "Arabic layout", "Commerce"],
-    cover: "/portfolio/habba/hero_020.webp",
-    gallery: mobileGallery("habba", ["hero_020.webp", "02_016.webp", "03_021.webp", "04_024.webp", "05_027.webp", "06_014.webp"]),
-    galleryAlt: ["Habba handmade product page", "Habba product discovery", "Habba brand home", "Habba product detail", "Habba Arabic storefront", "Habba conversion flow"],
+    cover: "/work/habba/01-brand-home.webp",
+    gallery: curatedGallery("habba", ["01-brand-home.webp", "02-featured-products.webp", "03-product-detail.webp", "04-choose-your-way.webp", "05-drop-builder.webp", "06-drop-result.webp", "07-cart-upsell.webp", "08-whatsapp-conversion.webp"]),
+    galleryAlt: ["Habba Arabic brand home", "Habba featured products", "Habba product detail", "Habba shopping path choice", "Habba drop builder", "Habba custom drop result", "Habba cart upsell", "Habba WhatsApp conversion"],
     tone: "sand",
     visualMode: "mobile",
     featured: false,
@@ -307,9 +315,9 @@ export const projects: Project[] = [
     value: "Bahja expands the body of work beyond systems into tactile art direction and Arabic product storytelling.",
     stack: ["Next.js", "TypeScript", "Arabic / RTL", "PWA-style commerce"],
     capabilities: ["Art direction", "Handmade story", "Merchandising", "Custom order"],
-    cover: "/portfolio/bahja/hero_037.webp",
-    gallery: mobileGallery("bahja", ["hero_037.webp", "02_040.webp", "03_036.webp", "04_041.webp", "05_044.webp", "06_035.webp"]),
-    galleryAlt: ["Bahja elegant clutch collection", "Bahja handmade bags", "Bahja collection page", "Bahja product detail", "Bahja custom order experience", "Bahja Arabic storefront"],
+    cover: "/work/bahja/01-home-sections.webp",
+    gallery: curatedGallery("bahja", ["01-home-sections.webp", "02-bag-collections.webp", "03-product-detail.webp", "04-cart-checkout.webp", "05-checkout-form.webp"]),
+    galleryAlt: ["Bahja Arabic brand home", "Bahja handmade bag collections", "Bahja product detail", "Bahja cart and checkout", "Bahja checkout form"],
     tone: "sand",
     visualMode: "mobile",
     featured: false,
@@ -398,15 +406,44 @@ export const projects: Project[] = [
     tone: "ember",
     visualMode: "text",
     featured: false,
-    caseStudy: false,
+    caseStudy: true,
     links: [
+      { label: "Case study", href: "/work/abdel-aal-coffee", kind: "case-study" },
       { label: "Live project", href: "https://abdel-aal-coffee.vercel.app", kind: "live" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/abdel-aal-coffee", kind: "repo" }
     ]
   },
   {
-    slug: "sultan-al-burhan",
+    slug: "athr",
     index: "12",
+    title: "Athr Studio — Origins in motion",
+    compactTitle: "Athr Studio",
+    lane: "creative",
+    category: "Origins / creative direction",
+    status: "Live origin work · visual review pending",
+    year: "Earlier work",
+    role: "Self-directed web, visual studies and motion-led presentation",
+    lead: "An early studio identity kept as honest progression evidence for the visual practice behind the current systems.",
+    challenge: "Origin work is useful only when it explains growth instead of pretending to be a current flagship.",
+    approach: "Athr is presented as a compact creative chapter around composition, before-and-after studies and motion evidence.",
+    value: "It makes the progression legible while keeping the strongest current product systems at the front of the portfolio.",
+    stack: ["Web", "Visual direction", "Motion"],
+    capabilities: ["Origins", "Composition", "Visual studies", "Motion"],
+    gallery: [],
+    galleryAlt: [],
+    tone: "signal",
+    visualMode: "text",
+    featured: false,
+    caseStudy: true,
+    links: [
+      { label: "Case study", href: "/work/athr", kind: "case-study" },
+      { label: "Live project", href: "https://athr-studio-website.vercel.app", kind: "live" },
+      { label: "GitHub", href: "https://github.com/omarkhair70-droid/athr-studio-website", kind: "repo" }
+    ]
+  },
+  {
+    slug: "sultan-al-burhan",
+    index: "13",
     title: "Sultan Al-Burhan — Independent editorial system",
     compactTitle: "Sultan Al-Burhan",
     lane: "independent",
@@ -425,8 +462,9 @@ export const projects: Project[] = [
     tone: "ink",
     visualMode: "text",
     featured: false,
-    caseStudy: false,
+    caseStudy: true,
     links: [
+      { label: "Case study", href: "/work/sultan-al-burhan", kind: "case-study" },
       { label: "Live project", href: "https://sultan-al-burhan.vercel.app", kind: "live" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/sultan-al-burhan", kind: "repo" }
     ]

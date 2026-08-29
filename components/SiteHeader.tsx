@@ -11,9 +11,9 @@ export default function SiteHeader() {
         <nav className="site-nav" aria-label="Primary navigation">
           <Link href="/work">Work</Link>
           <Link href="/about">About</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
-        <Link href="/#contact" className="availability">
+        <Link href="/contact" className="availability">
           <span aria-hidden="true" />
           Available for selected work
         </Link>

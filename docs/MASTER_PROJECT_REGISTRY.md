@@ -29,9 +29,9 @@ Do not rebuild portfolio structure from memory; update this registry first.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **HILTECH** | Flagship Products & Systems | Flagship | Product direction, UI, full-stack business workflow, RFQ/product/admin system | Live production business system | [hiltech-eg.com](https://hiltech-eg.com) | [repo](https://github.com/omarkhair70-droid/hiltech-eg-website) | N/A | Strong set available; 7 selected from source pack, 3 already in portfolio repo | Existing: `/work/hiltech` | Not inventoried yet | **READY** | Featured with image + case study, but current live button still uses old Vercel URL | Expand gallery; switch live CTA to custom domain; add repo CTA where appropriate | **INCLUDE — top flagship** |
 | **Teswa** | Flagship Products & Systems | Flagship | Product direction, React Native/Expo mobile build, Supabase, release operations | Public app / post-launch | [web](https://teswa-eg.vercel.app) | [repo](https://github.com/omarkhair70-droid/teswa.eg) | [Google Play](https://play.google.com/store/apps/details?id=com.teswa.mobile) | Very strong source pack; 45 source screenshots, 7 selected | Existing: `/work/teswa` | Not inventoried yet | **READY** | Featured + case study, but Google Play and web CTAs are not fully represented | Build full 6–8 screen visual story; add Play Store, web, repo buttons | **INCLUDE — top flagship** |
-| **Nova** | Flagship Products & Systems | Flagship | Product direction, native Kotlin Android, Django/backend, WebSockets, architecture/release work | Closed testing now; public release expected later | No separate public marketing site locked | [repo](https://github.com/omarkhair-labs/nova) | [Tester group](https://groups.google.com/g/nova-closed-testers) · [Google Play closed test](https://play.google.com/apps/testing/com.omarkhair70.nova) | Strong source pack; 18 source screenshots, 7 selected | **Missing** | Not inventoried yet | **NEAR READY** | Work card only; no dedicated case study or testing links | Create Nova case study + full gallery; add closed-test CTA flow; replace with public Play URL when available | **INCLUDE — top flagship** |
-| **WaveZero** | Flagship Products & Systems | Flagship | Product direction, Flutter UI, Kotlin/Media3 native playback bridge, offline/download/media systems | Active build; not on Google Play yet | None locked | [repo](https://github.com/omarkhair70-droid/wavezero) | Google Play: **coming after release** | Strong source pack; 10 source screenshots, 6 selected | **Missing** | Not inventoried yet | **NEAR READY** | Work card only; no dedicated case study | Create case study + 5–6 screen flow; add repo CTA; add Play link only after release | **INCLUDE — top flagship** |
-| **Balcona Bar** | Flagship Products & Systems | Flagship / advanced system | Product/system architecture, Next.js + NestJS, Prisma/Postgres/Redis, operations workflows | Advanced staging build | [staging](https://balcona-bar-staging-web.vercel.app) | [repo](https://github.com/omarkhair70-droid/balcona-bar) | N/A | Current pack has only 1 clearly usable shot; earlier error-state shots rejected | **Missing** | Not inventoried yet | **NEAR READY** | Text-only project card; underrepresented visually | Capture proper customer/cashier/KDS/owner screens; create case study; label clearly as advanced/staging | **INCLUDE — flagship once visuals are ready** |
+| **Nova** | Flagship Products & Systems | Flagship | Product direction, native Kotlin Android, Django/backend, WebSockets, architecture/release work | Available on Google Play; currently distributed via closed testing | No separate public marketing site locked | [repo](https://github.com/omarkhair-labs/nova) | [Google Play](https://play.google.com/store/apps/details?id=com.omarkhair70.nova) · [Tester group](https://groups.google.com/g/nova-closed-testers) | Strong final curated set; 8 approved | Existing: `/work/nova` | Not inventoried yet | **READY** | Dedicated flagship case study + Play/test actions | Remove the temporary closed-testing note when production rollout becomes public | **INCLUDE — top flagship** |
+| **WaveZero** | Flagship Products & Systems | Flagship | Product direction, Flutter UI, Kotlin/Media3 native playback bridge, offline/download/media systems | Available on Google Play; currently distributed via closed testing | Google Play distribution | [repo](https://github.com/omarkhair70-droid/wavezero) | [Google Play](https://play.google.com/store/apps/details?id=com.omarkhair.wavezero) · [Tester group](https://groups.google.com/g/nova-closed-testers) | Strong final curated set; 7 approved | Existing: `/work/wavezero` | Not inventoried yet | **READY** | Dedicated flagship case study + Play/test actions + privacy policy | Remove the temporary closed-testing note when production rollout becomes public | **INCLUDE — top flagship** |
+| **Balcona Bar** | Flagship Products & Systems | Flagship / advanced system | Product/system architecture, Next.js + NestJS, Prisma/Postgres/Redis, operations workflows | Live / online | [live demo](https://balcona-bar-staging-web.vercel.app) | [repo](https://github.com/omarkhair70-droid/balcona-bar) | N/A | Final curation intentionally has 1 approved shot; stronger operational captures remain optional evidence work | Existing: `/work/balcona` | Not inventoried yet | **READY with restrained visuals** | Dedicated system case study + verified live demo CTA | Add stronger operational captures later without changing current live status | **INCLUDE — flagship** |
 | **Senior Pharmacist Portfolio** | Client & Business Work | Strong supporting / client proof | Client delivery, information architecture, responsive web build, career presentation | Delivered live client project | [live](https://pharmacist-portfolio.vercel.app) | [repo](https://github.com/omarkhair70-droid/pharmacist-portfolio) | N/A | No dedicated source pack inventoried; live site can be captured cleanly | Existing: `/work/pharmacist-portfolio` | Not inventoried | **READY** | Dedicated case study exists | Capture polished hero + 3–4 sections; add repo CTA if useful | **INCLUDE — key client proof** |
 | **Tuscanini Ordering System** | Client & Business Work | Strong supporting | Product/UX direction, Arabic ordering experience, cart/offers/PWA direction | Live staged product | [live](https://tuscanini-ordering-system.vercel.app) | Private repo — do not expose | N/A | Good pack; 11 source screenshots, 5 selected; 3 current captures already in portfolio | Existing: `/work/tuscanini` | Not inventoried | **READY** | Case study exists | Upgrade gallery using selected source screenshots; keep repo private | **INCLUDE** |
 | **Habba** | Client & Business Work + Creative | Strong supporting | Visual direction, RTL storefront, product discovery, WhatsApp conversion | Live | [live](https://habba-store.vercel.app) | [repo](https://github.com/omarkhair70-droid/habba-store) | N/A | Good pack; 17 source screenshots, 6 selected | Existing: `/work/habba` | Not inventoried | **READY / light polish** | Currently merged with Bahja in Work list; own case study exists | Separate it visually from Bahja; add gallery; emphasize creative/product strength | **INCLUDE** |
@@ -81,19 +81,19 @@ Do not rebuild portfolio structure from memory; update this registry first.
    - Needs Google Play, web, and GitHub CTAs presented as one clean package.
 
 3. **Nova**
-   - Only a Work card exists.
-   - No dedicated `/work/nova` case study yet.
-   - Closed-test group + Play testing flow are missing from portfolio UI.
+   - Dedicated case study exists.
+   - Normal Google Play listing + closed-test group are represented.
+   - Keep only the removable closed-testing distribution note until production rollout is public.
 
 4. **WaveZero**
-   - Only a Work card exists.
-   - No dedicated `/work/wavezero` case study yet.
-   - Google Play must remain “coming soon” until release.
+   - Dedicated case study exists.
+   - Normal Google Play listing + closed-test group are represented.
+   - Published WaveZero privacy policy remains part of the release package.
 
 5. **Balcona Bar**
-   - Text-only in Work.
-   - Needs a proper screenshot pack and dedicated case study.
-   - Must remain clearly labeled staging/advanced build until production status changes.
+   - Dedicated system case study exists.
+   - Hosted demo is live at `https://balcona-bar-staging-web.vercel.app`.
+   - Visual evidence remains intentionally restrained until stronger operational captures are added.
 
 6. **Habba / Bahja**
    - They are currently collapsed into one Work card even though both have their own case-study routes.
@@ -132,9 +132,9 @@ Each public project package should use only the links that actually exist:
 - **Case Study**
 - **Live Website / Demo**
 - **GitHub** — only when the repo is public and worth showing
-- **Google Play** — only when public
-- **Join Closed Test** — for Nova until public release
-- **Coming to Google Play** — plain status, never a fake/dead button
+- **Google Play** — use the normal store listing when it exists
+- **Join Closed Test** — show alongside the store listing while distribution is closed testing
+- **Temporary distribution note** — keep it small and removable when production rollout becomes public
 
 The portfolio should not use raw URLs as the visual language. Use consistent buttons/badges with platform identity and a clear status.
 

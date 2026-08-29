@@ -44,7 +44,7 @@ npm run build
 
 ## Assets
 
-Curated project evidence lives under `public/portfolio/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
+The final 55-image curated evidence set lives under `public/work/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
 
 ## Public routes
 
@@ -52,7 +52,10 @@ Curated project evidence lives under `public/portfolio/<project>/`. Farrag Coffe
 - `/work`
 - `/work/<project-slug>`
 - `/about`
+- `/services`
+- `/contact`
 - `/local-business`
+- `/privacy/wavezero`
 
 `app/sitemap.ts`, `app/robots.ts`, Open Graph metadata and social images cover the public surface. Set `NEXT_PUBLIC_SITE_URL` to the final production origin before launch.
 

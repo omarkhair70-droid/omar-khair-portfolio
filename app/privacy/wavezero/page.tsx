@@ -123,8 +123,8 @@ const sections: PolicySection[] = [
 
 export default function WaveZeroPrivacyPolicyPage() {
   return (
-    <main className="bg-stone-50 pb-20">
-      <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8 md:py-20">
+    <main id="main-content" className="bg-stone-50 pb-20">
+      <section className="mx-auto max-w-6xl px-5 pb-14 pt-32 sm:px-8 md:pb-20 md:pt-36">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
           WaveZero · V1 Android
         </p>

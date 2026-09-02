@@ -1,4 +1,8 @@
-# Final Portfolio Implementation Architecture
+# Previous Portfolio Implementation Architecture
+
+Status: **SUPERSEDED on 2026-08-29 by `docs/FINAL_VISUAL_DIRECTION.md` and the `Systems with a pulse` implementation.**
+
+This file remains as the audit and migration record for the earlier evidence-led portfolio pass. Current component ownership, motion architecture and public routes are documented in the repository README and final visual direction.
 
 Baseline: main @ d6bd4cbc733541e1e4e10d293c5a659b3800c876 (2026-08-27)
 
@@ -82,6 +86,7 @@ Lanes:
    - Balcona Bar
 2. Client & Business Work
    - Senior Pharmacist Portfolio
+   - Ahmed Khair Portfolio
    - Tuscanini
    - Habba
    - Bahja (restrained until external issue is fixed)
@@ -273,7 +278,7 @@ When the curator PR lands:
 ## Status integration contract
 
 Current source-of-truth baseline:
-- HILTECH: live production; canonical live URL `https://hiltech-eg.com`
+- HILTECH: verified public Next.js deployment at `https://hiltech-eg-website.vercel.app`; the similarly named custom domain currently points to a different site
 - Teswa: public/post-launch; public Google Play URL is valid
 - Nova: available on the normal Google Play listing; currently distributed through closed testing
 - WaveZero: available on the normal Google Play listing; currently distributed through closed testing; production privacy policy is published

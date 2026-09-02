@@ -1,54 +1,67 @@
-# Omar Khair Professional Portfolio
+# Omar Khair — Systems with a pulse
 
-A Next.js App Router portfolio organized around the professional positioning:
+An editorial portfolio for product builder and creative developer Omar Khair. The experience is organised around proof: flagship systems, client delivery, creative commerce and independent work, with motion used to connect chapters rather than decorate them.
 
-**Product + Engineering + Visual Direction + Launch**
+## Experience stack
 
-## Governing sources
-Read before portfolio changes:
-- `AGENTS.md`
-- `docs/MASTER_PROJECT_REGISTRY.md`
-- `docs/PROFESSIONAL_PROFILE_SOURCE.md`
-- `docs/CODEX_PORTFOLIO_MASTER_TASK.md`
-- `docs/FINAL_IMPLEMENTATION_ARCHITECTURE.md`
-- `portfolio-input/final-visual-curation/ASSET_MANIFEST.md`
+- Next.js App Router, React and TypeScript
+- GSAP + ScrollTrigger for chapter reveals and spatial pacing
+- Lenis for controlled smooth scrolling
+- PixiJS for the interactive hero signal field
+- `next/font` for Manrope and Instrument Serif
+- `next/image` and curated local WebP evidence
 
-## Architecture
-- `data/projects.ts` — canonical public project lanes, status, links, proof, and release state.
-- `data/project-visuals.ts` — curated visual source IDs and final intended public paths.
-- `data/site.ts` — identity, navigation, capabilities, contact, pricing, education, and working approach.
-- `components/ProjectActions.tsx` / `ProjectStatusBadge.tsx` — reusable project release/link primitives.
-- `components/SiteHeader.tsx` / `SiteFooter.tsx` — shared responsive shell.
+Three.js is intentionally not included in this version. The portfolio's visual thesis is two-dimensional systems, signals and real interface evidence; a second 3D runtime would add weight without improving that story.
 
-## Primary routes
-- `/` — curated identity and flagship evidence
-- `/work` — four portfolio lanes
-- `/about` — professional narrative and capabilities
-- `/services` — standard commercial ranges + separate limited local offer
-- `/contact` — direct contact and structured project brief
-- `/local-business` — dedicated 1,000 EGP Local Launch Offer
+## Run locally
 
-## Final implementation status
-
-The final portfolio implementation was merged through PR #36 on August 28, 2026.
-
-- 55 curated WebP assets are committed under `public/work/`.
-- Flagship, client, creative, and independent project lanes are implemented.
-- Final desktop/mobile route QA passed before merge.
-- No broken images or horizontal overflow were found in the closure pass.
-- Keyboard focus, mobile navigation, reduced motion, and accessibility checks were included.
-- `/privacy/wavezero` is preserved as the production WaveZero V1 privacy-policy route.
-
-## Visual curation
-
-The final visual source of truth is `portfolio-input/final-visual-curation/ASSET_MANIFEST.md`.
-
-The committed `public/work/` assets are the approved portfolio evidence set and are also reused by public GitHub READMEs so the portfolio and repositories present the same product proof.
-
-## Local development
 ```bash
 npm install
 npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Validate
+
+```bash
 npm run lint
+npx tsc --noEmit
 npm run build
 ```
+
+## Content architecture
+
+- `data/projects.ts` is the single source for project names, categories, statuses, links, narratives and galleries.
+- `app/page.tsx` is the authored home sequence.
+- `app/work/page.tsx` is the complete project index.
+- `app/work/[slug]/page.tsx` generates the case-study system.
+- `app/about/page.tsx` presents Omar's cross-disciplinary practice.
+- `app/local-business/page.tsx` keeps the limited commercial offer separate from the award-facing portfolio narrative.
+- `components/RouteExperience.tsx` owns GSAP, ScrollTrigger and Lenis lifecycle.
+- `components/SignalCanvas.tsx` owns the PixiJS hero field.
+- `docs/FINAL_VISUAL_DIRECTION.md` records the visual and motion decisions.
+
+## Assets
+
+The current curated evidence set contains 58 WebP assets under `public/work/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
+
+## Public routes
+
+- `/`
+- `/work`
+- `/work/<project-slug>`
+- `/about`
+- `/services`
+- `/contact`
+- `/local-business`
+- `/privacy/wavezero`
+
+`app/sitemap.ts`, `app/robots.ts`, Open Graph metadata and social images cover the public surface. Set `NEXT_PUBLIC_SITE_URL` to the final production origin before launch.
+
+## Contact
+
+- Email: `omar.khair70@gmail.com`
+- WhatsApp: `+20 115 189 1310`
+- GitHub: `https://github.com/omarkhair70-droid`
+- LinkedIn: `https://www.linkedin.com/in/omar-khair-product-builder`

@@ -1,6 +1,6 @@
 # Omar Khair — Master Project Registry v1
 
-Last updated: 2026-08-27
+Last updated: 2026-09-02
 
 This file is the source of truth for portfolio inclusion, project links, visual assets, case-study status, release status, and next actions.  
 Do not rebuild portfolio structure from memory; update this registry first.
@@ -27,15 +27,16 @@ Do not rebuild portfolio structure from memory; update this registry first.
 
 | Project | Lane | Portfolio tier | My role / proof | Public status | Live / Demo | GitHub | Store / Release | Screenshots | Case study | Video / Promo | Readiness | Current portfolio representation | Next action | Decision |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **HILTECH** | Flagship Products & Systems | Flagship | Product direction, UI, full-stack business workflow, RFQ/product/admin system | Live production business system | [hiltech-eg.com](https://hiltech-eg.com) | [repo](https://github.com/omarkhair70-droid/hiltech-eg-website) | N/A | Strong set available; 7 selected from source pack, 3 already in portfolio repo | Existing: `/work/hiltech` | Not inventoried yet | **READY** | Featured with image + case study, but current live button still uses old Vercel URL | Expand gallery; switch live CTA to custom domain; add repo CTA where appropriate | **INCLUDE — top flagship** |
+| **HILTECH** | Flagship Products & Systems | Flagship | Product direction, UI, full-stack business workflow, RFQ/product/admin system | Verified public Next.js deployment | [verified deployment](https://hiltech-eg-website.vercel.app) | [repo](https://github.com/omarkhair-labs/hiltech-eg-website) | N/A | 5 fresh desktop captures from the current local award branch | Existing: `/work/hiltech` | Not inventoried yet | **READY** | Featured with a new homepage, solution paths, product library, scope finder, and RFQ evidence set | Keep the Vercel deployment as the verified public target; `hiltech-eg.com` currently points to a different site and must not be used as proof for this repository | **INCLUDE — top flagship** |
 | **Teswa** | Flagship Products & Systems | Flagship | Product direction, React Native/Expo mobile build, Supabase, release operations | Public app / post-launch | [web](https://teswa-eg.vercel.app) | [repo](https://github.com/omarkhair70-droid/teswa.eg) | [Google Play](https://play.google.com/store/apps/details?id=com.teswa.mobile) | Very strong source pack; 45 source screenshots, 7 selected | Existing: `/work/teswa` | Not inventoried yet | **READY** | Featured + case study, but Google Play and web CTAs are not fully represented | Build full 6–8 screen visual story; add Play Store, web, repo buttons | **INCLUDE — top flagship** |
 | **Nova** | Flagship Products & Systems | Flagship | Product direction, native Kotlin Android, Django/backend, WebSockets, architecture/release work | Available on Google Play; currently distributed via closed testing | No separate public marketing site locked | [repo](https://github.com/omarkhair-labs/nova) | [Google Play](https://play.google.com/store/apps/details?id=com.omarkhair70.nova) · [Tester group](https://groups.google.com/g/nova-closed-testers) | Strong final curated set; 8 approved | Existing: `/work/nova` | Not inventoried yet | **READY** | Dedicated flagship case study + Play/test actions | Remove the temporary closed-testing note when production rollout becomes public | **INCLUDE — top flagship** |
 | **WaveZero** | Flagship Products & Systems | Flagship | Product direction, Flutter UI, Kotlin/Media3 native playback bridge, offline/download/media systems | Available on Google Play; currently distributed via closed testing | Google Play distribution | [repo](https://github.com/omarkhair70-droid/wavezero) | [Google Play](https://play.google.com/store/apps/details?id=com.omarkhair.wavezero) · [Tester group](https://groups.google.com/g/nova-closed-testers) | Strong final curated set; 7 approved | Existing: `/work/wavezero` | Not inventoried yet | **READY** | Dedicated flagship case study + Play/test actions + privacy policy | Remove the temporary closed-testing note when production rollout becomes public | **INCLUDE — top flagship** |
 | **Balcona Bar** | Flagship Products & Systems | Flagship / advanced system | Product/system architecture, Next.js + NestJS, Prisma/Postgres/Redis, operations workflows | Live / online | [live demo](https://balcona-bar-staging-web.vercel.app) | [repo](https://github.com/omarkhair70-droid/balcona-bar) | N/A | Final curation intentionally has 1 approved shot; stronger operational captures remain optional evidence work | Existing: `/work/balcona` | Not inventoried yet | **READY with restrained visuals** | Dedicated system case study + verified live demo CTA | Add stronger operational captures later without changing current live status | **INCLUDE — flagship** |
 | **Senior Pharmacist Portfolio** | Client & Business Work | Strong supporting / client proof | Client delivery, information architecture, responsive web build, career presentation | Delivered live client project | [live](https://pharmacist-portfolio.vercel.app) | [repo](https://github.com/omarkhair70-droid/pharmacist-portfolio) | N/A | No dedicated source pack inventoried; live site can be captured cleanly | Existing: `/work/pharmacist-portfolio` | Not inventoried | **READY** | Dedicated case study exists | Capture polished hero + 3–4 sections; add repo CTA if useful | **INCLUDE — key client proof** |
+| **Ahmed Khair Portfolio** | Client & Business Work + Creative | Strong supporting / client proof | Art direction, interaction design, responsive Next.js delivery | Delivered live portfolio | [live](https://ahmed-khair-portfolio.vercel.app) | [repo](https://github.com/omarkhair70-droid/ahmed-khair-portfolio) | N/A | 3 fresh desktop captures: hero, work index, and About | Existing: `/work/ahmed-khair-portfolio` | Not inventoried | **READY** | Dedicated case study with live and repository links | Keep claims constrained to visible art direction, motion, implementation, and Ahmed's verified public work | **INCLUDE — client/creative proof** |
 | **Tuscanini Ordering System** | Client & Business Work | Strong supporting | Product/UX direction, Arabic ordering experience, cart/offers/PWA direction | Live staged product | [live](https://tuscanini-ordering-system.vercel.app) | Private repo — do not expose | N/A | Good pack; 11 source screenshots, 5 selected; 3 current captures already in portfolio | Existing: `/work/tuscanini` | Not inventoried | **READY** | Case study exists | Upgrade gallery using selected source screenshots; keep repo private | **INCLUDE** |
 | **Habba** | Client & Business Work + Creative | Strong supporting | Visual direction, RTL storefront, product discovery, WhatsApp conversion | Live | [live](https://habba-store.vercel.app) | [repo](https://github.com/omarkhair70-droid/habba-store) | N/A | Good pack; 17 source screenshots, 6 selected | Existing: `/work/habba` | Not inventoried | **READY / light polish** | Currently merged with Bahja in Work list; own case study exists | Separate it visually from Bahja; add gallery; emphasize creative/product strength | **INCLUDE** |
-| **Bahja Store** | Client & Business Work + Creative | Supporting | Visual/RTL storefront direction, PWA-style shopping, WhatsApp handoff | Live but known layout issue | [live](https://bahja-store.vercel.app) | [repo](https://github.com/omarkhair70-droid/bahja-store) | N/A | Good pack; 14 source screenshots, 6 selected | Existing: `/work/bahja-store` | Not inventoried | **POLISH FIRST** | Currently grouped with Habba on Work page | Fix header/product-page clipping and scroll/layout issue; re-capture after fix; then promote separately | **INCLUDE after polish** |
+| **Bahja Store** | Client & Business Work + Creative | Supporting | Visual/RTL storefront direction, PWA-style shopping, WhatsApp handoff | Live | [live](https://bahja-store.vercel.app) | [repo](https://github.com/omarkhair70-droid/bahja-store) | N/A | 4 fresh desktop captures: home, shop, product detail, and custom order | Existing: `/work/bahja-store` | Not inventoried | **READY** | Separate supporting project with fresh live-site imagery | Keep the current desktop capture set and refresh only when the external product changes materially | **INCLUDE** |
 | **Farrag Coffee V2** | Creative / Brand / Visual Work + Business | Strong supporting / evolution proof | Brand/UX direction, RTL coffee experience, discovery, ordering flow, Supabase-backed product work | Live | [live](https://farrag-coffee-v2.vercel.app) | [repo](https://github.com/omarkhair70-droid/farrag-coffee-v2) | N/A | 3 current portfolio captures exist; source pack not yet inventoried | Existing: `/work/farrag-coffee` and it points to V2 | Not inventoried | **READY** | Dedicated case study already represents V2 | Keep V2 as canonical Farrag project; optionally add evolution section from original version | **INCLUDE** |
 | **Farrag Coffee — original** | Creative / Brand / Visual Work | Early / evolution | Early self-directed brand/web work; useful as progression evidence | Live | [live](https://farrag-coffee.vercel.app) | [repo](https://github.com/omarkhair70-droid/farrag-coffee) | N/A | Not separately inventoried | No separate case study | Not inventoried | **REVIEW** | Not separate in current portfolio | Use inside an “evolution / early work” narrative rather than as another full project card | **GROUP, do not headline** |
 | **Abdel Aal Coffee** | Creative / Brand / Visual Work | Early / high creative value | Concept, visual design, site creation from scratch, and embedded/video direction | Live | [live](https://abdel-aal-coffee.vercel.app) | [repo](https://github.com/omarkhair70-droid/abdel-aal-coffee) | N/A | No dedicated screenshot pack inventoried yet | **Missing** | **Yes — project includes user-created visual/video work** | **NEAR READY** | Absent from current portfolio | Capture full visual set; package design + video as creative proof; create grouped or dedicated creative case study | **INCLUDE — creative proof, not technical flagship** |
@@ -72,8 +73,8 @@ Do not rebuild portfolio structure from memory; update this registry first.
 
 1. **HILTECH**
    - Case study exists.
-   - Current CTA still points to the older Vercel URL instead of the custom domain.
-   - Needs the full selected screenshot set, not only the current 3 captures.
+   - CTA uses the verified Next.js deployment; the similarly named custom domain currently points to a different site.
+   - Fresh desktop captures now show the current award branch across Home, Solutions, Products, Scope Finder, and RFQ.
 
 2. **Teswa**
    - Case study exists.
@@ -96,9 +97,8 @@ Do not rebuild portfolio structure from memory; update this registry first.
    - Visual evidence remains intentionally restrained until stronger operational captures are added.
 
 6. **Habba / Bahja**
-   - They are currently collapsed into one Work card even though both have their own case-study routes.
-   - Habba is ready to separate.
-   - Bahja should be fixed first, then re-captured.
+   - Habba and Bahja are separate projects with their own case-study routes.
+   - Bahja now has a clean current desktop capture set from the live site.
 
 7. **Creative / visual identity**
    - Abdel Aal, Athr, Unique Piece, Fine Arts, and the Farrag evolution are absent from the current Work structure.
@@ -116,13 +116,13 @@ Do not rebuild portfolio structure from memory; update this registry first.
 
 | Project | Source screenshots | Current selected set | Current action |
 |---|---:|---:|---|
-| HILTECH | ~19 in uploaded sequence | 7 | Build full web/system gallery |
+| HILTECH | Current local award branch | 5 | Fresh desktop web/system gallery complete |
 | Nova | 18 | 7 | Create app visual story + case study |
 | Teswa | 45 | 7 | Create app visual story + strengthen case study |
 | WaveZero | 10 | 6 | Create app visual story + case study |
 | Tuscanini | 11 | 5 | Upgrade current case study gallery |
 | Habba | 17 | 6 | Add visual gallery |
-| Bahja | 14 | 6 | Fix product/header layout first, then re-capture |
+| Bahja | Current live site | 4 | Fresh desktop capture set complete |
 | Balcona Bar | Small/weak current set | 1 usable | Capture a proper new set |
 
 ## Link presentation standard
@@ -170,7 +170,7 @@ Independent projects prove initiative and original direction.
 5. Balcona Bar
 6. Tuscanini
 7. Habba
-8. Bahja after bug fix
+8. Bahja
 
 ### Sprint 2 — Link/package completeness
 - Add/correct live, GitHub, Play Store, tester, and status links.

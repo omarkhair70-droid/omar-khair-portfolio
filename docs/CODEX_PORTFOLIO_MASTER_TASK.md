@@ -92,7 +92,7 @@ Recommended lanes:
 HILTECH, Teswa, Nova, WaveZero, Balcona Bar
 
 ### Client & Business Work
-Senior Pharmacist Portfolio, Tuscanini, Habba, Bahja, Farrag Coffee V2
+Senior Pharmacist Portfolio, Ahmed Khair Portfolio, Tuscanini, Habba, Bahja, Farrag Coffee V2
 
 ### Creative / Brand / Visual Work
 Abdel Aal Coffee, Farrag evolution, and only the strongest of Athr / Unique Piece / Fine Arts after inspection
@@ -212,11 +212,11 @@ Strengthen the existing HILTECH case study with the curated asset pack.
 Use a web/system-oriented visual composition instead of phone framing.
 
 Links:
-- canonical live site: https://hiltech-eg.com
-- GitHub: https://github.com/omarkhair70-droid/hiltech-eg-website
+- verified Next.js deployment: https://hiltech-eg-website.vercel.app
+- GitHub: https://github.com/omarkhair-labs/hiltech-eg-website
 - Case Study
 
-Replace old portfolio CTAs that still point to the Vercel preview/alias when the custom domain is the intended public destination.
+Use the verified Next.js deployment for portfolio proof. The similarly named custom domain currently points to a different site and must not be used for this repository.
 
 The case study should visually prove:
 corporate/product presentation, product catalog, RFQ flow, business/admin/operational depth where supported by assets and repository evidence.
@@ -536,7 +536,7 @@ The task is NOT complete until all of the following are true:
 - Teswa has Google Play + web + GitHub + case-study links.
 - Nova has a dedicated case study, Google Play CTA, and accurate closed-testing distribution note.
 - WaveZero has a dedicated case study, Google Play CTA, closed-testing distribution note, and intact privacy policy.
-- HILTECH uses the custom domain as its canonical live CTA.
+- HILTECH uses the verified Next.js deployment and does not link to the unrelated custom-domain site.
 - supporting projects are properly separated and curated.
 - Habba and Bahja are no longer collapsed into one indistinct project.
 - creative/brand work has a legitimate place in the portfolio.

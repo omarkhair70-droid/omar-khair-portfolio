@@ -1,22 +1,38 @@
 import Link from "next/link";
 
-import { contactLinks, siteIdentity } from "@/data/site";
-
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-stone-800 bg-stone-950 text-stone-300">
-      <div className="section-wrap grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
-        <div>
-          <p className="text-lg font-semibold text-white">{siteIdentity.name}</p>
-          <p className="mt-2 max-w-xl text-sm leading-relaxed text-stone-400">{siteIdentity.positioning}</p>
-          <p className="mt-1 text-sm text-stone-400">{siteIdentity.title}</p>
+    <footer className="site-footer" id="contact">
+      <div className="shell site-footer__inner">
+        <p className="eyebrow" data-reveal>
+          Start somewhere real
+        </p>
+        <div className="site-footer__headline" data-reveal>
+          <span>Have a system, product</span>
+          <span>
+            or <em>strange idea?</em>
+          </span>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm">
-          <a href={contactLinks.email.href}>Email</a>
-          <a href={contactLinks.whatsapp.href} target="_blank" rel="noreferrer">WhatsApp</a>
-          <a href={contactLinks.linkedin.href} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={contactLinks.github.href} target="_blank" rel="noreferrer">GitHub</a>
-          <Link href="/contact">Contact</Link>
+        <a className="contact-link" href="mailto:omar.khair70@gmail.com" data-reveal>
+          omar.khair70@gmail.com
+          <span aria-hidden="true">↗</span>
+        </a>
+        <div className="site-footer__meta">
+          <p>Egypt · Working worldwide</p>
+          <div>
+            <a href="https://github.com/omarkhair70-droid" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/omar-khair-product-builder" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a href="https://wa.me/201151891310" target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+            <Link href="/services">Services</Link>
+            <Link href="/local-business">Local offer</Link>
+          </div>
+          <p>© 2026 Omar Khair</p>
         </div>
       </div>
     </footer>

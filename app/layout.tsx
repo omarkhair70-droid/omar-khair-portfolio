@@ -1,41 +1,23 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
-
-import SignatureMotion from "@/components/SignatureMotion";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { siteIdentity } from "@/data/site";
-
+import { instrumentSerif, manrope } from "@/lib/fonts";
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap"
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-editorial",
-  display: "swap"
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfolio.vercel.app";
 const title = "Omar Khair — Product Builder | Web & Mobile";
 const description =
-  "Omar Khair builds digital products end-to-end across product direction, engineering, visual direction, and launch.";
+  "Omar Khair builds websites, mobile products, ordering experiences, RFQ systems, dashboards, and business software — from product direction to deployment.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
+  title: { default: title, template: "%s — Omar Khair" },
   description,
   openGraph: {
     title,
     description,
     url: siteUrl,
-    siteName: siteIdentity.name,
+    siteName: "Omar Khair",
     type: "website",
     images: ["/opengraph-image"]
   },
@@ -58,8 +40,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${instrumentSerif.variable}`}>
-      <body className="min-h-screen bg-stone-50 text-stone-950 antialiased">
-        <SignatureMotion />
+      <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <SiteHeader />
         {children}
         <SiteFooter />

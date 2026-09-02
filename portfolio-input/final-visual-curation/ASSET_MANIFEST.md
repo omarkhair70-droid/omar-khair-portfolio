@@ -1,8 +1,8 @@
 # Final Visual Evidence Curation Manifest
 
-**Portfolio:** `omarkhair70-droid/omar-khair-portfolio`  
-**Audit date:** 2026-08-27  
-**Input audited:** full uploaded `memo(1).zip`  
+**Portfolio:** `omarkhair70-droid/omar-khair-portfolio`
+**Audit date:** 2026-08-27
+**Input audited:** full uploaded `memo(1).zip`
 **Scope:** visual evidence curation only. No portfolio redesign, layout implementation, or product-repository modification.
 
 ## Audit result
@@ -31,9 +31,9 @@ The 55 approved source screenshots were separately converted into clean full-fra
 
 ## Balcona Bar
 
-**Hero:** P003 — `customer-entry.webp`  
-**Home:** none recommended until fresh captures exist.  
-**Work preview:** P003.  
+**Hero:** P003 — `customer-entry.webp`
+**Home:** none recommended until fresh captures exist.
+**Work preview:** P003.
 **Case-study sequence:** P003 only.
 
 ### Reject
@@ -47,11 +47,11 @@ Capture real customer menu/category, product detail, cart/order flow, live order
 
 ## Tuscanini
 
-**Hero:** P011 — `menu.webp`  
-**Home:** P011  
+**Hero:** P011 — `menu.webp`
+**Home:** P011
 **Work:** P011, P009, P007
 
-**Case-study order:**  
+**Case-study order:**
 P013 category discovery → P011 branded menu → P008 Food Finder → P004 recommendation → P009 customization → P006 cart → P005 checkout → P007 order summary.
 
 ### Reject
@@ -66,11 +66,11 @@ No blocking gap. Optional clean browser-free captures / one responsive desktop-t
 
 ## Habba
 
-**Hero:** P031 — `brand-home.webp`  
-**Home:** P031  
+**Hero:** P031 — `brand-home.webp`
+**Home:** P031
 **Work:** P031, P022, P017
 
-**Case-study order:**  
+**Case-study order:**
 P031 brand home → P030 featured products → P017 product detail → P028 guided “choose your way” → P022 Drop builder → P021 Drop result → P015 cart/cross-sell → P026 WhatsApp conversion.
 
 ### Reject
@@ -87,11 +87,11 @@ No blocking gap. Optional browser-free recapture only.
 
 **Decision:** conservative treatment until the known external layout issue is fixed.
 
-**Hero:** P037 — `bag-collections.webp`  
-**Home:** P037 only, and only as supporting work.  
+**Hero:** P037 — `bag-collections.webp`
+**Home:** P037 only, and only as supporting work.
 **Work:** P037, P041, P034
 
-**Case-study order:**  
+**Case-study order:**
 P035 home/collection sections → P037 bag collections → P041 Arabic product detail → P034 cart/checkout → P033 checkout form.
 
 ### Reject
@@ -108,11 +108,11 @@ Clean home hero, category, Arabic product detail, cart/checkout, and desktop + m
 
 ## HILTECH
 
-**Hero:** P064 — `home-hero.webp`  
-**Home:** P064, P061, P056  
+**Hero:** P064 — `home-hero.webp`
+**Home:** P064, P061, P056
 **Work:** P064, P056, P045
 
-**Case-study order:**  
+**Case-study order:**
 P064 corporate hero → P061 real field/delivery context → P051 core services → P056 catalog → P053 product/spec detail → P045 RFQ basket → P046 RFQ details → P059 procurement flow.
 
 ### Reject
@@ -133,11 +133,11 @@ Desktop hero/catalog/RFQ plus a safe admin/RFQ inbox/quote-tracking or other ope
 
 ## Nova
 
-**Hero:** P082 — `home-dashboard.webp`  
-**Home:** P082, P073, P068  
+**Hero:** P082 — `home-dashboard.webp`
+**Home:** P082, P073, P068
 **Work:** P082, P073, P069
 
-**Case-study order:**  
+**Case-study order:**
 P082 branded native social home → P073 Orbit → P068 Tonight → P069 Reel → P075 creation hub → P079 post interaction → P076 messaging/calls → P072 profile.
 
 ### Reject
@@ -157,11 +157,11 @@ Current set is sufficient. Optional story viewer/composer, polished call UI, or 
 
 **Decision:** strongest and most complete visual product set in the pack. Ten screens are intentional because they prove different product layers, not because of a fixed gallery quota.
 
-**Hero:** P123 — `discovery-hub.webp`  
-**Home:** P123, P127, P084, P104  
+**Hero:** P123 — `discovery-hub.webp`
+**Home:** P123, P127, P084, P104
 **Work:** P123, P084, P104
 
-**Case-study order:**  
+**Case-study order:**
 P123 discovery/product thesis → P127 active home → P109 marketplace → P084 item/exchange detail → P100 offer state → P104 accepted-exchange chat/calls → P108 create listing → P099 profile → P111 trust/reputation → P122 movement/social layer.
 
 ### Reject
@@ -185,13 +185,13 @@ No blocking gap. Future polish may use browser-free exports and a deliberate rel
 
 ## WaveZero
 
-**Hero:** P135 — `brand-home.webp`  
-**Home:** P135, P133, P128  
+**Hero:** P135 — `brand-home.webp`
+**Home:** P135, P133, P128
 **Work:** P135, P133, P128
 
 P135 is the strongest consumer/editorial composition, but visibly contains the Apple BipBop HLS demo track. It is valid current evidence, not the ideal permanent hero.
 
-**Case-study order:**  
+**Case-study order:**
 P135 editorial home → P136 listening history → P131 library → P128 local/device music → P132 search → P133 Now Playing → P130 audio/download/storage settings.
 
 ### Reject
@@ -210,19 +210,19 @@ The 136-image ZIP does **not** contain Farrag Coffee, Abdel Aal Coffee, Athr Stu
 ## Farrag Coffee V2
 Current portfolio repo has legacy captures `ben-farag-hero.png`, `ben-farag-coffee-finder.png`, and `ben-farag-process-reviews.png`. The V2 project also contains Hero, Coffee Finder, product/catalog/cart/admin surfaces.
 
-**Status:** not promoted into the new final pack by this audit because those legacy captures were not part of the uploaded full visual review.  
+**Status:** not promoted into the new final pack by this audit because those legacy captures were not part of the uploaded full visual review.
 **Capture request:** current hero, Coffee Finder interaction, product/menu discovery, cart/conversion, and optionally one safe admin view. Use V2 as canonical; original Farrag only as evolution/origin context.
 
 ## Abdel Aal Coffee
 Repository inventory confirms `hero.jpeg`, `product.jpeg`, `store.jpeg`, and `videosloop.mp4` (~1.3 MB).
 
-**Status:** do not choose a hero blindly from filenames alone.  
+**Status:** do not choose a hero blindly from filenames alone.
 **Capture request:** current site hero, product composition, store/brand section, logo lockup if present, and a deliberate poster/frame + short loop from the existing video. Treat as creative/brand/motion proof, not a technical flagship.
 
 ## Athr Studio Website
 Repository inventory confirms `design-1.jpeg`–`design-3.jpeg`, before/after pairs for Boulevard, Cavello and La Roche, `cover-collage.jpeg`, `founder.jpeg`, and a root MP4 (~6 MB).
 
-**Status:** strong Origins / Creative Direction candidate, but no blind hero choice.  
+**Status:** strong Origins / Creative Direction candidate, but no blind hero choice.
 **Capture request:** visually validate the cover, strongest before/after pair(s), 1–2 design studies, and motion poster/excerpt. Use it to prove visual direction/progression.
 
 ## Senior Pharmacist Portfolio

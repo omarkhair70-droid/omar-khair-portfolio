@@ -213,6 +213,13 @@ img { max-width: 100%; }
 .web-shot { grid-column: 1 / -1; position: relative; min-height: min(74vw, 58rem); overflow: hidden; background: #d8d5cc; }
 .web-shot:nth-child(even) { grid-column: 3 / -1; }
 .web-shot img { object-fit: contain; padding: clamp(0.75rem, 2vw, 2rem); }
+.mixed-story { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2.5rem); align-items: start; }
+.mixed-shot { position: relative; overflow: hidden; background: #d8d5cc; box-shadow: 0 1.5rem 5rem rgba(10, 10, 10, 0.1); }
+.mixed-shot--portrait { grid-column: 1 / span 4; aspect-ratio: 375 / 812; }
+.mixed-shot--landscape { grid-column: 5 / -1; aspect-ratio: 1265 / 712; }
+.mixed-shot--landscape:nth-child(3) { grid-column: 2 / span 8; }
+.mixed-shot--landscape:nth-child(4) { grid-column: 5 / -1; }
+.mixed-shot img { object-fit: contain; }
 .text-evidence { display: grid; grid-template-columns: repeat(12, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 4rem; }
 .text-evidence p { grid-column: 4 / -1; max-width: 36ch; margin: 0; font-family: var(--font-serif), Georgia, serif; font-size: clamp(2.4rem, 5vw, 5rem); line-height: 1; }
 .next-project { border-top: 1px solid var(--line); background: var(--paper-bright); }
@@ -342,6 +349,9 @@ img { max-width: 100%; }
   .mobile-shot:nth-child(2), .mobile-shot:nth-child(5) { margin-top: 5rem; }
   .web-story { grid-template-columns: repeat(4, 1fr); }
   .web-shot, .web-shot:nth-child(even) { grid-column: 1 / -1; min-height: min(125vw, 45rem); }
+  .mixed-story { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .mixed-shot--portrait { grid-column: 1 / span 2; }
+  .mixed-shot--landscape, .mixed-shot--landscape:nth-child(3), .mixed-shot--landscape:nth-child(4) { grid-column: 1 / -1; }
   .text-evidence { grid-template-columns: repeat(4, 1fr); }
   .text-evidence p { grid-column: 1 / -1; }
   .about-intro__portrait { grid-column: 1 / -1; min-height: 24rem; }
@@ -375,6 +385,8 @@ img { max-width: 100%; }
   .work-row { grid-template-columns: 2.3rem 1fr; }
   .mobile-story { display: block; }
   .mobile-shot { width: 100%; margin: 0 0 1.5rem !important; }
+  .mixed-story { display: block; }
+  .mixed-shot { width: 100%; margin-bottom: 1.5rem; }
   .case-hero__meta span:nth-child(2) { display: none; }
   .about-facts { grid-template-columns: 1fr; }
   .offer-block ul, .inquiry-form__grid { grid-template-columns: 1fr; }

@@ -30,8 +30,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const currentIndex = caseStudyProjects.findIndex((item) => item.slug === project.slug);
   const next = caseStudyProjects[(currentIndex + 1) % caseStudyProjects.length];
   const externalLinks = project.links.filter((link) => link.kind !== "case-study");
-  const galleryClass = project.visualMode === "web" ? "web-story" : "mobile-story";
-  const itemClass = project.visualMode === "web" ? "web-shot" : "mobile-shot";
+  const galleryClass =
+    project.visualMode === "web"
+      ? "web-story"
+      : project.visualMode === "mixed"
+        ? "mixed-story"
+        : "mobile-story";
 
   return (
     <main id="main-content">
@@ -92,12 +96,30 @@ export default async function CaseStudyPage({ params }: PageProps) {
           {project.gallery.length ? (
             <div className={galleryClass}>
               {project.gallery.map((image, index) => (
-                <figure className={itemClass} key={image} data-reveal>
+                <figure
+                  className={
+                    project.visualMode === "web"
+                      ? "web-shot"
+                      : project.visualMode === "mixed"
+                        ? `mixed-shot ${index === 0 ? "mixed-shot--portrait" : "mixed-shot--landscape"}`
+                        : "mobile-shot"
+                  }
+                  key={image}
+                  data-reveal
+                >
                   <Image
                     src={image}
                     alt={project.galleryAlt[index] ?? `${project.compactTitle} product screen ${index + 1}`}
                     fill
-                    sizes={project.visualMode === "web" ? "100vw" : "(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"}
+                    sizes={
+                      project.visualMode === "web"
+                        ? "100vw"
+                        : project.visualMode === "mixed"
+                          ? index === 0
+                            ? "(max-width: 900px) 100vw, 32vw"
+                            : "(max-width: 900px) 100vw, 66vw"
+                          : "(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    }
                   />
                 </figure>
               ))}

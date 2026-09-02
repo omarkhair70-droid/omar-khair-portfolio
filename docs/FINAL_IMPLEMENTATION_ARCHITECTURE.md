@@ -86,6 +86,7 @@ Lanes:
    - Balcona Bar
 2. Client & Business Work
    - Senior Pharmacist Portfolio
+   - Ahmed Khair Portfolio
    - Tuscanini
    - Habba
    - Bahja (restrained until external issue is fixed)
@@ -277,7 +278,7 @@ When the curator PR lands:
 ## Status integration contract
 
 Current source-of-truth baseline:
-- HILTECH: live production; canonical live URL `https://hiltech-eg.com`
+- HILTECH: verified public Next.js deployment at `https://hiltech-eg-website.vercel.app`; the similarly named custom domain currently points to a different site
 - Teswa: public/post-launch; public Google Play URL is valid
 - Nova: available on the normal Google Play listing; currently distributed through closed testing
 - WaveZero: available on the normal Google Play listing; currently distributed through closed testing; production privacy policy is published

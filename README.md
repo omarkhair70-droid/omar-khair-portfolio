@@ -44,7 +44,7 @@ npm run build
 
 ## Assets
 
-The final 55-image curated evidence set lives under `public/work/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
+The current curated evidence set contains 58 WebP assets under `public/work/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
 
 ## Public routes
 
@@ -64,4 +64,4 @@ The final 55-image curated evidence set lives under `public/work/<project>/`. Fa
 - Email: `omar.khair70@gmail.com`
 - WhatsApp: `+20 115 189 1310`
 - GitHub: `https://github.com/omarkhair70-droid`
-- LinkedIn: `https://linkedin.com/in/omar-khair-70`
+- LinkedIn: `https://www.linkedin.com/in/omar-khair-product-builder`

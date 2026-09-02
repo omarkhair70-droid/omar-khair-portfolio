@@ -2,7 +2,7 @@ export const contactLinks = [
   { label: "Email", value: "omar.khair70@gmail.com", href: "mailto:omar.khair70@gmail.com" },
   { label: "WhatsApp", value: "+20 115 189 1310", href: "https://wa.me/201151891310" },
   { label: "Phone", value: "+20 115 189 1310", href: "tel:+201151891310" },
-  { label: "LinkedIn", value: "omar-khair-70", href: "https://linkedin.com/in/omar-khair-70" },
+  { label: "LinkedIn", value: "omar-khair-product-builder", href: "https://www.linkedin.com/in/omar-khair-product-builder" },
   { label: "GitHub", value: "omarkhair70-droid", href: "https://github.com/omarkhair70-droid" }
 ];
 

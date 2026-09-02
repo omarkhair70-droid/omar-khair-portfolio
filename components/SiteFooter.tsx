@@ -23,7 +23,7 @@ export default function SiteFooter() {
             <a href="https://github.com/omarkhair70-droid" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a href="https://linkedin.com/in/omar-khair-70" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/omar-khair-product-builder" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
             <a href="https://wa.me/201151891310" target="_blank" rel="noreferrer">

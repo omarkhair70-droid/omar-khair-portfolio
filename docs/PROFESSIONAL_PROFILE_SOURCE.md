@@ -94,7 +94,7 @@ Do not present Omar as a full-service film studio unless actual finished work su
 
 - Email: omar.khair70@gmail.com
 - Phone: 011 5189 1310
-- LinkedIn: https://linkedin.com/in/omar-khair-70
+- LinkedIn: https://www.linkedin.com/in/omar-khair-product-builder
 - GitHub: https://github.com/omarkhair70-droid
 - Portfolio: https://omar-khair-portfolio.vercel.app
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { MouseEvent, PointerEvent, ReactNode } from "react";
 import { useRef } from "react";
+import styles from "./FokharaTraceLink.module.css";
 
 type Props = {
   href: string;
@@ -50,14 +51,14 @@ export default function FokharaTraceLink({ href, children, className }: Props) {
     <Link
       ref={anchorRef}
       href={href}
-      className={`${className ?? ""} fokhara-trace-link`.trim()}
+      className={`${className ?? ""} ${styles.root}`.trim()}
       onPointerMove={updatePointer}
       onClick={navigate}
       data-reveal
     >
-      <span className="fokhara-trace-link__wash" aria-hidden="true" />
-      <span className="fokhara-trace-link__imprint" aria-hidden="true" />
-      <span className="fokhara-trace-link__content">{children}</span>
+      <span className={styles.wash} aria-hidden="true" />
+      <span className={styles.imprint} aria-hidden="true" />
+      <span className={styles.content}>{children}</span>
     </Link>
   );
 }

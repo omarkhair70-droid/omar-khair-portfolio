@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import FokharaCaseTrace from "@/components/FokharaCaseTrace";
 import ProjectLinks from "@/components/ProjectLinks";
 import { caseStudyProjects, getProject } from "@/data/portfolio-projects";
 
@@ -39,6 +40,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
   return (
     <main id="main-content">
+      {project.slug === "fokhara" ? <FokharaCaseTrace /> : null}
+
       <header className={`case-hero case-hero--${project.tone}`}>
         <div className="shell case-hero__grid">
           <div className="case-hero__meta">

@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import styles from "./FokharaCaseTrace.module.css";
 
@@ -54,13 +55,13 @@ export default function FokharaCaseTrace() {
         {
           "--trace-origin-x": `${origin.x}%`,
           "--trace-origin-y": `${origin.y}%`
-        } as React.CSSProperties
+        } as CSSProperties
       }
       aria-hidden="true"
     >
       <span className={styles.field} />
-      <span className={styles.pressure} />
-      <span className={styles.memory} />
+      <span className={styles.mark} />
+      <span className={styles.echo} />
     </div>
   );
 }

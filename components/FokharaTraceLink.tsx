@@ -12,16 +12,24 @@ type Props = {
   className?: string;
 };
 
+const STORAGE_KEY = "fokhara-trace-origin";
+
 export default function FokharaTraceLink({ href, children, className }: Props) {
   const router = useRouter();
   const anchorRef = useRef<HTMLAnchorElement>(null);
+  const lastPoint = useRef({ x: 50, y: 50 });
 
   const updatePointer = (event: PointerEvent<HTMLAnchorElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    event.currentTarget.style.setProperty("--trace-x", `${x}%`);
-    event.currentTarget.style.setProperty("--trace-y", `${y}%`);
+    const localX = ((event.clientX - rect.left) / rect.width) * 100;
+    const localY = ((event.clientY - rect.top) / rect.height) * 100;
+    event.currentTarget.style.setProperty("--trace-x", `${localX}%`);
+    event.currentTarget.style.setProperty("--trace-y", `${localY}%`);
+
+    lastPoint.current = {
+      x: (event.clientX / window.innerWidth) * 100,
+      y: (event.clientY / window.innerHeight) * 100
+    };
   };
 
   const navigate = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -40,6 +48,16 @@ export default function FokharaTraceLink({ href, children, className }: Props) {
     if (!anchor || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     event.preventDefault();
+
+    const point = event.detail === 0
+      ? { x: 50, y: 50 }
+      : lastPoint.current;
+
+    sessionStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ x: point.x, y: point.y, ts: Date.now() })
+    );
+
     anchor.dataset.leaving = "true";
 
     window.setTimeout(() => {

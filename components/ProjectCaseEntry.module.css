@@ -1,0 +1,177 @@
+.root {
+  --entry-x: 50%;
+  --entry-y: 50%;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 80;
+}
+
+.layerA,
+.layerB,
+.layerC {
+  inset: 0;
+  position: absolute;
+  transform-origin: var(--entry-x) var(--entry-y);
+}
+
+.root[data-variant="nova"] .layerA,
+.root[data-variant="nova"] .layerB {
+  opacity: 1;
+  transition: opacity 760ms ease, transform 980ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="nova"] .layerA {
+  background: radial-gradient(34vmax 22vmax at calc(var(--entry-x) - 10%) var(--entry-y), rgba(255, 184, 167, 0.3), rgba(123, 92, 255, 0.18) 48%, transparent 74%);
+  transform: translateX(-4vw) scale(1.2);
+}
+
+.root[data-variant="nova"] .layerB {
+  background: radial-gradient(34vmax 22vmax at calc(var(--entry-x) + 10%) var(--entry-y), rgba(45, 139, 255, 0.28), rgba(123, 92, 255, 0.18) 48%, transparent 74%);
+  transform: translateX(4vw) scale(1.2);
+}
+
+.root[data-variant="nova"] .layerC {
+  background: radial-gradient(11vmax circle at var(--entry-x) var(--entry-y), rgba(233, 230, 255, 0.3), transparent 74%);
+  opacity: 0.86;
+  transition: opacity 620ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.8);
+}
+
+.root[data-variant="nova"].settled .layerA,
+.root[data-variant="nova"].settled .layerB {
+  opacity: 0;
+  transform: translateX(0) scale(1.65);
+}
+
+.root[data-variant="nova"].settled .layerC {
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+.root[data-variant="wavezero"] .layerA {
+  background: repeating-linear-gradient(0deg, transparent 0 12px, rgba(24, 23, 28, 0.09) 12px 13px, transparent 13px 24px);
+  mask-image: radial-gradient(48vmax 26vmax at var(--entry-x) var(--entry-y), black, transparent 74%);
+  opacity: 0.78;
+  transition: opacity 760ms ease, transform 1100ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scaleX(1.14);
+}
+
+.root[data-variant="wavezero"] .layerB {
+  background: linear-gradient(90deg, transparent, rgba(24, 23, 28, 0.22), transparent);
+  height: 1px;
+  inset: var(--entry-y) 5% auto;
+  opacity: 1;
+  transition: opacity 600ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(1);
+}
+
+.root[data-variant="wavezero"] .layerC {
+  background: radial-gradient(18vmax 5vmax at var(--entry-x) var(--entry-y), rgba(24, 23, 28, 0.12), transparent 74%);
+  opacity: 0.7;
+  transition: opacity 700ms ease, transform 1000ms ease;
+}
+
+.root[data-variant="wavezero"].settled .layerA {
+  opacity: 0;
+  transform: scaleX(0.82);
+}
+
+.root[data-variant="wavezero"].settled .layerB {
+  opacity: 0;
+  transform: scaleX(0.2);
+}
+
+.root[data-variant="wavezero"].settled .layerC {
+  opacity: 0;
+  transform: scaleX(1.6);
+}
+
+.root[data-variant="balcona"] .layerA,
+.root[data-variant="balcona"] .layerB,
+.root[data-variant="balcona"] .layerC {
+  border: 1px solid rgba(24, 23, 28, 0.16);
+  border-radius: 4px;
+  height: 8vh;
+  left: calc(var(--entry-x) - 10vw);
+  max-height: 72px;
+  max-width: 220px;
+  opacity: 0.8;
+  top: calc(var(--entry-y) - 4vh);
+  transition: opacity 620ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 20vw;
+}
+
+.root[data-variant="balcona"] .layerA {
+  transform: translateY(-9vh);
+}
+
+.root[data-variant="balcona"] .layerB {
+  transform: translateY(0);
+}
+
+.root[data-variant="balcona"] .layerC {
+  transform: translateY(9vh);
+}
+
+.root[data-variant="balcona"].settled .layerA,
+.root[data-variant="balcona"].settled .layerB,
+.root[data-variant="balcona"].settled .layerC {
+  opacity: 0;
+  transform: translate(-12vw, 0) scale(0.9);
+}
+
+.root[data-variant="teswa"] .layerA,
+.root[data-variant="teswa"] .layerB {
+  border: 1px solid rgba(24, 23, 28, 0.14);
+  border-radius: 18px;
+  height: 22vh;
+  max-height: 190px;
+  max-width: 150px;
+  opacity: 0.78;
+  top: calc(var(--entry-y) - 11vh);
+  transition: opacity 700ms ease, transform 980ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 14vw;
+}
+
+.root[data-variant="teswa"] .layerA {
+  left: calc(var(--entry-x) - 16vw);
+  transform: rotate(-5deg);
+}
+
+.root[data-variant="teswa"] .layerB {
+  left: calc(var(--entry-x) + 2vw);
+  transform: rotate(5deg);
+}
+
+.root[data-variant="teswa"] .layerC {
+  background: linear-gradient(90deg, transparent, rgba(24, 23, 28, 0.16), transparent);
+  height: 1px;
+  left: calc(var(--entry-x) - 9vw);
+  opacity: 0.9;
+  top: var(--entry-y);
+  transition: opacity 620ms ease, transform 900ms ease;
+  width: 18vw;
+}
+
+.root[data-variant="teswa"].settled .layerA {
+  opacity: 0;
+  transform: translateX(8vw) rotate(0) scale(0.88);
+}
+
+.root[data-variant="teswa"].settled .layerB {
+  opacity: 0;
+  transform: translateX(-8vw) rotate(0) scale(0.88);
+}
+
+.root[data-variant="teswa"].settled .layerC {
+  opacity: 0;
+  transform: scaleX(0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    display: none;
+  }
+}

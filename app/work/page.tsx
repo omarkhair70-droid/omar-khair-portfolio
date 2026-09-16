@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { laneLabels, projects, type ProjectLane } from "@/data/projects";
+import { laneLabels, projects, type ProjectLane } from "@/data/portfolio-projects";
 
 export const metadata: Metadata = {
   title: "Work",

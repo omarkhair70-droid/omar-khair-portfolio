@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProjectLinks from "@/components/ProjectLinks";
-import { caseStudyProjects, getProject } from "@/data/projects";
+import { caseStudyProjects, getProject } from "@/data/portfolio-projects";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -126,7 +126,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </div>
           ) : (
             <div className="text-evidence" data-reveal>
-              <p>The proof is the delivered experience: a clear narrative, responsive implementation and a direct path to the live work.</p>
+              <p>The proof is the working experience: a clear narrative, responsive implementation and a direct path to the live work.</p>
             </div>
           )}
         </section>

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { caseStudyProjects } from "@/data/projects";
+import { caseStudyProjects } from "@/data/portfolio-projects";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfolio.vercel.app";
 

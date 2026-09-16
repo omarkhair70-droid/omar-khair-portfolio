@@ -1,0 +1,269 @@
+.root {
+  --interaction-x: 50%;
+  --interaction-y: 50%;
+  isolation: isolate;
+  overflow: clip;
+  position: relative;
+  transition: transform 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+.content {
+  display: contents;
+}
+
+.layerA,
+.layerB,
+.layerC {
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Nova — two distinct presences approach, affect one another, then settle. */
+.root[data-variant="nova"] .layerA,
+.root[data-variant="nova"] .layerB {
+  transition: opacity 220ms ease, transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="nova"] .layerA {
+  background: radial-gradient(112px 76px at calc(var(--interaction-x) - 13%) calc(var(--interaction-y) - 3%), rgba(255, 184, 167, 0.28), rgba(201, 135, 255, 0.2) 42%, rgba(123, 92, 255, 0.1) 62%, transparent 76%);
+  transform: translateX(-24px) rotate(-5deg) scale(0.78, 0.9);
+}
+
+.root[data-variant="nova"] .layerB {
+  background: radial-gradient(108px 80px at calc(var(--interaction-x) + 13%) calc(var(--interaction-y) + 3%), rgba(123, 92, 255, 0.23), rgba(45, 139, 255, 0.2) 48%, transparent 76%);
+  transform: translateX(24px) rotate(6deg) scale(0.8, 0.92);
+}
+
+.root[data-variant="nova"] .layerC {
+  background: radial-gradient(44px 30px at var(--interaction-x) var(--interaction-y), transparent 0 34%, rgba(233, 230, 255, 0.34) 39%, rgba(123, 92, 255, 0.12) 48%, transparent 66%);
+  transition: opacity 180ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.48);
+}
+
+.root[data-variant="nova"]:hover .layerA,
+.root[data-variant="nova"]:focus-visible .layerA {
+  opacity: 1;
+  transform: translateX(-3px) rotate(-1deg) scale(1, 0.96);
+}
+
+.root[data-variant="nova"]:hover .layerB,
+.root[data-variant="nova"]:focus-visible .layerB {
+  opacity: 1;
+  transform: translateX(3px) rotate(1deg) scale(1, 0.98);
+}
+
+.root[data-variant="nova"]:hover .layerC,
+.root[data-variant="nova"]:focus-visible .layerC {
+  opacity: 0.92;
+  transform: scale(1);
+}
+
+/* WaveZero — a quiet waveform field plus a moving playhead, not an equalizer gimmick. */
+.root[data-variant="wavezero"] .layerA {
+  background: repeating-linear-gradient(90deg, transparent 0 10px, rgba(24, 23, 28, 0.035) 10px 11px, transparent 11px 20px);
+  mask-image: radial-gradient(230px 84px at var(--interaction-x) var(--interaction-y), black 0 28%, rgba(0, 0, 0, 0.76) 50%, transparent 78%);
+  transition: opacity 220ms ease, transform 560ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scaleX(0.84);
+}
+
+.root[data-variant="wavezero"] .layerB {
+  background: linear-gradient(90deg, transparent 4%, rgba(24, 23, 28, 0.08) 18%, rgba(24, 23, 28, 0.23) 50%, rgba(24, 23, 28, 0.08) 82%, transparent 96%);
+  height: 1px;
+  inset: var(--interaction-y) 7% auto;
+  transform: scaleX(0.18);
+  transform-origin: var(--interaction-x) 50%;
+  transition: opacity 180ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="wavezero"] .layerC {
+  background: linear-gradient(180deg, transparent, rgba(24, 23, 28, 0.16) 28%, rgba(24, 23, 28, 0.16) 72%, transparent);
+  inset: 18% auto 18% var(--interaction-x);
+  transition: opacity 180ms ease, transform 420ms ease;
+  transform: scaleY(0.36);
+  width: 1px;
+}
+
+.root[data-variant="wavezero"]:hover .layerA,
+.root[data-variant="wavezero"]:focus-visible .layerA {
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
+.root[data-variant="wavezero"]:hover .layerB,
+.root[data-variant="wavezero"]:focus-visible .layerB,
+.root[data-variant="wavezero"]:hover .layerC,
+.root[data-variant="wavezero"]:focus-visible .layerC {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Balcona — service tickets enter a live queue, then hand off left. */
+.root[data-variant="balcona"] .layerA,
+.root[data-variant="balcona"] .layerB,
+.root[data-variant="balcona"] .layerC {
+  background:
+    linear-gradient(90deg, rgba(24, 23, 28, 0.13) 0 5px, transparent 5px),
+    linear-gradient(90deg, rgba(24, 23, 28, 0.09) 0 38%, transparent 38% 46%, rgba(24, 23, 28, 0.06) 46% 76%, transparent 76%) 13px 50% / calc(100% - 22px) 1px no-repeat;
+  border: 1px solid rgba(24, 23, 28, 0.13);
+  border-radius: 3px;
+  height: 20px;
+  inset: calc(var(--interaction-y) - 10px) 8% auto auto;
+  transition: opacity 180ms ease, transform 460ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 94px;
+}
+
+.root[data-variant="balcona"] .layerA {
+  transform: translate(52px, -24px);
+}
+
+.root[data-variant="balcona"] .layerB {
+  transform: translate(68px, 0);
+  transition-delay: 45ms;
+}
+
+.root[data-variant="balcona"] .layerC {
+  transform: translate(84px, 24px);
+  transition-delay: 90ms;
+}
+
+.root[data-variant="balcona"]:hover .layerA,
+.root[data-variant="balcona"]:focus-visible .layerA {
+  opacity: 0.9;
+  transform: translate(0, -24px);
+}
+
+.root[data-variant="balcona"]:hover .layerB,
+.root[data-variant="balcona"]:focus-visible .layerB {
+  opacity: 0.68;
+  transform: translate(0, 0);
+}
+
+.root[data-variant="balcona"]:hover .layerC,
+.root[data-variant="balcona"]:focus-visible .layerC {
+  opacity: 0.46;
+  transform: translate(0, 24px);
+}
+
+/* Teswa — two objects approach, connect, then literally exchange sides. */
+.root[data-variant="teswa"] .layerA,
+.root[data-variant="teswa"] .layerB {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(24, 23, 28, 0.08) 0 4px, transparent 5px),
+    linear-gradient(rgba(24, 23, 28, 0.07), rgba(24, 23, 28, 0.07)) 50% 72% / 55% 1px no-repeat;
+  border: 1px solid rgba(24, 23, 28, 0.13);
+  border-radius: 12px;
+  height: 52px;
+  top: 50%;
+  transition: opacity 200ms ease, transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 44px;
+}
+
+.root[data-variant="teswa"] .layerA {
+  left: calc(var(--interaction-x) - 54px);
+  transform: translate(-24px, -50%) rotate(-7deg);
+}
+
+.root[data-variant="teswa"] .layerB {
+  left: calc(var(--interaction-x) + 10px);
+  transform: translate(24px, -50%) rotate(7deg);
+}
+
+.root[data-variant="teswa"] .layerC {
+  background: repeating-linear-gradient(90deg, rgba(24, 23, 28, 0.13) 0 5px, transparent 5px 9px);
+  height: 1px;
+  left: calc(var(--interaction-x) - 42px);
+  top: var(--interaction-y);
+  transition: opacity 180ms ease, transform 440ms ease;
+  width: 84px;
+  transform: scaleX(0.22);
+}
+
+.root[data-variant="teswa"]:hover .layerA,
+.root[data-variant="teswa"]:focus-visible .layerA,
+.root[data-variant="teswa"]:hover .layerB,
+.root[data-variant="teswa"]:focus-visible .layerB {
+  opacity: 0.8;
+  transform: translate(0, -50%) rotate(0);
+}
+
+.root[data-variant="teswa"]:hover .layerC,
+.root[data-variant="teswa"]:focus-visible .layerC {
+  opacity: 0.78;
+  transform: scaleX(1);
+}
+
+.root[data-leaving="true"] {
+  transform: translateY(-1px);
+}
+
+.root[data-variant="nova"][data-leaving="true"] .layerA {
+  opacity: 1;
+  transform: translateX(6px) rotate(2deg) scale(1.5, 1.15);
+}
+
+.root[data-variant="nova"][data-leaving="true"] .layerB {
+  opacity: 1;
+  transform: translateX(-6px) rotate(-2deg) scale(1.5, 1.15);
+}
+
+.root[data-variant="nova"][data-leaving="true"] .layerC {
+  opacity: 1;
+  transform: scale(0.68);
+}
+
+.root[data-variant="wavezero"][data-leaving="true"] .layerA {
+  opacity: 0.84;
+  transform: scaleX(1.18);
+}
+
+.root[data-variant="wavezero"][data-leaving="true"] .layerB {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.root[data-variant="wavezero"][data-leaving="true"] .layerC {
+  opacity: 1;
+  transform: scaleY(1.35);
+}
+
+.root[data-variant="balcona"][data-leaving="true"] .layerA {
+  opacity: 0.88;
+  transform: translate(-34px, 0);
+}
+
+.root[data-variant="balcona"][data-leaving="true"] .layerB {
+  opacity: 0.64;
+  transform: translate(-18px, 0);
+}
+
+.root[data-variant="balcona"][data-leaving="true"] .layerC {
+  opacity: 0.36;
+  transform: translate(-4px, 0);
+}
+
+.root[data-variant="teswa"][data-leaving="true"] .layerA {
+  opacity: 0.92;
+  transform: translate(64px, -50%) rotate(6deg) scale(0.9);
+}
+
+.root[data-variant="teswa"][data-leaving="true"] .layerB {
+  opacity: 0.92;
+  transform: translate(-64px, -50%) rotate(-6deg) scale(0.9);
+}
+
+.root[data-variant="teswa"][data-leaving="true"] .layerC {
+  opacity: 0.3;
+  transform: scaleX(0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root,
+  .layerA,
+  .layerB,
+  .layerC {
+    transition: none;
+  }
+}

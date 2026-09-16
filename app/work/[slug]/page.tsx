@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import FokharaCaseTrace from "@/components/FokharaCaseTrace";
+import ProjectCaseEntry from "@/components/ProjectCaseEntry";
+import type { ProjectInteractionVariant } from "@/components/ProjectInteractionLink";
 import ProjectLinks from "@/components/ProjectLinks";
 import { caseStudyProjects, getProject } from "@/data/portfolio-projects";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+const interactionSlugs: ProjectInteractionVariant[] = ["nova", "wavezero", "balcona", "teswa"];
 
 export function generateStaticParams() {
   return caseStudyProjects.map((project) => ({ slug: project.slug }));
@@ -36,9 +41,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
       : project.visualMode === "mixed"
         ? "mixed-story"
         : "mobile-story";
+  const hasProjectEntry = interactionSlugs.includes(project.slug as ProjectInteractionVariant);
 
   return (
     <main id="main-content">
+      {project.slug === "fokhara" ? <FokharaCaseTrace /> : null}
+      {hasProjectEntry ? <ProjectCaseEntry variant={project.slug as ProjectInteractionVariant} /> : null}
+
       <header className={`case-hero case-hero--${project.tone}`}>
         <div className="shell case-hero__grid">
           <div className="case-hero__meta">

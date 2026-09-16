@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FokharaTraceLink from "@/components/FokharaTraceLink";
+import ProjectInteractionLink, { type ProjectInteractionVariant } from "@/components/ProjectInteractionLink";
 import { laneLabels, projects, type ProjectLane } from "@/data/portfolio-projects";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const laneOrder: ProjectLane[] = ["flagship", "client", "creative", "independent"];
+const interactionSlugs: ProjectInteractionVariant[] = ["nova", "wavezero", "balcona", "teswa"];
 
 export default function WorkPage() {
   return (
@@ -57,6 +59,19 @@ export default function WorkPage() {
                         <FokharaTraceLink className="work-row" href={destination} key={project.slug}>
                           {content}
                         </FokharaTraceLink>
+                      );
+                    }
+
+                    if (interactionSlugs.includes(project.slug as ProjectInteractionVariant) && !external) {
+                      return (
+                        <ProjectInteractionLink
+                          className="work-row"
+                          href={destination}
+                          key={project.slug}
+                          variant={project.slug as ProjectInteractionVariant}
+                        >
+                          {content}
+                        </ProjectInteractionLink>
                       );
                     }
 

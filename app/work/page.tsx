@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FokharaTraceLink from "@/components/FokharaTraceLink";
 import { laneLabels, projects, type ProjectLane } from "@/data/portfolio-projects";
 
 export const metadata: Metadata = {
@@ -50,6 +51,15 @@ export default function WorkPage() {
                         <span className="work-row__status">{project.status}</span>
                       </>
                     );
+
+                    if (project.slug === "fokhara" && !external) {
+                      return (
+                        <FokharaTraceLink className="work-row" href={destination} key={project.slug}>
+                          {content}
+                        </FokharaTraceLink>
+                      );
+                    }
+
                     return external ? (
                       <a className="work-row" href={destination} target="_blank" rel="noreferrer" key={project.slug} data-reveal>
                         {content}

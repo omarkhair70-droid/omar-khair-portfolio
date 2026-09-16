@@ -1,0 +1,217 @@
+.root {
+  --interaction-x: 50%;
+  --interaction-y: 50%;
+  isolation: isolate;
+  overflow: clip;
+  position: relative;
+  transition: transform 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+.content {
+  display: contents;
+}
+
+.layerA,
+.layerB,
+.layerC {
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.root[data-variant="nova"] .layerA,
+.root[data-variant="nova"] .layerB {
+  transition: opacity 220ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="nova"] .layerA {
+  background: radial-gradient(120px 72px at calc(var(--interaction-x) - 14%) var(--interaction-y), rgba(255, 184, 167, 0.22), rgba(123, 92, 255, 0.13) 48%, transparent 72%);
+  transform: translateX(-18px) scale(0.82);
+}
+
+.root[data-variant="nova"] .layerB {
+  background: radial-gradient(120px 72px at calc(var(--interaction-x) + 14%) var(--interaction-y), rgba(45, 139, 255, 0.2), rgba(123, 92, 255, 0.13) 48%, transparent 72%);
+  transform: translateX(18px) scale(0.82);
+}
+
+.root[data-variant="nova"] .layerC {
+  background: radial-gradient(44px circle at var(--interaction-x) var(--interaction-y), rgba(233, 230, 255, 0.22), transparent 72%);
+  transition: opacity 180ms ease, transform 360ms ease;
+  transform: scale(0.55);
+}
+
+.root[data-variant="nova"]:hover .layerA,
+.root[data-variant="nova"]:focus-visible .layerA,
+.root[data-variant="nova"]:hover .layerB,
+.root[data-variant="nova"]:focus-visible .layerB {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.root[data-variant="nova"]:hover .layerC,
+.root[data-variant="nova"]:focus-visible .layerC {
+  opacity: 0.86;
+  transform: scale(1);
+}
+
+.root[data-variant="wavezero"] .layerA {
+  background: repeating-linear-gradient(0deg, transparent 0 9px, rgba(24, 23, 28, 0.08) 9px 10px, transparent 10px 18px);
+  mask-image: radial-gradient(220px 80px at var(--interaction-x) var(--interaction-y), black, transparent 74%);
+  transition: opacity 220ms ease, transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scaleX(0.9);
+}
+
+.root[data-variant="wavezero"] .layerB {
+  background: linear-gradient(90deg, transparent, rgba(24, 23, 28, 0.17), transparent);
+  height: 1px;
+  inset: 50% 7% auto;
+  transform: scaleX(0.2);
+  transition: opacity 180ms ease, transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="wavezero"] .layerC {
+  background: radial-gradient(72px 18px at var(--interaction-x) var(--interaction-y), rgba(24, 23, 28, 0.11), transparent 72%);
+  transition: opacity 220ms ease, transform 500ms ease;
+  transform: scaleX(0.55);
+}
+
+.root[data-variant="wavezero"]:hover .layerA,
+.root[data-variant="wavezero"]:focus-visible .layerA,
+.root[data-variant="wavezero"]:hover .layerB,
+.root[data-variant="wavezero"]:focus-visible .layerB,
+.root[data-variant="wavezero"]:hover .layerC,
+.root[data-variant="wavezero"]:focus-visible .layerC {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.root[data-variant="balcona"] .layerA,
+.root[data-variant="balcona"] .layerB,
+.root[data-variant="balcona"] .layerC {
+  border: 1px solid rgba(24, 23, 28, 0.13);
+  border-radius: 2px;
+  height: 18px;
+  inset: auto 8% 18% auto;
+  transition: opacity 180ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 88px;
+}
+
+.root[data-variant="balcona"] .layerA {
+  transform: translate(42px, -20px);
+}
+
+.root[data-variant="balcona"] .layerB {
+  transform: translate(58px, 3px);
+  transition-delay: 40ms;
+}
+
+.root[data-variant="balcona"] .layerC {
+  transform: translate(74px, 26px);
+  transition-delay: 80ms;
+}
+
+.root[data-variant="balcona"]:hover .layerA,
+.root[data-variant="balcona"]:focus-visible .layerA {
+  opacity: 0.82;
+  transform: translate(0, -20px);
+}
+
+.root[data-variant="balcona"]:hover .layerB,
+.root[data-variant="balcona"]:focus-visible .layerB {
+  opacity: 0.62;
+  transform: translate(0, 3px);
+}
+
+.root[data-variant="balcona"]:hover .layerC,
+.root[data-variant="balcona"]:focus-visible .layerC {
+  opacity: 0.42;
+  transform: translate(0, 26px);
+}
+
+.root[data-variant="teswa"] .layerA,
+.root[data-variant="teswa"] .layerB {
+  border: 1px solid rgba(24, 23, 28, 0.12);
+  border-radius: 12px;
+  height: 52px;
+  top: 50%;
+  transition: opacity 200ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 44px;
+}
+
+.root[data-variant="teswa"] .layerA {
+  left: calc(var(--interaction-x) - 48px);
+  transform: translate(-18px, -50%) rotate(-6deg);
+}
+
+.root[data-variant="teswa"] .layerB {
+  left: calc(var(--interaction-x) + 4px);
+  transform: translate(18px, -50%) rotate(6deg);
+}
+
+.root[data-variant="teswa"] .layerC {
+  background: linear-gradient(90deg, transparent, rgba(24, 23, 28, 0.12), transparent);
+  height: 1px;
+  left: calc(var(--interaction-x) - 40px);
+  top: var(--interaction-y);
+  transition: opacity 180ms ease, transform 420ms ease;
+  width: 80px;
+  transform: scaleX(0.3);
+}
+
+.root[data-variant="teswa"]:hover .layerA,
+.root[data-variant="teswa"]:focus-visible .layerA,
+.root[data-variant="teswa"]:hover .layerB,
+.root[data-variant="teswa"]:focus-visible .layerB {
+  opacity: 0.72;
+  transform: translate(0, -50%) rotate(0);
+}
+
+.root[data-variant="teswa"]:hover .layerC,
+.root[data-variant="teswa"]:focus-visible .layerC {
+  opacity: 0.8;
+  transform: scaleX(1);
+}
+
+.root[data-leaving="true"] {
+  transform: translateY(-1px);
+}
+
+.root[data-variant="nova"][data-leaving="true"] .layerA,
+.root[data-variant="nova"][data-leaving="true"] .layerB {
+  opacity: 1;
+  transform: translateX(0) scale(1.55);
+}
+
+.root[data-variant="wavezero"][data-leaving="true"] .layerA {
+  opacity: 0.9;
+  transform: scaleX(1.22);
+}
+
+.root[data-variant="wavezero"][data-leaving="true"] .layerB {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.root[data-variant="balcona"][data-leaving="true"] .layerA,
+.root[data-variant="balcona"][data-leaving="true"] .layerB,
+.root[data-variant="balcona"][data-leaving="true"] .layerC {
+  opacity: 0.75;
+  transform: translate(-14px, 3px);
+}
+
+.root[data-variant="teswa"][data-leaving="true"] .layerA,
+.root[data-variant="teswa"][data-leaving="true"] .layerB {
+  opacity: 0.9;
+  transform: translate(0, -50%) scale(0.86);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root,
+  .layerA,
+  .layerB,
+  .layerC {
+    transition: none;
+  }
+}

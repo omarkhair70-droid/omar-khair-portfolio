@@ -430,3 +430,148 @@ Then use the matrix to decide:
 5. what the artifact archive physically feels like.
 
 No implementation is approved merely because it resembles a reference.
+
+
+---
+
+## ART / DESIGN SCHOOL SYNTHESIS — FOUNDATIONS, NOT COSTUMES
+
+The portfolio will not adopt one historical style as a skin.
+
+It uses several schools as structural teachers, with each school assigned a specific job.
+
+### BAUHAUS — SYNTHESIS OF ART, TECHNOLOGY, BODY AND MAKING
+
+Historical lesson:
+Bauhaus treated art, design, technology, materials and applied practice as one laboratory rather than
+separate prestige categories. Oskar Schlemmer's theatre work is especially relevant because it studied
+the relationship between the human body and surrounding space.
+
+Transfer to Omar:
+- do not split artist / developer identities;
+- software, image, sound, object and system can sit on one aesthetic scale;
+- body / space / technology relationships may become part of the portfolio experience;
+- experiment through material and function rather than imitating Bauhaus geometry.
+
+Do not copy:
+- primary-colour clichés;
+- circles / triangles / Bauhaus-poster styling;
+- retro-modernist costume.
+
+### INTERNATIONAL TYPOGRAPHIC STYLE / SWISS GRID — THE SKELETON
+
+Historical lesson:
+asymmetry, mathematical grid, proportion, typographic clarity and objective structure.
+
+Transfer to Omar:
+- preserve a hard compositional skeleton under experimental work;
+- navigation, metadata and project truth remain legible;
+- allow deliberate grid-breaking only after the grid is established.
+
+Do not copy:
+- sterile neutrality;
+- Helvetica-as-personality;
+- corporate-modernist cleanliness.
+
+### NEW WAVE / WEINGART — CONTROLLED BREAKAGE
+
+Historical lesson:
+a reaction from inside Swiss discipline: loosen the grid, layer, crop, distort and reintroduce intuition
+without losing typographic intelligence.
+
+Transfer to Omar:
+- threshold scenes can fracture the strict system;
+- type can become spatial / material;
+- the portfolio can move between measured and expressive states.
+
+Do not copy:
+- 1980s graphic styling;
+- random typographic chaos.
+
+### ARTE POVERA — MATERIAL BEFORE POLISH
+
+Historical lesson:
+ordinary / raw materials and process can carry meaning without luxurious finish.
+
+Transfer to Omar:
+- clay, ash, grain, trace, compression, fracture and imperfection can be meaningful material states;
+- Fokhara and SERAPH-derived thinking can inform how digital surfaces behave;
+- visual richness should come from material logic, not glossy effects.
+
+Do not copy:
+- gallery-object imitation;
+- fake dirt / paper / concrete textures added decoratively.
+
+### INSTALLATION / IMMERSIVE ART — THE VIEWER HAS A BODY
+
+Historical lesson:
+the artwork is not only an image; it can be a situation encountered in space and time.
+
+Transfer to Omar:
+- the Home can behave as a sequence of rooms / thresholds;
+- scale, sound, pause and distance matter;
+- the user should feel located inside the work, not only scrolling past it.
+
+Do not copy:
+- virtual-gallery simulation;
+- forced first-person navigation.
+
+### INTERACTIVE / CYBERNETIC ART — RESPONSE, MEMORY, AGENCY
+
+Lesson:
+the viewer can become part of a responsive system.
+
+Transfer to Omar:
+- interaction should change state rather than trigger canned decoration;
+- delay, hesitation, memory and resistance make digital presence feel alive;
+- the system can interpret attention, proximity, stillness or rhythm instead of mirroring input 1:1.
+
+This aligns strongly with SERAPH's existing laws.
+
+Do not copy:
+- surveillance aesthetics by default;
+- interaction for novelty;
+- game HUD logic.
+
+### CINEMATIC / SCENOGRAPHIC THINKING — PACING AND AFTERIMAGE
+
+Lesson:
+composition is temporal as well as spatial.
+
+Transfer to Omar:
+- opening, reveal, threshold, event, recovery;
+- sound / silence can define scale;
+- projects may enter like scenes rather than cards;
+- a transition should leave an afterimage before the next chapter.
+
+Do not copy:
+- trailer clichés;
+- giant glowing portals;
+- constant dramatic lighting.
+
+---
+
+## CURRENT MIX
+
+The intended synthesis is:
+
+**Swiss structure**
++ **New Wave rupture**
++ **Bauhaus synthesis**
++ **Arte Povera material logic**
++ **installation-scale encounter**
++ **interactive / cybernetic response**
++ **cinematic pacing**
+
+This is not a style recipe.
+
+It is a responsibility map:
+- Swiss keeps the work readable.
+- New Wave allows the structure to break.
+- Bauhaus prevents the art / technology split.
+- Arte Povera keeps material meaningful.
+- Installation gives the visitor a body.
+- Interactive art gives the system agency.
+- Cinema gives the experience time.
+
+The final visual language must still be recognisably Omar's own.

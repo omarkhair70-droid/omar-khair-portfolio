@@ -194,12 +194,14 @@ Instead the work is navigated through **territories**.
 
 Projects where meaning, atmosphere, material, image, character, place or behaviour leads.
 
-Likely anchors:
-- SERAPH;
+Locked primary anchors:
 - Fokhara;
-- The Red Thread;
-- First Contact;
-- Athr, if current evidence still earns inclusion.
+- The Red Thread.
+
+SERAPH sits before the territory split as a Featured Encounter.
+
+Athr remains an origin artifact unless later evidence earns promotion.
+First Contact remains out of the primary sequence until its canonical current source is identified and reviewed.
 
 These projects may contain serious engineering, but engineering is not their first reading.
 
@@ -207,7 +209,7 @@ These projects may contain serious engineering, but engineering is not their fir
 
 Projects where workflow, infrastructure, product behaviour, operations or system architecture leads.
 
-Likely anchors:
+Locked anchors:
 - HILTECH / HILTECH OS;
 - Teswa;
 - Nova;
@@ -296,48 +298,57 @@ Not every project receives equal physical or narrative weight.
 This is mandatory.
 
 ### MONUMENTS
-Large authored case studies or encounters.
+
+Large authored chapters or encounters.
 They receive custom composition, motion and pacing.
 
-Initial candidates:
-- SERAPH;
-- HILTECH / HILTECH OS;
-- Fokhara;
-- Teswa.
+Locked:
+- SERAPH — Featured Encounter before the split;
+- HILTECH / HILTECH OS — Systems Monument;
+- Fokhara — Worlds Monument;
+- Teswa — Systems Monument.
 
 ### MAJOR WORKS
-Strong complete projects that add a distinct capability / worldview.
 
-Initial candidates:
+Substantial projects with their own visual / product story.
+
+Locked:
 - Nova;
 - Balcona;
 - WaveZero;
-- The Red Thread;
-- First Contact.
+- The Red Thread.
 
 ### ARTIFACTS / STUDIES
-Useful fragments, identities, experiments, small commissions and earlier works.
 
-Possible examples:
+Useful fragments, origins, experiments, client deliveries and supporting proof.
+
+Current:
 - Abdel Aal;
 - Farrag;
 - Habba;
-- Bahja;
-- Sultan Al-Burhan;
-- other inspected experiments.
+- Bahja after current visual check;
+- Ahmed Khair Portfolio;
+- Senior Pharmacist;
+- Tuscanini;
+- Athr as origin artifact unless promoted by new evidence;
+- Sultan Al-Burhan only if re-inspection proves a distinct contribution.
+
+### HOLD
+
+- First Contact — canonical current source not yet confirmed.
 
 Artifacts do not stand shoulder-to-shoulder with Monuments.
 
-They can appear as:
+They appear through an editorial / object archive:
 - contact sheets;
 - fragments;
-- short moving panels;
+- selective moving panels;
 - image strips;
-- annotated objects;
-- archive drawers;
-- single-screen studies.
+- concise annotations;
+- expandable studies where useful.
 
 No fake equality.
+No 3D virtual-gallery treatment for supporting work.
 
 ---
 
@@ -434,21 +445,219 @@ Legacy commercial pages can remain reachable while the main portfolio identity c
 
 ---
 
-## 14. VISUAL LANGUAGE — OPEN QUESTIONS TO RESOLVE THROUGH RESEARCH
+## 14. VISUAL LANGUAGE — LOCKED DECISIONS
 
-Do not lock these by taste alone.
+Research for the first implementation sequence is closed.
 
-Research and prototype:
-- whether the root field remains warm paper / black or becomes a changing material field;
-- how much typography survives the threshold sequence;
-- whether a continuous 2D/Pixi field is enough or a bounded Three.js scene is justified;
-- whether sound belongs globally or only at selected encounters;
-- whether the homepage behaves as one continuous world or as hard-cut chapters;
-- whether archive artifacts appear spatially, editorially or as an interactive index;
-- how project colour can feel like material rather than branding;
-- whether navigation is persistent, hidden, or state-dependent.
+### Root field
 
-No library is chosen before a visual job is defined.
+Keep the inherited **warm mineral paper / near-black / restrained ember** family as Omar's base DNA.
+
+Do not turn the portfolio globally black just to look experimental.
+Do not turn it into a neutral white gallery either.
+
+The field can change state by chapter, but it begins from a material editorial surface rather than a sci-fi chamber.
+
+### Opening
+
+The Home opens as an authored composition, not a conventional hero.
+
+Immediate identity:
+- Omar Khair is visible from the first frame;
+- **SYSTEMS WITH A PULSE** remains the main proposition;
+- no role-title stack;
+- no "available for work" sales signal in the opening;
+- no project-card preview in the first viewport.
+
+The first five seconds must show one central contradiction:
+
+**an ordered editorial system containing something that does not stay completely ordered.**
+
+### Material / signal language
+
+The existing PixiJS signal field remains usable raw material.
+
+Its new behaviour must move beyond "network nodes":
+- irregular matter;
+- accumulated pressure;
+- delayed response;
+- partial alignment;
+- memory;
+- settling.
+
+It may resolve toward grids / coordinates / structured lines and then loosen again.
+
+This is the first seed of the later matter -> structure threshold.
+
+### 3D
+
+No new global Three.js scene, mascot, monolith, portal or decorative object.
+
+Three.js remains allowed inside a project or future section only when that section requires spatial embodiment.
+
+SERAPH owns the clearest 3D presence in the body of work and should not be diluted by a generic portfolio sculpture.
+
+### Typography
+
+Keep the current Manrope / Instrument Serif tension as inherited DNA for the first section.
+
+Role:
+- sans = structure / exactness / weight;
+- serif = human interruption / instability / breath.
+
+Typography can later:
+- crop;
+- compress;
+- move off-grid;
+- recover into alignment.
+
+But the break only matters because a grid exists first.
+
+### Image / media
+
+Projects are not forced into one global treatment.
+
+Rules:
+- Fokhara gets material evidence and spatial breathing room;
+- The Red Thread gets image-sequence authority with minimal UI;
+- HILTECH gets route / evidence / engineering-state language;
+- Teswa / Nova / WaveZero / Balcona avoid phone-gallery repetition;
+- media scale follows project weight.
+
+### Motion
+
+Global law:
+
+**stillness -> attention -> pressure -> event -> settle.**
+
+Motion must:
+- be finite;
+- have inertia;
+- leave a readable still frame;
+- not chase the pointer 1:1;
+- not animate every element on entrance.
+
+### Interaction
+
+The portfolio can notice the visitor, but it is not a puppet.
+
+Opening interaction:
+- subtle delayed field response to pointer / touch movement;
+- stillness allows the field to partially organize;
+- movement introduces local pressure / drift;
+- no visible controls;
+- no tutorial.
+
+The site must remain fully legible if the visitor never discovers the interaction.
+
+### Sound
+
+No global autoplay soundtrack.
+
+- Home Opening = silent.
+- SERAPH Encounter = sound may be explicitly invited.
+- project media = user-initiated sound only where it belongs.
+- the global threshold must work without sound; an event sound is optional later, not required by the concept.
+
+### Navigation
+
+The current commercial header is not the final Home-opening header.
+
+Opening law:
+- Omar's name remains accessible immediately;
+- navigation is reduced to a quiet **INDEX** entry rather than Work / About / Contact + availability CTA across the first frame;
+- no sales availability pulse in the opening;
+- after the opening, the site may expose fuller orientation without losing the authored state.
+
+Accessibility:
+- skip link remains;
+- keyboard access to navigation remains immediate;
+- hidden visual navigation must never mean hidden semantic navigation.
+
+### Home structure
+
+The Home is one continuous authored sequence with hard changes of state inside it.
+
+It is not:
+- one endlessly smooth WebGL scene;
+- a set of unrelated landing-page sections;
+- a stack of full-screen cinematic effects.
+
+Locked sequence:
+1. Opening;
+2. SERAPH Featured Encounter;
+3. Worlds I Author;
+4. Matter -> Structure Threshold;
+5. Systems I Build;
+6. Artifacts / Studies;
+7. Afterimage / About / Contact.
+
+### Territory transition
+
+The threshold is a real section, not a label.
+
+Locked conceptual movement:
+
+**grain / image / irregular field**
+-> **points / traces**
+-> **lines / alignment**
+-> **grid / coordinates / structured signal**
+
+The transition happens through the same material changing state.
+
+Do not split the screen into "art" and "tech".
+Do not use a glowing portal.
+
+Implementation starts with existing DOM / CSS / PixiJS / GSAP capabilities.
+No new renderer is justified yet.
+
+### Archive
+
+Supporting work uses an editorial / object archive.
+
+It can:
+- overlap;
+- crop;
+- expand;
+- reveal moving fragments;
+- use short notes.
+
+It must not:
+- become equal cards;
+- simulate a virtual museum;
+- give small work Monument-scale transitions.
+
+### Project colour
+
+Colour is local evidence, not global branding.
+
+A project may temporarily alter the field when its subject earns it.
+On exit, the portfolio returns toward its base material state.
+
+### Mobile
+
+Mobile keeps the same laws but changes composition.
+
+No desktop shrink.
+
+- fewer simultaneous field elements;
+- same delayed response;
+- no hover dependency;
+- touch / scroll substitutes for pointer;
+- typography may reorder rather than scale down mechanically;
+- reduced motion retains the static tension and project hierarchy.
+
+### Reduced motion
+
+No creative concept is allowed to depend on complex motion.
+
+With reduced motion:
+- field settles to an authored still;
+- transitions become cuts / fades / finite position continuity;
+- project hierarchy remains identical;
+- no information disappears.
+
+VISUAL_LANGUAGE_GATE = LOCKED
 
 ---
 
@@ -471,10 +680,12 @@ This is enough to start the new art direction without adding technology.
 
 Three.js / React Three Fiber are **not currently portfolio dependencies**.
 
-They may be introduced only after the art-direction prototype proves a 3D spatial state is
-better than the existing 2D/WebGL system for a specific scene.
+No new global 3D renderer is required for the first implementation section.
 
-SERAPH already provides a separate proven Three.js / R3F body of work and can inform that decision.
+Existing DOM / CSS / GSAP / Lenis / PixiJS capabilities are sufficient for HOME / OPENING.
+Three.js may be admitted later only when a specific real section requires spatial embodiment.
+
+SERAPH remains the proven Three.js / R3F body of work and should keep its own identity.
 
 ---
 
@@ -720,20 +931,25 @@ One active creative constitution. Git history records evolution.
 
 ## 19. CURRENT CONTINUATION POINT
 
-We are still in **research / decision work**.
+Closed:
+- identity / source audit;
+- reference / school research;
+- project-weight audit;
+- global creative-constitution decisions required for the first Home section.
 
-Do not implement another visual section yet.
+Current task:
+**write and close the complete HOME / OPENING implementation brief.**
 
-Next:
-1. finish the reference / school research matrix until the useful fields are covered rather than merely reaching a reference count;
-2. reconcile the project-weight audit with the latest project reality;
-3. resolve the remaining creative-constitution questions, including the exact role of the opening, SERAPH, sound, navigation and the matter -> structure threshold;
-4. write the complete first-section brief for **HOME / OPENING**.
+No public Home code changes occur before that brief is committed.
 
-Only when those decisions are closed do we touch the public Home.
+After the brief closes, implementation begins directly on the real `/` Home opening.
+There is no lab route and no visual-checkpoint PR.
 
-Then the first implementation is not a demo:
-**HOME / OPENING is built completely — composition + typography + material + motion + interaction + responsive behaviour + QA — and reviewed in place.**
+The first implementation gate is:
 
-If it passes, we continue forward from it.
-If it fails, we fix that same real section until it passes.
+**HOME / OPENING — complete composition + material field + motion + interaction + responsive behaviour + accessibility + real visual QA.**
+
+If it passes, it becomes the foundation for the next real section: SERAPH Featured Encounter.
+If it fails, the same Home opening is corrected until it passes.
+
+CREATIVE_CONSTITUTION_READY_FOR_OPENING_BRIEF = YES

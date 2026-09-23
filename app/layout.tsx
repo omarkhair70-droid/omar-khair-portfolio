@@ -5,9 +5,9 @@ import { instrumentSerif, manrope } from "@/lib/fonts";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfolio.vercel.app";
-const title = "Omar Khair — Systems with a pulse";
+const title = "Omar Khair — Product Builder | Web & Mobile";
 const description =
-  "Egyptian multidisciplinary creator working across interactive systems, visual art, creative technology, product and cinematic experiences.";
+  "Omar Khair builds websites, mobile products, ordering experiences, RFQ systems, dashboards, and business software — from product direction to deployment.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,6 +1,6 @@
 # PORTFOLIO PROJECT WEIGHT AUDIT
 
-Status: **ACTIVE**
+Status: **CLOSED FOR HOME ARCHITECTURE**
 Date: 2026-09-23
 Canonical direction: `docs/PORTFOLIO_ART_PRACTICE_MASTER.md`
 
@@ -86,7 +86,7 @@ Risk:
 
 ---
 
-### TESWA — MONUMENT CANDIDATE
+### TESWA — MONUMENT
 
 Reason:
 - founder-level product authorship;
@@ -101,8 +101,9 @@ Portfolio job:
 Risk:
 - do not let screenshots become a standard product-design gallery.
 
-Decision still needed:
-- Monument or strongest Major Work depending on visual composition tests.
+Decision:
+- Monument-scale treatment is justified by founder-level product authorship, Arabic-first interaction, exchange behaviour, messaging and the product's current `Between Us` direction.
+- It must not be presented as a conventional app-screen case study.
 
 ---
 
@@ -170,14 +171,15 @@ Risk:
 
 ---
 
-### FIRST CONTACT — MAJOR WORK CANDIDATE
+### FIRST CONTACT — HOLD / SOURCE NOT CURRENTLY CONFIRMED
 
 Reason:
-- potentially important as an authored communication / outreach experiment and microsite;
-- fits the new practice if the live visual / behavioural evidence remains strong.
+- the idea may fit the authored-practice direction;
+- however, a current canonical repository/source was not found under the verified Omar GitHub account during this audit.
 
-Status:
-- re-inspect current repo / live state before locking weight.
+Decision:
+- do not allocate Home sequence weight yet;
+- keep out of the primary sequence until the actual current source is identified and inspected.
 
 ---
 
@@ -319,15 +321,145 @@ This is not layout yet.
 
 ---
 
-## QUESTIONS THAT MUST BE ANSWERED BY VISUAL PROTOTYPES
+## WEIGHT DECISIONS — CLOSED
 
-1. Is Teswa a Monument or the strongest Major Work?
-2. Does HILTECH appear before or after the threshold?
-   - candidate answer: the public experience can begin before it and HILTECH OS can finish after it.
-3. Does The Red Thread interrupt the web-based work as a pure image sequence?
-4. Is First Contact strong enough today for Major Work weight?
-5. Does the artifact archive feel editorial, spatial, or object-like?
-6. Can the portfolio support SERAPH near the opening without making everything after it feel smaller?
-7. Which project creates the final emotional afterimage before About / Contact?
+### Teswa
 
-No weight becomes final because of repo size, code count, commercial value or personal nostalgia alone.
+**MONUMENT.**
+
+Its scale comes from authored product behaviour, not code volume:
+Arabic-first exchange, identity, messaging, trust and the current human negotiation layer make it a major expression of Omar's systems practice.
+
+### HILTECH placement
+
+**Entirely inside SYSTEMS I BUILD.**
+
+Do not split the same project across both territories.
+
+The chapter itself contains the meaningful internal transition:
+
+**public surface -> infrastructure -> HILTECH OS**
+
+That gives the project its own transformation without confusing the global architecture.
+
+Current evidence strengthens this decision:
+- the public HILTECH creative site has already developed an authored engineering grammar and completed the latest Home pacing pass;
+- HILTECH OS is now beyond a website/system concept and is in Phase 5 physical-resource truth, with warehouse, stock, assets, reservation, receiving and operational closure mapped as real system domains.
+
+### Fokhara
+
+**MONUMENT / WORLDS I AUTHOR.**
+
+Current production evidence confirms the project earned this weight:
+- VP10 reached final visual acceptance;
+- rendered Desktop and Mobile review was completed;
+- WebGL material-memory and larger 3D carry theatre were deliberately removed when they read as technology rather than meaning.
+
+That subtraction is itself part of why Fokhara belongs in the portfolio's current identity.
+
+### The Red Thread
+
+**MAJOR ART CHAPTER / WORLDS I AUTHOR.**
+
+It appears as an image sequence with breathing room.
+No browser chrome, product metrics or developer framing should compete with the work.
+
+### SERAPH
+
+**MONUMENT / FEATURED ENCOUNTER BEFORE THE TERRITORY SPLIT.**
+
+SERAPH remains near the opening because it embodies the combined medium most completely.
+It is not filed as "Art" or "System".
+After the encounter, the portfolio releases into WORLDS I AUTHOR.
+
+### First Contact
+
+**HOLD.**
+
+Do not present until the canonical current source is found and reviewed.
+
+### Artifact archive
+
+**EDITORIAL / OBJECT ARCHIVE.**
+
+Not a 3D gallery.
+Not a card grid.
+
+It should use scale, cropping, juxtaposition, short captions and selective moving fragments.
+Artifacts may expand on demand, but they do not receive Monument theatre.
+
+### End of Home
+
+No project is forced to become the final emotional climax.
+
+After Systems and the Artifact archive, the portfolio itself returns to a quieter state for:
+- short artist / maker statement;
+- a trace of the opening field;
+- quiet contact.
+
+This prevents the Home from ending as a sales funnel or arbitrary project ranking.
+
+---
+
+## LOCKED HOME WEIGHT SEQUENCE
+
+1. **OPENING — OMAR / SYSTEMS WITH A PULSE**
+2. **SERAPH — FEATURED ENCOUNTER**
+3. **WORLDS I AUTHOR**
+   - Fokhara — Monument
+   - The Red Thread — Major Art Chapter
+   - Athr — origin artifact unless future evidence promotes it
+4. **THRESHOLD — MATTER -> STRUCTURE**
+5. **SYSTEMS I BUILD**
+   - HILTECH / HILTECH OS — Monument
+   - Teswa — Monument
+   - Nova — Major Work
+   - Balcona Bar — Major Work
+   - WaveZero — Major / Quiet System
+6. **ARTIFACTS / STUDIES**
+   - Abdel Aal
+   - Farrag
+   - Habba
+   - Bahja after current visual check
+   - Ahmed Khair Portfolio
+   - Senior Pharmacist
+   - Tuscanini
+   - other approved studies
+7. **AFTERIMAGE / ABOUT / CONTACT**
+
+No project gains or loses weight because of repository size, commercial price, code count or nostalgia.
+
+PROJECT_WEIGHT_GATE = CLOSED
+
+
+---
+
+## SOURCE-REALITY SNAPSHOT USED FOR CLOSURE — 2026-09-23
+
+This audit was reconciled against current source truth before closure.
+
+### SERAPH
+- canonical main: `e49d37c0d7567f0bf780f033aa5f7311d290bc96`
+- two preserved first-class experiences: THE BODY + WAKING RELIC.
+
+### HILTECH OS
+- canonical main checked at: `b516193694f6a3b06c86265ec0845408cfb224f3`
+- latest merge reconciles Phase 5 warehouse evidence.
+- Phase 5 is defined as authoritative physical-resource truth across warehouse, stock, assets, custody, reservation, fulfillment, receiving, stocktake and command-center closure.
+
+### HILTECH public digital experience
+- canonical main checked at: `d5e565e04c3489e2a938639466f3ec747fe5e633`
+- latest merge completes Award Step 4 Home pacing.
+- its creative system is explicitly derived from infrastructure behaviour: BUILD -> ROUTE -> TEST -> PROVE.
+
+### Fokhara
+- canonical main checked at: `f66bbd8c85bb6c4129e7e348ee6124cc56b6c665`
+- latest merge is VP10 Full Visual Review.
+- final visual acceptance keeps Studio evidence, collection memory and small Carry depth while deleting shader-led material memory and larger 3D theatre.
+
+### Teswa
+- public main alone does not contain every latest continuation artifact discussed in the active work.
+- presentation weight is therefore locked from the broader verified product body and current active product direction, while final public case-study copy must still be refreshed from the current canonical Teswa continuation source before implementation.
+
+This distinction matters:
+**presentation weight is closed; final factual copy is not frozen yet.**

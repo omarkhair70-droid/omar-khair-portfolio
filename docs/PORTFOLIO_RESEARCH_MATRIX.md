@@ -1,6 +1,6 @@
 # PORTFOLIO RESEARCH MATRIX
 
-Status: **ACTIVE SUPPORTING RESEARCH**
+Status: **CLOSED FOR CREATIVE-CONSTITUTION ENTRY**
 Date opened: 2026-09-23
 Canonical creative direction: `docs/PORTFOLIO_ART_PRACTICE_MASTER.md`
 
@@ -575,3 +575,140 @@ It is a responsibility map:
 - Cinema gives the experience time.
 
 The final visual language must still be recognisably Omar's own.
+
+
+---
+
+# RESEARCH CLOSURE — 2026-09-23
+
+This closes the research gate for the first portfolio implementation sequence.
+
+The research is not "finished forever".
+It is sufficient to stop browsing references and start making authored decisions.
+
+## Comparative matrix
+
+| Reference / field | First-five-seconds lesson | Composition / type | Interaction / transition | Sound | Work hierarchy | Mobile / no-motion lesson | Transfer to Omar |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Niccolò Miranda | identity before explanation | typography can be the spatial object | navigation belongs to the authored system | not required | projects can change grammar | still frame must already carry identity | editorial authorship without copying the newspaper metaphor |
+| Bruno Simon | the site itself can be proof | world before résumé | behaviour teaches the visitor | secondary | projects live inside the experience | novelty must still remain usable | portfolio itself may demonstrate creative technology |
+| David Heckhoff | technical craft can disappear behind a personal world | object + space can hold identity | WebGL may be structural | optional | no need for stack-first presentation | performance is part of art direction | 3D only when it creates a better perceptual condition |
+| Contemporary Awwwards interactive field | concept must be legible before effects | type, image and motion need one system | scene change is stronger than unrelated micro-effects | earned, not default | strong work gets custom pacing | mobile is an authored composition | use as quality ceiling, never as a trend checklist |
+| SERAPH | encounter before explanation | stillness and negative space have authority | interaction changes the world; delayed response matters | architecture when used | one encounter can carry much more weight than cards | reduced form must keep the same identity | behavioural law, not visual skin |
+| The Red Thread | a visual motif can change meaning across a sequence | image sequence can carry concept with sparse text | repetition / reconstruction can be narrative | not required | artwork can interrupt the interface hierarchy | images must stand without effects | technology can be conceptual material |
+| CaiYAWen Ceramics / artist-portfolio field | material practice can lead the interface | object / material evidence can govern rhythm | interaction should support material presence | not required | work first, biography second | do not collapse material evidence into small cards | allow project-specific material grammar |
+| Rabo Art Collection / spatial art navigation | space can become curation | collection can become an environment | 3D earns itself only when it changes encounter | optional | scale and grouping can replace flat lists | avoid 3D if it hurts access | keep as an extreme, not default archive solution |
+| Arvin Leeuwis / continuous computational field | one field can become both atmosphere and navigation | technical surface can hold continuity | WebGL may be structural rather than decorative | not required | continuous field can connect work | fallback must preserve composition | evolve existing signal field before adding another renderer |
+| Priestess / sound-led storytelling | pacing is remembered as much as copy | typography can carry temporal state | scroll and sound can share one state model | strong when authored | chapters can behave like scenes | mute version must remain intentional | sound belongs only where it changes the encounter |
+| TUX Creative House / cinematic project detail | one project can feel like a short film | full-screen media only for work that earns it | project transitions can vary | project-specific | Monument work deserves custom opening | full-screen media must recompose on mobile | no equal template for Monuments |
+| Moha. Auf / clarity control | visitor still needs orientation | information hierarchy cannot disappear | expression must preserve navigation | optional | project structure remains readable | usability is not anti-art | use as a control against self-indulgent opacity |
+
+## School synthesis closure
+
+The schools are assigned jobs, not aesthetics:
+
+- **Swiss / International Style** = structural skeleton, grid, legibility, information truth.
+- **New Wave / Weingart** = deliberate rupture after structure exists.
+- **Bauhaus / Schlemmer** = no false split between art, technology, body and making; body and space can form one system.
+- **Arte Povera** = material logic and process over polished decoration.
+- **Installation art** = the visitor has a body and occupies time / space.
+- **Interactive / cybernetic art** = response, memory and system agency rather than canned hover effects.
+- **Cinematic / scenographic thinking** = sequence, pause, cut, afterimage and sound discipline.
+
+Useful historical anchors:
+- MoMA describes the Bauhaus as integrating technology, art, design and life, and Schlemmer as investigating the relation between the body and surrounding space.
+- Swiss design history gives the mathematical grid, asymmetry and rational hierarchy as its structural core, while Weingart's New Wave loosens that system from inside it.
+- MoMA's interactive-art history and later body / technology exhibitions reinforce the difference between a controllable interface and a responsive system in which the viewer becomes part of the work.
+
+## Decisions produced by research
+
+### 1. The portfolio does not need a new global 3D object
+
+Decision:
+**NO GLOBAL 3D MASCOT / MONOLITH / PORTAL.**
+
+Reason:
+- it would be easier to remember the object than Omar's practice;
+- it risks generic creative-developer spectacle;
+- SERAPH already owns embodied 3D much more truthfully.
+
+The portfolio may contain 3D inside work that earns it.
+The portfolio shell begins with the existing 2D/WebGL / DOM material.
+
+### 2. The current PixiJS signal system is kept as raw material, not as final art direction
+
+Decision:
+**EVOLVE, DO NOT REPLACE BY DEFAULT.**
+
+Its next job is no longer "technical network background".
+It must become a field capable of:
+- irregular matter;
+- tension;
+- delayed response;
+- partial alignment;
+- memory;
+- return to stillness.
+
+### 3. Sound is encounter-specific
+
+Decision:
+**NO GLOBAL AUTOPLAY SOUNDTRACK.**
+
+- Home Opening: silent.
+- SERAPH: sound may be invited because sound is native to that work.
+- selected moving-image / project chapters: user-initiated sound only when meaningful.
+- threshold: must work silently; a restrained event sound may be added later only if the transition genuinely improves with it.
+
+### 4. The archive is not spatial 3D
+
+Decision:
+**EDITORIAL / OBJECT ARCHIVE, NOT VIRTUAL GALLERY.**
+
+Small work gains dignity through curation, scale and juxtaposition, not through making every artifact explorable in 3D.
+
+### 5. Typography remains a system, but it is allowed to change state
+
+Decision:
+- keep the existing sans / serif tension as inherited DNA;
+- keep strong grid discipline;
+- allow type to break, crop, compress or become image only at meaningful thresholds;
+- do not make every project use the same giant-title grammar.
+
+### 6. The strongest internal references are Fokhara, HILTECH and SERAPH for different reasons
+
+- **Fokhara** proves subtraction: WebGL and 3D-like theatre were rejected when they read as technology rather than material meaning.
+- **HILTECH** proves that a technical subject can produce an authored visual grammar derived from its internal system rather than decoration.
+- **SERAPH** proves that body, sound, state, memory and code can operate as one medium.
+
+The portfolio must inherit those disciplines without copying their visual surfaces.
+
+## Primary ceilings — final
+
+1. **Authored editorial object:** Niccolò Miranda / strong editorial portfolio field.
+2. **Responsive encounter:** SERAPH + interactive / cybernetic-art law.
+3. **Material / subject-derived system:** Fokhara + HILTECH as internal proof that the answer changes with the subject.
+
+## Controls
+
+- current Omar portfolio: evidence, accessibility, real project truth.
+- Moha. Auf / clarity-oriented portfolio field: orientation must survive expression.
+
+## Extremes
+
+- Bruno Simon: site itself as the proof.
+- Rabo Art Collection: spatial navigation when collection logic truly earns space.
+
+## Anti-reference — final
+
+Reject any result where:
+- every project is the same card;
+- "creative" means black background + WebGL;
+- art is claimed in copy but the page behaves like a résumé;
+- technology is visible before the reason for it;
+- motion never settles;
+- every project inherits SERAPH's darkness or Fokhara's materiality;
+- the visitor must decode the interface before they can feel the work;
+- mobile becomes a stripped-down utility version of the real design.
+
+RESEARCH_GATE = CLOSED
+READY_FOR_CREATIVE_CONSTITUTION = YES

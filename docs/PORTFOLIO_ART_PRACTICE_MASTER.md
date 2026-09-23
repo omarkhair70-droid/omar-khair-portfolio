@@ -1,6 +1,8 @@
 # OMAR KHAIR PORTFOLIO — ART PRACTICE MASTER
 
-Status: **ACTIVE / CANONICAL**
+
+> Current direction: the existing Omar portfolio remains intact. The independent selected-works exhibition is defined by `docs/OMAR_SELECTED_WORKS_LIVING_EXHIBITION_CURRATION.md`, `docs/LIVING_EXHIBITION_EXPERIENCE_ARCHITECTURE.md`, `docs/LIVING_EXHIBITION_ROOM_AUTHORSHIP_MATRIX.md`, and `docs/LIVING_EXHIBITION_PREPRODUCTION_SYSTEM.md`.
+Status: **SUPERSEDED AS IMPLEMENTATION PLAN / RETAINED AS RESEARCH HISTORY**
 Started: 2026-09-23
 Repository: `omarkhair70-droid/omar-khair-portfolio`
 Active branch: `portfolio/art-practice-reframe-20260923`

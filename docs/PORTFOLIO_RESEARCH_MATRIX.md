@@ -200,9 +200,215 @@ without becoming branding decoration?
 
 ---
 
-## MATRIX TO COMPLETE BEFORE VISUAL LOCK
+## REFERENCE 07 — CAIYAWEN CERAMICS
 
-For 8–12 references record:
+Source:
+- https://www.awwwards.com/sites/caiyawen-ceramics
+
+Why it matters:
+A working artist portfolio where the subject is material practice, not digital craft for its own sake.
+The site uses loading, scroll, mouse interaction and navigation around the artist's work and philosophy.
+
+Principle:
+A portfolio can let the material practice define the interface rhythm.
+
+Transferable:
+- work first;
+- artist statement and object language can govern pacing;
+- interaction can support material presence without becoming the subject.
+
+Do not copy:
+- ceramics-specific visual language;
+- studio presentation tropes;
+- literal material textures as decoration.
+
+Question:
+Can Fokhara and other authored worlds receive material-specific behaviour without forcing the whole
+portfolio into one texture?
+
+---
+
+## REFERENCE 08 — RABO ART COLLECTION
+
+Source:
+- https://www.awwwards.com/sites/rabo-art-collection
+
+Observed field:
+- digital art world;
+- approximately 2,500 artworks;
+- 3D navigation / presentation;
+- Three.js;
+- gallery / art context.
+
+Principle:
+3D earns its place when it changes how a body of art is spatially encountered.
+
+Transferable:
+- space can be navigation;
+- collection scale can become an environment instead of a list;
+- 3D should carry curatorial structure.
+
+Do not copy:
+- virtual-gallery metaphor;
+- museum simulation;
+- spatial navigation if a simpler composition communicates the work more strongly.
+
+Question:
+Could Omar's artifact archive become spatial later, while Monuments remain authored chapters?
+
+---
+
+## REFERENCE 09 — ARVIN LEEUWIS
+
+Source:
+- https://www.awwwards.com/inspiration/infinite-scroll-homepage
+
+Observed field:
+- experimental portfolio;
+- 3D;
+- WebGL;
+- Three.js;
+- GLSL;
+- Next.js;
+- infinite-scroll navigation.
+
+Principle:
+A developer portfolio can use a continuous computational field as its navigation language.
+
+Transferable:
+- navigation and atmosphere can be the same system;
+- a continuous field can hold multiple projects without card-grid logic;
+- WebGL can become structural rather than decorative.
+
+Do not copy:
+- infinite scroll as a gimmick;
+- shader-first aesthetics;
+- technical surface as identity by default.
+
+Question:
+Can the current Pixi signal field evolve into the matter -> structure threshold before adding Three.js?
+
+---
+
+## REFERENCE 10 — PRIESTESS
+
+Source:
+- https://www.awwwards.com/inspiration/priestess-storytelling-website
+
+Observed field:
+- storytelling;
+- music / sound;
+- typography;
+- scrolling;
+- interaction design;
+- desktop and mobile treatments.
+
+Principle:
+Sound, typography and scroll can form one storytelling system instead of separate effects.
+
+Transferable:
+- sound can mark scene state;
+- typography can carry narrative pacing;
+- mobile should have an authored version of the same story.
+
+Do not copy:
+- dark / orange palette;
+- music-site visual language;
+- continuous sound without consent or purpose.
+
+Question:
+Does the portfolio need global sound, or only sound at selected thresholds and encounters?
+
+---
+
+## REFERENCE 11 — TUX CREATIVE HOUSE
+
+Source:
+- https://www.awwwards.com/inspiration/project-detail-page-with-fullscreen-image-video-tux-creative-house
+
+Observed field:
+- fullscreen project image / video;
+- big typography;
+- interactive project detail;
+- multiple project-listing modes;
+- cinematic navigation.
+
+Principle:
+Project pages can behave like individual films while still belonging to one portfolio system.
+
+Transferable:
+- Monument case studies can open with full-screen media;
+- navigation can feel cinematic without hiding basic orientation;
+- project chapters can vary in grammar.
+
+Do not copy:
+- agency-showreel pacing;
+- full-screen media for projects that do not deserve that weight.
+
+Question:
+Which four works truly earn Monument-scale treatment?
+
+---
+
+## REFERENCE 12 — MOHA. AUF
+
+Source:
+- https://www.awwwards.com/sites/moha-auf-experience-expert
+
+Observed field:
+- portfolio navigation;
+- loading;
+- featured-area interaction;
+- scrolling animation;
+- responsive design.
+
+Principle:
+A professional portfolio can be interaction-rich while keeping information orientation readable.
+
+Transferable:
+- use as a clarity control;
+- transitions cannot erase navigation;
+- expressive sections still need legible state and hierarchy.
+
+Do not copy:
+- career-achievement framing;
+- yellow/black visual system;
+- professional-CV emphasis.
+
+Use:
+This is not a primary art-direction ceiling. It is a control against making the portfolio so opaque
+that the visitor loses the work.
+
+---
+
+## PRELIMINARY REFERENCE ROLES
+
+### Primary ceilings
+- Niccolò Miranda — authored editorial object / typography / pacing.
+- SERAPH — interaction law / cinematic encounter / scarcity.
+- Rabo Art Collection or Arvin Leeuwis — spatial / computational navigation ceiling, to be tested rather than copied.
+
+### Clarity controls
+- Moha. Auf — interaction-rich but readable portfolio orientation.
+- current Omar portfolio — evidence, accessibility and project truth.
+
+### Experimental extremes
+- Bruno Simon — portfolio itself as proof.
+- Rabo Art Collection — art collection as spatial environment.
+
+### Anti-reference
+Any portfolio where:
+- every project is an equal rounded card;
+- the stack is the identity;
+- WebGL exists only as a cursor effect;
+- motion is constant;
+- all work is forced into one visual theme.
+
+---
+
+## NEXT RESEARCH OUTPUT
+
+Before visual lock, convert the 12 references into a comparative matrix covering:
 - first five seconds;
 - dominant visual memory;
 - composition law;
@@ -216,10 +422,11 @@ For 8–12 references record:
 - what survives in a screenshot;
 - what fails when motion is removed.
 
-Then choose:
-- 2–3 primary ceilings;
-- 2 clarity controls;
-- 2 experimental extremes;
-- 1 anti-reference.
+Then use the matrix to decide:
+1. exact first-five-seconds composition;
+2. whether the threshold remains Pixi / DOM / CSS or earns Three.js;
+3. whether sound is global or encounter-specific;
+4. which projects are Monuments;
+5. what the artifact archive physically feels like.
 
 No implementation is approved merely because it resembles a reference.

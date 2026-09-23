@@ -15,6 +15,12 @@ type FieldNode = {
   emphasis: number;
 };
 
+type LivePoint = FieldNode & {
+  x: number;
+  y: number;
+  memoryInfluence: number;
+};
+
 const clamp = (value: number, min = 0, max = 1) => Math.max(min, Math.min(max, value));
 const mix = (from: number, to: number, amount: number) => from + (to - from) * amount;
 
@@ -37,17 +43,17 @@ function createNodes() {
 
   for (let row = 0; row < rows; row += 1) {
     for (let column = 0; column < columns; column += 1) {
-      if (random() < 0.12 && !(row > 2 && row < 7 && column > 2 && column < 8)) continue;
+      if (random() < 0.14 && !(row > 2 && row < 7 && column > 2 && column < 8)) continue;
 
       const gx = 0.43 + (column / (columns - 1)) * 0.5;
       const gy = 0.11 + (row / (rows - 1)) * 0.74;
       const edgeBias = Math.abs(column - (columns - 1) / 2) / ((columns - 1) / 2);
-      const jitterX = (random() - 0.5) * (0.085 + edgeBias * 0.025);
-      const jitterY = (random() - 0.5) * 0.105;
+      const jitterX = (random() - 0.5) * (0.105 + edgeBias * 0.03);
+      const jitterY = (random() - 0.5) * 0.125;
 
       nodes.push({
-        ux: clamp(gx + jitterX, 0.34, 0.99),
-        uy: clamp(gy + jitterY, 0.04, 0.94),
+        ux: clamp(gx + jitterX, 0.31, 0.99),
+        uy: clamp(gy + jitterY, 0.035, 0.95),
         gx,
         gy,
         phase: random() * Math.PI * 2,
@@ -60,6 +66,10 @@ function createNodes() {
   }
 
   return nodes;
+}
+
+function pointKey(row: number, column: number) {
+  return `${row}:${column}`;
 }
 
 export default function HomeOpeningField() {
@@ -105,8 +115,6 @@ export default function HomeOpeningField() {
         targetY: -1000,
         x: -1000,
         y: -1000,
-        previousX: -1000,
-        previousY: -1000,
         active: false,
         energy: 0,
         lastInputAt: performance.now() - 3200
@@ -128,8 +136,6 @@ export default function HomeOpeningField() {
           pointer.energy = Math.max(pointer.energy, clamp(distance / 80));
         }
 
-        pointer.previousX = pointer.targetX;
-        pointer.previousY = pointer.targetY;
         pointer.targetX = nextX;
         pointer.targetY = nextY;
         pointer.active = true;
@@ -175,12 +181,12 @@ export default function HomeOpeningField() {
           pointer.y = mix(pointer.y < -100 ? pointer.targetY : pointer.y, pointer.targetY, 0.055);
         }
 
-        const points = nodes.map((node) => {
+        const points: LivePoint[] = nodes.map((node) => {
           const baseX = mix(node.ux, node.gx, alignment);
           const baseY = mix(node.uy, node.gy, alignment);
           const residual = 1 - alignment;
-          const driftX = Math.sin(time * 0.00019 * node.drift + node.phase) * 0.0055 * residual;
-          const driftY = Math.cos(time * 0.00016 * node.drift + node.phase * 0.73) * 0.0065 * residual;
+          const driftX = Math.sin(time * 0.00019 * node.drift + node.phase) * 0.0075 * residual;
+          const driftY = Math.cos(time * 0.00016 * node.drift + node.phase * 0.73) * 0.0085 * residual;
 
           let x = (baseX + driftX) * width;
           let y = (baseY + driftY) * height;
@@ -209,71 +215,128 @@ export default function HomeOpeningField() {
           return { ...node, x, y, memoryInfluence };
         });
 
-        const lineAlpha = 0.018 + alignment * 0.085;
+        const byPosition = new Map(points.map((point) => [pointKey(point.row, point.column), point]));
+
+        // Material facets: faint, incomplete skins that refuse to become a clean network diagram.
+        for (let row = 0; row < 8; row += 1) {
+          for (let column = 0; column < 9; column += 1) {
+            const a = byPosition.get(pointKey(row, column));
+            const b = byPosition.get(pointKey(row, column + 1));
+            const c = byPosition.get(pointKey(row + 1, column + 1));
+            const d = byPosition.get(pointKey(row + 1, column));
+            if (!a || !b || !c || !d) continue;
+
+            const selector = (row * 11 + column * 7) % 6;
+            if (selector > 2) continue;
+
+            const residual = 1 - alignment;
+            const materialAlpha = 0.006 + residual * 0.017 + pressure * 0.006;
+            drawing
+              .poly([a.x, a.y, b.x, b.y, c.x, c.y, d.x, d.y])
+              .fill({
+                color: selector === 0 ? 0xd95739 : 0x0a0a0a,
+                alpha: selector === 0 ? materialAlpha * 0.55 : materialAlpha
+              });
+          }
+        }
+
+        // Broken traces: alignment becomes legible without resolving into a full technical mesh.
         for (let row = 0; row < 9; row += 1) {
           const rowPoints = points.filter((point) => point.row === row).sort((a, b) => a.column - b.column);
           for (let index = 0; index < rowPoints.length - 1; index += 1) {
             const one = rowPoints[index];
             const two = rowPoints[index + 1];
             if (two.column - one.column > 2) continue;
+
+            const selector = (row * 13 + one.column * 5) % 7;
+            const shouldDraw = selector < 3 || (alignment > 0.54 && selector === 3);
+            if (!shouldDraw) continue;
+
             drawing
               .moveTo(one.x, one.y)
               .lineTo(two.x, two.y)
               .stroke({
                 color: 0x0a0a0a,
                 width: 1,
-                alpha: lineAlpha * (0.72 + Math.min(one.emphasis, two.emphasis) * 0.5)
+                alpha: 0.018 + alignment * 0.058 + Math.min(one.emphasis, two.emphasis) * 0.018
               });
           }
         }
 
-        const verticalAlpha = Math.max(0, alignment - 0.23) * 0.105;
-        if (verticalAlpha > 0.002) {
-          for (let column = 0; column < 10; column += 2) {
+        if (alignment > 0.34) {
+          for (let column = 1; column < 10; column += 3) {
             const columnPoints = points.filter((point) => point.column === column).sort((a, b) => a.row - b.row);
             for (let index = 0; index < columnPoints.length - 1; index += 1) {
               const one = columnPoints[index];
               const two = columnPoints[index + 1];
               if (two.row - one.row > 2) continue;
+
+              const selector = (column * 17 + one.row * 3) % 5;
+              if (selector > 1) continue;
+
               drawing
                 .moveTo(one.x, one.y)
                 .lineTo(two.x, two.y)
-                .stroke({ color: 0x0a0a0a, width: 1, alpha: verticalAlpha });
+                .stroke({
+                  color: 0x0a0a0a,
+                  width: 1,
+                  alpha: Math.max(0, alignment - 0.3) * 0.095
+                });
             }
           }
         }
 
-        points.forEach((point) => {
-          const memory = point.memoryInfluence;
-          const radiusValue = 0.9 + point.emphasis * 1.25 + pressure * 0.4;
-          const isMemoryPoint = memory > 0.38 && point.emphasis > 0.54;
-          const color = isMemoryPoint ? 0xd95739 : 0x0a0a0a;
-          const alpha = isMemoryPoint
-            ? 0.48 + memory * 0.28
-            : 0.19 + point.emphasis * 0.25 + alignment * 0.12;
+        // A few oblique seams keep the field closer to a material under tension than a dashboard graph.
+        const seams = [
+          [pointKey(1, 3), pointKey(3, 5), pointKey(5, 4), pointKey(7, 6)],
+          [pointKey(0, 7), pointKey(2, 6), pointKey(4, 8), pointKey(6, 7)],
+          [pointKey(2, 2), pointKey(4, 3), pointKey(6, 2)]
+        ];
 
-          drawing.circle(point.x, point.y, radiusValue).fill({ color, alpha });
+        seams.forEach((keys, seamIndex) => {
+          const seamPoints = keys.map((key) => byPosition.get(key)).filter((point): point is LivePoint => Boolean(point));
+          if (seamPoints.length < 2) return;
+
+          seamPoints.forEach((point, index) => {
+            if (index === 0) {
+              drawing.moveTo(point.x, point.y);
+            } else {
+              drawing.lineTo(point.x, point.y);
+            }
+          });
+
+          drawing.stroke({
+            color: seamIndex === 1 ? 0xd95739 : 0x0a0a0a,
+            width: 1,
+            alpha: seamIndex === 1
+              ? 0.025 + memoryStrength * 0.055
+              : 0.014 + (1 - alignment) * 0.025
+          });
         });
 
-        const tracePoints = points
-          .filter((point) => point.column === 5 || point.column === 6)
-          .sort((a, b) => a.y - b.y);
+        points.forEach((point) => {
+          const memory = point.memoryInfluence;
+          const pointRadius = 0.65 + point.emphasis * 1.05 + pressure * 0.28;
+          const isMemoryPoint = memory > 0.42 && point.emphasis > 0.56;
+          const color = isMemoryPoint ? 0xd95739 : 0x0a0a0a;
+          const alpha = isMemoryPoint
+            ? 0.44 + memory * 0.24
+            : 0.15 + point.emphasis * 0.19 + alignment * 0.08;
 
-        for (let index = 0; index < tracePoints.length - 1; index += 1) {
-          const one = tracePoints[index];
-          const two = tracePoints[index + 1];
-          const memory = Math.max(one.memoryInfluence, two.memoryInfluence);
-          if (memory < 0.07) continue;
-          drawing
-            .moveTo(one.x, one.y)
-            .lineTo(two.x, two.y)
-            .stroke({ color: 0xd95739, width: 1, alpha: memory * 0.16 });
-        }
+          drawing.circle(point.x, point.y, pointRadius).fill({ color, alpha });
+        });
       };
 
       if (reducedMotion) {
-        draw(0, 0.36);
-        app.ticker.stop();
+        let staticFrame = 0;
+        app.ticker.add(() => {
+          if (staticFrame > 2) {
+            app.ticker.stop();
+            return;
+          }
+          draw(0, 0.36);
+          staticFrame += 1;
+        });
       } else {
         host.addEventListener("pointermove", setPointer, { passive: true });
         host.addEventListener("pointerleave", clearPointer);

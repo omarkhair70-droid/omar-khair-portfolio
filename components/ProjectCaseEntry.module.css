@@ -1,0 +1,205 @@
+.root {
+  --entry-x: 50%;
+  --entry-y: 50%;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 80;
+}
+
+.layerA,
+.layerB,
+.layerC {
+  inset: 0;
+  position: absolute;
+  transform-origin: var(--entry-x) var(--entry-y);
+}
+
+/* Nova — the two presences finish crossing into each other's space, then disappear. */
+.root[data-variant="nova"] .layerA,
+.root[data-variant="nova"] .layerB {
+  opacity: 1;
+  transition: opacity 760ms ease, transform 980ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.root[data-variant="nova"] .layerA {
+  background: radial-gradient(34vmax 23vmax at calc(var(--entry-x) - 9%) calc(var(--entry-y) - 2%), rgba(255, 184, 167, 0.32), rgba(201, 135, 255, 0.2) 42%, rgba(123, 92, 255, 0.12) 58%, transparent 75%);
+  transform: translateX(-5vw) rotate(-4deg) scale(1.18, 1.03);
+}
+
+.root[data-variant="nova"] .layerB {
+  background: radial-gradient(34vmax 23vmax at calc(var(--entry-x) + 9%) calc(var(--entry-y) + 2%), rgba(123, 92, 255, 0.23), rgba(45, 139, 255, 0.25) 48%, transparent 75%);
+  transform: translateX(5vw) rotate(5deg) scale(1.18, 1.03);
+}
+
+.root[data-variant="nova"] .layerC {
+  background: radial-gradient(11vmax 8vmax at var(--entry-x) var(--entry-y), transparent 0 31%, rgba(233, 230, 255, 0.34) 38%, rgba(123, 92, 255, 0.11) 48%, transparent 66%);
+  opacity: 0.94;
+  transition: opacity 620ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.72);
+}
+
+.root[data-variant="nova"].settled .layerA {
+  opacity: 0;
+  transform: translateX(2vw) rotate(2deg) scale(1.7, 1.28);
+}
+
+.root[data-variant="nova"].settled .layerB {
+  opacity: 0;
+  transform: translateX(-2vw) rotate(-2deg) scale(1.7, 1.28);
+}
+
+.root[data-variant="nova"].settled .layerC {
+  opacity: 0;
+  transform: scale(0.46);
+}
+
+/* WaveZero — incoming signal resolves to one line/playhead, then becomes quiet. */
+.root[data-variant="wavezero"] .layerA {
+  background: repeating-linear-gradient(90deg, transparent 0 14px, rgba(24, 23, 28, 0.045) 14px 15px, transparent 15px 28px);
+  mask-image: radial-gradient(48vmax 28vmax at var(--entry-x) var(--entry-y), black 0 28%, rgba(0, 0, 0, 0.72) 54%, transparent 78%);
+  opacity: 0.82;
+  transition: opacity 760ms ease, transform 1100ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scaleX(1.18);
+}
+
+.root[data-variant="wavezero"] .layerB {
+  background: linear-gradient(90deg, transparent 4%, rgba(24, 23, 28, 0.1) 20%, rgba(24, 23, 28, 0.24) 50%, rgba(24, 23, 28, 0.1) 80%, transparent 96%);
+  height: 1px;
+  inset: var(--entry-y) 5% auto;
+  opacity: 1;
+  transition: opacity 600ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(1);
+  transform-origin: var(--entry-x) 50%;
+}
+
+.root[data-variant="wavezero"] .layerC {
+  background: linear-gradient(180deg, transparent, rgba(24, 23, 28, 0.18) 26%, rgba(24, 23, 28, 0.18) 74%, transparent);
+  inset: 16% auto 16% var(--entry-x);
+  opacity: 0.92;
+  transition: opacity 620ms ease, transform 960ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleY(1.24);
+  width: 1px;
+}
+
+.root[data-variant="wavezero"].settled .layerA {
+  opacity: 0;
+  transform: scaleX(0.82);
+}
+
+.root[data-variant="wavezero"].settled .layerB {
+  opacity: 0;
+  transform: scaleX(0.15);
+}
+
+.root[data-variant="wavezero"].settled .layerC {
+  opacity: 0;
+  transform: scaleY(0.26);
+}
+
+/* Balcona — order/service cards enter as a queue then hand off left in sequence. */
+.root[data-variant="balcona"] .layerA,
+.root[data-variant="balcona"] .layerB,
+.root[data-variant="balcona"] .layerC {
+  background:
+    linear-gradient(90deg, rgba(24, 23, 28, 0.14) 0 7px, transparent 7px),
+    linear-gradient(90deg, rgba(24, 23, 28, 0.09) 0 34%, transparent 34% 43%, rgba(24, 23, 28, 0.06) 43% 70%, transparent 70%) 18px 50% / calc(100% - 30px) 1px no-repeat;
+  border: 1px solid rgba(24, 23, 28, 0.17);
+  border-radius: 4px;
+  height: 8vh;
+  left: calc(var(--entry-x) - 10vw);
+  max-height: 72px;
+  max-width: 220px;
+  opacity: 0.84;
+  top: calc(var(--entry-y) - 4vh);
+  transition: opacity 620ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 20vw;
+}
+
+.root[data-variant="balcona"] .layerA {
+  transform: translate(3vw, -9vh);
+}
+
+.root[data-variant="balcona"] .layerB {
+  transform: translate(5vw, 0);
+  transition-delay: 70ms;
+}
+
+.root[data-variant="balcona"] .layerC {
+  transform: translate(7vw, 9vh);
+  transition-delay: 140ms;
+}
+
+.root[data-variant="balcona"].settled .layerA {
+  opacity: 0;
+  transform: translate(-18vw, 0) scale(0.9);
+}
+
+.root[data-variant="balcona"].settled .layerB {
+  opacity: 0;
+  transform: translate(-13vw, 0) scale(0.9);
+}
+
+.root[data-variant="balcona"].settled .layerC {
+  opacity: 0;
+  transform: translate(-8vw, 0) scale(0.9);
+}
+
+/* Teswa — two carried objects cross sides, making the exchange explicit. */
+.root[data-variant="teswa"] .layerA,
+.root[data-variant="teswa"] .layerB {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(24, 23, 28, 0.085) 0 7px, transparent 8px),
+    linear-gradient(rgba(24, 23, 28, 0.07), rgba(24, 23, 28, 0.07)) 50% 72% / 54% 1px no-repeat;
+  border: 1px solid rgba(24, 23, 28, 0.15);
+  border-radius: 18px;
+  height: 22vh;
+  max-height: 190px;
+  max-width: 150px;
+  opacity: 0.82;
+  top: calc(var(--entry-y) - 11vh);
+  transition: opacity 720ms ease, transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 14vw;
+}
+
+.root[data-variant="teswa"] .layerA {
+  left: calc(var(--entry-x) - 17vw);
+  transform: rotate(-6deg);
+}
+
+.root[data-variant="teswa"] .layerB {
+  left: calc(var(--entry-x) + 3vw);
+  transform: rotate(6deg);
+}
+
+.root[data-variant="teswa"] .layerC {
+  background: repeating-linear-gradient(90deg, rgba(24, 23, 28, 0.14) 0 8px, transparent 8px 14px);
+  height: 1px;
+  left: calc(var(--entry-x) - 9vw);
+  opacity: 0.86;
+  top: var(--entry-y);
+  transition: opacity 620ms ease, transform 900ms ease;
+  width: 18vw;
+}
+
+.root[data-variant="teswa"].settled .layerA {
+  opacity: 0;
+  transform: translateX(19vw) rotate(6deg) scale(0.88);
+}
+
+.root[data-variant="teswa"].settled .layerB {
+  opacity: 0;
+  transform: translateX(-19vw) rotate(-6deg) scale(0.88);
+}
+
+.root[data-variant="teswa"].settled .layerC {
+  opacity: 0;
+  transform: scaleX(0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    display: none;
+  }
+}

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import HomeOpening from "@/components/HomeOpening";
 import ProjectLinks from "@/components/ProjectLinks";
-import SignalCanvas from "@/components/SignalCanvas";
 import { featuredProjects, getProject } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Systems with a pulse",
   description:
-    "Omar Khair builds digital products between engineering, visual direction and launch — across web, mobile and business systems.",
+    "Omar Khair is an Egyptian multidisciplinary creator working across interactive systems, visual art, creative technology, product and cinematic experiences.",
   alternates: { canonical: "/" }
 };
 
@@ -25,27 +25,7 @@ export default function Home() {
 
   return (
     <main id="main-content">
-      <section className="hero" aria-labelledby="hero-title">
-        <SignalCanvas />
-        <div className="shell hero__grid">
-          <p className="hero__intro" data-reveal>
-            <strong>Omar Khair</strong> is a product builder and creative developer working across web, mobile,
-            business systems and visual direction.
-          </p>
-          <p className="hero__coordinates" aria-label="Based in Egypt">
-            30.0444° N<br />31.2357° E<br />Egypt · 2026
-          </p>
-          <h1 className="hero__title" id="hero-title">
-            <span>Systems</span>
-            <span className="hero__title-line--two">with a <em>pulse.</em></span>
-          </h1>
-          <div className="hero__footer">
-            <p>Product · Engineering · Image</p>
-            <p>Scroll to enter</p>
-            <p>Available for selected collaborations</p>
-          </div>
-        </div>
-      </section>
+      <HomeOpening />
 
       <section className="manifesto section-pad">
         <div className="shell manifesto__grid">

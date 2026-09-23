@@ -1,12 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 export default function RouteExperience({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
   useEffect(() => {
     let disposed = false;
     let destroy = () => undefined;
@@ -22,15 +18,13 @@ export default function RouteExperience({ children }: { children: React.ReactNod
       gsap.registerPlugin(ScrollTrigger);
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const context = gsap.context(() => {
-        if (!isHome) {
-          gsap.to(".route-shutter__panel", {
-            scaleY: 0,
-            transformOrigin: "top",
-            duration: reduced ? 0 : 0.72,
-            stagger: reduced ? 0 : 0.07,
-            ease: "power4.inOut"
-          });
-        }
+        gsap.to(".route-shutter__panel", {
+          scaleY: 0,
+          transformOrigin: "top",
+          duration: reduced ? 0 : 0.72,
+          stagger: reduced ? 0 : 0.07,
+          ease: "power4.inOut"
+        });
 
         if (!reduced) {
           gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
@@ -84,17 +78,15 @@ export default function RouteExperience({ children }: { children: React.ReactNod
       disposed = true;
       destroy();
     };
-  }, [isHome, pathname]);
+  }, []);
 
   return (
     <>
-      {!isHome ? (
-        <div className="route-shutter" aria-hidden="true">
-          <span className="route-shutter__panel" />
-          <span className="route-shutter__panel" />
-          <span className="route-shutter__panel" />
-        </div>
-      ) : null}
+      <div className="route-shutter" aria-hidden="true">
+        <span className="route-shutter__panel" />
+        <span className="route-shutter__panel" />
+        <span className="route-shutter__panel" />
+      </div>
       {children}
     </>
   );

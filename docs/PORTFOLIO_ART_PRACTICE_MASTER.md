@@ -480,14 +480,23 @@ SERAPH already provides a separate proven Three.js / R3F body of work and can in
 
 ## 16. WORKFLOW — LOCKED
 
-We keep the high-end visual workflow already proven in previous portfolio work, but change the
-creative target.
+This project follows the portfolio workflow already proven in earlier work.
+
+**Research and decisions are completed first.**
+Only then do we implement a real section of the actual portfolio.
+
+There are no disposable visual lab routes, isolated demo pages, style playgrounds, or throwaway prototype
+screens inside the repository workflow.
+
+A section is not shown for review as a half-built concept.
+When implementation begins, that section is carried through composition, typography, media, motion,
+interaction, responsive behaviour and visual QA before the next section starts.
 
 ### PHASE 00 — REALITY / FREEZE
 - record current `main`;
 - preserve public routes and privacy routes;
 - record current project data;
-- no redesign by uncontrolled edits.
+- no uncontrolled redesign.
 
 Exit:
 - baseline is reproducible.
@@ -496,17 +505,26 @@ Exit:
 - latest personal / artistic identity;
 - current repository;
 - SERAPH creative laws;
-- library files;
-- project truth;
-- current strongest work.
+- Library files and earlier portfolio workflow;
+- current project truth;
+- strongest current work.
 
 Exit:
 - no important identity contradiction remains.
 
-### PHASE 02 — REFERENCE RESEARCH
-Study 8–12 references across different schools.
+### PHASE 02 — REFERENCE / SCHOOL / FIELD RESEARCH
+Research is completed before visual implementation.
 
-For each reference record only:
+Study:
+- contemporary portfolios;
+- artist portfolios;
+- interactive / creative-technology work;
+- design and art schools relevant to the practice;
+- installation / spatial precedents;
+- typography and editorial systems;
+- sound / cinematic / interaction precedents.
+
+For every reference record:
 1. principle;
 2. transferable pattern;
 3. what must not be copied.
@@ -515,120 +533,115 @@ Evaluate:
 - first five seconds;
 - composition;
 - typography;
+- material language;
 - spatial behaviour;
 - work hierarchy;
 - project transitions;
 - sound;
+- interaction;
 - mobile;
 - still-frame quality;
-- signature interaction.
+- what survives without motion.
 
 Exit:
-- 2–3 primary ceilings;
-- several controls / extremes;
-- no moodboard made of one aesthetic.
+- research matrix is complete;
+- primary ceilings, controls, extremes and anti-reference are selected;
+- open questions that require a design decision are explicitly resolved or marked as intentionally deferred.
 
-### PHASE 03 — CREATIVE CONSTITUTION
-Lock:
-- opening law;
-- territories;
-- threshold;
-- project hierarchy;
-- typography law;
-- image law;
-- motion law;
-- sound law;
-- navigation law;
-- mobile law.
-
-Exit:
-- this document updated with decisions.
-
-### PHASE 04 — STATIC COMPOSITION
-No heavy animation yet.
-
-Create the strongest desktop stills for:
+### PHASE 03 — CREATIVE CONSTITUTION / FULL DECISION PASS
+Before code changes to the public experience, lock the portfolio's current laws:
 - opening;
-- SERAPH encounter;
-- Worlds territory;
+- project hierarchy;
+- Worlds / Systems relationship;
+- SERAPH role;
 - threshold;
-- Systems territory;
-- artifact archive;
-- About / end state.
+- typography;
+- image / media;
+- material;
+- motion;
+- interaction;
+- sound;
+- navigation;
+- responsive / mobile;
+- accessibility / reduced-motion behaviour;
+- section order;
+- what existing portfolio DNA is preserved;
+- what is removed.
+
+This is a decision phase, not a visual demo phase.
 
 Exit:
-- screenshots work as art direction without motion.
+- the canonical master document contains enough direction to build without improvising the identity in code.
 
-### PHASE 05 — MOTION / INTERACTION PROTOTYPE
-Implement only:
-- opening behaviour;
-- one threshold transformation;
-- one project-entry transition;
-- one artifact interaction.
+### PHASE 04+ — BUILD THE REAL SITE, ONE COMPLETE SECTION AT A TIME
 
-Exit:
-- motion has a reason;
-- no effect exists because a library exists.
+Each implementation gate is a **real section of the actual portfolio**, not a lab.
 
-### PHASE 06 — HOME EXPERIENCE
-Build the complete root sequence.
+For every section the order is:
 
-Exit:
-- desktop render;
-- mobile render;
-- real screenshots;
-- recorded motion;
-- human visual inspection.
+1. implement the full static composition;
+2. typography and media treatment;
+3. complete its intended motion;
+4. complete its intended interaction;
+5. add sound only if the section's law requires it;
+6. desktop render;
+7. mobile render;
+8. real screenshots;
+9. real motion capture where motion exists;
+10. inspect by eye;
+11. record exact deltas;
+12. fix exact deltas only;
+13. run technical QA;
+14. lock the section;
+15. only then move to the next section.
 
-### PHASE 07 — MONUMENTS
-Build custom treatments one by one:
-- SERAPH;
-- HILTECH;
-- Fokhara;
-- Teswa;
-- other confirmed monuments.
+A section is not considered ready because:
+- the build passes;
+- a component exists;
+- the first screenshot looks promising;
+- a temporary route demonstrates the idea.
 
-Each can have its own grammar while belonging to the same world.
+The section must feel finished in context.
 
-### PHASE 08 — MAJOR WORKS / ARTIFACTS
-Recompose remaining work by weight.
-No card cemetery.
+### EXPECTED SECTION SEQUENCE
 
-### PHASE 09 — ABOUT / CONTACT / ARCHIVE
-Bring secondary routes into the same DNA without turning them into spectacle.
+The exact order is confirmed in Phase 03, but the current working sequence is:
 
-### PHASE 10 — RE-BENCHMARK
-Return to the original reference matrix.
+1. **HOME / OPENING** — first encounter and first five seconds;
+2. **SERAPH ENCOUNTER** — integrated as a real portfolio chapter, not a project card;
+3. **WORLDS I AUTHOR** — authored / material / artistic work;
+4. **THRESHOLD** — the full matter -> structure transformation;
+5. **SYSTEMS I BUILD** — systemic work with its own visual grammar;
+6. **ARTIFACTS / STUDIES** — smaller work with deliberately smaller weight;
+7. **ABOUT / AFTERIMAGE / CONTACT** — identity resolves quietly rather than becoming a sales funnel;
+8. supporting Work / case-study routes are then reconciled with the new system.
 
-Ask:
-- did the site become more authored;
-- did motion become generic;
-- did hierarchy collapse;
-- did mobile lose the work;
-- did SERAPH swallow Omar's identity;
-- did technology become decoration.
+### SECTION CLOSURE STANDARD
 
-### PHASE 11 — FINAL CLOSURE
-- lint;
-- typecheck;
-- production build;
-- desktop browser QA;
-- mobile browser QA;
-- overflow;
-- broken images;
+Every completed section must pass:
+- desktop visual review;
+- mobile visual review;
+- screenshot review;
+- motion review if applicable;
 - keyboard / focus;
 - reduced motion;
-- audio fallback if used;
-- performance;
-- route transition integrity;
-- real screenshots;
-- real screen recording;
-- final human visual review.
+- no overflow;
+- no broken media;
+- no accidental generic card / SaaS language;
+- no technology that exists without artistic or perceptual reason;
+- build / type / lint checks appropriate to the change.
 
 A green build is not visual approval.
 A beautiful screenshot is not engineering approval.
 
 Both are required.
+
+### PR LAW
+
+A pull request is not used as a visual checkpoint.
+
+Do not open a review PR merely because research or a partial section exists.
+The branch may accumulate the bounded work, but the review PR belongs to a coherent completed gate.
 
 ---
 
@@ -707,13 +720,20 @@ One active creative constitution. Git history records evolution.
 
 ## 19. CURRENT CONTINUATION POINT
 
-The next action is **not broad implementation**.
+We are still in **research / decision work**.
+
+Do not implement another visual section yet.
 
 Next:
-1. complete the 2026-09-23 reference research matrix;
-2. audit current projects by artistic / systemic weight rather than old lanes;
-3. identify the exact first five seconds;
-4. prototype the threshold from matter -> structure;
-5. render stills before committing to a larger interaction architecture.
+1. finish the reference / school research matrix until the useful fields are covered rather than merely reaching a reference count;
+2. reconcile the project-weight audit with the latest project reality;
+3. resolve the remaining creative-constitution questions, including the exact role of the opening, SERAPH, sound, navigation and the matter -> structure threshold;
+4. write the complete first-section brief for **HOME / OPENING**.
 
-After those five are reviewed, implementation can become aggressive.
+Only when those decisions are closed do we touch the public Home.
+
+Then the first implementation is not a demo:
+**HOME / OPENING is built completely — composition + typography + material + motion + interaction + responsive behaviour + QA — and reviewed in place.**
+
+If it passes, we continue forward from it.
+If it fails, we fix that same real section until it passes.

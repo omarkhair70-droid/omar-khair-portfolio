@@ -1,6 +1,6 @@
 # Omar Khair — Systems with a pulse
 
-An editorial portfolio for product builder and creative developer Omar Khair. The experience is organised around proof: flagship systems, client delivery, creative commerce and independent work, with motion used to connect chapters rather than decorate them.
+An editorial portfolio for product builder Omar Khair, bringing together engineering, creative direction and ongoing business development and strategic partnership work. The experience is organised around proven product systems, client delivery and independent work, with motion used to connect chapters rather than decorate them.
 
 ## Experience stack
 

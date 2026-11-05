@@ -8,7 +8,7 @@ Use this as the factual source for public professional identity copy. Keep the s
 **Product Builder | Full-Stack Web & Mobile Developer**  
 Based in Egypt.
 
-Primary positioning: Omar builds digital products end-to-end across web, mobile, business systems, visual direction, and launch presentation. The portfolio must not reduce the identity to “just a programmer.”
+Primary positioning: Omar is first a product builder and technical delivery practitioner. Alongside web/mobile/business systems and visual direction, he works on opportunity research, business development and strategic partnership discovery. The public portfolio should connect these capabilities without turning into a sales pitch or claiming undisclosed contract outcomes.
 
 ## Professional narrative
 
@@ -22,10 +22,15 @@ Omar's strongest public story is the combination of:
 - Arabic-first and RTL product experience
 - Visual direction, branding, and interface taste
 - Client-facing delivery
+- Opportunity research, qualification, technical/commercial scope mapping and strategic partnerships
 - Independent creative/editorial projects
 - AI-assisted launch and promotional media workflows
 
 Technical products prove engineering depth. Creative/brand work proves visual range. Client projects prove delivery. Independent work proves initiative.
+
+## Business development / partnerships positioning
+
+Present this as ongoing work: opportunity research, reading organisational and procurement needs, assessing fit, connecting commercial and technical requirements, and translating an initial brief into a credible solution direction. Do **not** imply secured tenders, contract awards, institutional clients, signed partnership agreements, revenue, or an exclusive company mandate without published evidence and approval. Avoid naming confidential bids or organisations in this personal portfolio.
 
 ## Education wording
 

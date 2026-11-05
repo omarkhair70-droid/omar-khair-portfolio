@@ -237,6 +237,20 @@ img { max-width: 100%; }
 .about-fact h3 { margin: 0; font-size: 1.4rem; }
 .about-fact p { margin: 1rem 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.65; }
 
+
+.opportunity-practice { border-top: 1px solid var(--line); background: var(--paper-bright); }
+.opportunity-practice__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+.opportunity-practice__heading { grid-column: 1 / span 5; align-self: start; }
+.opportunity-practice__heading h2 { max-width: 11ch; margin: 2.5rem 0 0; font-size: clamp(3rem, 5.8vw, 6.7rem); font-weight: 570; letter-spacing: -0.07em; line-height: 0.92; }
+.opportunity-practice__heading em { font-family: var(--font-serif), Georgia, serif; font-weight: 400; }
+.opportunity-practice__detail { grid-column: 7 / -1; }
+.opportunity-practice__lead { max-width: 41rem; margin: 0 0 4rem; font-size: clamp(1.12rem, 1.8vw, 1.6rem); line-height: 1.6; }
+.opportunity-practice__step { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1.8rem 2.5rem; }
+.opportunity-practice__step:last-child { border-bottom: 1px solid var(--line); }
+.opportunity-practice__step > span { padding-top: 0.35rem; color: var(--muted); font-size: 0.7rem; }
+.opportunity-practice__step h3 { margin: 0; font-size: clamp(1.5rem, 2.8vw, 2.7rem); font-weight: 570; letter-spacing: -0.05em; }
+.opportunity-practice__step p { max-width: 32rem; margin: 0.8rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+
 .inquiry-form { display: grid; gap: 1rem; margin-top: 2rem; }
 .inquiry-form__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .field label { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -339,6 +353,9 @@ img { max-width: 100%; }
   .about-intro__portrait { grid-column: 1 / -1; min-height: 24rem; }
   .about-intro__copy { grid-column: 1 / -1; margin-top: 3rem; }
   .about-facts { grid-template-columns: repeat(2, 1fr); }
+  .opportunity-practice__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .opportunity-practice__heading, .opportunity-practice__detail { grid-column: 1 / -1; }
+  .opportunity-practice__detail { margin-top: 4rem; }
   .contact-layout { grid-template-columns: repeat(4, 1fr); }
   .contact-methods, .contact-brief { grid-column: 1 / -1; }
   .contact-brief { margin-top: 6rem; }
@@ -367,6 +384,8 @@ img { max-width: 100%; }
   .mixed-shot { width: 100%; margin-bottom: 1.5rem; }
   .case-hero__meta span:nth-child(2) { display: none; }
   .about-facts { grid-template-columns: 1fr; }
+  .opportunity-practice__heading h2 { font-size: clamp(3rem, 12vw, 5rem); }
+  .opportunity-practice__step { grid-template-columns: 2.5rem 1fr; }
   .inquiry-form__grid { grid-template-columns: 1fr; }
   .contact-method { grid-template-columns: 2rem 1fr auto; }
   .contact-method > span:nth-child(3) { grid-column: 2 / -1; }

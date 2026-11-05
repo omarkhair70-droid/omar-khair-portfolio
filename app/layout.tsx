@@ -7,7 +7,7 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://omar-khair-portfolio.vercel.app";
 const title = "Omar Khair — Product Builder | Web & Mobile";
 const description =
-  "Omar Khair builds websites, mobile products, ordering experiences, RFQ systems, dashboards, and business software — from product direction to deployment.";
+  "Omar Khair builds web and mobile products, business systems and digital experiences, with work spanning technical delivery, opportunity research and strategic partnerships.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

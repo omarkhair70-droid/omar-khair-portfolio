@@ -8,12 +8,12 @@ import { featuredProjects, getProject } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Systems with a pulse",
   description:
-    "Omar Khair builds digital products between engineering, visual direction and launch — across web, mobile and business systems.",
+    "Omar Khair builds web and mobile products, works across business systems, opportunity research and strategic partnerships, and connects technical and visual direction.",
   alternates: { canonical: "/" }
 };
 
 const practices = [
-  ["01", "Product", "Shape the problem, the sequence and the smallest coherent version worth building."],
+  ["01", "Product", "Understand the business need, shape the scope and build a coherent product rather than a list of features."],
   ["02", "Engineering", "Own the working system across interface, data, native behaviour, deployment and release gates."],
   ["03", "Visual direction", "Give the product a composition, rhythm and image language that belong to its subject."],
   ["04", "Launch", "Extend the product into release, presentation and short-form moving-image workflows when it helps."]
@@ -29,8 +29,8 @@ export default function Home() {
         <SignalCanvas />
         <div className="shell hero__grid">
           <p className="hero__intro" data-reveal>
-            <strong>Omar Khair</strong> is a product builder and creative developer working across web, mobile,
-            business systems and visual direction.
+            <strong>Omar Khair</strong> is a product builder working across engineering, visual direction,
+            business development and strategic partnerships.
           </p>
           <p className="hero__coordinates" aria-label="Based in Egypt">
             30.0444° N<br />31.2357° E<br />Egypt · 2026
@@ -51,11 +51,11 @@ export default function Home() {
         <div className="shell manifesto__grid">
           <p className="eyebrow manifesto__label" data-reveal>Practice / 01</p>
           <p className="manifesto__statement" data-reveal>
-            I build in the space between <em>logic and feeling</em>, product and image, Arabic and global.
+            I work between <em>business needs and technical decisions</em>, product and image, vision and delivery.
           </p>
           <p className="manifesto__note" data-reveal>
-            The interface is only one layer. The work includes the product decision, the system underneath it,
-            the visual world around it and the discipline required to launch it.
+            From opportunity research and partnership conversations to product architecture and release, I focus on
+            what the organisation needs, what the system must do and how the experience should feel.
           </p>
         </div>
       </section>

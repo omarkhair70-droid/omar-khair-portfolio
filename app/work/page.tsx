@@ -21,8 +21,8 @@ export default function WorkPage() {
           <p className="eyebrow" data-reveal>Index / Selected work</p>
           <h1 data-reveal>Not one style.<br /><em>One point of view.</em></h1>
           <p className="page-hero__copy" data-reveal>
-            Products are organised by what they prove—not by the technology used to make them. Flagship systems show depth,
-            client work shows delivery, and creative work shows visual authorship.
+            Products are organised by what they prove, not just by the technologies used to make them. Flagship systems
+            demonstrate product and engineering depth, client work shows delivery, and creative work shows visual authorship.
           </p>
         </div>
       </header>

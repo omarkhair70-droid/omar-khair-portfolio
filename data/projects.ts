@@ -43,7 +43,7 @@ export const projects: Project[] = [
     compactTitle: "HILTECH",
     lane: "flagship",
     category: "B2B product & business system",
-    status: "Verified public Next.js deployment",
+    status: "Live B2B product experience",
     year: "2026",
     role: "Product direction, interface design and full-stack delivery",
     lead:
@@ -427,7 +427,7 @@ export const projects: Project[] = [
     compactTitle: "Athr Studio",
     lane: "creative",
     category: "Origins / creative direction",
-    status: "Live origin work · visual review pending",
+    status: "Early creative study · live",
     year: "Earlier work",
     role: "Self-directed web, visual studies and motion-led presentation",
     lead: "An early studio identity kept as honest progression evidence for the visual practice behind the current systems.",

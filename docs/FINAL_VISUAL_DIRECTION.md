@@ -91,8 +91,8 @@ The implementation borrows principles, not layouts:
   navigation system.
 - About frames the combination: Product + Engineering + Visual Direction +
   Launch.
-- Commercial packages and the 1,000 EGP offer remain useful but live below the
-  identity layer, primarily on their own page.
+- Standard service scope ranges remain secondary to the work and professional
+  identity, on the Services page.
 
 ## Stop conditions
 

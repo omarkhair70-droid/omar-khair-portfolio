@@ -78,7 +78,7 @@ The home page should immediately establish:
 - concise value proposition
 - visual evidence from flagship work
 - multiple capability dimensions without turning into a skill dump
-- clear routes to Work, About/Capabilities, commercial offer, and Contact
+- clear routes to Work, About/Capabilities, Services, and Contact
 - strongest proof above the fold or immediately after it
 
 The home page must not show every project. Curate.
@@ -116,15 +116,12 @@ Add or rebuild a professional About/Capabilities experience that includes:
 Do not expose private educational history.
 
 ## Services / Work with me
-Keep the offer architecture clear:
-- Local Launch Offer — 1,000 EGP, clearly limited scope
+Keep the standard project scope ranges clear:
 - Starter Website — 15,000 EGP+
 - Business Website — 30,000 EGP+
 - Brand / Ordering Experience — 45,000 EGP+
 - RFQ / Business System — 60,000 EGP+
 - Larger products / mobile / systems — custom
-
-The 1,000 EGP offer must never read as if Omar normally sells all websites/apps for 1,000 EGP.
 
 ## Contact
 Make contact frictionless:
@@ -451,15 +448,7 @@ Do not publish grades, transfer history, family context, or unrelated personal m
 
 # 12. Commercial presentation
 
-Preserve the two-layer pricing strategy.
-
-## Local Launch Offer
-1,000 EGP limited offer:
-- compact one-page scope
-- 500 upfront + 500 on launch
-- one revision
-- basic SEO/deployment/contact
-- explicit scope boundaries
+Present indicative standard scope ranges; quote final projects after discovery.
 
 ## Standard work
 - 15k+
@@ -467,8 +456,6 @@ Preserve the two-layer pricing strategy.
 - 45k+
 - 60k+
 - custom
-
-Make the distinction visually and verbally impossible to misunderstand.
 
 ---
 
@@ -518,7 +505,6 @@ Workflow:
    - /work/wavezero
    - /work/hiltech
    - /work/balcona (or chosen slug)
-   - /local-business
    - About/Capabilities route if created
 7. fix only actual failures and rerun the necessary final check
 
@@ -543,7 +529,7 @@ The task is NOT complete until all of the following are true:
 - Abdel Aal is represented if inspection confirms the creative proof described in the registry.
 - Sultan Al-Burhan is intentionally included or intentionally omitted after inspection, not forgotten.
 - launch/media capability is represented accurately.
-- standard pricing and 1,000 EGP local offer coexist without contradiction.
+- standard price ranges are clearly indicative, with custom scope quoted separately.
 - real screenshots are readable and not tiny collages.
 - selected visual assets are organized cleanly.
 - old broken/low-resolution showcase treatment is removed.

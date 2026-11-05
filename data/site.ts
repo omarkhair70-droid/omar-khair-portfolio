@@ -34,9 +34,3 @@ export const serviceRanges = [
   }
 ];
 
-export const localLaunchOffer = {
-  name: "Local launch offer",
-  price: "1,000 EGP",
-  payment: "500 EGP upfront · 500 EGP on launch",
-  summary: "A deliberately limited one-page launch package for local professionals and small businesses."
-};

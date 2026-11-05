@@ -30,7 +30,6 @@ export default function SiteFooter() {
               WhatsApp
             </a>
             <Link href="/services">Services</Link>
-            <Link href="/local-business">Local offer</Link>
           </div>
           <p>© 2026 Omar Khair</p>
         </div>

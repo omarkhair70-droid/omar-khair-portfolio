@@ -12,7 +12,7 @@ const projectTypes = [
   "Portfolio / case-study website",
   "Not sure yet"
 ];
-const budgets = ["Local launch offer", "15,000–30,000 EGP", "30,000–60,000 EGP", "60,000+ EGP", "Not sure yet"];
+const budgets = ["15,000–30,000 EGP", "30,000–60,000 EGP", "60,000+ EGP", "Not sure yet"];
 const normalize = (value: string) => value.trim() || "Not provided";
 
 export default function ProjectInquiryForm() {

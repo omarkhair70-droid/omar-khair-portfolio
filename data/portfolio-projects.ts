@@ -9,7 +9,7 @@ export { laneLabels };
 
 const fokharaProject: Project = {
   slug: "fokhara",
-  index: "15",
+  index: "13",
   title: "Fokhara — The form remembers",
   compactTitle: "Fokhara",
   lane: "creative",

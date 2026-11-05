@@ -74,7 +74,7 @@ export default function AboutPage() {
             <p className="opportunity-practice__lead">
               The same thinking used to build a product helps evaluate an opportunity: understand the need, test the fit,
               translate the requirements and make the next decision clear. This is ongoing work across opportunity
-              research, partnership conversations and solution scoping—not a claim of contracts won.
+              research, partnership conversations and solution scoping, with each next step grounded in real needs.
             </p>
             <div className="opportunity-practice__steps">
               {opportunitySteps.map(([title, description], index) => (

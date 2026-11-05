@@ -37,14 +37,13 @@ npm run build
 - `app/work/page.tsx` is the complete project index.
 - `app/work/[slug]/page.tsx` generates the case-study system.
 - `app/about/page.tsx` presents Omar's cross-disciplinary practice.
-- `app/local-business/page.tsx` keeps the limited commercial offer separate from the award-facing portfolio narrative.
 - `components/RouteExperience.tsx` owns GSAP, ScrollTrigger and Lenis lifecycle.
 - `components/SignalCanvas.tsx` owns the PixiJS hero field.
 - `docs/FINAL_VISUAL_DIRECTION.md` records the visual and motion decisions.
 
 ## Assets
 
-The current curated evidence set contains 58 WebP assets under `public/work/<project>/`. Farrag Coffee's existing wide web captures remain under `public/project-screenshots/`. Obsolete low-resolution and duplicate captures were removed once they were no longer referenced.
+The curated project evidence is stored under `public/work/<project>/`. Excluded work and obsolete screenshots are not included in the public exhibition.
 
 ## Public routes
 
@@ -54,7 +53,6 @@ The current curated evidence set contains 58 WebP assets under `public/work/<pro
 - `/about`
 - `/services`
 - `/contact`
-- `/local-business`
 - `/privacy/wavezero`
 
 `app/sitemap.ts`, `app/robots.ts`, Open Graph metadata and social images cover the public surface. Set `NEXT_PUBLIC_SITE_URL` to the final production origin before launch.

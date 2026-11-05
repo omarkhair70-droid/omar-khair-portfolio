@@ -98,27 +98,8 @@ Do not present Omar as a full-service film studio unless actual finished work su
 - GitHub: https://github.com/omarkhair70-droid
 - Portfolio: https://omar-khair-portfolio.vercel.app
 
-## Commercial offer architecture
+## Standard project ranges
 
-Keep two distinct layers so pricing does not contradict itself.
-
-### Local Launch Offer — limited scope
-**1,000 EGP**
-- 500 EGP upfront
-- 500 EGP on launch
-- compact polished multi-section one-page site
-- mobile responsive
-- profile/services/products as relevant
-- WhatsApp/contact
-- location/social links
-- basic SEO metadata
-- deployment
-- one revision
-- domain, paid third-party services, custom backend, and expanded scope are separate
-
-This is a limited local launch offer, not the normal price of all work.
-
-### Standard project ranges
 - Starter Website — from 15,000 EGP
 - Business Website — from 30,000 EGP
 - Brand / Ordering Experience — from 45,000 EGP

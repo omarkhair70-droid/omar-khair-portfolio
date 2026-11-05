@@ -21,8 +21,8 @@ Release status must also remain centralized so Nova, WaveZero, and Balcona can b
 ### What is already worth preserving
 - Next.js App Router + TypeScript + Tailwind with very low dependency surface.
 - Neutral visual foundation is compatible with the requested evidence-led editorial direction.
-- Existing routes for HILTECH, Teswa, Tuscanini, Habba, Bahja, Farrag Coffee, Senior Pharmacist Portfolio, Work, and Local Business Offer.
-- Local 1,000 EGP offer is already separated verbally from standard 15k+/30k+/45k+/60k+ work.
+- Existing routes for HILTECH, Teswa, Tuscanini, Habba, Bahja, Senior Pharmacist Portfolio, and Work.
+- Standard service scope ranges are kept separate from product case studies.
 - Inquiry flow is functional and intentionally lightweight.
 - Metadata, robots, sitemap, OpenGraph/Twitter generation already exist.
 
@@ -69,7 +69,6 @@ Order:
 5. Selected client/business proof
 6. Commercial entry points
    - standard work
-   - Local Launch Offer
 7. concise working approach
 8. contact CTA
 9. global footer
@@ -116,12 +115,8 @@ Purpose: one durable commercial architecture.
 Sections:
 - standard scope categories and starting ranges
 - larger mobile/product/system custom scope
-- Local Launch Offer as a clearly separate limited package
 - proof matching by service type
 - inquiry CTA
-
-### /local-business
-Retain as the dedicated conversion landing page for the 1,000 EGP limited offer.
 
 ### /contact
 Purpose: frictionless direct contact plus structured inquiry.
@@ -231,7 +226,6 @@ Centralize:
 - public contact links
 - capability pillars
 - service ranges
-- Local Launch Offer facts
 - navigation
 
 ### lib/portfolio/
@@ -344,7 +338,6 @@ All work stays on one final implementation branch and produces one reviewable fi
    - About
    - Services
    - Contact
-   - preserve Local Business Offer
 
 3. Flagship case-study system
    - Nova

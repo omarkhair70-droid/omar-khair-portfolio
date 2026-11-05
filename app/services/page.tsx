@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { localLaunchOffer, serviceRanges } from "@/data/site";
+import { serviceRanges } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Services & project ranges",
@@ -40,20 +39,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="service-local">
-        <div className="shell service-local__grid">
-          <div data-reveal>
-            <p className="eyebrow">Separate local path</p>
-            <p className="service-local__price">{localLaunchOffer.price}</p>
-          </div>
-          <div data-reveal>
-            <h2>{localLaunchOffer.name}</h2>
-            <p>{localLaunchOffer.summary}</p>
-            <p className="eyebrow">{localLaunchOffer.payment}</p>
-            <Link className="project-link" href="/local-business">Open the limited offer ↗</Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

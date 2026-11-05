@@ -336,37 +336,8 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: "farrag-coffee",
-    index: "09",
-    title: "Farrag Coffee — Brand to ordering evolution",
-    compactTitle: "Farrag Coffee",
-    lane: "creative",
-    category: "RTL brand & ordering",
-    status: "Live",
-    year: "2026",
-    role: "Brand direction, product UX and full-stack implementation",
-    lead: "An Arabic coffee experience connecting brand atmosphere, guided discovery and direct ordering.",
-    challenge: "A strong coffee identity still has to move a customer from mood to a confident product choice.",
-    approach: "The second version turns the early visual experiment into a clearer product and ordering system.",
-    value: "The project is useful as evolution proof: taste, product logic and technical foundations matured together.",
-    stack: ["Next.js", "TypeScript", "Supabase", "RLS", "RTL"],
-    capabilities: ["Brand evolution", "Coffee finder", "Ordering", "Admin"],
-    cover: "/project-screenshots/ben-farag-hero.png",
-    gallery: ["/project-screenshots/ben-farag-hero.png", "/project-screenshots/ben-farag-coffee-finder.png", "/project-screenshots/ben-farag-process-reviews.png"],
-    galleryAlt: ["Farrag Coffee brand homepage", "Farrag Coffee guided finder", "Farrag Coffee ordering process"],
-    tone: "ember",
-    visualMode: "web",
-    featured: false,
-    caseStudy: true,
-    links: [
-      { label: "Case study", href: "/work/farrag-coffee", kind: "case-study" },
-      { label: "Live website", href: "https://farrag-coffee-v2.vercel.app", kind: "live" },
-      { label: "GitHub", href: "https://github.com/omarkhair70-droid/farrag-coffee-v2", kind: "repo" }
-    ]
-  },
-  {
     slug: "pharmacist-portfolio",
-    index: "10",
+    index: "09",
     title: "Senior Pharmacist — A career made legible",
     compactTitle: "Senior Pharmacist",
     lane: "client",
@@ -394,7 +365,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ahmed-khair-portfolio",
-    index: "11",
+    index: "10",
     title: "Ahmed Khair — A graphic designer in motion",
     compactTitle: "Ahmed Khair Portfolio",
     lane: "client",
@@ -423,7 +394,7 @@ export const projects: Project[] = [
   },
   {
     slug: "abdel-aal-coffee",
-    index: "12",
+    index: "11",
     title: "Abdel Aal Coffee — Visual origin work",
     compactTitle: "Abdel Aal Coffee",
     lane: "creative",
@@ -451,7 +422,7 @@ export const projects: Project[] = [
   },
   {
     slug: "athr",
-    index: "13",
+    index: "12",
     title: "Athr Studio — Origins in motion",
     compactTitle: "Athr Studio",
     lane: "creative",
@@ -475,34 +446,6 @@ export const projects: Project[] = [
       { label: "Case study", href: "/work/athr", kind: "case-study" },
       { label: "Live project", href: "https://athr-studio-website.vercel.app", kind: "live" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/athr-studio-website", kind: "repo" }
-    ]
-  },
-  {
-    slug: "sultan-al-burhan",
-    index: "14",
-    title: "Sultan Al-Burhan — Independent editorial system",
-    compactTitle: "Sultan Al-Burhan",
-    lane: "independent",
-    category: "Independent editorial product",
-    status: "Live independent work",
-    year: "2026",
-    role: "Independent concept, product and editorial execution",
-    lead: "A separate editorial identity exploring long-form structure, evidence and launch presentation.",
-    challenge: "The portfolio keeps the subject matter separate from client claims and focuses on the product and editorial execution.",
-    approach: "A self-directed system connects research, publishing structure and a vertical launch-film workflow.",
-    value: "It proves initiative and the ability to author a complete independent world rather than waiting for a client brief.",
-    stack: ["Editorial product", "Web", "Research structure", "Launch film"],
-    capabilities: ["Independent direction", "Editorial", "Research", "Launch"],
-    gallery: [],
-    galleryAlt: [],
-    tone: "ink",
-    visualMode: "text",
-    featured: false,
-    caseStudy: true,
-    links: [
-      { label: "Case study", href: "/work/sultan-al-burhan", kind: "case-study" },
-      { label: "Live project", href: "https://sultan-al-burhan.vercel.app", kind: "live" },
-      { label: "GitHub", href: "https://github.com/omarkhair70-droid/sultan-al-burhan", kind: "repo" }
     ]
   }
 ];

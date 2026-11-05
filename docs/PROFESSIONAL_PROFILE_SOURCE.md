@@ -140,15 +140,14 @@ This is a limited local launch offer, not the normal price of all work.
 - Tuscanini
 - Habba
 - Bahja
-- Farrag Coffee V2
 
 ### Creative / Brand / Visual
 - Abdel Aal Coffee
-- Farrag evolution / early work
 - Athr Studio, Unique Piece Gallery, Fine Arts NUB only if inspection shows they strengthen the finished portfolio
 
 ### Independent / Editorial / Experimental
-- Sultan Al-Burhan
 - other experiments only if they add a distinct capability and do not dilute quality
+
+Farrag Coffee (both versions) and Sultan Al-Burhan are excluded from the public portfolio by the 2026-11-06 curation decision. Abdel Aal Coffee stays.
 
 The finished site should curate, not dump every repository.

@@ -57,13 +57,12 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Operational workflows"],
     capabilities: ["Product catalogue", "RFQ basket", "Quotation flow", "Admin operations"],
     cover: "/work/hiltech/01-home-hero.webp",
-    gallery: curatedGallery("hiltech", ["01-home-hero.webp", "02-solutions.webp", "03-product-library.webp", "04-scope-finder.webp", "05-rfq-review.webp"]),
+    gallery: curatedGallery("hiltech", ["01-home-hero.webp", "02-solutions.webp", "03-product-library.webp", "04-scope-finder.webp"]),
     galleryAlt: [
       "HILTECH physical network infrastructure homepage",
       "HILTECH solution paths interface",
       "HILTECH physical product library",
-      "HILTECH project scope finder",
-      "HILTECH RFQ review workflow"
+      "HILTECH project scope finder"
     ],
     tone: "ember",
     visualMode: "web",
@@ -98,16 +97,16 @@ export const projects: Project[] = [
     cover: "/work/teswa/01-discovery-hub.webp",
     gallery: curatedGallery("teswa", ["01-discovery-hub.webp", "02-home-dashboard.webp", "03-marketplace-feed.webp", "04-item-detail.webp", "05-offer-state.webp", "06-exchange-chat.webp", "07-create-listing.webp", "08-profile.webp", "09-trust.webp", "10-movement.webp"]),
     galleryAlt: [
-      "Teswa Arabic discovery feed",
+      "Teswa Arabic discovery hub",
+      "Teswa home dashboard and activity overview",
+      "Teswa marketplace feed showing available items",
       "Teswa item detail and exchange context",
-      "Teswa social marketplace interface",
-      "Teswa messaging experience",
-      "Teswa notification and product state",
-      "Teswa profile and account experience",
-      "Teswa discovery hub",
-      "Teswa profile screen",
-      "Teswa trust and exchange state",
-      "Teswa product movement screen"
+      "Teswa exchange offer status and timeline",
+      "Teswa conversation and exchange messages",
+      "Teswa create listing form",
+      "Teswa profile and account overview",
+      "Teswa community trust indicators",
+      "Teswa exchange movement overview"
     ],
     tone: "sand",
     visualMode: "mobile",
@@ -140,17 +139,14 @@ export const projects: Project[] = [
       "Nova demonstrates product design and deep engineering as one discipline: interface, state, realtime behaviour, security, CI and release gates are treated as a single system.",
     stack: ["Kotlin", "Jetpack Compose", "Django", "WebSockets", "CI / release engineering"],
     capabilities: ["Native Android", "Realtime", "Messaging", "Architecture governance"],
-    cover: "/work/nova/01-home-dashboard.webp",
-    gallery: curatedGallery("nova", ["01-home-dashboard.webp", "02-orbit.webp", "03-tonight.webp", "04-reel.webp", "05-create-hub.webp", "06-post-detail.webp", "07-messaging-calls.webp", "08-profile.webp"]),
+    cover: "/work/nova/02-orbit.webp",
+    // Only publish clear, representative product states. Broken typography, demo reels,
+    // test-call histories and placeholder-profile captures remain out of the public gallery.
+    gallery: curatedGallery("nova", ["02-orbit.webp", "05-create-hub.webp", "06-post-detail.webp"]),
     galleryAlt: [
-      "Nova Orbit social interface",
-      "Nova home experience",
-      "Nova media and reel experience",
-      "Nova creation flow",
-      "Nova conversation surface",
-      "Nova profile experience",
-      "Nova social interaction screen",
-      "Nova profile screen"
+      "Nova Orbit showing the close-connection map and recent activity",
+      "Nova creation hub with post, story, room, pulse and reel actions",
+      "Nova post detail with social interactions"
     ],
     tone: "violet",
     visualMode: "mobile",
@@ -186,13 +182,13 @@ export const projects: Project[] = [
     cover: "/work/wavezero/01-brand-home.webp",
     gallery: curatedGallery("wavezero", ["01-brand-home.webp", "02-listening-home.webp", "03-library.webp", "04-device-music.webp", "05-search.webp", "06-now-playing.webp", "07-settings-downloads.webp"]),
     galleryAlt: [
-      "WaveZero Now Playing interface",
-      "WaveZero music home",
-      "WaveZero local library",
-      "WaveZero queue and playback state",
-      "WaveZero search and discovery",
-      "WaveZero collection interface",
-      "WaveZero settings and downloads"
+      "WaveZero branded listening home",
+      "WaveZero recent and continued listening",
+      "WaveZero library overview",
+      "WaveZero device music list",
+      "WaveZero search and browse",
+      "WaveZero now playing controls",
+      "WaveZero audio settings and download preferences"
     ],
     tone: "porcelain",
     visualMode: "mobile",
@@ -201,7 +197,6 @@ export const projects: Project[] = [
     links: [
       { label: "Case study", href: "/work/wavezero", kind: "case-study" },
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.omarkhair.wavezero", kind: "store" },
-      { label: "Join closed test", href: "https://groups.google.com/g/nova-closed-testers", kind: "testing" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/wavezero", kind: "repo" },
       { label: "Privacy", href: "/privacy/wavezero", kind: "live" }
     ]

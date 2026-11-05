@@ -22,14 +22,14 @@ export default function WorkPage() {
           <h1 data-reveal>Not one style.<br /><em>One point of view.</em></h1>
           <p className="page-hero__copy" data-reveal>
             Products are organised by what they prove—not by the technology used to make them. Flagship systems show depth,
-            client work shows delivery, creative work shows visual authorship and independent work shows initiative.
+            client work shows delivery, and creative work shows visual authorship.
           </p>
         </div>
       </header>
 
       <section className="work-index">
         <div className="shell">
-          {laneOrder.map((lane) => {
+          {laneOrder.filter((lane) => projects.some((project) => project.lane === lane)).map((lane) => {
             const label = laneLabels[lane];
             const laneProjects = projects.filter((project) => project.lane === lane);
             return (

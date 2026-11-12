@@ -110,7 +110,7 @@ export default function OpportunityIntelligencePage() {
                 <div><strong>63</strong><span>requirements tracked in a working analysis</span></div>
                 <div><strong>18</strong><span>open questions in that analysis</span></div>
               </div>
-              <p className={styles.caseNote}>The notice describes the project scope. The requirement and question counts are from Omar's own working traceability register, not independently certified procurement figures. This is a research example, not a client engagement, confirmed bid, supplier qualification or award.</p>
+              <p className={styles.caseNote}>The notice describes the project scope. The requirement and question counts are from Omar&apos;s own working traceability register, not independently certified procurement figures. This is a research example, not a client engagement, confirmed bid, supplier qualification or award.</p>
             </div>
           </div>
           <div className={styles.checkGrid}>
@@ -125,7 +125,7 @@ export default function OpportunityIntelligencePage() {
           <div className={styles.decision}>
             <span>DECISION STATE</span>
             <strong>Qualification pending.</strong>
-            <p>No supplier evidence has been verified for this example. A Go / No-go decision requires the prospective bidder's documents and current tender instructions.</p>
+            <p>No supplier evidence has been verified for this example. A Go / No-go decision requires the prospective bidder&apos;s documents and current tender instructions.</p>
           </div>
         </div>
       </section>

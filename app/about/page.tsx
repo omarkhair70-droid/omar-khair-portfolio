@@ -47,8 +47,7 @@ export default function AboutPage() {
                 client work proves delivery; creative projects show how the experience can have its own identity.
               </p>
               <p>
-                Background: Computer Science coursework at Nahda University in Beni Suef, alongside visual arts /
-                Fine Arts preparation and a design background.
+                Background: Computer Science coursework at Nahda University in Beni Suef, Egypt.
               </p>
             </div>
           </div>

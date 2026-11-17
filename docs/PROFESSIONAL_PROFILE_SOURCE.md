@@ -37,7 +37,6 @@ Present this as ongoing work: opportunity research, reading organisational and p
 Use concise, factual wording. Do not imply a completed degree.
 
 - Computer Science coursework — Nahda University, Beni Suef, Egypt
-- Visual arts / Fine Arts preparation and design background
 
 Do not publish personal transfer history, family context, grades, or private educational details.
 

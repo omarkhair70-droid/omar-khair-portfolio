@@ -126,7 +126,7 @@ export const projects: Project[] = [
     compactTitle: "Nova",
     lane: "flagship",
     category: "Native Android social product",
-    status: "Available on Google Play · closed testing",
+    status: "Closed testing — tester access required",
     year: "2026",
     role: "Product direction, native Android, backend and release architecture",
     lead:
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     caseStudy: true,
     links: [
       { label: "Case study", href: "/work/nova", kind: "case-study" },
-      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.omarkhair70.nova", kind: "store" },
+      { label: "Play Store access: closed test", kind: "status" },
       { label: "GitHub", href: "https://github.com/omarkhair-labs/nova", kind: "repo" },
       { label: "Join closed test", href: "https://groups.google.com/g/nova-closed-testers", kind: "testing" }
     ]
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     compactTitle: "WaveZero",
     lane: "flagship",
     category: "Music product & native playback",
-    status: "Available on Google Play · closed testing",
+    status: "Closed testing — tester access required",
     year: "2026",
     role: "Product direction, Flutter interface and native playback engineering",
     lead:
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     caseStudy: true,
     links: [
       { label: "Case study", href: "/work/wavezero", kind: "case-study" },
-      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.omarkhair.wavezero", kind: "store" },
+      { label: "Play Store access: invite required", kind: "status" },
       { label: "GitHub", href: "https://github.com/omarkhair70-droid/wavezero", kind: "repo" },
       { label: "Privacy", href: "/privacy/wavezero", kind: "live" }
     ]
@@ -251,7 +251,7 @@ export const projects: Project[] = [
     compactTitle: "Tuscanini",
     lane: "client",
     category: "Ordering experience",
-    status: "Live staged product",
+    status: "Live staging — ordering flow in active QA",
     year: "2026",
     role: "Product direction, Arabic UX and responsive implementation",
     lead: "A mobile-first Arabic restaurant journey from menu discovery to customisation, offers and cart.",

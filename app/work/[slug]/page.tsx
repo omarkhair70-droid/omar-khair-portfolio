@@ -6,6 +6,7 @@ import FokharaCaseTrace from "@/components/FokharaCaseTrace";
 import ProjectCaseEntry from "@/components/ProjectCaseEntry";
 import type { ProjectInteractionVariant } from "@/components/ProjectInteractionLink";
 import ProjectLinks from "@/components/ProjectLinks";
+import { caseEvidence } from "@/data/case-evidence";
 import { caseStudyProjects, getProject } from "@/data/portfolio-projects";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -35,6 +36,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const currentIndex = caseStudyProjects.findIndex((item) => item.slug === project.slug);
   const next = caseStudyProjects[(currentIndex + 1) % caseStudyProjects.length];
   const externalLinks = project.links.filter((link) => link.kind !== "case-study");
+  const evidence = caseEvidence[project.slug];
   const galleryClass =
     project.visualMode === "web"
       ? "web-story"
@@ -86,21 +88,41 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </section>
             <section data-reveal>
               <p className="eyebrow">02 / The system</p>
-              <h2>A product decision before a screen decision.</h2>
+              <h2>{evidence?.solutionHeading ?? `How ${project.compactTitle} works.`}</h2>
               <p>{project.approach}</p>
             </section>
             <section data-reveal>
               <p className="eyebrow">03 / The value</p>
-              <h2>Evidence over adjectives.</h2>
+              <h2>{evidence?.valueHeading ?? `What ${project.compactTitle} demonstrates.`}</h2>
               <p>{project.value}</p>
             </section>
           </div>
         </section>
 
+        {evidence ? (
+          <section className="shell case-flow section-pad" aria-labelledby={`case-flow-${project.slug}`}>
+            <div className="case-flow__heading" data-reveal>
+              <p className="eyebrow">Operational sequence / {project.compactTitle}</p>
+              <h2 id={`case-flow-${project.slug}`}>{evidence.sequenceHeading}</h2>
+              <p>{evidence.intro}</p>
+            </div>
+            <ol className="case-flow__steps">
+              {evidence.steps.map((step, index) => (
+                <li key={step.title} data-reveal>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="case-flow__note">{evidence.note}</p>
+          </section>
+        ) : null}
+
         <section className="shell case-gallery">
           <div className="case-gallery__heading">
             <p className="eyebrow" data-reveal>Product evidence</p>
-            <h2 data-reveal>A story told through <span className="display-serif">real states.</span></h2>
+            <h2 data-reveal>{evidence?.galleryHeading ?? `Inside ${project.compactTitle}.`}</h2>
           </div>
           {project.gallery.length ? (
             <div className={galleryClass}>

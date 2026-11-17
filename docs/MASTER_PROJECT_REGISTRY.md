@@ -2,6 +2,8 @@
 > **Portfolio curation decision (2026-11-06):** Farrag Coffee (both original and V2) and Sultan Al-Burhan are **EXCLUDED** from all public portfolio listings, case studies and sitemap. Abdel Aal Coffee remains included. Preserve source projects/repositories; this is a portfolio selection change.
 
 
+**2026-11-17 public-link verification:** The normal Google Play listing URLs for Nova and WaveZero returned 404 to an unauthenticated browser. The public portfolio therefore shows factual closed-testing status (and the known Nova tester group) instead of dead store buttons. Restore a normal Play CTA only after a genuinely accessible listing is verified. This does not assert the builds are unpublished or unavailable to enrolled testers.
+
 Last updated: 2026-09-02
 
 This file is the source of truth for portfolio inclusion, project links, visual assets, case-study status, release status, and next actions.  

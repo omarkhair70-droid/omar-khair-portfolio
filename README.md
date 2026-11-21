@@ -63,3 +63,7 @@ The curated project evidence is stored under `public/work/<project>/`. Excluded 
 - WhatsApp: `+20 115 189 1310`
 - GitHub: `https://github.com/omarkhair70-droid`
 - LinkedIn: `https://www.linkedin.com/in/omar-khair-product-builder`
+
+## Personal visual reference (living, not a project style rule)
+
+[Omar's confirmed personal visual taste reference](docs/creative/OMAR_VISUAL_TASTE_REFERENCE_2026-11-21.md) — confirmed by Omar on 21 November 2026. Research context only; every project still needs its own evidence, audience, creative decisions and rights checks.
